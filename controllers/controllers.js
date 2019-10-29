@@ -1,16 +1,46 @@
 var path = require('path')
-
+var Data = require('../model/data');
 module.exports.new = function(request, response) {
 
   response.sendFile(path.join(__dirname,'/../views/index.html'));
-    
- 
   }
 
   module.exports.new1 = function(request, response) {
 
     response.sendFile(path.join(__dirname,'/../views/form.html'));
-      
-   
+      }
+
+    
+
+module.exports.create = function(request, response) {
+  var new_data = new Data(request.body);
+  new_data.save(function(err, data) {
+    if (err)
+      return response.status(400)
+        .json({
+          error: "Please add a School"
+        });
+    console.log(data);
+    return response.status(200)
+      .json({
+        message: "Data succesfully added"
+      });
+
+  })
+  console.log(request.body);
+}
+module.exports.list = function(request, response) {
+  Data.find(function(err, data){
+    if(err){
+      response.status(400)
+        .json({
+          error: "Database query error"
+        });
     }
   
+    response.status(200).json({
+      datas: data
+    });
+  });
+  
+  }

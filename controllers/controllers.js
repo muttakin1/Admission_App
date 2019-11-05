@@ -10,6 +10,11 @@ module.exports.new = function(request, response) {
     response.sendFile(path.join(__dirname,'/../views/form.html'));
       }
 
+      module.exports.new2 = function(request, response) {
+
+        response.sendFile(path.join(__dirname,'/../views/graph.html'));
+          }     
+
     
 
 module.exports.create = function(request, response) {
@@ -44,3 +49,18 @@ module.exports.list = function(request, response) {
   });
   
   }
+  module.exports.listline = function(request, response) {
+    Data.find({ },function(err, data){
+      if(err){
+        response.status(400)
+          .json({
+            error: "Database query error"
+          });
+      }
+    
+      response.status(200).json({
+        datas: data
+      });
+    });
+    
+    }

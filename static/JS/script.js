@@ -43,36 +43,54 @@ $("#getline").click(function (event) {
     url: "/data/list1"
   }).done(function (response) {
 
-    console.log(response)
+    //console.log(response)
     let noofStd = response.datas
-    twentyThirteenStd = noofStd.filter(it => it.year.includes('2013'));
-    a = twentyThirteenStd.reduce((total, currentValue) => {
-      return total + Number(currentValue.no_of_Student)
-    }, 0)
-    twentyFourteenStd = noofStd.filter(it => it.year.includes('2014'));
-    b = twentyFourteenStd.reduce((total, currentValue) => {
-      return total + Number(currentValue.no_of_Student)
-    }, 0)
-    twentyFifteenStd = noofStd.filter(it => it.year.includes('2015'));
-    c = twentyFifteenStd.reduce((total, currentValue) => {
-      return total + Number(currentValue.no_of_Student)
-    }, 0)
-    twentySixteenStd = noofStd.filter(it => it.year.includes('2016'));
-    d = twentySixteenStd.reduce((total, currentValue) => {
-      return total + Number(currentValue.no_of_Student)
-    }, 0)
-    twentySeventeenStd = noofStd.filter(it => it.year.includes('2017'));
-    e = twentySeventeenStd.reduce((total, currentValue) => {
-      return total + Number(currentValue.no_of_Student)
-    }, 0)
-    twentyEightteenStd = noofStd.filter(it => it.year.includes('2018'));
-    f = twentyEightteenStd.reduce((total, currentValue) => {
-      return total + Number(currentValue.no_of_Student)
-    }, 0)
-    twentyNineteenStd = noofStd.filter(it => it.year.includes('2019'));
-    g = twentyNineteenStd.reduce((total, currentValue) => {
-      return total + Number(currentValue.no_of_Student)
-    }, 0)
+    let counter=0
+
+    let numberOfStd=[]
+    for (let i=2013;i<=2019;i++){  
+    noofStd.forEach((item,index) => {
+      if (item.year==i){
+       counter= counter +Number(item.no_of_Student)
+      }
+    }
+    
+    );
+    numberOfStd.push(counter)
+    counter=0}
+    console.log(numberOfStd)
+   
+
+    // twentyThirteenStd = noofStd.filter(it => it.year.includes('2013'));
+    
+    // a = twentyThirteenStd.reduce((total, currentValue) => {
+    
+    //   return total + Number(currentValue.no_of_Student)
+    // }, 0)
+    // twentyFourteenStd = noofStd.filter(it => it.year.includes('2014'));
+    // b = twentyFourteenStd.reduce((total, currentValue) => {
+    //   return total + Number(currentValue.no_of_Student)
+    // }, 0)
+    // twentyFifteenStd = noofStd.filter(it => it.year.includes('2015'));
+    // c = twentyFifteenStd.reduce((total, currentValue) => {
+    //   return total + Number(currentValue.no_of_Student)
+    // }, 0)
+    // twentySixteenStd = noofStd.filter(it => it.year.includes('2016'));
+    // d = twentySixteenStd.reduce((total, currentValue) => {
+    //   return total + Number(currentValue.no_of_Student)
+    // }, 0)
+    // twentySeventeenStd = noofStd.filter(it => it.year.includes('2017'));
+    // e = twentySeventeenStd.reduce((total, currentValue) => {
+    //   return total + Number(currentValue.no_of_Student)
+    // }, 0)
+    // twentyEightteenStd = noofStd.filter(it => it.year.includes('2018'));
+    // f = twentyEightteenStd.reduce((total, currentValue) => {
+    //   return total + Number(currentValue.no_of_Student)
+    // }, 0)
+    // twentyNineteenStd = noofStd.filter(it => it.year.includes('2019'));
+    // g = twentyNineteenStd.reduce((total, currentValue) => {
+    //   return total + Number(currentValue.no_of_Student)
+    // }, 0)
     
 
 
@@ -86,7 +104,7 @@ $("#getline").click(function (event) {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [{
           label: 'Number Of Students',
-          data: [a,b,c,d,e,f,g],
+          data: [numberOfStd[0],numberOfStd[1],numberOfStd[2],numberOfStd[3],numberOfStd[4],numberOfStd[5],numberOfStd[6],numberOfStd[7],],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
            

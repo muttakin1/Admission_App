@@ -1,3 +1,5 @@
+
+
 var admissionData = {
   School: $('#schoolN').val(),
   Department: $('#deptN').val(),
@@ -149,36 +151,36 @@ $("#schoolWise").click(function (event) {
     console.log(response)
     let noofStd = response.datas
 
-    let counter=0
-    let counterSob=0
+    let counter = 0
+    let counterSob = 0
     let counterOther = 0
     let numberOfStd = []
-    let numberOfSob=[]
-    let numberOfOth=[]
+    let numberOfSob = []
+    let numberOfOth = []
     for (let i = 2013; i <= 2019; i++) {
       noofStd.forEach((item, index) => {
-        if (item.year == i && item.School=="SECS" ) {
+        if (item.year == i && item.School == "SECS") {
           counter = counter + Number(item.no_of_Student)
-         
+
         }
-        else if (item.year == i && item.School=="SoB" ) {
+        else if (item.year == i && item.School == "SoB") {
           counterSob = counterSob + Number(item.no_of_Student)
         }
 
-        else if (item.year == i &&(item.School=="Phar"|| item.School=="SESM" || item.School=="SLASS"|| item.School=="SLS" )) {
+        else if (item.year == i && (item.School == "Phar" || item.School == "SESM" || item.School == "SLASS" || item.School == "SLS")) {
           counterOther = counterOther + Number(item.no_of_Student)
         }
-      
+
       }
 
       );
-      
+
       numberOfStd.push(counter)
       numberOfSob.push(counterSob)
       numberOfOth.push(counterOther)
-      counter=0 
-      counterSob=0 
-      counterOther=0
+      counter = 0
+      counterSob = 0
+      counterOther = 0
     }
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
@@ -188,16 +190,16 @@ $("#schoolWise").click(function (event) {
         datasets: [{
           label: 'Number Of Students in SECS',
           data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-          
+
           borderColor: [
             'rgba(255, 99, 132, 1)',
 
           ],
           borderWidth: 2
-        },{
+        }, {
           label: 'Number Of Students in SoB',
-          data: [numberOfSob[0],numberOfSob[1],numberOfSob[2],numberOfSob[3],numberOfSob[4],numberOfSob[5],numberOfSob[6],numberOfSob[7],],
-          
+          data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+
           borderColor: [
             'rgba(220,180,0,1)',
 
@@ -206,16 +208,16 @@ $("#schoolWise").click(function (event) {
         },
         {
           label: 'Number Of Students in Others',
-          data: [numberOfOth[0],numberOfOth[1],numberOfOth[2],numberOfOth[3],numberOfOth[4],numberOfOth[5],numberOfOth[6],numberOfOth[7],],
-          
+          data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+
           borderColor: [
             'rgba(180,130,0,1)',
 
           ],
           borderWidth: 2
         },
-      ]
-        
+        ]
+
       },
       options: {
         scales: {
@@ -243,50 +245,50 @@ $("#barSchoolWise").click(function (event) {
     console.log(response)
     let noofStd = response.datas
 
-    let counter=0
-    let counterSob=0
+    let counter = 0
+    let counterSob = 0
     let counterOther = 0
-    let counterSlass=0
-    let counterSls=0
+    let counterSlass = 0
+    let counterSls = 0
     let numberOfStd = []
-    let numberOfSob=[]
-    let numberOfOth=[]
-    let numberOfSlass=[]
-    let numberOfSls=[]
+    let numberOfSob = []
+    let numberOfOth = []
+    let numberOfSlass = []
+    let numberOfSls = []
     for (let i = 2013; i <= 2019; i++) {
       noofStd.forEach((item, index) => {
-        if (item.year == i && item.School=="SECS" ) {
+        if (item.year == i && item.School == "SECS") {
           counter = counter + Number(item.no_of_Student)
-         
+
         }
-        else if (item.year == i && item.School=="SoB" ) {
+        else if (item.year == i && item.School == "SoB") {
           counterSob = counterSob + Number(item.no_of_Student)
         }
 
-        else if (item.year == i &&(item.School=="Phar"|| item.School=="SESM")) {
+        else if (item.year == i && (item.School == "Phar" || item.School == "SESM")) {
           counterOther = counterOther + Number(item.no_of_Student)
         }
-        else if (item.year == i && item.School=="SLASS" ) {
+        else if (item.year == i && item.School == "SLASS") {
           counterSlass = counterSlass + Number(item.no_of_Student)
         }
-        else if (item.year == i && item.School=="SLS" ) {
+        else if (item.year == i && item.School == "SLS") {
           counterSls = counterSls + Number(item.no_of_Student)
         }
-      
+
       }
 
       );
-      
+
       numberOfStd.push(counter)
       numberOfSob.push(counterSob)
       numberOfOth.push(counterOther)
       numberOfSlass.push(counterSlass)
       numberOfSls.push(counterSls)
-      counter=0 
-      counterSob=0 
-      counterOther=0
-      counterSls=0
-      counterSlass=0
+      counter = 0
+      counterSob = 0
+      counterOther = 0
+      counterSls = 0
+      counterSlass = 0
     }
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
@@ -296,7 +298,7 @@ $("#barSchoolWise").click(function (event) {
         datasets: [{
           label: 'Number Of Students in SECS',
           data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-          
+
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -306,8 +308,8 @@ $("#barSchoolWise").click(function (event) {
             'rgba(255, 159, 64, 0.2)',
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
-        ],
-        borderColor: [
+          ],
+          borderColor: [
             'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
@@ -316,12 +318,12 @@ $("#barSchoolWise").click(function (event) {
             'rgba(255, 159, 64, 1)',
             'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
-        ],
+          ],
           borderWidth: 2
-        },{
+        }, {
           label: 'Number Of Students in SoB',
-          data: [numberOfSob[0],numberOfSob[1],numberOfSob[2],numberOfSob[3],numberOfSob[4],numberOfSob[5],numberOfSob[6],numberOfSob[7],],
-          
+          data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+
           borderColor: [
             'rgba(220,180,0,1)',
 
@@ -330,8 +332,8 @@ $("#barSchoolWise").click(function (event) {
         },
         {
           label: 'Number Of Students in SESM+PHARM',
-          data: [numberOfOth[0],numberOfOth[1],numberOfOth[2],numberOfOth[3],numberOfOth[4],numberOfOth[5],numberOfOth[6],numberOfOth[7],],
-          
+          data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+
           borderColor: [
             'rgba(180,130,0,1)',
 
@@ -340,8 +342,8 @@ $("#barSchoolWise").click(function (event) {
         },
         {
           label: 'Number Of Students in Slass',
-          data: [numberOfSlass[0],numberOfSlass[1],numberOfSlass[2],numberOfSlass[3],numberOfSlass[4],numberOfSlass[5],numberOfSlass[6],numberOfSlass[7],],
-          
+          data: [numberOfSlass[0], numberOfSlass[1], numberOfSlass[2], numberOfSlass[3], numberOfSlass[4], numberOfSlass[5], numberOfSlass[6], numberOfSlass[7],],
+
           borderColor: [
             'rgba(180,130,0,1)',
 
@@ -350,16 +352,16 @@ $("#barSchoolWise").click(function (event) {
         },
         {
           label: 'Number Of Students in SLS',
-          data: [numberOfSls[0],numberOfSls[1],numberOfSls[2],numberOfSls[3],numberOfSls[4],numberOfSls[5],numberOfSls[6],numberOfSls[7],],
-          
+          data: [numberOfSls[0], numberOfSls[1], numberOfSls[2], numberOfSls[3], numberOfSls[4], numberOfSls[5], numberOfSls[6], numberOfSls[7],],
+
           borderColor: [
             'rgba(180,130,0,1)',
 
           ],
           borderWidth: 2
         },
-      ]
-        
+        ]
+
       },
       options: {
         scales: {
@@ -390,36 +392,36 @@ $("#OtherWise").click(function (event) {
     console.log(response)
     let noofStd = response.datas
 
-    let counter=0
-    let counterSob=0
+    let counter = 0
+    let counterSob = 0
     let counterOther = 0
     let numberOfStd = []
-    let numberOfSob=[]
-    let numberOfOth=[]
+    let numberOfSob = []
+    let numberOfOth = []
     for (let i = 2013; i <= 2019; i++) {
       noofStd.forEach((item, index) => {
-        if (item.year == i && item.School=="SLASS" ) {
+        if (item.year == i && item.School == "SLASS") {
           counter = counter + Number(item.no_of_Student)
-         
+
         }
-        else if (item.year == i && item.School=="SLS" ) {
+        else if (item.year == i && item.School == "SLS") {
           counterSob = counterSob + Number(item.no_of_Student)
         }
 
-        else if (item.year == i &&(item.School=="Phar"|| item.School=="SESM")) {
+        else if (item.year == i && (item.School == "Phar" || item.School == "SESM")) {
           counterOther = counterOther + Number(item.no_of_Student)
         }
-      
+
       }
 
       );
-      
+
       numberOfStd.push(counter)
       numberOfSob.push(counterSob)
       numberOfOth.push(counterOther)
-      counter=0 
-      counterSob=0 
-      counterOther=0
+      counter = 0
+      counterSob = 0
+      counterOther = 0
     }
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
@@ -429,16 +431,16 @@ $("#OtherWise").click(function (event) {
         datasets: [{
           label: 'Number Of Students in Slass',
           data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-          
+
           borderColor: [
             'rgba(255, 99, 132, 1)',
 
           ],
           borderWidth: 2
-        },{
+        }, {
           label: 'Number Of Students in SLS',
-          data: [numberOfSob[0],numberOfSob[1],numberOfSob[2],numberOfSob[3],numberOfSob[4],numberOfSob[5],numberOfSob[6],numberOfSob[7],],
-          
+          data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+
           borderColor: [
             'rgba(220,180,0,1)',
 
@@ -447,18 +449,166 @@ $("#OtherWise").click(function (event) {
         },
         {
           label: 'Number Of Students in Sesm+Phar',
-          data: [numberOfOth[0],numberOfOth[1],numberOfOth[2],numberOfOth[3],numberOfOth[4],numberOfOth[5],numberOfOth[6],numberOfOth[7],],
-          
+          data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+
           borderColor: [
             'rgba(180,130,0,1)',
 
           ],
           borderWidth: 2
         },
-      ]
-        
+        ]
+
       },
       options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+
+  }).fail(function (response) {
+    console.log(response.responseText);
+  });
+
+})
+
+$("#getFocusYear").click(function (event) {
+  $.ajax({
+    method: "GET",
+    url: "/data/list"
+  }).done(function (response) {
+
+    Yearvalue = $("#focusYearVal").val()
+    console.log(Yearvalue)
+    //console.log(response)
+    let noofStd = response.datas
+
+
+    let counterAutumn = 0
+    let counterSummer = 0
+    let counterSpring = 0
+    let numberOfAutumn = []
+    let numberOfSummer = []
+    let numberOfSpring = []
+    for (let i = 2013; i <= 2019; i++) {
+      noofStd.forEach((item, index) => {
+        if (item.year == Yearvalue && item.Semester == "1") {
+          counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+        }
+        else if (item.year == Yearvalue && item.Semester == "2") {
+          counterSpring = counterSpring + Number(item.no_of_Student)
+        }
+
+        else if (item.year == Yearvalue && item.Semester == "3") {
+          counterSummer = counterSummer + Number(item.no_of_Student)
+        }
+
+      }
+
+      );
+
+      numberOfAutumn.push(counterAutumn)
+      numberOfSpring.push(counterSpring)
+      numberOfSummer.push(counterSummer)
+      counterAutumn = 0
+      counterSpring = 0
+      counterSummer = 0
+    }
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Spring', 'Summer', 'Autumn'],
+        datasets: [{
+          label: 'Number Of Students in ' + Yearvalue,
+          data: [numberOfAutumn[0], numberOfSpring[0], numberOfSummer[0]],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+          ],
+          borderWidth: 2
+        },
+        ]
+
+      },
+      options: {
+        title: {
+          display: true,
+          text: Yearvalue+' @ IUB',
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+
+        },
+
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+    var ctx = document.getElementById('myChart1');
+    var myChart1 = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Spring', 'Summer', 'Autumn'],
+        datasets: [{
+          label: 'Number Of Students in ' + Yearvalue,
+          data: [numberOfAutumn[0], numberOfSpring[0], numberOfSummer[0]],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+          ],
+          borderWidth: 2
+        },//{
+          //   label: 'Number Of Students in SoB',
+          //   data: [numberOfSob[0],numberOfSob[1],numberOfSob[2],numberOfSob[3],numberOfSob[4],numberOfSob[5],numberOfSob[6],numberOfSob[7],],
+
+          //   borderColor: [
+          //     'rgba(220,180,0,1)',
+
+          //   ],
+          //   borderWidth: 2
+          // },
+          // {
+          //   label: 'Number Of Students in Others',
+          //   data: [numberOfOth[0],numberOfOth[1],numberOfOth[2],numberOfOth[3],numberOfOth[4],numberOfOth[5],numberOfOth[6],numberOfOth[7],],
+
+          //   borderColor: [
+          //     'rgba(180,130,0,1)',
+
+          //   ],
+          //   borderWidth: 2
+          // },
+        ]
+
+      },
+      options: {
+        title: {
+          display: true,
+          text: Yearvalue+' School wise distribution',
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+
+        },
         scales: {
           yAxes: [{
             ticks: {

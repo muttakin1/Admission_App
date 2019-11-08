@@ -488,10 +488,19 @@ $("#getFocusYear").click(function (event) {
     //console.log(response)
     let noofStd = response.datas
 
-
+    let counterSecs=0
+    let counterSlass = 0
+    let counterSob = 0
+    let counterOther = 0
     let counterAutumn = 0
     let counterSummer = 0
     let counterSpring = 0
+    let counterSls=0
+    let numberOfSls=[]
+    let numberOfSlass = []
+    let numberOfSob = []
+    let numberOfOth = []
+    let numberOfSecs = []
     let numberOfAutumn = []
     let numberOfSummer = []
     let numberOfSpring = []
@@ -508,22 +517,82 @@ $("#getFocusYear").click(function (event) {
         else if (item.year == Yearvalue && item.Semester == "3") {
           counterSummer = counterSummer + Number(item.no_of_Student)
         }
+        if (item.year == Yearvalue && item.School == "SLASS") {
+          counterSlass = counterSlass + Number(item.no_of_Student)
+
+        }
+        else if (item.year == Yearvalue && item.School == "SoB") {
+          counterSob = counterSob + Number(item.no_of_Student)
+        }
+
+        else if (item.year == Yearvalue && (item.School == "Phar" || item.School == "SESM")) {
+          counterOther = counterOther + Number(item.no_of_Student)
+        }
+        else if (item.year == Yearvalue && item.School == "SECS") {
+          counterSecs = counterSecs + Number(item.no_of_Student)
+        }
+        else if (item.year == Yearvalue && item.School == "SLS") {
+          counterSls = counterSls + Number(item.no_of_Student)
+        }
 
       }
 
       );
-
+      numberOfSlass.push(counterSlass)
+      numberOfSob.push(counterSob)
+      numberOfOth.push(counterOther)
+      numberOfSecs.push(counterSecs)
       numberOfAutumn.push(counterAutumn)
       numberOfSpring.push(counterSpring)
       numberOfSummer.push(counterSummer)
+      numberOfSls.push(counterSls)
+      
+      counterSls=0
       counterAutumn = 0
+      counterSecs = 0
       counterSpring = 0
       counterSummer = 0
+      counterSlass = 0
+      counterSob = 0
+      counterOther = 0
+
     }
+    // let counter = 0
+    // let counterSob = 0
+    // let counterOther = 0
+    // let numberOfStd = []
+    // let numberOfSob = []
+    // let numberOfOth = []
+    // for (let i = 2013; i <= 2019; i++) {
+    //   noofStd.forEach((item, index) => {
+    //     if (item.year == i && item.School == "SLASS") {
+    //       counter = counter + Number(item.no_of_Student)
+
+    //     }
+    //     else if (item.year == i && item.School == "SLS") {
+    //       counterSob = counterSob + Number(item.no_of_Student)
+    //     }
+
+    //     else if (item.year == i && (item.School == "Phar" || item.School == "SESM")) {
+    //       counterOther = counterOther + Number(item.no_of_Student)
+    //     }
+
+    //   }
+
+    //   );
+
+    //   numberOfStd.push(counter)
+    //   numberOfSob.push(counterSob)
+    //   numberOfOth.push(counterOther)
+    //   counter = 0
+    //   counterSob = 0
+    //   counterOther = 0
+    // }
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
+        
         labels: ['Spring', 'Summer', 'Autumn'],
         datasets: [{
           label: 'Number Of Students in ' + Yearvalue,
@@ -544,9 +613,10 @@ $("#getFocusYear").click(function (event) {
 
       },
       options: {
+        
         title: {
           display: true,
-          text: Yearvalue+' @ IUB',
+          text: Yearvalue + ' @ IUB',
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
 
         },
@@ -564,10 +634,11 @@ $("#getFocusYear").click(function (event) {
     var myChart1 = new Chart(ctx, {
       type: 'pie',
       data: {
+       
         labels: ['Spring', 'Summer', 'Autumn'],
         datasets: [{
           label: 'Number Of Students in ' + Yearvalue,
-          data: [numberOfAutumn[0], numberOfSpring[0], numberOfSummer[0]],
+          data: [numberOfSls[0], numberOfSlass[0], numberOfSob[0],numberOfOth[0],numberOfSecs[0]],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -603,9 +674,17 @@ $("#getFocusYear").click(function (event) {
 
       },
       options: {
+        plugins:{
+          
+          labels: {
+            render: 'percentage',
+           
+            precision: 2
+          }
+        },
         title: {
           display: true,
-          text: Yearvalue+' School wise distribution',
+          text: Yearvalue + ' School wise distribution',
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
 
         },

@@ -1,0 +1,30 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "chartjs-plugin-labels": "^1.1.0",
+    "chart.js": "^2.9.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.3",
+    "mongoimport": "^1.0.6",
+    "mongoose": "^5.7.7",
+    "node": "^12.11.0",
+    "nodemon": "^1.19.4"
+  },
+  "scripts": {
+    "test": "",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muttakin1/Admission_App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muttakin1/Admission_App/issues"
+  },
+  "homepage": "https://github.com/muttakin1/Admission_App#readme"
+}

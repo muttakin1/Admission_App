@@ -1,5 +1,5 @@
 
-
+//Number of Students
 $("#getline").click(function (event) {
     $.ajax({
       method: "GET",
@@ -72,8 +72,8 @@ $("#getline").click(function (event) {
       let noofStd = response.datas
   
       let counter = 0
-      let counterSob = 0
-      let counterOther = 0
+      let counterSLS = 0
+      let counterSESM_PHARM = 0
       let numberOfStd = []
       let numberOfSob = []
       let numberOfOth = []
@@ -84,11 +84,11 @@ $("#getline").click(function (event) {
   
           }
           else if (item.year == i && item.School == "SoB") {
-            counterSob = counterSob + Number(item.no_of_Student)
+            counterSLS = counterSLS + Number(item.no_of_Student)
           }
   
           else if (item.year == i && (item.School == "Phar" || item.School == "SESM" || item.School == "SLASS" || item.School == "SLS")) {
-            counterOther = counterOther + Number(item.no_of_Student)
+            counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
           }
   
         }
@@ -96,11 +96,11 @@ $("#getline").click(function (event) {
         );
   
         numberOfStd.push(counter)
-        numberOfSob.push(counterSob)
-        numberOfOth.push(counterOther)
+        numberOfSob.push(counterSLS)
+        numberOfOth.push(counterSESM_PHARM)
         counter = 0
-        counterSob = 0
-        counterOther = 0
+        counterSLS = 0
+        counterSESM_PHARM = 0
       }
       var ctx = document.getElementById('myChart');
       var myChart = new Chart(ctx, {
@@ -166,8 +166,8 @@ $("#getline").click(function (event) {
       let noofStd = response.datas
   
       let counter = 0
-      let counterSob = 0
-      let counterOther = 0
+      let counterSLS = 0
+      let counterSESM_PHARM = 0
       let counterSlass = 0
       let counterSls = 0
       let numberOfStd = []
@@ -182,11 +182,11 @@ $("#getline").click(function (event) {
   
           }
           else if (item.year == i && item.School == "SoB") {
-            counterSob = counterSob + Number(item.no_of_Student)
+            counterSLS = counterSLS + Number(item.no_of_Student)
           }
   
           else if (item.year == i && (item.School == "Phar" || item.School == "SESM")) {
-            counterOther = counterOther + Number(item.no_of_Student)
+            counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
           }
           else if (item.year == i && item.School == "SLASS") {
             counterSlass = counterSlass + Number(item.no_of_Student)
@@ -200,13 +200,13 @@ $("#getline").click(function (event) {
         );
   
         numberOfStd.push(counter)
-        numberOfSob.push(counterSob)
-        numberOfOth.push(counterOther)
+        numberOfSob.push(counterSLS)
+        numberOfOth.push(counterSESM_PHARM)
         numberOfSlass.push(counterSlass)
         numberOfSls.push(counterSls)
         counter = 0
-        counterSob = 0
-        counterOther = 0
+        counterSLS = 0
+        counterSESM_PHARM = 0
         counterSls = 0
         counterSlass = 0
       }
@@ -313,8 +313,8 @@ $("#getline").click(function (event) {
       let noofStd = response.datas
   
       let counter = 0
-      let counterSob = 0
-      let counterOther = 0
+      let counterSLS = 0
+      let counterSESM_PHARM = 0
       let numberOfStd = []
       let numberOfSob = []
       let numberOfOth = []
@@ -325,11 +325,11 @@ $("#getline").click(function (event) {
   
           }
           else if (item.year == i && item.School == "SLS") {
-            counterSob = counterSob + Number(item.no_of_Student)
+            counterSLS = counterSLS + Number(item.no_of_Student)
           }
   
           else if (item.year == i && (item.School == "Phar" || item.School == "SESM")) {
-            counterOther = counterOther + Number(item.no_of_Student)
+            counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
           }
   
         }
@@ -337,11 +337,11 @@ $("#getline").click(function (event) {
         );
   
         numberOfStd.push(counter)
-        numberOfSob.push(counterSob)
-        numberOfOth.push(counterOther)
+        numberOfSob.push(counterSLS)
+        numberOfOth.push(counterSESM_PHARM)
         counter = 0
-        counterSob = 0
-        counterOther = 0
+        counterSLS = 0
+        counterSESM_PHARM = 0
       }
       var ctx = document.getElementById('myChart');
       var myChart = new Chart(ctx, {

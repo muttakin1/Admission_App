@@ -1,4 +1,3 @@
-
 var admissionData = {
   School: $('#schoolN').val(),
   Department: $('#deptN').val(),

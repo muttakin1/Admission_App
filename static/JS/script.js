@@ -71,35 +71,38 @@ $("#getline").click(function (event) {
     console.log(numberOfStd)
 
 
-    var ctx = document.getElementById('myChart');
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-        datasets: [{
-          label: 'Number Of Students',
-          data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+    //var ctx = document.getElementById('myChart');
 
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
 
-          ],
-          borderWidth: 2
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-    });
+  
+    // var myChart = new Chart(ctx, {
+    //   type: 'line',
+    //   data: {
+    //     labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+    //     datasets: [{
+    //       label: 'Number Of Students',
+    //       data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+    //       backgroundColor: [
+    //         'rgba(255, 99, 132, 0.2)',
+
+    //       ],
+    //       borderColor: [
+    //         'rgba(255, 99, 132, 1)',
+
+    //       ],
+    //       borderWidth: 2
+    //     }]
+    //   },
+    //   options: {
+    //     scales: {
+    //       yAxes: [{
+    //         ticks: {
+    //           beginAtZero: true
+    //         }
+    //       }]
+    //     }
+    //   }
+    // });
 
   }).fail(function (response) {
     console.log(response.responseText);
@@ -561,6 +564,14 @@ $("#getFocusYear").click(function (event) {
 
       },
       options: {
+        plugins:{
+          labels: {
+          render: 'percentage',
+         // fontColor: ['green', 'white', 'red'],
+          precision: 2,
+          arc: true,
+          }
+          },
         
         title: {
           display: true,

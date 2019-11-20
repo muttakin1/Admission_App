@@ -28,13 +28,13 @@ $("#getFocusYear").click(function (event) {
       let counterMkt=0
       let counterHR=0
       let counterEco=0
+     
       let numberBBA=[]
       
-      let numberOfSls=[]
-      let numberOfSlass = []
-      let numberOfSob = []
-      let numberOfOth = []
-      let numberOfSecs = []
+      let numberBbaSemester=[]
+
+      let BbaSemesterDist=[]
+     
       let numberOfAutumn = []
       let numberOfSummer = []
       let numberOfSpring = []
@@ -107,11 +107,7 @@ $("#getFocusYear").click(function (event) {
             
           }
   
-        }
-  
-  
-  
-        );
+        });
         numberBBA.push(counterBBAMis)
         numberBBA.push(counterBBAFin)
         numberBBA.push(counterInvestMgt)
@@ -122,15 +118,21 @@ $("#getFocusYear").click(function (event) {
         numberBBA.push(counterMkt)
         numberBBA.push(counterEco) 
 
-      
-        numberOfSlass.push(counterSlass)
-        numberOfSob.push(counterSob)
-        numberOfOth.push(counterOther)
-        numberOfSecs.push(counterSecs)
+        
+        numberBbaSemester.push(counterSlass)
+        numberBbaSemester.push(counterSob)
+        numberBbaSemester.push(counterOther)
+        numberBbaSemester.push(counterSecs)
+        numberBbaSemester.push(counterSls)
+        
+        BbaSemesterDist.push(counterAutumn)
+        BbaSemesterDist.push(counterSpring)
+        BbaSemesterDist.push(counterSummer)
+
         numberOfAutumn.push(counterAutumn)
         numberOfSpring.push(counterSpring)
         numberOfSummer.push(counterSummer)
-        numberOfSls.push(counterSls)
+        
        
         counterEco=0
         counterIB=0
@@ -153,14 +155,15 @@ $("#getFocusYear").click(function (event) {
       }
       
       var ctx = document.getElementById('myChart');
+      
       var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
           
-          labels: ['Spring', 'Summer', 'Autumn'],
+          labels: ['Autumn', 'Spring', 'Summer'],
           datasets: [{
             label: 'Number Of Students in ' + Yearvalue,
-            data: [numberOfAutumn[0], numberOfSpring[0], numberOfSummer[0]],
+            data: [BbaSemesterDist[0], BbaSemesterDist[1], BbaSemesterDist[2]],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -199,10 +202,10 @@ $("#getFocusYear").click(function (event) {
         type: 'pie',
         data: {
          
-          labels: ['SLS', 'Slass', 'SoB','Others','Secs'],
+          labels: ['Slass', 'SoB','Others','Secs','Sls'],
           datasets: [{
             label: 'Number Of Students in ' + Yearvalue,
-            data: [numberOfSls[0], numberOfSlass[0], numberOfSob[0],numberOfOth[0],numberOfSecs[0]],
+            data: [numberBbaSemester[0], numberBbaSemester[1], numberBbaSemester[2],numberBbaSemester[3],numberBbaSemester[4],numberBbaSemester[5]],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',

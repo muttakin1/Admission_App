@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "chart.js": "^2.9.3",
     "chartjs-plugin-labels": "^1.1.0",
-    "chart.js": "^2.9.2",
     "express": "^4.17.1",
     "mongodb": "^3.3.3",
     "mongoimport": "^1.0.6",

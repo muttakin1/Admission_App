@@ -7,7 +7,7 @@ $("#getFocusYear").click(function (event) {
       method: "GET",
       url: "/data/list"
     }).done(function (response) {
-        console.log("hello")
+      
       Yearvalue = $("#focusYearVal").val()
     
       let noofStd = response.datas
@@ -22,6 +22,14 @@ $("#getFocusYear").click(function (event) {
       let counterBBAMis= 0
       let counterBBAFin=0
       let counterInvestMgt=0
+      let counterBBAACN=0
+      let counterBBAMGT=0
+      let counterIB=0
+      let counterMkt=0
+      let counterHR=0
+      let counterEco=0
+      let numberBBA=[]
+      
       let numberOfSls=[]
       let numberOfSlass = []
       let numberOfSob = []
@@ -30,9 +38,7 @@ $("#getFocusYear").click(function (event) {
       let numberOfAutumn = []
       let numberOfSummer = []
       let numberOfSpring = []
-      let numberOfBBAMis=[]
-      let numberofBBAfin=[]
-      let numberOFInvestMgt=[]
+      
       for (let i = 2013; i <= 2019; i++) {
         noofStd.forEach((item, index) => {
           if (item.year == Yearvalue && item.Semester == "1") {
@@ -76,12 +82,47 @@ $("#getFocusYear").click(function (event) {
             counterInvestMgt = counterInvestMgt + Number(item.no_of_Student)
             
           }
+          if (item.year == Yearvalue && item.Major== "BBA - Accounting") {
+            counterBBAACN = counterBBAACN + Number(item.no_of_Student)
+            
+          }
+          if (item.year == Yearvalue && item.Major== "BBA - General Management") {
+            counterBBAMGT = counterBBAMGT + Number(item.no_of_Student)
+            
+          }
+          if (item.year == Yearvalue && item.Major== "BBA - Human Resources Management") {
+            counterHR = counterHR + Number(item.no_of_Student)
+            
+          }
+          if (item.year == Yearvalue && item.Major== "BBA - International Business") {
+            counterIB = counterIB + Number(item.no_of_Student)
+            
+          }
+          if (item.year == Yearvalue && item.Major== "BBA - Marketing") {
+            counterMkt = counterMkt + Number(item.no_of_Student)
+            
+          }
+          if (item.year == Yearvalue && item.Major== "BSc - Economics") {
+            counterEco = counterEco + Number(item.no_of_Student)
+            
+          }
   
         }
   
   
   
         );
+        numberBBA.push(counterBBAMis)
+        numberBBA.push(counterBBAFin)
+        numberBBA.push(counterInvestMgt)
+        numberBBA.push(counterBBAACN)
+        numberBBA.push(counterBBAMGT)
+        numberBBA.push(counterHR)
+        numberBBA.push(counterIB)
+        numberBBA.push(counterMkt)
+        numberBBA.push(counterEco) 
+
+      
         numberOfSlass.push(counterSlass)
         numberOfSob.push(counterSob)
         numberOfOth.push(counterOther)
@@ -90,9 +131,13 @@ $("#getFocusYear").click(function (event) {
         numberOfSpring.push(counterSpring)
         numberOfSummer.push(counterSummer)
         numberOfSls.push(counterSls)
-        numberOfBBAMis.push(counterBBAMis)
-        numberofBBAfin.push(counterBBAFin)
-        numberOFInvestMgt.push(counterInvestMgt)
+       
+        counterEco=0
+        counterIB=0
+        counterMkt=0
+        counterHR=0
+        counterBBAMGT=0
+        counterBBAACN=0
         counterInvestMgt=0
         counterSls=0
         counterAutumn = 0
@@ -154,7 +199,7 @@ $("#getFocusYear").click(function (event) {
         type: 'pie',
         data: {
          
-          labels: ['Spring', 'Summer', 'Autumn'],
+          labels: ['SLS', 'Slass', 'SoB','Others','Secs'],
           datasets: [{
             label: 'Number Of Students in ' + Yearvalue,
             data: [numberOfSls[0], numberOfSlass[0], numberOfSob[0],numberOfOth[0],numberOfSecs[0]],
@@ -202,19 +247,81 @@ $("#getFocusYear").click(function (event) {
         type: 'pie',
         data: {
           
-          labels: ['Spring', 'Summer', 'Autumn'],
+          labels: ['Management Information Systems', 'Finance', 'Investment Management','Accounting', 'General Management','Human Resources Management', 'International Business','Marketing','Economics'],
           datasets: [{
             label: 'Number Of Students in ' + Yearvalue,
-            data: [numberOfBBAMis[0],numberofBBAfin[0],numberOFInvestMgt[0]],
+            data: [numberBBA[0],numberBBA[1],numberBBA[2],numberBBA[3],numberBBA[4],numberBBA[5],numberBBA[6],numberBBA[7],numberBBA[8]],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
               'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 2
+          },
+          ]
+  
+        },
+        options: {
+          plugins:{
+            
+            labels: {
+              render: 'percentage',
+             
+              precision: 2
+            }
+          },
+          
+          title: {
+            display: true,
+            text: Yearvalue + ' @ SOB',
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+  
+          },
+  
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+      var ctx = document.getElementById('myChart3');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          
+          labels: ['Management Information Systems', 'Finance', 'Investment Management','Accounting', 'General Management','Human Resources Management', 'International Business','Marketing','Economics'],
+          datasets: [{
+            label: 'School of Business ' + Yearvalue,
+            data: [numberBBA[0],numberBBA[1],numberBBA[2],numberBBA[3],numberBBA[4],numberBBA[5],numberBBA[6],numberBBA[7],numberBBA[8]],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 2
           },

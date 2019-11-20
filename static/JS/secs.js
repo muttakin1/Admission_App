@@ -16,6 +16,9 @@ $("#MajorWiseStudentsSECS").click(function (event) {
       let counterCS = 0
       let counterEEE = 0
       let countermaths = 0
+      let counterDeptCSE = 0
+      let counterDeptEEE = 0
+      let counterDeptPhySci = 0
       let numberOfCE = []
       let numberOfmaths = []
       let numberOfCSE = []
@@ -23,6 +26,10 @@ $("#MajorWiseStudentsSECS").click(function (event) {
       let numberOfPhy = []
       let numberOfCS = []
       let numberOfEEE = []
+      let numberOfDeptCSE = []
+      let numberOfDeptEEE = []
+      let numberOfDeptPhySci = []
+
       for (let i = 2013; i <= 2019; i++) {
         noofStd.forEach((item, index) => {
           if (item.year == i && item.Major == "BSc - Computer Engineering") {
@@ -54,6 +61,20 @@ $("#MajorWiseStudentsSECS").click(function (event) {
             countermaths = countermaths + Number(item.no_of_Student)
             }
 
+            if (item.year == i && item.Dept == "CSE") {
+                counterDeptCSE = counterDeptCSE + Number(item.no_of_Student)
+                   
+            }
+
+            if (item.year == i && item.Dept == "EEE") {
+                counterDeptEEE = counterDeptEEE + Number(item.no_of_Student)
+                }
+
+                if (item.year == i && item.Dept == "PhySci") {
+                    counterDeptPhySci = counterDeptPhySci + Number(item.no_of_Student)
+                    }
+
+          
           });
 
   
@@ -64,6 +85,9 @@ $("#MajorWiseStudentsSECS").click(function (event) {
         numberOfPhy.push(counterPhy)
         numberOfmaths.push(countermaths)
         numberOfCS.push(counterCS)
+        numberOfDeptCSE.push(counterDeptCSE)
+        numberOfDeptEEE.push(counterDeptEEE)
+        numberOfDeptPhySci.push(counterDeptPhySci)
         counterCE = 0
         counterEEE = 0
         counterETE = 0
@@ -71,6 +95,9 @@ $("#MajorWiseStudentsSECS").click(function (event) {
         counterPhy = 0
         countermaths = 0
         counterCS = 0
+        counterDeptCSE = 0
+        counterDeptEEE = 0
+        counterDeptPhySci = 0
       }
     //   Line graph
       var ctx = document.getElementById('myChart');
@@ -174,7 +201,19 @@ $("#MajorWiseStudentsSECS").click(function (event) {
         type: 'line',
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [{
+          datasets: [ {
+            label: 'Number Of Students in Maths',
+            // fill: false,
+            data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
+  
+            borderColor: [
+              'rgba(180,130,0,1)',
+  
+            ],
+            borderWidth: 2
+          },              
+            
+            {
             label: 'Number Of Students in Computer Engineering',
             // fill: false,
             data: [numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
@@ -239,23 +278,68 @@ $("#MajorWiseStudentsSECS").click(function (event) {
             ],
             borderWidth: 2
           },
-          {
-            label: 'Number Of Students in Maths',
-            // fill: false,
-            data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
-  
-            borderColor: [
-              'rgba(180,130,0,1)',
-  
-            ],
-            borderWidth: 2
-          },
+         
           ]
   
         },
         options: {
           scales: {
             yAxes: [{  stacked: true,
+              ticks: {  min: 0,
+                max: 1600,
+                stepSize: 100,
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+
+    //   SECS Dept
+      var ctx = document.getElementById('myChart2');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          datasets: [ {
+            label: 'Number Of Students in EEE',
+            fill: false,
+            data: [numberOfDeptEEE[0], numberOfDeptEEE[1], numberOfDeptEEE[2], numberOfDeptEEE[3], numberOfDeptEEE[4], numberOfDeptEEE[5], numberOfDeptEEE[6], numberOfDeptEEE[7],],
+  
+            borderColor: [
+              'rgba(180,130,0,1)',
+  
+            ],
+            borderWidth: 2
+          },  
+            {
+            label: 'Number Of Students in Computer Science Engineering',
+            fill: false,
+            data: [numberOfDeptCSE[0], numberOfDeptCSE[1], numberOfDeptCSE[2], numberOfDeptCSE[3], numberOfDeptCSE[4], numberOfDeptCSE[5], numberOfDeptCSE[6], numberOfDeptCSE[7],],
+            
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+  
+            ],
+            borderWidth: 2
+          },  {
+            label: 'Number Of Students in Physical Sciences',
+            fill: false,
+            data: [numberOfDeptPhySci[0], numberOfDeptPhySci[1], numberOfDeptPhySci[2], numberOfDeptPhySci[3], numberOfDeptPhySci[4], numberOfDeptPhySci[5], numberOfDeptPhySci[6], numberOfDeptPhySci[7],],
+            
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+  
+            ],
+            borderWidth: 2
+          }, 
+         
+          ]
+  
+        },
+        options: {
+          scales: {
+            yAxes: [{ 
               ticks: {
                 beginAtZero: true
               }

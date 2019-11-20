@@ -347,6 +347,61 @@ $("#MajorWiseStudentsSECS").click(function (event) {
           }
         }
       });
+
+      var ctx = document.getElementById('myChart3');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          datasets: [ {
+            label: 'Number Of Students in EEE',
+            fill: false,
+            data: [numberOfDeptEEE[0], numberOfDeptEEE[1], numberOfDeptEEE[2], numberOfDeptEEE[3], numberOfDeptEEE[4], numberOfDeptEEE[5], numberOfDeptEEE[6], numberOfDeptEEE[7],],
+  
+            borderColor: [
+              'rgba(180,130,0,1)',
+  
+            ],
+            borderWidth: 2
+          },  
+            {
+            label: 'Number Of Students in Computer Science Engineering',
+            fill: false,
+            data: [numberOfDeptCSE[0], numberOfDeptCSE[1], numberOfDeptCSE[2], numberOfDeptCSE[3], numberOfDeptCSE[4], numberOfDeptCSE[5], numberOfDeptCSE[6], numberOfDeptCSE[7],],
+            
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+  
+            ],
+            borderWidth: 2
+          },  {
+            label: 'Number Of Students in Physical Sciences',
+            fill: false,
+            data: [numberOfDeptPhySci[0], numberOfDeptPhySci[1], numberOfDeptPhySci[2], numberOfDeptPhySci[3], numberOfDeptPhySci[4], numberOfDeptPhySci[5], numberOfDeptPhySci[6], numberOfDeptPhySci[7],],
+            
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+  
+            ],
+            borderWidth: 2
+          }, 
+         
+          ]
+  
+        },
+        options: {
+          scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{  stacked: true,
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
   
     }).fail(function (response) {
       console.log(response.responseText);

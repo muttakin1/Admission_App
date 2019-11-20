@@ -1,5 +1,3 @@
-
-
 $("#getFocusYear").click(function (event) {
     
   
@@ -28,12 +26,31 @@ $("#getFocusYear").click(function (event) {
       let counterMkt=0
       let counterHR=0
       let counterEco=0
-     
+      let counterYearlyMkt=0
+      let counterYearlyMis=0
+      let counterYearlyMgt=0
+      let counterYearlyInvest=0
+      let counterYearlyIb=0
+      let counterYearlyHrm=0
+      let counterYearlyFin=0
+      let counterYearlyEcn=0
+      let counterYearlyAcn=0
+
+
       let numberBBA=[]
+      let numberYearlyMis=[]
+      let numberYearlyInvest=[]
+      let numberYearlyMkt=[]
+      let numberYearlyIb=[]
+      let numberYearlyHrm=[]
+      let numberYearlyFin=[]
+      let numberYearlyEcn=[]
+      let numberYearlyAcn=[]
+      let numberYearlyMgt=[]
       
       let numberBbaSemester=[]
 
-      let BbaSemesterDist=[]
+      let SemesterDist=[]
      
       let numberOfAutumn = []
       let numberOfSummer = []
@@ -106,8 +123,54 @@ $("#getFocusYear").click(function (event) {
             counterEco = counterEco + Number(item.no_of_Student)
             
           }
+          if (item.year == i && item.Major== "BBA - Management Information Systems") {
+            counterYearlyMis = counterYearlyMis + Number(item.no_of_Student)
+            
+          }
+          if (item.year == i && item.Major== "BBA - Finance") {
+            counterYearlyFin = counterYearlyFin + Number(item.no_of_Student)
+            
+          }
+          if (item.year == i && item.Major== "BBA - Investment Management") {
+            counterYearlyInvest = counterYearlyInvest + Number(item.no_of_Student)
+            
+          }
+          if (item.year == i && item.Major== "BBA - Accounting") {
+            counterYearlyAcn = counterYearlyAcn + Number(item.no_of_Student)
+            
+          }
+          if (item.year == i && item.Major== "BBA - General Management") {
+            counterYearlyMgt = counterYearlyMgt + Number(item.no_of_Student)
+            
+          }
+          if (item.year == i && item.Major== "BBA - Human Resources Management") {
+            counterYearlyHrm = counterYearlyHrm + Number(item.no_of_Student)
+            
+          }
+          if (item.year == i && item.Major== "BBA - International Business") {
+            counterYearlyIb = counterYearlyIb + Number(item.no_of_Student)
+            
+          }
+          if (item.year == i && item.Major== "BBA - Marketing") {
+            counterYearlyMkt = counterYearlyMkt + Number(item.no_of_Student)
+            
+          }
+          if (item.year == i && item.Major== "BSc - Economics") {
+            counterYearlyEcn = counterYearlyEcn + Number(item.no_of_Student)
+            
+          }
   
         });
+        numberYearlyMgt.push(counterYearlyMgt)
+        numberYearlyMis.push(counterYearlyMis)
+        numberYearlyMkt.push(counterYearlyMkt)
+        numberYearlyMis.push(counterYearlyMis)
+        numberYearlyInvest.push(counterYearlyInvest)
+        numberYearlyIb.push(counterYearlyIb)
+        numberYearlyHrm.push(counterYearlyHrm)
+        numberYearlyFin.push(counterYearlyFin)
+        numberYearlyEcn.push(counterYearlyEcn)
+        numberYearlyAcn.push(counterYearlyAcn)
         numberBBA.push(counterBBAMis)
         numberBBA.push(counterBBAFin)
         numberBBA.push(counterInvestMgt)
@@ -119,21 +182,33 @@ $("#getFocusYear").click(function (event) {
         numberBBA.push(counterEco) 
 
         
+      
+        
         numberBbaSemester.push(counterSlass)
         numberBbaSemester.push(counterSob)
         numberBbaSemester.push(counterOther)
         numberBbaSemester.push(counterSecs)
         numberBbaSemester.push(counterSls)
         
-        BbaSemesterDist.push(counterAutumn)
-        BbaSemesterDist.push(counterSpring)
-        BbaSemesterDist.push(counterSummer)
+        SemesterDist.push(counterAutumn)
+        SemesterDist.push(counterSpring)
+        SemesterDist.push(counterSummer)
 
         numberOfAutumn.push(counterAutumn)
         numberOfSpring.push(counterSpring)
         numberOfSummer.push(counterSummer)
+
+         counterYearlyMkt=0
+         counterYearlyMis=0
+        counterYearlyMgt=0
+         counterYearlyInvest=0
+         counterYearlyIb=0
+         counterYearlyHrm=0
+         counterYearlyFin=0
+         counterYearlyEcn=0
+         counterYearlyAcn=0
         
-       
+        counterYearlyMis=0
         counterEco=0
         counterIB=0
         counterMkt=0
@@ -153,6 +228,7 @@ $("#getFocusYear").click(function (event) {
         counterBBAFin=0
   
       }
+     
       
       var ctx = document.getElementById('myChart');
       
@@ -163,7 +239,7 @@ $("#getFocusYear").click(function (event) {
           labels: ['Autumn', 'Spring', 'Summer'],
           datasets: [{
             label: 'Number Of Students in ' + Yearvalue,
-            data: [BbaSemesterDist[0], BbaSemesterDist[1], BbaSemesterDist[2]],
+            data: [SemesterDist[0], SemesterDist[1], SemesterDist[2]],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -349,6 +425,345 @@ $("#getFocusYear").click(function (event) {
           }
         }
       });
+      var ctx = document.getElementById('myChart4');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          
+          labels: [2013,2014,2015,2016,2017,2018,2019],
+          datasets: [{
+            label: 'Management Information System',
+            data:  [numberYearlyMis[0],numberYearlyMis[1],numberYearlyMis[2],numberYearlyMis[3],numberYearlyMis[4],numberYearlyMis[5],numberYearlyMis[6],numberYearlyMis[7],],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+                
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+               
+            ],
+            borderWidth: 2
+          
+          },
+          {
+            label: 'Marketing',
+            data: [numberYearlyMkt[0],numberYearlyMkt[1],numberYearlyMkt[2],numberYearlyMkt[3],numberYearlyMkt[4],numberYearlyMkt[5],numberYearlyMkt[6],numberYearlyMkt[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+          {
+            label: 'Accounting',
+            data: [numberYearlyAcn[0],numberYearlyAcn[1],numberYearlyAcn[2],numberYearlyAcn[3],numberYearlyAcn[4],numberYearlyAcn[5],numberYearlyAcn[6],numberYearlyAcn[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },{
+            label: 'Finance',
+            data: [numberYearlyFin[0],numberYearlyFin[1],numberYearlyFin[2],numberYearlyFin[3],numberYearlyFin[4],numberYearlyFin[5],numberYearlyFin[6],numberYearlyFin[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+          {
+            label: 'General Management',
+            data: [numberYearlyMgt[0],numberYearlyMgt[1],numberYearlyMgt[2],numberYearlyMgt[3],numberYearlyMgt[4],numberYearlyMgt[5],numberYearlyMgt[6],numberYearlyMgt[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+          {
+            label: 'Human Resources Management',
+            data: [numberYearlyHrm[0],numberYearlyHrm[1],numberYearlyHrm[2],numberYearlyHrm[3],numberYearlyHrm[4],numberYearlyHrm[5],numberYearlyHrm[6],numberYearlyHrm[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+           {
+            label: 'International Business',
+            data: [numberYearlyIb[0],numberYearlyIb[1],numberYearlyIb[2],numberYearlyIb[3],numberYearlyIb[4],numberYearlyIb[5],numberYearlyIb[6],numberYearlyIb[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+          {
+            label: 'Investment Management',
+            data: [numberYearlyInvest[0],numberYearlyInvest[1],numberYearlyInvest[2],numberYearlyInvest[3],numberYearlyInvest[4],numberYearlyInvest[5],numberYearlyInvest[6],numberYearlyInvest[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },{
+            label: 'Economics',
+            data: [numberYearlyEcn[0],numberYearlyEcn[1],numberYearlyEcn[2],numberYearlyEcn[3],numberYearlyEcn[4],numberYearlyEcn[5],numberYearlyEcn[6],numberYearlyEcn[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+      
+        ]
+
+  
+        },
+        options: {
+          
+          title: {
+            display: true,
+            text: Yearvalue + ' @ SOB',
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+  
+          },
+  
+          scales: {
+            yAxes: [{
+              stacked: true,
+              ticks: {
+                
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+      var ctx = document.getElementById('myChart5');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          
+          labels: [2013,2014,2015,2016,2017,2018,2019],
+          datasets: [{
+            label: 'Management Information System',
+            fill: false,
+            data:  [numberYearlyMis[0],numberYearlyMis[1],numberYearlyMis[2],numberYearlyMis[3],numberYearlyMis[4],numberYearlyMis[5],numberYearlyMis[6],numberYearlyMis[7],],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+                
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+               
+            ],
+            borderWidth: 2
+          
+          },
+          {
+            label: 'Marketing',
+            fill: false,
+            data: [numberYearlyMkt[0],numberYearlyMkt[1],numberYearlyMkt[2],numberYearlyMkt[3],numberYearlyMkt[4],numberYearlyMkt[5],numberYearlyMkt[6],numberYearlyMkt[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+          {
+            label: 'Accounting',
+            fill: false,
+            data: [numberYearlyAcn[0],numberYearlyAcn[1],numberYearlyAcn[2],numberYearlyAcn[3],numberYearlyAcn[4],numberYearlyAcn[5],numberYearlyAcn[6],numberYearlyAcn[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },{
+            label: 'Finance',
+            fill: false,
+            data: [numberYearlyFin[0],numberYearlyFin[1],numberYearlyFin[2],numberYearlyFin[3],numberYearlyFin[4],numberYearlyFin[5],numberYearlyFin[6],numberYearlyFin[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+          {
+            label: 'General Management',
+            fill: false,
+            data: [numberYearlyMgt[0],numberYearlyMgt[1],numberYearlyMgt[2],numberYearlyMgt[3],numberYearlyMgt[4],numberYearlyMgt[5],numberYearlyMgt[6],numberYearlyMgt[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+          {
+            label: 'Human Resources Management',
+            fill: false,
+            data: [numberYearlyHrm[0],numberYearlyHrm[1],numberYearlyHrm[2],numberYearlyHrm[3],numberYearlyHrm[4],numberYearlyHrm[5],numberYearlyHrm[6],numberYearlyHrm[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+           {
+            label: 'International Business',
+            fill: false,
+            data: [numberYearlyIb[0],numberYearlyIb[1],numberYearlyIb[2],numberYearlyIb[3],numberYearlyIb[4],numberYearlyIb[5],numberYearlyIb[6],numberYearlyIb[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+          {
+            label: 'Investment Management',
+            fill: false,
+            data: [numberYearlyInvest[0],numberYearlyInvest[1],numberYearlyInvest[2],numberYearlyInvest[3],numberYearlyInvest[4],numberYearlyInvest[5],numberYearlyInvest[6],numberYearlyInvest[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },{
+            label: 'Economics',
+            fill: false,
+            data: [numberYearlyEcn[0],numberYearlyEcn[1],numberYearlyEcn[2],numberYearlyEcn[3],numberYearlyEcn[4],numberYearlyEcn[5],numberYearlyEcn[6],numberYearlyEcn[7],],
+            backgroundColor: [
+              'rgba(38, 185, 154, 0.31)',
+                
+            ],
+            borderColor: [
+              'rgba(38, 185, 154, 0.7)',
+               
+            ],
+            borderWidth: 2
+
+
+          },
+      
+        ]
+
+  
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                
+            }]
+        },
+          
+          title: {
+            display: true,
+            text: Yearvalue + ' @ SOB',
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+  
+          },
+  
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+  
   
     }).fail(function (response) {
       console.log(response.responseText);

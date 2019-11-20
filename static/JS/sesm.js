@@ -17,13 +17,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       let numberOfENV = []
       let numberOfENV_management = []
       let numberOfPoplation_Env = []
-      let numberOfEngLit = []
-      let numberOfGSG = []
-      let numberOfDeptENG = []
-      let numberOfDeptSOC = []
-      let numberOfDeptGSG = []
-      let numberOfDeptMed = []
-      let numberOfDeptLaw = []
+     
 
       for (let i = 2013; i <= 2019; i++) {
         noofStd.forEach((item, index) => {

@@ -19,6 +19,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       let counterDeptENG = 0
       let counterDeptSOC = 0
       let counterDeptGSG = 0
+      let counterDeptMed = 0
+      let counterDeptLaw = 0
       let numberOfEngTrainingLang = []
       let numberOfSOC = []
       let numberOfANT = []
@@ -29,6 +31,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       let numberOfDeptENG = []
       let numberOfDeptSOC = []
       let numberOfDeptGSG = []
+      let numberOfDeptMed = []
+      let numberOfDeptLaw = []
 
       for (let i = 2013; i <= 2019; i++) {
         noofStd.forEach((item, index) => {
@@ -41,7 +45,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             counterGSG = counterGSG + Number(item.no_of_Student)
             }
 
-            else if (item.year == i && (item.Major == ",BSS - Media and Communication")) {
+            else if (item.year == i && (item.Major == "BSS - Media and Communication")) {
             counterMedia_Com = counterMedia_Com + Number(item.no_of_Student)
             }
 
@@ -61,18 +65,26 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             counterSOC = counterSOC + Number(item.no_of_Student)
             }
 
-            if (item.year == i && item.Dept == "CSE") {
+            if (item.year == i && item.Dept == "Eng") {
                 counterDeptENG = counterDeptENG + Number(item.no_of_Student)
                    
             }
 
-            if (item.year == i && item.Dept == "EEE") {
+            if (item.year == i && item.Dept == "SOC") {
                 counterDeptSOC = counterDeptSOC + Number(item.no_of_Student)
                 }
 
-                if (item.year == i && item.Dept == "PhySci") {
-                    counterDeptGSG = counterDeptGSG + Number(item.no_of_Student)
-                    }
+            if (item.year == i && item.Dept == "GSG") {
+                counterDeptGSG = counterDeptGSG + Number(item.no_of_Student)
+                }
+
+            if (item.year == i && item.Dept == "MED") {
+                counterDeptMed = counterDeptMed + Number(item.no_of_Student)
+                }
+                
+            if (item.year == i && item.Dept == "LAW") {
+                counterDeptLaw = counterDeptLaw + Number(item.no_of_Student)
+                }
 
           
           });
@@ -88,6 +100,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         numberOfDeptENG.push(counterDeptENG)
         numberOfDeptSOC.push(counterDeptSOC)
         numberOfDeptGSG.push(counterDeptGSG)
+        numberOfDeptMed.push(counterDeptMed)
+        numberOfDeptLaw.push(counterLaw)
         counterEngTrainingLang = 0
         counterGSG = 0
         counterMedia_Com = 0
@@ -98,6 +112,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         counterDeptENG = 0
         counterDeptSOC = 0
         counterDeptGSG = 0
+        counterDeptMed = 0
+        counterLaw = 0
       }
     //   Line graph
       var ctx = document.getElementById('myChart');
@@ -332,6 +348,26 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
   
             ],
             borderWidth: 2
+          }, {
+            label: 'Number Of Students in Media and Com',
+            fill: false,
+            data: [numberOfDeptMed[0], numberOfDeptMed[1], numberOfDeptMed[2], numberOfDeptMed[3], numberOfDeptMed[4], numberOfDeptMed[5], numberOfDeptMed[6], numberOfDeptMed[7],],
+            
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+  
+            ],
+            borderWidth: 2
+          }, {
+            label: 'Number Of Students in Law',
+            fill: false,
+            data: [numberOfDeptLaw[0], numberOfDeptLaw[1], numberOfDeptLaw[2], numberOfDeptLaw[3], numberOfDeptLaw[4], numberOfDeptLaw[5], numberOfDeptLaw[6], numberOfDeptLaw[7],],
+            
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+  
+            ],
+            borderWidth: 2
           }, 
          
           ]
@@ -378,6 +414,26 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             label: 'Number Of Students in GSG',
             fill: false,
             data: [numberOfDeptGSG[0], numberOfDeptGSG[1], numberOfDeptGSG[2], numberOfDeptGSG[3], numberOfDeptGSG[4], numberOfDeptGSG[5], numberOfDeptGSG[6], numberOfDeptGSG[7],],
+            
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+  
+            ],
+            borderWidth: 2
+          }, {
+            label: 'Number Of Students in Media and Com',
+            fill: false,
+            data: [numberOfDeptMed[0], numberOfDeptMed[1], numberOfDeptMed[2], numberOfDeptMed[3], numberOfDeptMed[4], numberOfDeptMed[5], numberOfDeptMed[6], numberOfDeptMed[7],],
+            
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+  
+            ],
+            borderWidth: 2
+          }, {
+            label: 'Number Of Students in Law',
+            fill: false,
+            data: [numberOfDeptLaw[0], numberOfDeptLaw[1], numberOfDeptLaw[2], numberOfDeptLaw[3], numberOfDeptLaw[4], numberOfDeptLaw[5], numberOfDeptLaw[6], numberOfDeptLaw[7],],
             
             borderColor: [
               'rgba(255, 99, 132, 1)',

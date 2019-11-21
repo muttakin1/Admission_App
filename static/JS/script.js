@@ -1,7 +1,3 @@
-
-  
-
-
 var admissionData = {
   School: $('#schoolN').val(),
   Department: $('#deptN').val(),
@@ -71,35 +67,38 @@ $("#getline").click(function (event) {
     console.log(numberOfStd)
 
 
-    var ctx = document.getElementById('myChart');
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-        datasets: [{
-          label: 'Number Of Students',
-          data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+    //var ctx = document.getElementById('myChart');
 
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
 
-          ],
-          borderWidth: 2
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-    });
+  
+    // var myChart = new Chart(ctx, {
+    //   type: 'line',
+    //   data: {
+    //     labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+    //     datasets: [{
+    //       label: 'Number Of Students',
+    //       data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+    //       backgroundColor: [
+    //         'rgba(255, 99, 132, 0.2)',
+
+    //       ],
+    //       borderColor: [
+    //         'rgba(255, 99, 132, 1)',
+
+    //       ],
+    //       borderWidth: 2
+    //     }]
+    //   },
+    //   options: {
+    //     scales: {
+    //       yAxes: [{
+    //         ticks: {
+    //           beginAtZero: true
+    //         }
+    //       }]
+    //     }
+    //   }
+    // });
 
   }).fail(function (response) {
     console.log(response.responseText);
@@ -443,234 +442,242 @@ $("#OtherWise").click(function (event) {
 
 })
 
-$("#getFocusYear").click(function (event) {
+// $("#getFocusYear").click(function (event) {
 
 
-  $.ajax({
-    method: "GET",
-    url: "/data/list"
-  }).done(function (response) {
+//   $.ajax({
+//     method: "GET",
+//     url: "/data/list"
+//   }).done(function (response) {
 
-    Yearvalue = $("#focusYearVal").val()
+//     Yearvalue = $("#focusYearVal").val()
     
-    console.log(Yearvalue)
-    let noofStd = response.datas
-    let counterSecs=0
-    let counterSlass = 0
-    let counterSob = 0
-    let counterOther = 0
-    let counterAutumn = 0
-    let counterSummer = 0
-    let counterSpring = 0
-    let counterSls=0
-    let numberOfSls=[]
-    let numberOfSlass = []
-    let numberOfSob = []
-    let numberOfOth = []
-    let numberOfSecs = []
-    let numberOfAutumn = []
-    let numberOfSummer = []
-    let numberOfSpring = []
-    let numberOfBBAMGT=[]
-    let counterBBAMgt= 0
-    for (let i = 2013; i <= 2019; i++) {
-      noofStd.forEach((item, index) => {
-        if (item.year == Yearvalue && item.Semester == "1") {
-          counterAutumn = counterAutumn + Number(item.no_of_Student)
+//     console.log(Yearvalue)
+//     let noofStd = response.datas
+//     let counterSecs=0
+//     let counterSlass = 0
+//     let counterSob = 0
+//     let counterOther = 0
+//     let counterAutumn = 0
+//     let counterSummer = 0
+//     let counterSpring = 0
+//     let counterSls=0
+//     let numberOfSls=[]
+//     let numberOfSlass = []
+//     let numberOfSob = []
+//     let numberOfOth = []
+//     let numberOfSecs = []
+//     let numberOfAutumn = []
+//     let numberOfSummer = []
+//     let numberOfSpring = []
+//     let numberOfBBAMGT=[]
+//     let counterBBAMgt= 0
+//     for (let i = 2013; i <= 2019; i++) {
+//       noofStd.forEach((item, index) => {
+//         if (item.year == Yearvalue && item.Semester == "1") {
+//           counterAutumn = counterAutumn + Number(item.no_of_Student)
 
-        }
-        else if (item.year == Yearvalue && item.Semester == "2") {
-          counterSpring = counterSpring + Number(item.no_of_Student)
-        }
+//         }
+//         else if (item.year == Yearvalue && item.Semester == "2") {
+//           counterSpring = counterSpring + Number(item.no_of_Student)
+//         }
 
-        else if (item.year == Yearvalue && item.Semester == "3") {
-          counterSummer = counterSummer + Number(item.no_of_Student)
-        }
-        if (item.year == Yearvalue && item.School == "SLASS") {
-          counterSlass = counterSlass + Number(item.no_of_Student)
+//         else if (item.year == Yearvalue && item.Semester == "3") {
+//           counterSummer = counterSummer + Number(item.no_of_Student)
+//         }
+//         if (item.year == Yearvalue && item.School == "SLASS") {
+//           counterSlass = counterSlass + Number(item.no_of_Student)
 
-        }
-        else if (item.year == Yearvalue && item.School == "SoB") {
-          counterSob = counterSob + Number(item.no_of_Student)
-        }
+//         }
+//         else if (item.year == Yearvalue && item.School == "SoB") {
+//           counterSob = counterSob + Number(item.no_of_Student)
+//         }
 
-        else if (item.year == Yearvalue && (item.School == "Phar" || item.School == "SESM")) {
-          counterOther = counterOther + Number(item.no_of_Student)
-        }
-        else if (item.year == Yearvalue && item.School == "SECS") {
-          counterSecs = counterSecs + Number(item.no_of_Student)
-        }
-        else if (item.year == Yearvalue && item.School == "SLS") {
-          counterSls = counterSls + Number(item.no_of_Student)
+//         else if (item.year == Yearvalue && (item.School == "Phar" || item.School == "SESM")) {
+//           counterOther = counterOther + Number(item.no_of_Student)
+//         }
+//         else if (item.year == Yearvalue && item.School == "SECS") {
+//           counterSecs = counterSecs + Number(item.no_of_Student)
+//         }
+//         else if (item.year == Yearvalue && item.School == "SLS") {
+//           counterSls = counterSls + Number(item.no_of_Student)
           
-        }
-        if (item.year == Yearvalue && item.Major== "BBA - Management Information Systems") {
-          counterBBAMgt = counterBBAMgt + Number(item.no_of_Student)
+//         }
+//         if (item.year == Yearvalue && item.Major== "BBA - Management Information Systems") {
+//           counterBBAMgt = counterBBAMgt + Number(item.no_of_Student)
           
-        }
+//         }
 
-      }
+//       }
 
 
 
-      );
-      numberOfSlass.push(counterSlass)
-      numberOfSob.push(counterSob)
-      numberOfOth.push(counterOther)
-      numberOfSecs.push(counterSecs)
-      numberOfAutumn.push(counterAutumn)
-      numberOfSpring.push(counterSpring)
-      numberOfSummer.push(counterSummer)
-      numberOfSls.push(counterSls)
-      numberOfBBAMGT.push(counterBBAMgt)
+//       );
+//       numberOfSlass.push(counterSlass)
+//       numberOfSob.push(counterSob)
+//       numberOfOth.push(counterOther)
+//       numberOfSecs.push(counterSecs)
+//       numberOfAutumn.push(counterAutumn)
+//       numberOfSpring.push(counterSpring)
+//       numberOfSummer.push(counterSummer)
+//       numberOfSls.push(counterSls)
+//       numberOfBBAMGT.push(counterBBAMgt)
       
-      counterSls=0
-      counterAutumn = 0
-      counterSecs = 0
-      counterSpring = 0
-      counterSummer = 0
-      counterSlass = 0
-      counterSob = 0
-      counterOther = 0
-      counterBBAMgt=0
+//       counterSls=0
+//       counterAutumn = 0
+//       counterSecs = 0
+//       counterSpring = 0
+//       counterSummer = 0
+//       counterSlass = 0
+//       counterSob = 0
+//       counterOther = 0
+//       counterBBAMgt=0
 
-    }
+//     }
     
-    var ctx = document.getElementById('myChart');
-    var myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
+//     var ctx = document.getElementById('myChart');
+//     var myChart = new Chart(ctx, {
+//       type: 'pie',
+//       data: {
         
-        labels: ['Spring', 'Summer', 'Autumn'],
-        datasets: [{
-          label: 'Number Of Students in ' + Yearvalue,
-          data: [numberOfAutumn[0], numberOfSpring[0], numberOfSummer[0]],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-          ],
-          borderWidth: 2
-        },
-        ]
+//         labels: ['Spring', 'Summer', 'Autumn'],
+//         datasets: [{
+//           label: 'Number Of Students in ' + Yearvalue,
+//           data: [numberOfAutumn[0], numberOfSpring[0], numberOfSummer[0]],
+//           backgroundColor: [
+//             'rgba(255, 99, 132, 0.2)',
+//             'rgba(54, 162, 235, 0.2)',
+//             'rgba(255, 206, 86, 0.2)',
+//           ],
+//           borderColor: [
+//             'rgba(255, 99, 132, 1)',
+//             'rgba(54, 162, 235, 1)',
+//             'rgba(255, 206, 86, 1)',
+//           ],
+//           borderWidth: 2
+//         },
+//         ]
 
-      },
-      options: {
+//       },
+//       options: {
+//         plugins:{
+//           labels: {
+//           render: 'percentage',
+//          // fontColor: ['green', 'white', 'red'],
+//           precision: 2,
+//           arc: true,
+//           }
+//           },
         
-        title: {
-          display: true,
-          text: Yearvalue + ' @ IUB',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+//         title: {
+//           display: true,
+//           text: Yearvalue + ' @ IUB',
+//           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
 
-        },
+//         },
 
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-    });
-    var ctx = document.getElementById('myChart1');
-    var myChart1 = new Chart(ctx, {
-      type: 'pie',
-      data: {
+//         scales: {
+//           yAxes: [{
+//             ticks: {
+//               beginAtZero: true
+//             }
+//           }]
+//         }
+//       }
+//     });
+//     var ctx = document.getElementById('myChart1');
+//     var myChart1 = new Chart(ctx, {
+//       type: 'pie',
+//       data: {
        
-        labels: ['Spring', 'Summer', 'Autumn'],
-        datasets: [{
-          label: 'Number Of Students in ' + Yearvalue,
-          data: [numberOfSls[0], numberOfSlass[0], numberOfSob[0],numberOfOth[0],numberOfSecs[0]],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-          ],
-          borderWidth: 2
-        },
-        ]
+//         labels: ['Spring', 'Summer', 'Autumn'],
+//         datasets: [{
+//           label: 'Number Of Students in ' + Yearvalue,
+//           data: [numberOfSls[0], numberOfSlass[0], numberOfSob[0],numberOfOth[0],numberOfSecs[0]],
+//           backgroundColor: [
+//             'rgba(255, 99, 132, 0.2)',
+//             'rgba(54, 162, 235, 0.2)',
+//             'rgba(255, 206, 86, 0.2)',
+//           ],
+//           borderColor: [
+//             'rgba(255, 99, 132, 1)',
+//             'rgba(54, 162, 235, 1)',
+//             'rgba(255, 206, 86, 1)',
+//           ],
+//           borderWidth: 2
+//         },
+//         ]
 
-      },
-      options: {
-        plugins:{
+//       },
+//       options: {
+//         plugins:{
           
-          labels: {
-            render: 'percentage',
+//           labels: {
+//             render: 'percentage',
            
-            precision: 2
-          }
-        },
-        title: {
-          display: true,
-          text: Yearvalue + ' School wise distribution',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+//             precision: 2
+//           }
+//         },
+//         title: {
+//           display: true,
+//           text: Yearvalue + ' School wise distribution',
+//           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
 
-        },
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-    });
-    var ctx = document.getElementById('myChart2');
-    var myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
+//         },
+//         scales: {
+//           yAxes: [{
+//             ticks: {
+//               beginAtZero: true
+//             }
+//           }]
+//         }
+//       }
+//     });
+//     var ctx = document.getElementById('myChart2');
+//     var myChart = new Chart(ctx, {
+//       type: 'pie',
+//       data: {
         
-        labels: ['Spring', 'Summer', 'Autumn'],
-        datasets: [{
-          label: 'Number Of Students in ' + Yearvalue,
-          data: [numberOfBBAMGT[0]],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-          ],
-          borderWidth: 2
-        },
-        ]
+//         labels: ['Spring', 'Summer', 'Autumn'],
+//         datasets: [{
+//           label: 'Number Of Students in ' + Yearvalue,
+//           data: [numberOfBBAMGT[0]],
+//           backgroundColor: [
+//             'rgba(255, 99, 132, 0.2)',
+//             'rgba(54, 162, 235, 0.2)',
+//             'rgba(255, 206, 86, 0.2)',
+//           ],
+//           borderColor: [
+//             'rgba(255, 99, 132, 1)',
+//             'rgba(54, 162, 235, 1)',
+//             'rgba(255, 206, 86, 1)',
+//           ],
+//           borderWidth: 2
+//         },
+//         ]
 
-      },
-      options: {
+//       },
+//       options: {
         
-        title: {
-          display: true,
-          text: Yearvalue + ' @ IUB',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+//         title: {
+//           display: true,
+//           text: Yearvalue + ' @ IUB',
+//           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
 
-        },
+//         },
 
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-    });
+//         scales: {
+//           yAxes: [{
+//             ticks: {
+//               beginAtZero: true
+//             }
+//           }]
+//         }
+//       }
+//     });
 
-  }).fail(function (response) {
-    console.log(response.responseText);
-  });
+//   }).fail(function (response) {
+//     console.log(response.responseText);
+//   });
 
-})
+// })

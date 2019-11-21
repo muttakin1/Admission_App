@@ -6,6 +6,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@1"></script>
         <script>"https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"</script>
     
 
@@ -46,6 +47,10 @@
     <input class="btn btn-primary" type="button" id="schoolWise" value="School Wise Interest over the years">
     <input class="btn btn-primary" type="button" id="OtherWise" value="Other School Wise Interest over the years">
     <input class="btn btn-primary" type="button" id="barSchoolWise" value="School Wise Interest over the years, BAR">
+    <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" value="Major Wise Students' interest at SECS, LINE">
+    <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" value="Major Wise Students' interest at SLASS, LINE">
+    <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" value="Major Wise Students' interest at SESM, LINE">
+    <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" value="Major Wise Students' interest at SLS, LINE">
     
     <div style="width:30%" class="input-group mb-3">
         <div  class="input-group-prepend">
@@ -56,15 +61,23 @@
     </div>
     <!-- navbar -->
     <div style="height:20%; width:40%">
+        
+        
     <canvas id="myChart" width="200" height="200"></canvas>
     <canvas id="myChart1" width="200" height="200" ></canvas>
     <canvas id="myChart2" width="200" height="200" ></canvas>
     <canvas id="myChart3" width="200" height="200" ></canvas>
+    <canvas id="myChart4" width="200" height="200" ></canvas>
+    <canvas id="myChart5" width="200" height="200" ></canvas>
 
     </div>
    
     <script type="text/javascript" src="../static/JS/graph.js"></script>
     <script type="text/javascript" src="../static/JS/focusGraph.js"></script>
+    <script type="text/javascript" src="../static/JS/secs.js"></script>
+    <script type="text/javascript" src="../static/JS/slass.js"></script>
+    <script type="text/javascript" src="../static/JS/sesm.js"></script>
+    <script type="text/javascript" src="../static/JS/sls.js"></script>
 
 
     <!-- Bootstrap links -->
@@ -76,7 +89,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        
     <!-- Bootstrap links -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 
 </html>

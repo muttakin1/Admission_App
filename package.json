@@ -1,20 +1,18 @@
 {
-  "name": "project",
+  "name": "admission_app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "chart.js": "^2.9.3",
-    "chartjs-plugin-labels": "^1.1.0",
     "express": "^4.17.1",
-    "mongodb": "^3.3.3",
-    "mongoimport": "^1.0.6",
-    "mongoose": "^5.7.7",
-    "node": "^12.11.0",
+    "expressjs": "^1.0.1",
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.11",
     "nodemon": "^1.19.4"
   },
+  "devDependencies": {},
   "scripts": {
-    "test": "",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {

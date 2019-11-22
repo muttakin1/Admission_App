@@ -20,34 +20,32 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/index" id="nav-text">Home</a></li>
+                <li class="active"><a href="/" id="nav-text">Home</a></li>
                 <li><a href="/graph" id="nav-text">Graph</a></li>
                 <li><a href="#" id="nav-text">Features</a></li>
                 <li><a href="/form" id="nav-text">Data Input</a></li>
-                <li><a href="/" id="nav-text">Logout</a></li>
             </ul>
         </div>
     </nav>
     <!-- navbar -->
     <div id="dataBoxI" class="container">
-                    <div class="d-flex justify-content-center">Data Input</div>
-                    
-                    <pre id="allDatasI">
-                    School Name: <input class="form-control" type="text" id="schoolN" placeholder="Input School Name">   
-                    Department Name: <input class="form-control" type="text" id="deptN" placeholder="Input Department Name">
-                    Major Name: <input class="form-control" type="text" id="majorN" placeholder="Input Major Name">
-                    Number Of Student: <input class="form-control" type="text" id="studentNo" placeholder="Input Student Number">
-                    Exam Number: <input class="form-control" type="text" id="examNo" placeholder="Input Exam Number">
-                    Year Number <input class="form-control" type="text" id="yearNo" placeholder="Input Year Number">
-                    Semester Name: <input class="form-control" type="text" id="semesterN" placeholder="Input Semester Name">
-                    Semester No: <input class="form-control" type="text" id="semesterNum" placeholder="Input Semester Number">
-                    <br>
-                    <input class="btn btn-primary" type="button" id="datainput" value="Submit">
-                    <input class="btn btn-primary" type="button" id="getdata" value="get">
-                </pre>
-                </div>
+        <h1>Data Input</h1>
+        <br>           
+        <form id="allDatasI">
+            <label>Year Number: </label><br>
+            <input type="text" id="yearNo" placeholder="  Input Year Number" required>
+            <br><br>
+            <label>Semester No: </label><br>
+            <input type="text" id="semesterNum" placeholder="  Input Semester Number" required>
+            <br><br>
+            <label>Data:</label><br>
+            <textarea  type="text" id="dataInput" placeholder="  Input Data" required></textarea>
+            <br><br>
+            <button class="btn" type="button" id="submitBtn" style="vertical-align:middle"><span>Submit</span></button>
+        </form>
+    </div>
                
-                <script type="text/javascript" src="../static/JS/script.js"></script>
+    <script type="text/javascript" src="../static/JS/script.js"></script>
                 
    
     <!-- Bootstrap links -->

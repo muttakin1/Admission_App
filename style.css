@@ -19,3 +19,58 @@
 #SOB2019{
     margin-left: 25mm;
 }
+
+#dataInput{
+    width: 302mm;
+    height: 100mm;
+}
+
+#yearNo{
+    width: 302mm;
+    height: 10mm;
+}
+
+#semesterNum{
+    width: 302mm;
+    height: 10mm;
+}
+
+#submitBtn{
+    background-color: #990099;
+    color: white;
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#submitBtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+#submitBtn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+#submitBtn:hover span {
+    padding-right: 25px;
+}
+  
+#submitBtn:hover span:after {
+    opacity: 1;
+    right: 0;
+}

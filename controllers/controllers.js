@@ -1,5 +1,10 @@
 var path = require('path')
 var Data = require('../model/data');
+
+module.exports.loginpg = function(request, response) {
+
+  response.sendFile(path.join(__dirname,'/../views/login.html'));
+    }
 module.exports.new = function(request, response) {
 
   response.sendFile(path.join(__dirname,'/../views/index.html'));
@@ -13,7 +18,9 @@ module.exports.new = function(request, response) {
       module.exports.new2 = function(request, response) {
 
         response.sendFile(path.join(__dirname,'/../views/graph.html'));
-          }     
+          }    
+          
+          
 
     
 

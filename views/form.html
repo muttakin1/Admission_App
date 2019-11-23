@@ -14,7 +14,7 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>     
     <!-- navbar -->
-    <nav class="navbar navbar-dark" style="background-color: #28a428" id="nav-text">
+    <!-- <nav class="navbar navbar-dark" style="background-color: #28a428" id="nav-text">
         <div class="navbar-header">
             <a class="navbar-brand" id="logo">Annex</a>
         </div>
@@ -27,8 +27,33 @@
                 <li><a href="/" id="nav-text">Logout</a></li>
             </ul>
         </div>
+    </nav> -->
+    
+
+    <!-- fixed nav -->
+    <nav class= "navbar navbar-default navbar-fixed-top">
+            <div class= "container-fluid">
+            <!-- Side nav -->
+            <div id="mySidenav" class="sidenav">
+                <a href= "javascript:void(0)" class= "closebtn" onclick= "closeNav()">&times;</a>
+                <a href= "/index"> Home </a>
+                <a href= "/graph"> Graph </a>
+                <a href= "#"> Features </a>
+                <a href= "/form"> Data Input </a>
+                <a href="/">Logout</a>
+            </div>
+                
+              
+            <div id="main">
+                <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+                  Annex</a>     
+            </div>
+        </div>
     </nav>
-    <!-- navbar -->
+
+    <br><br><br>
+
     <div id="dataBoxI" class="container">
         <h1>Data Input</h1>
         <br>           
@@ -48,7 +73,21 @@
                
     <script type="text/javascript" src="../static/JS/script.js"></script>
                 
-   
+   <!-- Script for navbar -->
+   <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+            
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
     <!-- Bootstrap links -->
     <script
                 src="https://code.jquery.com/jquery-3.4.1.js"

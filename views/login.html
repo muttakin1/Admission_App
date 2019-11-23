@@ -1,36 +1,52 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body class= "bg">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <!-- navbar -->
-    
-    <nav class="navbar navbar-dark" style="background-color: #28a428" id="nav-text">
-        <!-- <div class="container"> -->
-          <div class="navbar-header">
-            <a class="navbar-brand" id="logo">Annex</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            
-          </div>
-        <!-- </div> -->
+   
+    <!-- Fixed nav -->
+    <nav class= "navbar navbar-default navbar-fixed-top">
+        <div id="main">
+            <a class= "navbar-brand" href= "#" style="font-size: 30px;">  
+                  Annex</a>     
+        </div>
     </nav>
 
-    <div class="container">
-        <label><b>Username</b></label>
-        <input type= "text" placeholder="Enter Username">
-        <br><br>
-        <label><b>Password</b></label>
-        <input type= "text" placeholder="Enter Password">
-        <br><br>
-        <button type= "submit"><a href= "/index">Login</button>
+    <br><br><br><br>
+
+    <div class= "container-fluid">
+        <div class= "row">
+            <div class= "col-md-4 col-sm-4 col-xs-12"></div>
+            <div class= "col-md-4 col-sm-4 col-xs-12">
+                <!-- Form -->
+                <form class= "form-container">
+                    <h2 style="color: #fff; text-align: center;"> Login </h2>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="color: #fff;">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email Address">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1" style="color: #fff;">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+                    </div>
+                    <div class="checkbox">
+                      <label style="color: #fff;">
+                        <input type="checkbox"> Remember Me </label>
+                    </div>
+                    <button type="submit" class="btn btn-submit btn-block"><a href="/index">Submit</button></a>
+                </form>
+                <!-- End of form -->
+            </div>
+            <div class= "col-md-4 col-sm-4 col-xs-12"></div>
+        </div>
     </div>
 
 

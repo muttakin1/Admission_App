@@ -264,13 +264,7 @@ $("#getFocusYear").click(function (event) {
   
           },
   
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
+          
         }
       });
       var ctx = document.getElementById('myChart1');
@@ -300,10 +294,11 @@ $("#getFocusYear").click(function (event) {
         options: {
           plugins:{
             
-            labels: {
-              render: 'percentage',
-             
-              precision: 2
+            datalabels: {
+              
+              formatter: function(value){
+                return value + ' (100%) ';
+              }
             }
           },
           title: {
@@ -312,13 +307,7 @@ $("#getFocusYear").click(function (event) {
             fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
   
           },
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
+         
         }
       });
       var ctx = document.getElementById('myChart2');
@@ -368,13 +357,7 @@ $("#getFocusYear").click(function (event) {
   
           },
   
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
+          
         }
       });
       var ctx = document.getElementById('myChart3');

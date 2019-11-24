@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+    <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
+  
+
+    <title>Pie Chart Outlabels</title>
+</head>
+
+<body>
+
+    <div id="chart-wrapper">
+        <canvas id="barChartHeadcount"></canvas>
+    </div>
+    <script id="script-construct">
+        var chart = new Chart(document.getElementById("barChartHeadcount"), {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar'],
+                datasets: [{
+                    label: 'Billed',
+                    backgroundColor: 'rgb(0, 197, 106)',
+                    data: [56, 63, 67]
+                }, {
+                    label: 'Unbilled',
+                    backgroundColor: 'rgb(255, 114, 107)',
+                    data: [1, 2, 3]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Community Headcount'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false
+                },
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                        stacked: false
+                    }],
+                    yAxes: [{
+                        stacked: false
+                    }]
+                },
+                plugins: {
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'end',
+                        backgroundColor: function (context) {
+                            return context.dataset.backgroundColor;
+                        },
+                        borderRadius: 4,
+                        color: 'white',
+                        formatter: function (value) {
+                            return value + ' (100%) ';
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -5,7 +5,11 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,21 +19,22 @@
     <!-- Fixed nav -->
     <nav class= "navbar navbar-default navbar-fixed-top">
         <div id="main">
-            <a class= "navbar-brand" href= "#" style="font-size: 30px;">  
-                  Annex</a>     
+            <a class= "navbar-brand" href= "#" style="font-size: 30px; color: #fff !important">
+                  Annex</a>    
         </div>
     </nav>
 
     <br><br><br><br>
 
-    <div class= "container-fluid">
+    <!-- main 1 -->
+    <!-- <div class= "container-fluid">
         <div class= "row">
             <div class= "col-md-6">
                 <img src="iub.JPG" width="100%" height= auto>
             </div>
-            <div class= "col-md-6">
+            <div class= "col-md-6"> -->
                 <!-- Form -->
-                <form class= "form-container">
+                <!-- <form class= "form-container">
                     <h2 style="text-align: center;"> Login </h2>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
@@ -44,14 +49,44 @@
                         <input type="checkbox"> Remember Me </label>
                     </div>
                     <button type="submit" class="btn btn-submit btn-block"><a href="/index">Submit</button></a>
-                </form>
+                </form> -->
                 <!-- End of form -->
-            </div>
+            <!-- </div> -->
             <!-- <div class= "col-md-4 col-sm-4 col-xs-12"></div> -->
+        <!-- </div>
+    </div> -->
+
+
+    <!-- main 2 -->
+    <div class= "container">
+        <div class= "row" id= "loginForm">
+            <div class= "col-md-8">
+
+            </div>
+            <div class= "col-md-4">
+                <form action= "">
+                    <h2><b> Log In </b></h2>
+                    <br>
+                    <div class= "form-group">
+                        <label for= ""> Email Address</label>
+                        <input type= "text" placeholder="Enter Email Address" class= "form-control">
+                    </div>
+                    <div class= "form-group">
+                        <label for= ""> Password</label>
+                        <input type= "password" placeholder="Enter Password" class= "form-control">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                        <input type="checkbox"> Remember Me </label>
+                    </div>
+
+                    <a href= "/index"><button type= "button" class= "btn">Login</button>
+            </form>
+            </div>
+
         </div>
+
     </div>
-
-
     
     <!-- Bootstrap links -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

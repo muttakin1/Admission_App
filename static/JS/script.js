@@ -81,7 +81,7 @@ function divide(){  //START OF JS
 		var admissionInputData = new Object();
 		
 		for (var i = 0; i < texts.length; i++) {
-			admissionInputData[i] = ({year:yearNo,semester_SlotNo:semesterSlotNo,semester_no:semesterNO,key:texts[i], dept:dept[i],major:major[i],count:count[i],paid_count:paid_count[i]});
+			admissionInputData[i] = ({year:yearNo,semester_SlotNo:semesterSlotNo,semester_no:semesterNO, dept:dept[i],major:major[i],count:count[i],paid_count:paid_count[i]});
 		};
 		console.log(admissionInputData);
 		

@@ -120,17 +120,18 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         type: 'line',
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [          
+          datasets: [
             {
-            label: 'Number Of Students in Pharmacy',
-            // fill: false,
-            data: [numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-  
-            ],
-            borderWidth: 2
-          },
+              label: 'Number Of Students in Population_ENV',
+              // fill: false,
+              data: [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
+    
+              borderColor: [
+                'rgba(180,130,0,1)',
+    
+              ],
+              borderWidth: 2
+            },          
           {
             label: 'Number Of Students in ENV_Management',
             // fill: false,
@@ -153,13 +154,13 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             ],
             borderWidth: 2
           },
+
           {
-            label: 'Number Of Students in Population_ENV',
+            label: 'Number Of Students in Pharmacy',
             // fill: false,
-            data: [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
-  
+            data: [numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(255, 99, 132, 1)',
   
             ],
             borderWidth: 2
@@ -171,9 +172,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         options: {
           scales: {
             yAxes: [{  stacked: true,
-              ticks: {  min: 0,
-                max: 300,
-                stepSize: 100,
+              ticks: { 
                 beginAtZero: true
               }
             }]

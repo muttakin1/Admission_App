@@ -172,9 +172,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         options: {
           scales: {
             yAxes: [{  stacked: true,
-              ticks: {  min: 0,
-                max: 500,
-                stepSize: 50,
+              ticks: { 
                 beginAtZero: true
               }
             }]

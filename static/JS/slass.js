@@ -301,9 +301,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         options: {
           scales: {
             yAxes: [{  stacked: true,
-              ticks: {  min: 0,
-                max: 300,
-                stepSize: 100,
+              ticks: { 
                 beginAtZero: true
               }
             }]

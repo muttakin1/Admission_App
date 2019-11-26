@@ -107,14 +107,17 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           title: {
             display: true,
             text: 'Major wise Students interest @ SESM+Pharmacy',
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          },
           scales: {
-            yAxes: [{ 
+            yAxes: [{
+             
               ticks: {
                 beginAtZero: true
               }
             }]
           }
-        }
+        
       }
       });
 
@@ -124,8 +127,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         type: 'line',
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [
-            {
+          datasets: [{ 
+              lineTension:0.1,
               label: 'Number Of Students in Population_ENV',
               // fill: false,
               data: [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
@@ -136,7 +139,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
               ],
               borderWidth: 2
             },          
-          {
+          {lineTension:0.1,
             label: 'Number Of Students in ENV_Management',
             // fill: false,
             data: [numberOfENV_management[0], numberOfENV_management[1], numberOfENV_management[2], numberOfENV_management[3], numberOfENV_management[4], numberOfENV_management[5], numberOfENV_management[6], numberOfENV_management[7],],
@@ -147,7 +150,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             ],
             borderWidth: 2
           },
-          {
+          {lineTension:0.1,
             label: 'Number Of Students in ENV',
             // fill: false,
             data: [numberOfENV[0], numberOfENV[1], numberOfENV[2], numberOfENV[3], numberOfENV[4], numberOfENV[5], numberOfENV[6], numberOfENV[7],],
@@ -159,7 +162,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             borderWidth: 2
           },
 
-          {
+          {lineTension:0.1,
             label: 'Number Of Students in Pharmacy',
             // fill: false,
             data: [numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
@@ -177,16 +180,33 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         options: {
           title: {
             display: true,
-            text: 'Major wise Students interest @ SESM+Pharmacy',
+            text: 'Major wise Students interest @ SESM+Pharmacy'},
           scales: {
-            yAxes: [{  stacked: true,
+            yAxes: [{ 
+              stacked: true,
               ticks: { 
                 beginAtZero: true
               }
             }]
           }
+        
         }
-        }
+        // options: {
+        //   title: {
+        //     display: true,
+        //     text: 'Major wise Students interest @ SESM+Pharmacy',
+        //     fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+        //   },
+        //   scales: {
+        //     yAxes: [{ 
+        //        stacked: true,
+        //       ticks: { 
+        //         beginAtZero: true
+        //       }
+        //     }]
+        //   }
+        
+        // }
       });
 
    

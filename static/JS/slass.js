@@ -233,9 +233,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             label: 'Number Of Students in Sociology',
             // fill: false,
             data: [numberOfSOC[0], numberOfSOC[1], numberOfSOC[2], numberOfSOC[3], numberOfSOC[4], numberOfSOC[5], numberOfSOC[6], numberOfSOC[7],],
-            backgroundColor: [ 'rgba(170,170,170,1)',],
+            backgroundColor: [ 'rgba(170,170,170,0.2)',],
             borderColor: [
-              'rgba(170,170,170,1)',
+              'rgba(170,170,170,0.2)',
   
             ],
             borderWidth: 2
@@ -319,15 +319,16 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         options: {
           title: {
             display: true,
-            text: 'Major wise Students interest @ SLASS',
+            text: 'Major wise Students interest @ SLASS'},
           scales: {
-            yAxes: [{  stacked: true,
+            yAxes: [{ 
+              stacked: true,
               ticks: { 
                 beginAtZero: true
               }
             }]
           }
-        }
+        
         }
       });
 

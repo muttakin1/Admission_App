@@ -6,7 +6,7 @@ $("#getline").click(function (event) {
       url: "/data/list"
     }).done(function (response) {
   
-      //console.log(response)
+      console.log(response)
       let noofStd = response.datas
   
       let counter = 0

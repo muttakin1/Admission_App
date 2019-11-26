@@ -9,7 +9,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
 
     let noofStd = response.datas
     Yearvalue = $("#focusYearVal").val()
-    console.log(Yearvalue)
+    //console.log(Yearvalue)
 
     let counterYearlyPHY= 0
     let counterYearlyCSE = 0
@@ -222,7 +222,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
           
           title: {
             display: true,
-            text: Yearvalue + ' @ SOB',
+            text: Yearvalue + ' @ Secs Majors',
             fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
   
           },
@@ -274,7 +274,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
           
           title: {
             display: true,
-            text: Yearvalue + ' @ SOB',
+            text: "SECS departments "+Yearvalue ,
             fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
   
           },

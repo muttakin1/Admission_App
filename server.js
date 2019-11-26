@@ -1,7 +1,7 @@
 var http = require('http');
 var express = require('express');
 var app = express();
-var server = http.Server(app);
+var server = http.Server(server);
 var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 
@@ -18,8 +18,8 @@ mongoose.connection.on('error', function(err){
   console.log('Could not connect to mongodb');
 })
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({extended:true}));
 
 require('./routes/routes.js')(app);
 

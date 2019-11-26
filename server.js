@@ -23,7 +23,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 require('./routes/routes.js')(app);
 
-server.listen(process.env.PORT || 3000, process.env.IP || 'localhost', function(){
+server.listen(process.env.PORT || 3000,(err)=>{
+  if (err){
+    console.log(err)
+  }
   console.log('Server running');
 });
 

@@ -256,7 +256,15 @@ $("#getFocusYear").click(function (event) {
   
         },
         options: {
-          
+          plugins:{
+            
+            datalabels: {
+              
+              formatter: function(value){
+                return value + ' (100%) ';
+              }
+            }
+          },
           title: {
             display: true,
             text: Yearvalue + ' @ IUB',
@@ -343,10 +351,11 @@ $("#getFocusYear").click(function (event) {
         options: {
           plugins:{
             
-            labels: {
-              render: 'percentage',
-             
-              precision: 2
+            datalabels: {
+              
+              formatter: function(value){
+                return value + ' (100%) ';
+              }
             }
           },
           

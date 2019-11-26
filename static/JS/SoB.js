@@ -168,10 +168,10 @@ $("#SoB").click(function (event) {
       }
      
       
+      
+      
+      
       var ctx = document.getElementById('myChart');
-      
-      
-      var ctx = document.getElementById('myChart2');
       var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -222,13 +222,14 @@ $("#SoB").click(function (event) {
           
         }
       });
-      var ctx = document.getElementById('myChart3');
+      var ctx = document.getElementById('myChart1');
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
           
           labels: ['Management Information Systems', 'Finance', 'Investment Management','Accounting', 'General Management','Human Resources Management', 'International Business','Marketing','Economics'],
           datasets: [{
+            
             label: 'School of Business ' + Yearvalue,
             data: [numberBBA[0],numberBBA[1],numberBBA[2],numberBBA[3],numberBBA[4],numberBBA[5],numberBBA[6],numberBBA[7],numberBBA[8]],
             backgroundColor: [
@@ -270,7 +271,7 @@ $("#SoB").click(function (event) {
           }
         }
       });
-      var ctx = document.getElementById('myChart4');
+      var ctx = document.getElementById('myChart2');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -433,7 +434,7 @@ $("#SoB").click(function (event) {
           }
         }
       });
-      var ctx = document.getElementById('myChart5');
+      var ctx = document.getElementById('myChart3');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {

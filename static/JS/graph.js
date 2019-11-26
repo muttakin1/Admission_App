@@ -31,6 +31,7 @@ $("#getline").click(function (event) {
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [{
+            lineTension:0.1,
             label: 'Number Of Students',
             data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
             backgroundColor: [
@@ -121,6 +122,7 @@ $("#getline").click(function (event) {
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [{
+            lineTension:0.1,
             label: 'Number Of Students in SECS',
             data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
   
@@ -130,6 +132,7 @@ $("#getline").click(function (event) {
             ],
             borderWidth: 2
           }, {
+            lineTension:0.1,
             label: 'Number Of Students in SoB',
             data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
   
@@ -140,6 +143,7 @@ $("#getline").click(function (event) {
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Others',
             data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
   
@@ -273,7 +277,7 @@ $("#getline").click(function (event) {
             ],
             borderWidth: 2
           },
-          {
+          { 
             label: 'Number Of Students in Slass',
             data: [numberOfSlass[0], numberOfSlass[1], numberOfSlass[2], numberOfSlass[3], numberOfSlass[4], numberOfSlass[5], numberOfSlass[6], numberOfSlass[7],],
   
@@ -362,6 +366,7 @@ $("#getline").click(function (event) {
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [{
+            lineTension:0.1,
             label: 'Number Of Students in Slass',
             data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
   
@@ -371,6 +376,7 @@ $("#getline").click(function (event) {
             ],
             borderWidth: 2
           }, {
+            lineTension:0.1,
             label: 'Number Of Students in SLS',
             data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
   
@@ -381,6 +387,7 @@ $("#getline").click(function (event) {
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Sesm+Phar',
             data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
   

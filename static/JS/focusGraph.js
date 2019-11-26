@@ -238,6 +238,7 @@ $("#getFocusYear").click(function (event) {
           
           labels: ['Autumn', 'Spring', 'Summer'],
           datasets: [{
+            lineTension:0.1,
             label: 'Number Of Students in ' + Yearvalue,
             data: [SemesterDist[0], SemesterDist[1], SemesterDist[2]],
             backgroundColor: [
@@ -424,6 +425,7 @@ $("#getFocusYear").click(function (event) {
           
           labels: [2013,2014,2015,2016,2017,2018,2019],
           datasets: [{
+            lineTension:0.1,
             label: 'Management Information System',
             data:  [numberYearlyMis[0],numberYearlyMis[1],numberYearlyMis[2],numberYearlyMis[3],numberYearlyMis[4],numberYearlyMis[5],numberYearlyMis[6],numberYearlyMis[7],],
             backgroundColor: [
@@ -437,7 +439,8 @@ $("#getFocusYear").click(function (event) {
             borderWidth: 2
           
           },
-          {
+          { 
+            lineTension:0.1,
             label: 'Marketing',
             data: [numberYearlyMkt[0],numberYearlyMkt[1],numberYearlyMkt[2],numberYearlyMkt[3],numberYearlyMkt[4],numberYearlyMkt[5],numberYearlyMkt[6],numberYearlyMkt[7],],
             backgroundColor: [
@@ -453,6 +456,7 @@ $("#getFocusYear").click(function (event) {
 
           },
           {
+            lineTension:0.1,
             label: 'Accounting',
             data: [numberYearlyAcn[0],numberYearlyAcn[1],numberYearlyAcn[2],numberYearlyAcn[3],numberYearlyAcn[4],numberYearlyAcn[5],numberYearlyAcn[6],numberYearlyAcn[7],],
             backgroundColor: [
@@ -467,6 +471,7 @@ $("#getFocusYear").click(function (event) {
 
 
           },{
+            lineTension:0.1,
             label: 'Finance',
             data: [numberYearlyFin[0],numberYearlyFin[1],numberYearlyFin[2],numberYearlyFin[3],numberYearlyFin[4],numberYearlyFin[5],numberYearlyFin[6],numberYearlyFin[7],],
             backgroundColor: [
@@ -482,6 +487,7 @@ $("#getFocusYear").click(function (event) {
 
           },
           {
+            lineTension:0.1,
             label: 'General Management',
             data: [numberYearlyMgt[0],numberYearlyMgt[1],numberYearlyMgt[2],numberYearlyMgt[3],numberYearlyMgt[4],numberYearlyMgt[5],numberYearlyMgt[6],numberYearlyMgt[7],],
             backgroundColor: [
@@ -497,6 +503,7 @@ $("#getFocusYear").click(function (event) {
 
           },
           {
+            lineTension:0.1,
             label: 'Human Resources Management',
             data: [numberYearlyHrm[0],numberYearlyHrm[1],numberYearlyHrm[2],numberYearlyHrm[3],numberYearlyHrm[4],numberYearlyHrm[5],numberYearlyHrm[6],numberYearlyHrm[7],],
             backgroundColor: [
@@ -512,6 +519,7 @@ $("#getFocusYear").click(function (event) {
 
           },
            {
+            lineTension:0.1,
             label: 'International Business',
             data: [numberYearlyIb[0],numberYearlyIb[1],numberYearlyIb[2],numberYearlyIb[3],numberYearlyIb[4],numberYearlyIb[5],numberYearlyIb[6],numberYearlyIb[7],],
             backgroundColor: [
@@ -527,6 +535,7 @@ $("#getFocusYear").click(function (event) {
 
           },
           {
+            lineTension:0.1,
             label: 'Investment Management',
             data: [numberYearlyInvest[0],numberYearlyInvest[1],numberYearlyInvest[2],numberYearlyInvest[3],numberYearlyInvest[4],numberYearlyInvest[5],numberYearlyInvest[6],numberYearlyInvest[7],],
             backgroundColor: [
@@ -541,6 +550,7 @@ $("#getFocusYear").click(function (event) {
 
 
           },{
+            lineTension:0.1,
             label: 'Economics',
             data: [numberYearlyEcn[0],numberYearlyEcn[1],numberYearlyEcn[2],numberYearlyEcn[3],numberYearlyEcn[4],numberYearlyEcn[5],numberYearlyEcn[6],numberYearlyEcn[7],],
             backgroundColor: [
@@ -587,6 +597,7 @@ $("#getFocusYear").click(function (event) {
           
           labels: [2013,2014,2015,2016,2017,2018,2019],
           datasets: [{
+            lineTension:0.1,
             label: 'Management Information System',
             fill: false,
             data:  [numberYearlyMis[0],numberYearlyMis[1],numberYearlyMis[2],numberYearlyMis[3],numberYearlyMis[4],numberYearlyMis[5],numberYearlyMis[6],numberYearlyMis[7],],
@@ -602,6 +613,7 @@ $("#getFocusYear").click(function (event) {
           
           },
           {
+            lineTension:0.1,
             label: 'Marketing',
             fill: false,
             data: [numberYearlyMkt[0],numberYearlyMkt[1],numberYearlyMkt[2],numberYearlyMkt[3],numberYearlyMkt[4],numberYearlyMkt[5],numberYearlyMkt[6],numberYearlyMkt[7],],
@@ -617,7 +629,7 @@ $("#getFocusYear").click(function (event) {
 
 
           },
-          {
+          { lineTension:0.1,
             label: 'Accounting',
             fill: false,
             data: [numberYearlyAcn[0],numberYearlyAcn[1],numberYearlyAcn[2],numberYearlyAcn[3],numberYearlyAcn[4],numberYearlyAcn[5],numberYearlyAcn[6],numberYearlyAcn[7],],
@@ -633,6 +645,7 @@ $("#getFocusYear").click(function (event) {
 
 
           },{
+            lineTension:0.1,
             label: 'Finance',
             fill: false,
             data: [numberYearlyFin[0],numberYearlyFin[1],numberYearlyFin[2],numberYearlyFin[3],numberYearlyFin[4],numberYearlyFin[5],numberYearlyFin[6],numberYearlyFin[7],],
@@ -648,7 +661,7 @@ $("#getFocusYear").click(function (event) {
 
 
           },
-          {
+          { lineTension:0.1,
             label: 'General Management',
             fill: false,
             data: [numberYearlyMgt[0],numberYearlyMgt[1],numberYearlyMgt[2],numberYearlyMgt[3],numberYearlyMgt[4],numberYearlyMgt[5],numberYearlyMgt[6],numberYearlyMgt[7],],
@@ -664,7 +677,7 @@ $("#getFocusYear").click(function (event) {
 
 
           },
-          {
+          { lineTension:0.1,
             label: 'Human Resources Management',
             fill: false,
             data: [numberYearlyHrm[0],numberYearlyHrm[1],numberYearlyHrm[2],numberYearlyHrm[3],numberYearlyHrm[4],numberYearlyHrm[5],numberYearlyHrm[6],numberYearlyHrm[7],],
@@ -681,6 +694,7 @@ $("#getFocusYear").click(function (event) {
 
           },
            {
+            lineTension:0.1,
             label: 'International Business',
             fill: false,
             data: [numberYearlyIb[0],numberYearlyIb[1],numberYearlyIb[2],numberYearlyIb[3],numberYearlyIb[4],numberYearlyIb[5],numberYearlyIb[6],numberYearlyIb[7],],
@@ -697,6 +711,7 @@ $("#getFocusYear").click(function (event) {
 
           },
           {
+            lineTension:0.1,
             label: 'Investment Management',
             fill: false,
             data: [numberYearlyInvest[0],numberYearlyInvest[1],numberYearlyInvest[2],numberYearlyInvest[3],numberYearlyInvest[4],numberYearlyInvest[5],numberYearlyInvest[6],numberYearlyInvest[7],],
@@ -712,6 +727,7 @@ $("#getFocusYear").click(function (event) {
 
 
           },{
+            lineTension:0.1,
             label: 'Economics',
             fill: false,
             data: [numberYearlyEcn[0],numberYearlyEcn[1],numberYearlyEcn[2],numberYearlyEcn[3],numberYearlyEcn[4],numberYearlyEcn[5],numberYearlyEcn[6],numberYearlyEcn[7],],

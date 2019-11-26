@@ -50,33 +50,37 @@ $("#MajorWiseStudentsSLS").click(function (event) {
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [{
+            lineTension:0.1,
             label: 'Number Of Students in Biochemistry',
             fill: false,
             data: [numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
+            backgroundColor: [  'rgba(125,152,74, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(125,152,74, 1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Biochemistry and Biotechnology',
             fill: false,
             data: [numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
-  
+            backgroundColor: [  'rgba(197,213,173,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(197,213,173,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Microbiology',
             fill: false,
             data: [numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
-  
+            backgroundColor: [  'rgba(153,185,91,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(153,185,91,1)',
   
             ],
             borderWidth: 2
@@ -85,6 +89,9 @@ $("#MajorWiseStudentsSLS").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'Major wise Students interest @  SLS',
           scales: {
             yAxes: [{ 
               ticks: {
@@ -92,6 +99,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
               }
             }]
           }
+        }
         }
       });
 
@@ -103,33 +111,37 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [          
             {
+            lineTension:0.1,
             label: 'Number Of Students in Biochemistry',
             // fill: false,
             data: [numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
+            backgroundColor: [  'rgba(125,152,74, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(125,152,74, 1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Biochemistry and Biotechnology',
             // fill: false,
             data: [numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
-  
+            backgroundColor: [  'rgba(197,213,173,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(197,213,173,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Microbiology',
             // fill: false,
             data: [numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
-  
+            backgroundColor: [  'rgba(153,185,91,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(153,185,91,1)',
   
             ],
             borderWidth: 2
@@ -139,6 +151,9 @@ $("#MajorWiseStudentsSLS").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'Major wise Students interest @  SLS',
           scales: {
             yAxes: [{  stacked: true,
               ticks: { 
@@ -146,6 +161,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
               }
             }]
           }
+        }
         }
       });
 

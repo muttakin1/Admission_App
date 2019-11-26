@@ -122,77 +122,84 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [{
+            lineTension:0.1,
             label: 'Number Of Students in EngTrainingLang',
             fill: false,
             data: [numberOfEngTrainingLang[0], numberOfEngTrainingLang[1], numberOfEngTrainingLang[2], numberOfEngTrainingLang[3], numberOfEngTrainingLang[4], numberOfEngTrainingLang[5], numberOfEngTrainingLang[6], numberOfEngTrainingLang[7],],
-            
+            backgroundColor: [ 'rgba(109,109,109, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(109,109,109, 1)',
   
             ],
             borderWidth: 2
           }, {
+            lineTension:0.1,
             label: 'Number Of Students in GSG',
             fill: false,
             data: [numberOfGSG[0], numberOfGSG[1], numberOfGSG[2], numberOfGSG[3], numberOfGSG[4], numberOfGSG[5], numberOfGSG[6], numberOfGSG[7],],
-  
+            backgroundColor: [ 'rgba((33,33,33,1)',],
             borderColor: [
-              'rgba(220,180,0,1)',
+              'rgba((33,33,33,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Media Com',
             fill: false,
             data: [numberOfMedia_Com[0], numberOfMedia_Com[1], numberOfMedia_Com[2], numberOfMedia_Com[3], numberOfMedia_Com[4], numberOfMedia_Com[5], numberOfMedia_Com[6], numberOfMedia_Com[7],],
-  
+            backgroundColor: [  'rgba(218,218,218,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(218,218,218,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Anthropology',
             fill: false,
             data: [numberOfANT[0], numberOfANT[1], numberOfANT[2], numberOfANT[3], numberOfANT[4], numberOfANT[5], numberOfANT[6], numberOfANT[7],],
-  
+            backgroundColor: [  'rgba(137,137,137,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(137,137,137,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in English Literature',
             fill: false,
             data: [numberOfEngLit[0], numberOfEngLit[1], numberOfEngLit[2], numberOfEngLit[3], numberOfEngLit[4], numberOfEngLit[5], numberOfEngLit[6], numberOfEngLit[7],],
-  
+            backgroundColor: [  'rgba(179,179,179,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(179,179,179,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Law',
             fill: false,
             data: [numberOfLaw[0], numberOfLaw[1], numberOfLaw[2], numberOfLaw[3], numberOfLaw[4], numberOfLaw[5], numberOfLaw[6], numberOfLaw[7],],
-  
+            backgroundColor: [  'rgba(124,124,124,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(124,124,124,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Sociology',
             fill: false,
             data: [numberOfSOC[0], numberOfSOC[1], numberOfSOC[2], numberOfSOC[3], numberOfSOC[4], numberOfSOC[5], numberOfSOC[6], numberOfSOC[7],],
-  
+            backgroundColor: [ 'rgba(170,170,170,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(170,170,170,1)',
   
             ],
             borderWidth: 2
@@ -201,6 +208,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'Major wise Students interest @ SLASS',
           scales: {
             yAxes: [{ 
               ticks: {
@@ -208,6 +218,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
               }
             }]
           }
+        }
         }
       });
 
@@ -218,78 +229,85 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [ {
+            lineTension:0.1,
             label: 'Number Of Students in Sociology',
             // fill: false,
             data: [numberOfSOC[0], numberOfSOC[1], numberOfSOC[2], numberOfSOC[3], numberOfSOC[4], numberOfSOC[5], numberOfSOC[6], numberOfSOC[7],],
-  
+            backgroundColor: [ 'rgba(170,170,170,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(170,170,170,1)',
   
             ],
             borderWidth: 2
           },              
             
             {
+            lineTension:0.1,
             label: 'Number Of Students in EngTrainingLang',
             // fill: false,
             data: [numberOfEngTrainingLang[0], numberOfEngTrainingLang[1], numberOfEngTrainingLang[2], numberOfEngTrainingLang[3], numberOfEngTrainingLang[4], numberOfEngTrainingLang[5], numberOfEngTrainingLang[6], numberOfEngTrainingLang[7],],
-            
+            backgroundColor: [ 'rgba(109,109,109, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(109,109,109, 1)',
   
             ],
             borderWidth: 2
           }, {
+            lineTension:0.1,
             label: 'Number Of Students in GSG',
             // fill: false,
             data: [numberOfGSG[0], numberOfGSG[1], numberOfGSG[2], numberOfGSG[3], numberOfGSG[4], numberOfGSG[5], numberOfGSG[6], numberOfGSG[7],],
-  
+            backgroundColor: [ 'rgba((33,33,33,1)',],
             borderColor: [
-              'rgba(220,180,0,1)',
+              'rgba((33,33,33,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Media Com',
             // fill: false,
             data: [numberOfMedia_Com[0], numberOfMedia_Com[1], numberOfMedia_Com[2], numberOfMedia_Com[3], numberOfMedia_Com[4], numberOfMedia_Com[5], numberOfMedia_Com[6], numberOfMedia_Com[7],],
-  
+            backgroundColor: [  'rgba(218,218,218,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(218,218,218,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Anthropology',
             // fill: false,
             data: [numberOfANT[0], numberOfANT[1], numberOfANT[2], numberOfANT[3], numberOfANT[4], numberOfANT[5], numberOfANT[6], numberOfANT[7],],
-  
+            backgroundColor: [  'rgba(137,137,137,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(137,137,137,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Eng Lit',
             // fill: false,
             data: [numberOfEngLit[0], numberOfEngLit[1], numberOfEngLit[2], numberOfEngLit[3], numberOfEngLit[4], numberOfEngLit[5], numberOfEngLit[6], numberOfEngLit[7],],
-  
+            backgroundColor: [  'rgba(179,179,179,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(179,179,179,1)',
   
             ],
             borderWidth: 2
           },
           {
+            lineTension:0.1,
             label: 'Number Of Students in Law',
             // fill: false,
             data: [numberOfLaw[0], numberOfLaw[1], numberOfLaw[2], numberOfLaw[3], numberOfLaw[4], numberOfLaw[5], numberOfLaw[6], numberOfLaw[7],],
-  
+            backgroundColor: [  'rgba(124,124,124,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(124,124,124,1)',
   
             ],
             borderWidth: 2
@@ -299,6 +317,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'Major wise Students interest @ SLASS',
           scales: {
             yAxes: [{  stacked: true,
               ticks: { 
@@ -306,6 +327,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
               }
             }]
           }
+        }
         }
       });
 
@@ -316,53 +338,58 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [ {
+            lineTension:0.1,
             label: 'Number Of Students in SOC',
             fill: false,
             data: [numberOfDeptSOC[0], numberOfDeptSOC[1], numberOfDeptSOC[2], numberOfDeptSOC[3], numberOfDeptSOC[4], numberOfDeptSOC[5], numberOfDeptSOC[6], numberOfDeptSOC[7],],
-  
+            backgroundColor: [ 'rgba(179,179,179,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(179,179,179,1)',
   
             ],
             borderWidth: 2
           },  
             {
+            lineTension:0.1,
             label: 'Number Of Students in ENG',
             fill: false,
             data: [numberOfDeptENG[0], numberOfDeptENG[1], numberOfDeptENG[2], numberOfDeptENG[3], numberOfDeptENG[4], numberOfDeptENG[5], numberOfDeptENG[6], numberOfDeptENG[7],],
-            
+            backgroundColor: [ 'rgba(95,95,95, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(95,95,95, 1)',
   
             ],
             borderWidth: 2
           },  {
+            lineTension:0.1,
             label: 'Number Of Students in GSG',
             fill: false,
             data: [numberOfDeptGSG[0], numberOfDeptGSG[1], numberOfDeptGSG[2], numberOfDeptGSG[3], numberOfDeptGSG[4], numberOfDeptGSG[5], numberOfDeptGSG[6], numberOfDeptGSG[7],],
-            
+            backgroundColor: [ 'rgba(137,137,137, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(137,137,137, 1)',
   
             ],
             borderWidth: 2
           }, {
+            lineTension:0.1,
             label: 'Number Of Students in Media and Com',
             fill: false,
             data: [numberOfDeptMed[0], numberOfDeptMed[1], numberOfDeptMed[2], numberOfDeptMed[3], numberOfDeptMed[4], numberOfDeptMed[5], numberOfDeptMed[6], numberOfDeptMed[7],],
-            
+            backgroundColor: [ 'rgba(33,33,33, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(33,33,33, 1)',
   
             ],
             borderWidth: 2
           }, {
+            lineTension:0.1,
             label: 'Number Of Students in Law',
             fill: false,
             data: [numberOfDeptLaw[0], numberOfDeptLaw[1], numberOfDeptLaw[2], numberOfDeptLaw[3], numberOfDeptLaw[4], numberOfDeptLaw[5], numberOfDeptLaw[6], numberOfDeptLaw[7],],
-            
+            backgroundColor: [   'rgba(218,218,218, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(218,218,218, 1)',
   
             ],
             borderWidth: 2
@@ -372,6 +399,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'SLASS Departments',
           scales: {
             yAxes: [{ 
               ticks: {
@@ -379,6 +409,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
               }
             }]
           }
+        }
         }
       });
 
@@ -391,9 +422,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             label: 'Number Of Students in SOC',
             fill: false,
             data: [numberOfDeptSOC[0], numberOfDeptSOC[1], numberOfDeptSOC[2], numberOfDeptSOC[3], numberOfDeptSOC[4], numberOfDeptSOC[5], numberOfDeptSOC[6], numberOfDeptSOC[7],],
-  
+            backgroundColor: [ 'rgba(179,179,179,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(179,179,179,1)',
   
             ],
             borderWidth: 2
@@ -402,9 +433,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             label: 'Number Of Students in ENG',
             fill: false,
             data: [numberOfDeptENG[0], numberOfDeptENG[1], numberOfDeptENG[2], numberOfDeptENG[3], numberOfDeptENG[4], numberOfDeptENG[5], numberOfDeptENG[6], numberOfDeptENG[7],],
-            
+            backgroundColor: [ 'rgba(95,95,95, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(95,95,95, 1)',
   
             ],
             borderWidth: 2
@@ -412,9 +443,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             label: 'Number Of Students in GSG',
             fill: false,
             data: [numberOfDeptGSG[0], numberOfDeptGSG[1], numberOfDeptGSG[2], numberOfDeptGSG[3], numberOfDeptGSG[4], numberOfDeptGSG[5], numberOfDeptGSG[6], numberOfDeptGSG[7],],
-            
+            backgroundColor: [ 'rgba(137,137,137, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(137,137,137, 1)',
   
             ],
             borderWidth: 2
@@ -422,9 +453,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             label: 'Number Of Students in Media and Com',
             fill: false,
             data: [numberOfDeptMed[0], numberOfDeptMed[1], numberOfDeptMed[2], numberOfDeptMed[3], numberOfDeptMed[4], numberOfDeptMed[5], numberOfDeptMed[6], numberOfDeptMed[7],],
-            
+            backgroundColor: [ 'rgba(33,33,33, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(33,33,33, 1)',
   
             ],
             borderWidth: 2
@@ -432,9 +463,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             label: 'Number Of Students in Law',
             fill: false,
             data: [numberOfDeptLaw[0], numberOfDeptLaw[1], numberOfDeptLaw[2], numberOfDeptLaw[3], numberOfDeptLaw[4], numberOfDeptLaw[5], numberOfDeptLaw[6], numberOfDeptLaw[7],],
-            
+            backgroundColor: [   'rgba(218,218,218, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(218,218,218, 1)',
   
             ],
             borderWidth: 2
@@ -444,6 +475,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'SLASS Departments',
           scales: {
             xAxes: [{
                 stacked: true
@@ -454,6 +488,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
               }
             }]
           }
+        }
         }
       });
   

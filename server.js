@@ -21,7 +21,7 @@ mongoose.connection.on('error', function(err){
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended:true}));
 
-require('./routes/routes.js')(app);
+require('./routes/routes.js')(server);
 
 server.listen(process.env.PORT || 3000,(err)=>{
   if (err){

@@ -62,7 +62,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             fill: false,
             data: [numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(100, 79, 126, 1)',
   
             ],
             borderWidth: 2
@@ -73,7 +73,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             data: [numberOfENV_management[0], numberOfENV_management[1], numberOfENV_management[2], numberOfENV_management[3], numberOfENV_management[4], numberOfENV_management[5], numberOfENV_management[6], numberOfENV_management[7],],
   
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(120, 96, 150, 1)',
   
             ],
             borderWidth: 2
@@ -84,7 +84,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             data: [numberOfENV[0], numberOfENV[1], numberOfENV[2], numberOfENV[3], numberOfENV[4], numberOfENV[5], numberOfENV[6], numberOfENV[7],],
   
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(156,139,179,1)',
   
             ],
             borderWidth: 2
@@ -95,7 +95,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             data: [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
   
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(195,187,208,1)',
   
             ],
             borderWidth: 2
@@ -104,6 +104,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'Major wise Students interest @ SESM+Pharmacy',
           scales: {
             yAxes: [{ 
               ticks: {
@@ -112,6 +115,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             }]
           }
         }
+      }
       });
 
     //   Area under the graph
@@ -125,9 +129,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
               label: 'Number Of Students in Population_ENV',
               // fill: false,
               data: [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
-    
+              backgroundColor: [ 'rgba(195,187,208, 1)',],
               borderColor: [
-                'rgba(180,130,0,1)',
+                'rgba(195,187,208,1)',
     
               ],
               borderWidth: 2
@@ -136,9 +140,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             label: 'Number Of Students in ENV_Management',
             // fill: false,
             data: [numberOfENV_management[0], numberOfENV_management[1], numberOfENV_management[2], numberOfENV_management[3], numberOfENV_management[4], numberOfENV_management[5], numberOfENV_management[6], numberOfENV_management[7],],
-  
+            backgroundColor: [ 'rgba(120, 96, 150, 1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(120, 96, 150,1)',
   
             ],
             borderWidth: 2
@@ -147,9 +151,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             label: 'Number Of Students in ENV',
             // fill: false,
             data: [numberOfENV[0], numberOfENV[1], numberOfENV[2], numberOfENV[3], numberOfENV[4], numberOfENV[5], numberOfENV[6], numberOfENV[7],],
-  
+            backgroundColor: [ 'rgba(156,139,179, 1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(156,139,179,1)',
   
             ],
             borderWidth: 2
@@ -159,8 +163,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
             label: 'Number Of Students in Pharmacy',
             // fill: false,
             data: [numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
+            backgroundColor: [ 'rgba(100, 79, 126, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(100, 79, 126, 1)',
   
             ],
             borderWidth: 2
@@ -170,6 +175,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'Major wise Students interest @ SESM+Pharmacy',
           scales: {
             yAxes: [{  stacked: true,
               ticks: { 
@@ -177,6 +185,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
               }
             }]
           }
+        }
         }
       });
 

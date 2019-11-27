@@ -65,7 +65,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
             counterSOC = counterSOC + Number(item.no_of_Student)
             }
 
-            if (item.year == i && item.Dept == "Eng") {
+            if (item.year == i && item.Dept == "ENG") {
                 counterDeptENG = counterDeptENG + Number(item.no_of_Student)
                    
             }

@@ -1,6 +1,6 @@
 School,Dept,Major,no_of_Student,no,year,semester_no,Semester
-SLASS,Eng,BA - English Language Teaching,3,3,2013,Autumn 01,3
-SLASS,Eng,BA - English Literature,6,6,2013,Autumn 01,3
+SLASS,ENG,BA - English Language Teaching,3,3,2013,Autumn 01,3
+SLASS,ENG,BA - English Literature,6,6,2013,Autumn 01,3
 SoB,BBA,BBA - Accounting,96,96,2013,Autumn 01,3
 SoB,BBA,BBA - Finance,104,104,2013,Autumn 01,3
 SoB,BBA,BBA - General Management,13,13,2013,Autumn 01,3
@@ -20,8 +20,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,6,6,2013,Autumn 01,3
 SESM,ESc,BSc - Environmental Management,1,1,2013,Autumn 01,3
 SESM,EMgt,BSc - Environmental Science,6,6,2013,Autumn 01,3
 SLS,SLS,BSc - Microbiology,5,5,2013,Autumn 01,3
-SLASS,Eng,BA - English Language Teaching,6,6,2014,Autumn 01,3
-SLASS,Eng,BA - English Literature,8,8,2014,Autumn 01,3
+SLASS,ENG,BA - English Language Teaching,6,6,2014,Autumn 01,3
+SLASS,ENG,BA - English Literature,8,8,2014,Autumn 01,3
 SoB,BBA,BBA - Accounting,120,120,2014,Autumn 01,3
 SoB,BBA,BBA - Finance,101,101,2014,Autumn 01,3
 SoB,BBA,BBA - General Management,21,21,2014,Autumn 01,3
@@ -42,8 +42,8 @@ SESM,ESc,BSc - Environmental Management,3,3,2014,Autumn 01,3
 SESM,EMgt,BSc - Environmental Science,6,6,2014,Autumn 01,3
 SLS,SLS,BSc - Microbiology,5,5,2014,Autumn 01,3
 SLASS,LAW,LLB - Laws (Hons),5,5,2014,Autumn 01,3
-SLASS,Eng,BA - English Language Teaching,5,5,2015,Autumn 01,3
-SLASS,Eng,BA - English Literature,10,10,2015,Autumn 01,3
+SLASS,ENG,BA - English Language Teaching,5,5,2015,Autumn 01,3
+SLASS,ENG,BA - English Literature,10,10,2015,Autumn 01,3
 SoB,BBA,BBA - Accounting,83,83,2015,Autumn 01,3
 SoB,BBA,BBA - Finance,79,79,2015,Autumn 01,3
 SoB,BBA,BBA - General Management,24,24,2015,Autumn 01,3
@@ -66,8 +66,8 @@ SESM,ESc,BSc - Environmental Management,1,1,2015,Autumn 01,3
 SESM,EMgt,BSc - Environmental Science,6,6,2015,Autumn 01,3
 SLS,SLS,BSc - Microbiology,9,9,2015,Autumn 01,3
 SLASS,LAW,LLB - Laws (Hons),13,13,2015,Autumn 01,3
-SLASS,Eng,BA - English Language Teaching,2,2,2016,Autumn 01,3
-SLASS,Eng,BA - English Literature,13,13,2016,Autumn 01,3
+SLASS,ENG,BA - English Language Teaching,2,2,2016,Autumn 01,3
+SLASS,ENG,BA - English Literature,13,13,2016,Autumn 01,3
 SoB,BBA,BBA - Accounting,51,51,2016,Autumn 01,3
 SoB,BBA,BBA - Finance,51,51,2016,Autumn 01,3
 SoB,BBA,BBA - General Management,20,20,2016,Autumn 01,3
@@ -90,8 +90,8 @@ SESM,ESc,BSc - Environmental Science,6,6,2016,Autumn 01,3
 SECS,PhySci,BSc - Mathematics (Hons),1,1,2016,Autumn 01,3
 SLS,SLS,BSc - Microbiology,8,8,2016,Autumn 01,3
 SLASS,LAW,LLB - Laws (Hons),3,3,2016,Autumn 01,3
-SLASS,Eng,BA - English Language Teaching,10,10,2017,Autumn 01,3
-SLASS,Eng,BA - English Literature,10,10,2017,Autumn 01,3
+SLASS,ENG,BA - English Language Teaching,10,10,2017,Autumn 01,3
+SLASS,ENG,BA - English Literature,10,10,2017,Autumn 01,3
 SoB,BBA,BBA - Accounting,68,68,2017,Autumn 01,3
 SoB,BBA,BBA - Finance,75,75,2017,Autumn 01,3
 SoB,BBA,BBA - General Management,54,54,2017,Autumn 01,3
@@ -140,8 +140,8 @@ SECS,PhySci,BSc - Mathematics (Hons),2,2,2018,Autumn 01,3
 SLS,SLS,BSc - Microbiology,8,8,2018,Autumn 01,3
 SECS,PhySci,BSc - Physics (Hons),3,3,2018,Autumn 01,3
 SLASS,LAW,LLB - Laws (Hons),11,11,2018,Autumn 01,3
-SLASS,Eng,BA - English Language Teaching,3,3,2013,Autumn 02,3
-SLASS,Eng,BA - English Literature,5,5,2013,Autumn 02,3
+SLASS,ENG,BA - English Language Teaching,3,3,2013,Autumn 02,3
+SLASS,ENG,BA - English Literature,5,5,2013,Autumn 02,3
 SoB,BBA,BBA - Accounting,122,122,2013,Autumn 02,3
 SoB,BBA,BBA - Finance,101,101,2013,Autumn 02,3
 SoB,BBA,BBA - General Management,16,16,2013,Autumn 02,3
@@ -161,8 +161,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,14,14,2013,Autumn 02
 SESM,ESc,BSc - Environmental Management,1,1,2013,Autumn 02,3
 SESM,EMgt,BSc - Environmental Science,3,3,2013,Autumn 02,3
 SLS,SLS,BSc - Microbiology,10,10,2013,Autumn 02,3
-SLASS,Eng,BA - English Language Teaching,4,4,2014,Autumn 02,3
-SLASS,Eng,BA - English Literature,5,5,2014,Autumn 02,3
+SLASS,ENG,BA - English Language Teaching,4,4,2014,Autumn 02,3
+SLASS,ENG,BA - English Literature,5,5,2014,Autumn 02,3
 SoB,BBA,BBA - Accounting,105,105,2014,Autumn 02,3
 SoB,BBA,BBA - Finance,82,82,2014,Autumn 02,3
 SoB,BBA,BBA - General Management,26,26,2014,Autumn 02,3
@@ -180,8 +180,8 @@ SESM,ESc,BSc - Environmental Management,1,1,2014,Autumn 02,3
 SESM,EMgt,BSc - Environmental Science,4,4,2014,Autumn 02,3
 SLS,SLS,BSc - Microbiology,4,4,2014,Autumn 02,3
 SLASS,LAW,LLB - Laws (Hons),11,11,2014,Autumn 02,3
-SLASS,Eng,BA - English Language Teaching,9,9,2015,Autumn 02,3
-SLASS,Eng,BA - English Literature,8,8,2015,Autumn 02,3
+SLASS,ENG,BA - English Language Teaching,9,9,2015,Autumn 02,3
+SLASS,ENG,BA - English Literature,8,8,2015,Autumn 02,3
 SoB,BBA,BBA - Accounting,71,71,2015,Autumn 02,3
 SoB,BBA,BBA - Finance,76,76,2015,Autumn 02,3
 SoB,BBA,BBA - General Management,17,17,2015,Autumn 02,3
@@ -200,8 +200,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,8,8,2015,Autumn 02,3
 SESM,EMgt,BSc - Environmental Science,5,5,2015,Autumn 02,3
 SLS,SLS,BSc - Microbiology,3,3,2015,Autumn 02,3
 SLASS,LAW,LLB - Laws (Hons),5,5,2015,Autumn 02,3
-SLASS,Eng,BA - English Language Teaching,8,8,2016,Autumn 02,3
-SLASS,Eng,BA - English Literature,2,2,2016,Autumn 02,3
+SLASS,ENG,BA - English Language Teaching,8,8,2016,Autumn 02,3
+SLASS,ENG,BA - English Literature,2,2,2016,Autumn 02,3
 SoB,BBA,BBA - Accounting,62,62,2016,Autumn 02,3
 SoB,BBA,BBA - Finance,60,60,2016,Autumn 02,3
 SoB,BBA,BBA - General Management,31,31,2016,Autumn 02,3
@@ -224,8 +224,8 @@ SESM,ESc,BSc - Environmental Science,11,11,2016,Autumn 02,3
 SLS,SLS,BSc - Microbiology,7,7,2016,Autumn 02,3
 SECS,PhySci,BSc - Physics (Hons),1,1,2016,Autumn 02,3
 SLASS,LAW,LLB - Laws (Hons),6,6,2016,Autumn 02,3
-SLASS,Eng,BA - English Language Teaching,6,6,2017,Autumn 02,3
-SLASS,Eng,BA - English Literature,4,4,2017,Autumn 02,3
+SLASS,ENG,BA - English Language Teaching,6,6,2017,Autumn 02,3
+SLASS,ENG,BA - English Literature,4,4,2017,Autumn 02,3
 SoB,BBA,BBA - Accounting,53,53,2017,Autumn 02,3
 SoB,BBA,BBA - Finance,65,65,2017,Autumn 02,3
 SoB,BBA,BBA - General Management,31,31,2017,Autumn 02,3
@@ -276,8 +276,8 @@ SLS,SLS,BSc - Microbiology,14,14,2018,Autumn 02,3
 SECS,PhySci,BSc - Physics (Hons),2,2,2018,Autumn 02,3
 SESM,POP,BSc - Population Environment,1,1,2018,Autumn 02,3
 SLASS,LAW,LLB - Laws (Hons),14,14,2018,Autumn 02,3
-SLASS,Eng,BA - English Language Teaching,9,9,2014,Spring 01,1
-SLASS,Eng,BA - English Literature,22,22,2014,Spring 01,1
+SLASS,ENG,BA - English Language Teaching,9,9,2014,Spring 01,1
+SLASS,ENG,BA - English Literature,22,22,2014,Spring 01,1
 SoB,BBA,BBA - Accounting,204,204,2014,Spring 01,1
 SoB,BBA,BBA - Finance,252,252,2014,Spring 01,1
 SoB,BBA,BBA - General Management,35,35,2014,Spring 01,1
@@ -297,8 +297,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,16,16,2014,Spring 01
 SESM,ESc,BSc - Environmental Management,2,2,2014,Spring 01,1
 SESM,EMgt,BSc - Environmental Science,9,9,2014,Spring 01,1
 SLS,SLS,BSc - Microbiology,16,16,2014,Spring 01,1
-SLASS,Eng,BA - English Language Teaching,9,9,2015,Spring 01,1
-SLASS,Eng,BA - English Literature,26,26,2015,Spring 01,1
+SLASS,ENG,BA - English Language Teaching,9,9,2015,Spring 01,1
+SLASS,ENG,BA - English Literature,26,26,2015,Spring 01,1
 SoB,BBA,BBA - Accounting,205,205,2015,Spring 01,1
 SoB,BBA,BBA - Finance,280,280,2015,Spring 01,1
 SoB,BBA,BBA - General Management,53,53,2015,Spring 01,1
@@ -320,8 +320,8 @@ SESM,ESc,BSc - Environmental Management,4,4,2015,Spring 01,1
 SESM,EMgt,BSc - Environmental Science,13,13,2015,Spring 01,1
 SLS,SLS,BSc - Microbiology,36,36,2015,Spring 01,1
 SLASS,LAW,LLB - Laws (Hons),26,26,2015,Spring 01,1
-SLASS,Eng,BA - English Language Teaching,10,10,2016,Spring 01,1
-SLASS,Eng,BA - English Literature,20,20,2016,Spring 01,1
+SLASS,ENG,BA - English Language Teaching,10,10,2016,Spring 01,1
+SLASS,ENG,BA - English Literature,20,20,2016,Spring 01,1
 SoB,BBA,BBA - Accounting,108,108,2016,Spring 01,1
 SoB,BBA,BBA - Finance,136,136,2016,Spring 01,1
 SoB,BBA,BBA - General Management,37,37,2016,Spring 01,1
@@ -361,16 +361,16 @@ SECS,PhySci,BSc - Mathematics (Hons),2,2,2017,Spring 01,1
 SECS,PhySci,BSc - Physics (Hons),2,2,2017,Spring 01,1
 SESM,EMgt,BSc - Environmental Management,2,2,2017,Spring 01,1
 SESM,ESc,BSc - Environmental Science,14,14,2017,Spring 01,1
-SLASS,Eng,BA - English Language Teaching,12,12,2017,Spring 01,1
-SLASS,Eng,BA - English Literature,22,22,2017,Spring 01,1
+SLASS,ENG,BA - English Language Teaching,12,12,2017,Spring 01,1
+SLASS,ENG,BA - English Literature,22,22,2017,Spring 01,1
 SLASS,SOC,BSS - Anthropology,1,1,2017,Spring 01,1
 SLASS,MED,BSS - Media and Communication,16,16,2017,Spring 01,1
 SLASS,SOC,BSS - Sociology,2,2,2017,Spring 01,1
 SLASS,LAW,LLB - Laws (Hons),15,15,2017,Spring 01,1
 SLS,SLS,BSc - Biochemistry,21,21,2017,Spring 01,1
 SLS,SLS,BSc - Microbiology,36,36,2017,Spring 01,1
-SLASS,Eng,BA - English Language Teaching,14,14,2018,Spring 01,1
-SLASS,Eng,BA - English Literature,24,24,2018,Spring 01,1
+SLASS,ENG,BA - English Language Teaching,14,14,2018,Spring 01,1
+SLASS,ENG,BA - English Literature,24,24,2018,Spring 01,1
 SoB,BBA,BBA - Accounting,108,108,2018,Spring 01,1
 SoB,BBA,BBA - Finance,113,113,2018,Spring 01,1
 SoB,BBA,BBA - General Management,52,52,2018,Spring 01,1
@@ -423,8 +423,8 @@ SLS,SLS,BSc - Microbiology,27,27,2019,Spring 01,1
 SECS,PhySci,BSc - Physics (Hons),8,8,2019,Spring 01,1
 SESM,POP,BSc - Population Environment,2,2,2019,Spring 01,1
 SLASS,LAW,LLB - Laws (Hons),29,29,2019,Spring 01,1
-SLASS,Eng,BA - English Language Teaching,2,2,2014,Spring 02,1
-SLASS,Eng,BA - English Literature,1,1,2014,Spring 02,1
+SLASS,ENG,BA - English Language Teaching,2,2,2014,Spring 02,1
+SLASS,ENG,BA - English Literature,1,1,2014,Spring 02,1
 SoB,BBA,BBA - Accounting,82,82,2014,Spring 02,1
 SoB,BBA,BBA - Finance,103,103,2014,Spring 02,1
 SoB,BBA,BBA - General Management,19,19,2014,Spring 02,1
@@ -441,8 +441,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,3,3,2014,Spring 02,1
 SESM,ESc,BSc - Environmental Management,1,1,2014,Spring 02,1
 SESM,EMgt,BSc - Environmental Science,2,2,2014,Spring 02,1
 SLS,SLS,BSc - Microbiology,4,4,2014,Spring 02,1
-SLASS,Eng,BA - English Language Teaching,6,6,2015,Spring 02,1
-SLASS,Eng,BA - English Literature,13,13,2015,Spring 02,1
+SLASS,ENG,BA - English Language Teaching,6,6,2015,Spring 02,1
+SLASS,ENG,BA - English Literature,13,13,2015,Spring 02,1
 SoB,BBA,BBA - Accounting,111,111,2015,Spring 02,1
 SoB,BBA,BBA - Finance,135,135,2015,Spring 02,1
 SoB,BBA,BBA - General Management,20,20,2015,Spring 02,1
@@ -464,8 +464,8 @@ SESM,ESc,BSc - Environmental Management,2,2,2015,Spring 02,1
 SESM,EMgt,BSc - Environmental Science,7,7,2015,Spring 02,1
 SLS,SLS,BSc - Microbiology,14,14,2015,Spring 02,1
 SLASS,LAW,LLB - Laws (Hons),24,24,2015,Spring 02,1
-SLASS,Eng,BA - English Language Teaching,6,6,2016,Spring 02,1
-SLASS,Eng,BA - English Literature,8,8,2016,Spring 02,1
+SLASS,ENG,BA - English Language Teaching,6,6,2016,Spring 02,1
+SLASS,ENG,BA - English Literature,8,8,2016,Spring 02,1
 SoB,BBA,BBA - Accounting,69,69,2016,Spring 02,1
 SoB,BBA,BBA - Finance,61,61,2016,Spring 02,1
 SoB,BBA,BBA - General Management,21,21,2016,Spring 02,1
@@ -489,8 +489,8 @@ SESM,EMgt,BSc - Environmental Science,1,1,2016,Spring 02,1
 SECS,PhySci,BSc - Mathematics (Hons),1,1,2016,Spring 02,1
 SLS,SLS,BSc - Microbiology,10,10,2016,Spring 02,1
 SLASS,LAW,LLB - Laws (Hons),6,6,2016,Spring 02,1
-SLASS,Eng,BA - English Language Teaching,14,14,2017,Spring 02,1
-SLASS,Eng,BA - English Literature,13,13,2017,Spring 02,1
+SLASS,ENG,BA - English Language Teaching,14,14,2017,Spring 02,1
+SLASS,ENG,BA - English Literature,13,13,2017,Spring 02,1
 SoB,BBA,BBA - Accounting,85,85,2017,Spring 02,1
 SoB,BBA,BBA - Finance,108,108,2017,Spring 02,1
 SoB,BBA,BBA - General Management,70,70,2017,Spring 02,1
@@ -512,8 +512,8 @@ SESM,ESc,BSc - Environmental Science,14,14,2017,Spring 02,1
 SLS,SLS,BSc - Microbiology,24,24,2017,Spring 02,1
 SECS,PhySci,BSc - Physics (Hons),5,5,2017,Spring 02,1
 SLASS,LAW,LLB - Laws (Hons),13,13,2017,Spring 02,1
-SLASS,Eng,BA - English Language Teaching,13,13,2018,Spring 02,1
-SLASS,Eng,BA - English Literature,23,23,2018,Spring 02,1
+SLASS,ENG,BA - English Language Teaching,13,13,2018,Spring 02,1
+SLASS,ENG,BA - English Literature,23,23,2018,Spring 02,1
 SoB,BBA,BBA - Accounting,60,60,2018,Spring 02,1
 SoB,BBA,BBA - Finance,117,117,2018,Spring 02,1
 SoB,BBA,BBA - General Management,36,36,2018,Spring 02,1
@@ -563,8 +563,8 @@ SESM,ESc,BSc - Environmental Science,5,5,2019,Spring 02,1
 SECS,PhySci,BSc - Mathematics (Hons),2,2,2019,Spring 02,1
 SLS,SLS,BSc - Microbiology,22,22,2019,Spring 02,1
 SLASS,LAW,LLB - Laws (Hons),18,18,2019,Spring 02,1
-SLASS,Eng,BA - English Language Teaching,8,8,2013,Summer 01,2
-SLASS,Eng,BA - English Literature,11,11,2013,Summer 01,2
+SLASS,ENG,BA - English Language Teaching,8,8,2013,Summer 01,2
+SLASS,ENG,BA - English Literature,11,11,2013,Summer 01,2
 SoB,BBA,BBA - Accounting,129,129,2013,Summer 01,2
 SoB,BBA,BBA - Finance,199,199,2013,Summer 01,2
 SoB,BBA,BBA - General Management,14,14,2013,Summer 01,2
@@ -584,8 +584,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,26,26,2013,Summer 01
 SESM,EMgt,BSc - Environmental Science,3,3,2013,Summer 01,2
 SLS,SLS,BSc - Microbiology,16,16,2013,Summer 01,2
 SESM,POP,BSc - Population Environment,1,1,2013,Summer 01,2
-SLASS,Eng,BA - English Language Teaching,7,7,2014,Summer 01,2
-SLASS,Eng,BA - English Literature,8,8,2014,Summer 01,2
+SLASS,ENG,BA - English Language Teaching,7,7,2014,Summer 01,2
+SLASS,ENG,BA - English Literature,8,8,2014,Summer 01,2
 SoB,BBA,BBA - Accounting,196,196,2014,Summer 01,2
 SoB,BBA,BBA - Finance,239,239,2014,Summer 01,2
 SoB,BBA,BBA - General Management,25,25,2014,Summer 01,2
@@ -605,8 +605,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,26,26,2014,Summer 01
 SESM,ESc,BSc - Environmental Management,1,1,2014,Summer 01,2
 SESM,EMgt,BSc - Environmental Science,5,5,2014,Summer 01,2
 SLS,SLS,BSc - Microbiology,12,12,2014,Summer 01,2
-SLASS,Eng,BA - English Language Teaching,7,7,2015,Summer 01,2
-SLASS,Eng,BA - English Literature,7,7,2015,Summer 01,2
+SLASS,ENG,BA - English Language Teaching,7,7,2015,Summer 01,2
+SLASS,ENG,BA - English Literature,7,7,2015,Summer 01,2
 SoB,BBA,BBA - Accounting,135,135,2015,Summer 01,2
 SoB,BBA,BBA - Finance,143,143,2015,Summer 01,2
 SoB,BBA,BBA - General Management,19,19,2015,Summer 01,2
@@ -627,8 +627,8 @@ SESM,ESc,BSc - Environmental Management,2,2,2015,Summer 01,2
 SESM,EMgt,BSc - Environmental Science,8,8,2015,Summer 01,2
 SLS,SLS,BSc - Microbiology,9,9,2015,Summer 01,2
 SLASS,LAW,LLB - Laws (Hons),12,12,2015,Summer 01,2
-SLASS,Eng,BA - English Language Teaching,6,6,2016,Summer 01,2
-SLASS,Eng,BA - English Literature,13,13,2016,Summer 01,2
+SLASS,ENG,BA - English Language Teaching,6,6,2016,Summer 01,2
+SLASS,ENG,BA - English Literature,13,13,2016,Summer 01,2
 SoB,BBA,BBA - Accounting,69,69,2016,Summer 01,2
 SoB,BBA,BBA - Finance,102,102,2016,Summer 01,2
 SoB,BBA,BBA - General Management,32,32,2016,Summer 01,2
@@ -651,8 +651,8 @@ SECS,PhySci,BSc - Mathematics (Hons),2,2,2016,Summer 01,2
 SLS,SLS,BSc - Microbiology,13,13,2016,Summer 01,2
 SESM,POP,BSc - Population Environment,2,2,2016,Summer 01,2
 SLASS,LAW,LLB - Laws (Hons),9,9,2016,Summer 01,2
-SLASS,Eng,BA - English Language Teaching,12,12,2017,Summer 01,2
-SLASS,Eng,BA - English Literature,18,18,2017,Summer 01,2
+SLASS,ENG,BA - English Language Teaching,12,12,2017,Summer 01,2
+SLASS,ENG,BA - English Literature,18,18,2017,Summer 01,2
 SoB,BBA,BBA - Accounting,72,72,2017,Summer 01,2
 SoB,BBA,BBA - Finance,111,111,2017,Summer 01,2
 SoB,BBA,BBA - General Management,53,53,2017,Summer 01,2
@@ -743,8 +743,8 @@ SECS,EEE,BSc - Electrical and Electronic Engineering,17,17,2013,Summer 02,2
 SECS,EEE,BSc - Electronic and Telecommunication Engineering,4,4,2013,Summer 02,2
 SESM,EMgt,BSc - Environmental Science,1,1,2013,Summer 02,2
 SLS,SLS,BSc - Microbiology,4,4,2013,Summer 02,2
-SLASS,Eng,BA - English Language Teaching,2,2,2014,Summer 02,2
-SLASS,Eng,BA - English Literature,4,4,2014,Summer 02,2
+SLASS,ENG,BA - English Language Teaching,2,2,2014,Summer 02,2
+SLASS,ENG,BA - English Literature,4,4,2014,Summer 02,2
 SoB,BBA,BBA - Accounting,81,81,2014,Summer 02,2
 SoB,BBA,BBA - Finance,85,85,2014,Summer 02,2
 SoB,BBA,BBA - General Management,8,8,2014,Summer 02,2
@@ -762,8 +762,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,7,7,2014,Summer 02,2
 SESM,ESc,BSc - Environmental Management,1,1,2014,Summer 02,2
 SESM,EMgt,BSc - Environmental Science,1,1,2014,Summer 02,2
 SLS,SLS,BSc - Microbiology,4,4,2014,Summer 02,2
-SLASS,Eng,BA - English Language Teaching,1,1,2015,Summer 02,2
-SLASS,Eng,BA - English Literature,5,5,2015,Summer 02,2
+SLASS,ENG,BA - English Language Teaching,1,1,2015,Summer 02,2
+SLASS,ENG,BA - English Literature,5,5,2015,Summer 02,2
 SoB,BBA,BBA - Accounting,52,52,2015,Summer 02,2
 SoB,BBA,BBA - Finance,58,58,2015,Summer 02,2
 SoB,BBA,BBA - General Management,6,6,2015,Summer 02,2
@@ -783,8 +783,8 @@ SECS,EEE,BSc - Electronic and Telecommunication Engineering,5,5,2015,Summer 02,2
 SESM,EMgt,BSc - Environmental Science,1,1,2015,Summer 02,2
 SLS,SLS,BSc - Microbiology,3,3,2015,Summer 02,2
 SLASS,LAW,LLB - Laws (Hons),4,4,2015,Summer 02,2
-SLASS,Eng,BA - English Language Teaching,7,7,2016,Summer 02,2
-SLASS,Eng,BA - English Literature,2,2,2016,Summer 02,2
+SLASS,ENG,BA - English Language Teaching,7,7,2016,Summer 02,2
+SLASS,ENG,BA - English Literature,2,2,2016,Summer 02,2
 SoB,BBA,BBA - Accounting,66,66,2016,Summer 02,2
 SoB,BBA,BBA - Finance,58,58,2016,Summer 02,2
 SoB,BBA,BBA - General Management,15,15,2016,Summer 02,2
@@ -808,8 +808,8 @@ SLS,SLS,BSc - Microbiology,8,8,2016,Summer 02,2
 SECS,PhySci,BSc - Physics (Hons),2,2,2016,Summer 02,2
 SESM,POP,BSc - Population Environment,1,1,2016,Summer 02,2
 SLASS,LAW,LLB - Laws (Hons),9,9,2016,Summer 02,2
-SLASS,Eng,BA - English Language Teaching,5,5,2017,Summer 02,2
-SLASS,Eng,BA - English Literature,9,9,2017,Summer 02,2
+SLASS,ENG,BA - English Language Teaching,5,5,2017,Summer 02,2
+SLASS,ENG,BA - English Literature,9,9,2017,Summer 02,2
 SoB,BBA,BBA - Accounting,26,26,2017,Summer 02,2
 SoB,BBA,BBA - Finance,43,43,2017,Summer 02,2
 SoB,BBA,BBA - General Management,18,18,2017,Summer 02,2

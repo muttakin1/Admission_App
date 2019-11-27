@@ -9,6 +9,8 @@ $("#MajorWiseStudentsSECS").click(function (event) {
 
     let noofStd = response.datas
     Yearvalue = $("#focusYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
     //console.log(Yearvalue)
 
     let counterYearlyPHY= 0

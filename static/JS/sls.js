@@ -8,6 +8,8 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     //    console.log(response)
     let noofStd = response.datas
     Yearvalue = $("#focusYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
 
     let counterSLSAutumn=0
     let counterSLSSpring=0

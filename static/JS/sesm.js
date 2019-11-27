@@ -8,6 +8,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     //    console.log(response)
     let noofStd = response.datas
     Yearvalue = $("#focusYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
     console.log(Yearvalue)
 
     let counterSESMAutumn=0

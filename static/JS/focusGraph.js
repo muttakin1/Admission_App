@@ -7,7 +7,9 @@ $("#getFocusYear").click(function (event) {
     }).done(function (response) {
       
       Yearvalue = $("#focusYearVal").val()
-    
+      startYear =$("#startYearVal").val()
+      finishYear =$("#finishYearVal").val()
+      
       let noofStd = response.datas
       let counterSecs=0
       let counterSlass = 0

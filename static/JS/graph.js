@@ -6,8 +6,11 @@ $("#getline").click(function (event) {
       url: "/data/list"
     }).done(function (response) {
   
-      console.log(response)
+   
       let noofStd = response.datas
+
+      startYear =$("#startYearVal").val()
+      finishYear =$("#finishYearVal").val()
   
       let counter = 0
       let numberOfStd = []

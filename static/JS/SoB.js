@@ -1,5 +1,7 @@
+
 $("#SoB").click(function (event) {
 
+  
 
   $.ajax({
     method: "GET",
@@ -7,7 +9,8 @@ $("#SoB").click(function (event) {
   }).done(function (response) {
 
     Yearvalue = $("#focusYearVal").val()
-
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
     let noofStd = response.datas
 
     let counterBBAMis = 0
@@ -170,7 +173,7 @@ $("#SoB").click(function (event) {
 
 
 
-
+    
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
       type: 'pie',

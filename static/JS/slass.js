@@ -114,7 +114,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         }
         
 
-        if (item.year == i && item.Dept == "Eng" ||item.Dept == "ENG") {
+        if (item.year == i && item.Dept == "Eng" ) {
           counterDeptENG = counterDeptENG + Number(item.no_of_Student)
 
         }

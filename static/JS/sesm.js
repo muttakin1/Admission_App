@@ -52,7 +52,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         counterPopulation_Env = 0
       }
     //   Line graph
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart4');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -122,7 +122,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       });
 
     //   Area under the graph
-      var ctx = document.getElementById('myChart1');
+      var ctx = document.getElementById('myChart5');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {

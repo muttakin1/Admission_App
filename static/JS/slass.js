@@ -39,6 +39,15 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     let counterDeptMed = 0
     let counterDeptLaw = 0
 
+     // Yearly semester wise SLASS
+     let counterSpring = 0
+     let counterAutumn = 0
+     let counterSummer = 0
+ 
+     let numberAutumn=[]
+     let numberSpring=[]
+     let numberSummer=[] 
+
     let numberSlassDept=[]
     let numberSlass = []
 
@@ -159,6 +168,22 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           counterYearlyDeptLaw = counterYearlyDeptLaw + Number(item.no_of_Student)
         }
 
+          // Yearly semester wise SLASS
+          if (item.year == i  && item.Semester == "3" && item.School == "SLASS") {
+            counterAutumn = counterAutumn + Number(item.no_of_Student)
+  
+          }
+  
+          if (item.year == i  && item.Semester == "1" && item.School == "SLASS") {
+            counterSpring = counterSpring + Number(item.no_of_Student)
+  
+          }
+  
+          if (item.year == i  && item.Semester == "2" && item.School == "SLASS") {
+            counterSummer = counterSummer + Number(item.no_of_Student)
+  
+          }
+
 
       });
 
@@ -190,6 +215,11 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       numberOfDeptMed.push(counterDeptMed)
       numberOfDeptLaw.push(counterLaw)
 
+       // Yearly semester wise SLASS
+       numberAutumn.push(counterAutumn)
+       numberSpring.push(counterSpring)
+       numberSummer.push(counterSummer)
+
       counterYearlyDeptENG=0
       counterYearlyDeptSOC = 0
      counterYearlyDeptGSG = 0
@@ -214,6 +244,10 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       counterDeptGSG = 0
       counterDeptMed = 0
       counterLaw = 0
+
+      counterAutumn = 0
+      counterSpring = 0
+      counterSummer = 0
     }
 
 
@@ -703,6 +737,70 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         }
       }
     });
+
+    // Yearly semester wise SLASS
+    var ctx = document.getElementById('myChart6');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        datasets: [{
+          label: 'Autumn',
+          fill: false,
+          data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+          backgroundColor: ['rgba(155,187,89,1)',],
+          borderColor: [
+            'rgba(155,187,89,1)',
+
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Spring',
+          fill: false,
+          data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+          backgroundColor: ['rgba(79,129,189, 1)',],
+          borderColor: [
+            'rgba(79,129,189, 1)',
+
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Summer',
+          fill: false,
+          data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+          backgroundColor: ['rgba(192,80,77, 1)',],
+          borderColor: [
+            'rgba(192,80,77, 1)',
+
+          ],
+          borderWidth: 2
+        },
+
+        ]
+
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Yearly semester wise SLASS',
+          scales: {
+            xAxes: [{
+              stacked: true
+            }],
+            yAxes: [{
+              stacked: true,
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      }
+    });
+
+
 
   }).fail(function (response) {
     console.log(response.responseText);

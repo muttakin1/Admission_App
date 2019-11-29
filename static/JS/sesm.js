@@ -25,6 +25,16 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     let counterENV_management = 0
     let counterPopulation_Env = 0
 
+     // Yearly semester wise SESM
+     let counterSpring = 0
+     let counterAutumn = 0
+     let counterSummer = 0
+
+     let numberAutumn=[]
+     let numberSpring=[]
+     let numberSummer=[] 
+
+
     let numberSESMsemester=[]
     let numberYearlySESM=[]
     let numberOfPharmacy = []
@@ -81,7 +91,21 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           counterYearlyPopulation_Env = counterYearlyPharmacy + Number(item.no_of_Student)
         }
 
+         // Yearly semester wise SESM
+         if (item.year == i  && item.Semester == "3" && item.School == "SESM") {
+          counterAutumn = counterAutumn + Number(item.no_of_Student)
 
+        }
+
+        if (item.year == i  && item.Semester == "1" && item.School == "SESM") {
+          counterSpring = counterSpring + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i  && item.Semester == "2" && item.School == "SESM") {
+          counterSummer = counterSummer + Number(item.no_of_Student)
+
+        }
 
 
       });
@@ -100,6 +124,12 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       numberYearlySESM.push(counterYearlyPharmacy)
       numberYearlySESM.push(counterYearlyPopulation_Env)
 
+       // Yearly semester wise SESM
+       numberAutumn.push(counterAutumn)
+       numberSpring.push(counterSpring)
+       numberSummer.push(counterSummer)
+
+
       counterYearlyPharmacy = 0
       counterYearlyENV_management = 0
       counterYealryENV = 0
@@ -113,6 +143,10 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       counterSESMSummer=0
       counterSESMSpring=0
       counterSESMAutumn=0
+
+      counterAutumn = 0
+      counterSpring = 0
+      counterSummer = 0
     }
 
     var ctx = document.getElementById('myChart');
@@ -380,6 +414,68 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
       // }
     });
+
+     // Yearly semester wise SESM
+     var ctx = document.getElementById('myChart6');
+     var myChart = new Chart(ctx, {
+       type: 'bar',
+       data: {
+         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+         datasets: [{
+           label: 'Autumn',
+           fill: false,
+           data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+           backgroundColor: ['rgba(155,187,89,1)',],
+           borderColor: [
+             'rgba(155,187,89,1)',
+ 
+           ],
+           borderWidth: 2
+         },
+         {
+           label: 'Spring',
+           fill: false,
+           data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+           backgroundColor: ['rgba(79,129,189, 1)',],
+           borderColor: [
+             'rgba(79,129,189, 1)',
+ 
+           ],
+           borderWidth: 2
+         },
+         {
+           label: 'Summer',
+           fill: false,
+           data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+           backgroundColor: ['rgba(192,80,77, 1)',],
+           borderColor: [
+             'rgba(192,80,77, 1)',
+ 
+           ],
+           borderWidth: 2
+         },
+ 
+         ]
+ 
+       },
+       options: {
+         title: {
+           display: true,
+           text: 'Yearly semester wise SLASS',
+           scales: {
+             xAxes: [{
+               stacked: true
+             }],
+             yAxes: [{
+               stacked: true,
+               ticks: {
+                 beginAtZero: true
+               }
+             }]
+           }
+         }
+       }
+     });
 
 
 

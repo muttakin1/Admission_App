@@ -220,11 +220,11 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
        numberSpring.push(counterSpring)
        numberSummer.push(counterSummer)
 
-      counterYearlyDeptENG=0
+      counterYearlyDeptENG = 0
       counterYearlyDeptSOC = 0
-     counterYearlyDeptGSG = 0
-       counterYearlyDeptMed = 0
-       counterYearlyDeptLaw = 0
+      counterYearlyDeptGSG = 0
+      counterYearlyDeptMed = 0
+      counterYearlyDeptLaw = 0
       counterYearlyAnt = 0
       counterYearlyEngLang = 0
       counterYearlyEngLit = 0

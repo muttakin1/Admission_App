@@ -663,6 +663,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
       }
     });
 
+    // Yearly semester wise SECS
     var ctx = document.getElementById('myChart6');
     var myChart = new Chart(ctx, {
       type: 'bar',

@@ -13,6 +13,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
     finishYear =$("#finishYearVal").val()
     //console.log(Yearvalue)
 
+     // Focus year graphs, Majors
     let counterYearlyPHY= 0
     let counterYearlyCSE = 0
     let counterYearlyCE = 0
@@ -20,10 +21,13 @@ $("#MajorWiseStudentsSECS").click(function (event) {
     let counterYearlyETE = 0
     let counterYearlyMATH = 0
     let counterYearlyCS = 0
+
+     // Focus year graphs, Departments
     let counterYearlyDeptCSE=0
     let counterYearlyDeptEEE=0
     let counterYearlyDeptPS=0
     
+     // Major wise Students' interest @ SECS
     let counterCE = 0
     let counterCSE = 0
     let counterETE = 0
@@ -31,12 +35,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
     let counterCS = 0
     let counterEEE = 0
     let countermaths = 0
-    let counterDeptCSE = 0
-    let counterDeptEEE = 0
-    let counterDeptPhySci = 0
 
-    let numberDept=[]
-    let numberSECS = []
     let numberOfCE = []
     let numberOfmaths = []
     let numberOfCSE = []
@@ -44,12 +43,34 @@ $("#MajorWiseStudentsSECS").click(function (event) {
     let numberOfPhy = []
     let numberOfCS = []
     let numberOfEEE = []
+
+     // Department graphs
+    let counterDeptCSE = 0
+    let counterDeptEEE = 0
+    let counterDeptPhySci = 0
+
     let numberOfDeptCSE = []
     let numberOfDeptEEE = []
     let numberOfDeptPhySci = []
 
+    // Yearly semester wise SECS
+    let counterSpring = 0
+    let counterAutumn = 0
+    let counterSummer = 0
+
+    let numberAutumn=[]
+    let numberSpring=[]
+    let numberSummer=[]   
+
+    // Eita ki?
+    let numberDept=[]
+    let numberSECS = []
+   
+   
+
     for (let i = 2013; i <= 2019; i++) {
       noofStd.forEach((item, index) => {
+        // Major wise Student's interest @ SECS
         if (item.year == i && item.Major == "BSc - Computer Engineering") {
           counterCE = counterCE + Number(item.no_of_Student)
 
@@ -108,6 +129,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
           counterYearlyMATH = counterYearlyMATH + Number(item.no_of_Student)
         }
 
+        // SECS Department
         if (item.year == i && item.Dept == "CSE") {
           counterDeptCSE = counterDeptCSE + Number(item.no_of_Student)
 
@@ -121,6 +143,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
           counterDeptPhySci = counterDeptPhySci + Number(item.no_of_Student)
         }
 
+        // Focus year graphs
         if (item.year == Yearvalue && item.Dept == "CSE") {
           counterYearlyDeptCSE= counterYearlyDeptCSE + Number(item.no_of_Student)
 
@@ -134,9 +157,26 @@ $("#MajorWiseStudentsSECS").click(function (event) {
           counterYearlyDeptPS = counterYearlyDeptPS + Number(item.no_of_Student)
         }
 
+        // Yearly semester wise SECS
+        if (item.year == i  && item.Semester == "3" && item.School == "SECS") {
+          counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i  && item.Semester == "1" && item.School == "SECS") {
+          counterSpring = counterSpring + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i  && item.Semester == "2" && item.School == "SECS") {
+          counterSummer = counterSummer + Number(item.no_of_Student)
+
+        }
+
 
       });
 
+      // Focus year graphs, Majors
       numberSECS.push(counterYearlyCE)
       numberSECS.push(counterYearlyCS)
       numberSECS.push(counterYearlyCSE)
@@ -145,10 +185,12 @@ $("#MajorWiseStudentsSECS").click(function (event) {
       numberSECS.push(counterYearlyMATH)
       numberSECS.push(counterYearlyPHY)
 
+      // Focus year graphs, Departments
       numberDept.push(counterYearlyDeptCSE)
       numberDept.push(counterYearlyDeptEEE)
       numberDept.push(counterYearlyDeptPS)
 
+      // Major wise Students' interest @ SECS
       numberOfCE.push(counterCE)
       numberOfEEE.push(counterEEE)
       numberOfETE.push(counterETE)
@@ -156,18 +198,28 @@ $("#MajorWiseStudentsSECS").click(function (event) {
       numberOfPhy.push(counterPhy)
       numberOfmaths.push(countermaths)
       numberOfCS.push(counterCS)
+
+      // Department graphs
       numberOfDeptCSE.push(counterDeptCSE)
       numberOfDeptEEE.push(counterDeptEEE)
       numberOfDeptPhySci.push(counterDeptPhySci)
-      counterYearlyDeptCSE=0
-      counterYearlyDeptEEE=0
-      counterYearlyDeptPS=0
-       counterYearlyPHY= 0
-       counterYearlyCSE = 0
-       counterYearlyCE = 0
-       counterYearlyEEE = 0
-       counterYearlyETE = 0
-       counterYearlyMATH = 0
+
+      // Yearly semester wise SECS
+      numberAutumn.push(counterAutumn)
+      numberSpring.push(counterSpring)
+      numberSummer.push(counterSummer)   
+
+
+      // reinitializing the counter
+      counterYearlyDeptCSE = 0
+      counterYearlyDeptEEE = 0
+      counterYearlyDeptPS = 0
+      counterYearlyPHY = 0
+      counterYearlyCSE = 0
+      counterYearlyCE = 0
+      counterYearlyEEE = 0
+      counterYearlyETE = 0
+      counterYearlyMATH = 0
       counterYearlyCS = 0
       counterCE = 0
       counterEEE = 0
@@ -179,8 +231,12 @@ $("#MajorWiseStudentsSECS").click(function (event) {
       counterDeptCSE = 0
       counterDeptEEE = 0
       counterDeptPhySci = 0
+      counterAutumn = 0
+      counterSpring = 0
+      counterSummer = 0
     }
- 
+    
+    // Focus year graphs
     var ctx = document.getElementById('myChart');
       var myChart = new Chart(ctx, {
         type: 'pie',
@@ -284,8 +340,8 @@ $("#MajorWiseStudentsSECS").click(function (event) {
           
         }
       });
+
     //   Line graph
-    
     var ctx = document.getElementById('myChart2');
     var myChart = new Chart(ctx, {
       type: 'line',
@@ -592,6 +648,67 @@ $("#MajorWiseStudentsSECS").click(function (event) {
         title: {
           display: true,
           text: 'SECS Departments',
+          scales: {
+            xAxes: [{
+              stacked: true
+            }],
+            yAxes: [{
+              stacked: true,
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      }
+    });
+
+    var ctx = document.getElementById('myChart6');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        datasets: [{
+          label: 'Autumn',
+          fill: false,
+          data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+          backgroundColor: ['rgba(155,187,89,1)',],
+          borderColor: [
+            'rgba(155,187,89,1)',
+
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Spring',
+          fill: false,
+          data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+          backgroundColor: ['rgba(79,129,189, 1)',],
+          borderColor: [
+            'rgba(79,129,189, 1)',
+
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Summer',
+          fill: false,
+          data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+          backgroundColor: ['rgba(192,80,77, 1)',],
+          borderColor: [
+            'rgba(192,80,77, 1)',
+
+          ],
+          borderWidth: 2
+        },
+
+        ]
+
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Yearly semester wise SECS',
           scales: {
             xAxes: [{
               stacked: true

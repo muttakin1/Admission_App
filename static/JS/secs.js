@@ -70,6 +70,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
 
     for (let i = 2013; i <= 2019; i++) {
       noofStd.forEach((item, index) => {
+        
         // Major wise Student's interest @ SECS
         if (item.year == i && item.Major == "BSc - Computer Engineering") {
           counterCE = counterCE + Number(item.no_of_Student)

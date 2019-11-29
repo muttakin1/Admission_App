@@ -11,6 +11,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     startYear =$("#startYearVal").val()
     finishYear =$("#finishYearVal").val()
 
+     // Focus year graphs, Majors
     let counterYearlyEngLang = 0
     let counterYearlyAnt = 0
     let counterYearlyMedia_Com = 0
@@ -19,13 +20,14 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     let counterYearlyGSG = 0
     let counterYearlySOC = 0
 
+      // Focus year graphs, Departments
     let counterYearlyDeptENG=0
     let counterYearlyDeptSOC = 0
     let counterYearlyDeptGSG = 0
     let counterYearlyDeptMed = 0
     let counterYearlyDeptLaw = 0
 
-
+     // Major wise Students' interest @ SLASS
     let counterEngTrainingLang = 0
     let counterANT = 0
     let counterMedia_Com = 0
@@ -33,11 +35,27 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     let counterEngLit = 0
     let counterGSG = 0
     let counterSOC = 0
+
+    let numberOfEngTrainingLang = []
+    let numberOfSOC = []
+    let numberOfANT = []
+    let numberOfMedia_Com = []
+    let numberOfLaw = []
+    let numberOfEngLit = []
+    let numberOfGSG = []
+
+    // Department graphs
     let counterDeptENG = 0
     let counterDeptSOC = 0
     let counterDeptGSG = 0
     let counterDeptMed = 0
     let counterDeptLaw = 0
+
+    let numberOfDeptENG = []
+    let numberOfDeptSOC = []
+    let numberOfDeptGSG = []
+    let numberOfDeptMed = []
+    let numberOfDeptLaw = []
 
     // Yearly semester wise SLASS
     let counterSpring = 0
@@ -51,21 +69,13 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     let numberSlassDept=[]
     let numberSlass = []
 
-    let numberOfEngTrainingLang = []
-    let numberOfSOC = []
-    let numberOfANT = []
-    let numberOfMedia_Com = []
-    let numberOfLaw = []
-    let numberOfEngLit = []
-    let numberOfGSG = []
-    let numberOfDeptENG = []
-    let numberOfDeptSOC = []
-    let numberOfDeptGSG = []
-    let numberOfDeptMed = []
-    let numberOfDeptLaw = []
+   
+   
 
     for (let i = 2013; i <= 2019; i++) {
       noofStd.forEach((item, index) => {
+        
+         // Major wise Student's interest @ SECS
         if (item.year == i && item.Major == "BA - English Language Teaching") {
           counterEngTrainingLang = counterEngTrainingLang + Number(item.no_of_Student)
           // console.log(counterEngTrainingLang)
@@ -124,7 +134,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           counterYearlySOC = counterYearlySOC + Number(item.no_of_Student)
         }
         
-
+         // SECS Department
         if (item.year == i && item.Dept == "Eng" ) {
           counterDeptENG = counterDeptENG + Number(item.no_of_Student)
 
@@ -146,7 +156,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           counterDeptLaw = counterDeptLaw + Number(item.no_of_Student)
         }
 
-
+        // Focus year graphs
         if (item.year == Yearvalue && item.Dept == "Eng" ||item.Dept == "ENG" ) {
           counterYearlyDeptENG = counterYearlyDeptENG + Number(item.no_of_Student)
 
@@ -187,13 +197,14 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
       });
 
+       // Focus year graphs, Departments
       numberSlassDept.push(counterYearlyDeptENG)
       numberSlassDept.push(counterYearlyDeptGSG)
       numberSlassDept.push(counterYearlyDeptLaw)
       numberSlassDept.push(counterYearlyDeptMed)
       numberSlassDept.push(counterYearlyDeptSOC)
      
-      
+       // Focus year graphs, Majors
       numberSlass.push(counterYearlyAnt)
       numberSlass.push(counterYearlyEngLang)
       numberSlass.push(counterYearlyEngLit)
@@ -202,6 +213,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       numberSlass.push(counterYearlyMedia_Com)
       numberSlass.push(counterYearlySOC)
      
+       // Major wise Students' interest @ SECS
       numberOfEngTrainingLang.push(counterEngTrainingLang)
       numberOfGSG.push(counterGSG)
       numberOfMedia_Com.push(counterMedia_Com)
@@ -209,6 +221,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       numberOfLaw.push(counterLaw)
       numberOfSOC.push(counterSOC)
       numberOfEngLit.push(counterEngLit)
+
+       // Department graphs
       numberOfDeptENG.push(counterDeptENG)
       numberOfDeptSOC.push(counterDeptSOC)
       numberOfDeptGSG.push(counterDeptGSG)
@@ -220,6 +234,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
        numberSpring.push(counterSpring)
        numberSummer.push(counterSummer)
 
+      // reinitializing the counter
       counterYearlyDeptENG = 0
       counterYearlyDeptSOC = 0
       counterYearlyDeptGSG = 0

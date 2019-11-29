@@ -20,10 +20,16 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     let counterYearlyENV_management = 0
     let counterYearlyPopulation_Env = 0
 
+    // Major wise Students' interest @ SESM
     let counterPharmacy = 0
     let counterENV = 0
     let counterENV_management = 0
     let counterPopulation_Env = 0
+
+    let numberOfPharmacy = []
+    let numberOfENV = []
+    let numberOfENV_management = []
+    let numberOfPoplation_Env = []
 
      // Yearly semester wise SESM
      let counterSpring = 0
@@ -37,10 +43,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
     let numberSESMsemester=[]
     let numberYearlySESM=[]
-    let numberOfPharmacy = []
-    let numberOfENV = []
-    let numberOfENV_management = []
-    let numberOfPoplation_Env = []
+    
 
 
     for (let i = 2013; i <= 2019; i++) {
@@ -57,6 +60,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           counterSESMSummer = counterSESMSummer + Number(item.no_of_Student)
         }
 
+         // Major wise Student's interest @ SESM
         if (item.year == i && item.Major == "B.Pharm - Pharmacy") {
           counterPharmacy = counterPharmacy + Number(item.no_of_Student)
 
@@ -114,6 +118,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       numberSESMsemester.push(counterSESMSpring)
       numberSESMsemester.push(counterSESMSummer)
       
+      // Major wise Students' interest @ SECS
       numberOfPharmacy.push(counterPharmacy)
       numberOfENV_management.push(counterENV_management)
       numberOfENV.push(counterENV)
@@ -129,7 +134,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
        numberSpring.push(counterSpring)
        numberSummer.push(counterSummer)
 
-
+       // reinitializing the counter
       counterYearlyPharmacy = 0
       counterYearlyENV_management = 0
       counterYealryENV = 0

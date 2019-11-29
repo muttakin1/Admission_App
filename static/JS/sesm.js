@@ -461,7 +461,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
        options: {
          title: {
            display: true,
-           text: 'Yearly semester wise SLASS',
+           text: 'Yearly semester wise SESM',
            scales: {
              xAxes: [{
                stacked: true

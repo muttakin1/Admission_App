@@ -39,14 +39,14 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     let counterDeptMed = 0
     let counterDeptLaw = 0
 
-     // Yearly semester wise SLASS
-     let counterSpring = 0
-     let counterAutumn = 0
-     let counterSummer = 0
- 
-     let numberAutumn=[]
-     let numberSpring=[]
-     let numberSummer=[] 
+    // Yearly semester wise SLASS
+    let counterSpring = 0
+    let counterAutumn = 0
+    let counterSummer = 0
+
+    let numberAutumn = []
+    let numberSpring = []
+    let numberSummer = [] 
 
     let numberSlassDept=[]
     let numberSlass = []
@@ -168,21 +168,21 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           counterYearlyDeptLaw = counterYearlyDeptLaw + Number(item.no_of_Student)
         }
 
-          // Yearly semester wise SLASS
-          if (item.year == i  && item.Semester == "3" && item.School == "SLASS") {
-            counterAutumn = counterAutumn + Number(item.no_of_Student)
-  
-          }
-  
-          if (item.year == i  && item.Semester == "1" && item.School == "SLASS") {
-            counterSpring = counterSpring + Number(item.no_of_Student)
-  
-          }
-  
-          if (item.year == i  && item.Semester == "2" && item.School == "SLASS") {
-            counterSummer = counterSummer + Number(item.no_of_Student)
-  
-          }
+        // Yearly semester wise SLASS
+        if (item.year == i && item.Semester == "3" && item.School == "SLASS") {
+          counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i && item.Semester == "1" && item.School == "SLASS") {
+          counterSpring = counterSpring + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i && item.Semester == "2" && item.School == "SLASS") {
+          counterSummer = counterSummer + Number(item.no_of_Student)
+
+        }
 
 
       });

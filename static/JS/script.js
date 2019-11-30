@@ -85,6 +85,74 @@ function divide(){  //START OF JS
 		};
 		console.log(admissionInputData);
 		
-
+   
 	
 }
+
+
+// $('#cmd').click(function () {   
+  function print() {
+    var doc = new jsPDF('portrait');
+    var elementHTML = $('#content').html();
+    var specialElementHandlers = {
+        '#elementH': function (element, renderer) {
+            return true;
+        }
+    };
+    doc.fromHTML(elementHTML, 15, 15, {
+        'width': 170,
+        'elementHandlers': specialElementHandlers
+    });
+    
+   
+    
+
+  //});
+
+// Variant
+// This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
+
+  var newCanvas = document.querySelector('#myChart');
+  var newCanvas1 = document.querySelector('#myChart1');
+  var newCanvas2 = document.querySelector('#myChart2');
+  var newCanvas3 = document.querySelector('#myChart3');
+  var newCanvas4 = document.querySelector('#myChart4');
+  var newCanvas5 = document.querySelector('#myChart5');
+  var newCanvas6 = document.querySelector('#myChart6');
+  var newCanvas7 = document.querySelector('#myChart7');
+  
+  
+  
+  //create image from dummy canvas
+  var newCanvasImg = newCanvas.toDataURL("image/png", "image/octet-stream");
+  var newCanvasImg1 = newCanvas1.toDataURL("image/png", "image/octet-stream");
+  var newCanvasImg2 = newCanvas2.toDataURL("image/png", "image/octet-stream");
+  var newCanvasImg3 = newCanvas3.toDataURL("image/png", "image/octet-stream");
+  var newCanvasImg4 = newCanvas4.toDataURL("image/png", "image/octet-stream");
+  var newCanvasImg5 = newCanvas5.toDataURL("image/png", "image/octet-stream");
+  var newCanvasImg6 = newCanvas6.toDataURL("image/png", "image/octet-stream");
+  var newCanvasImg7 = newCanvas7.toDataURL("image/png", "image/octet-stream");
+ 
+  
+    //creates PDF from img
+  
+  doc.setFontSize(20);
+  doc.text(15, 15, "Super Cool Chart");
+  doc.addImage(newCanvasImg, 'JPEG', 40, 35, 135, 100 );
+  doc.addImage(newCanvasImg1, 'JPEG', 40, 145, 135, 100 );
+  doc.addPage();
+
+  doc.addImage(newCanvasImg2, 'JPEG', 40, 35, 135, 100 );
+  doc.addImage(newCanvasImg3, 'JPEG', 40, 145, 135, 100 );
+  doc.addPage();
+  doc.addImage(newCanvasImg4, 'JPEG', 40, 35, 135, 100 );
+  doc.addImage(newCanvasImg5, 'JPEG', 40, 145, 135, 100 );
+  doc.addPage();
+  doc.addImage(newCanvasImg6, 'JPEG', 40, 35, 135, 100 );
+  doc.addImage(newCanvasImg7, 'JPEG', 40, 145, 135, 100 );
+  
+   // Save the PDF
+  doc.save('Report.pdf');
+ 
+  }
+

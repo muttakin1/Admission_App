@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
 
 </head>
 
@@ -104,9 +104,12 @@
             <input type="text" class="form-control" id="finishYearVal" placeholder="Input Finish year"
                 aria-label="Username" aria-describedby="basic-addon1">
             <input class="btn btn-primary" type="button" id="getFocusYear" value="Get">
+            <input class="btn btn-primary" type="button" id="cmd" onclick="print()"value="downloadPDF2">
+            
         </div>
 
-        <div id="graph-container" style="height:60%; width:60%">
+        <div id="content" style="height:60%; width:60%">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus debitis officiis incidunt, earum adipisci optio aliquam dolorum aspernatur iste voluptate architecto fuga in modi assumenda esse labore eum, iure odit?</p>
             <canvas id="myChart" width="400" height="400"></canvas>
             <canvas id="myChart1" width="400" height="400"></canvas>
             <canvas id="myChart2" width="400" height="400"></canvas>
@@ -116,6 +119,8 @@
             <canvas id="myChart6" width="400" height="400"></canvas>
             <canvas id="myChart7" width="400" height="400"></canvas>
         </div>
+        <div id="elementH"></div>
+        
     </div>
 
 
@@ -133,7 +138,7 @@
             document.body.style.backgroundColor = "white";
         }
     </script>
-
+    <script type="text/javascript" src="../static/JS/script.js"></script>
     <script type="text/javascript" src="../static/JS/SoB.js"></script>
     <script type="text/javascript" src="../static/JS/graph.js"></script>
     <script type="text/javascript" src="../static/JS/focusGraph.js"></script>

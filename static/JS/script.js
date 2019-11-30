@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+  $("#content").hide()
+});
 var admissionData = {
   School: $('#schoolN').val(),
   Department: $('#deptN').val(),
@@ -152,3 +155,6 @@ function divide(){  //START OF JS
  
   }
 
+function editText() {
+  $("#content").show() 
+}

@@ -1,5 +1,5 @@
 // Major Wise students' interest @ SECS LINE
-$("#MajorWiseStudentsSECS").click(function (event) {
+function secsGraphs(event) {
 
   $.ajax({
     method: "GET",
@@ -11,7 +11,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
     Yearvalue = $("#focusYearVal").val()
     startYear =$("#startYearVal").val()
     finishYear =$("#finishYearVal").val()
-    //console.log(Yearvalue)
+    console.log(Yearvalue)
 
      // Focus year graphs, Majors
     let counterYearlyPHY= 0
@@ -732,6 +732,6 @@ $("#MajorWiseStudentsSECS").click(function (event) {
 
 
 
-})
+}
 
 

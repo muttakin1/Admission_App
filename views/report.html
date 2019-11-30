@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Graphs</title>
+    <title>Form Reports</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
@@ -80,7 +80,7 @@
         <input class="btn btn-primary" type="button" id="OtherWise" value="Other School Wise Interest over the years">
         <input class="btn btn-primary" type="button" id="barSchoolWise"
             value="School Wise Interest over the years, BAR">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" value="SECS Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick="secsGraphs()" value="SECS Graphs">
         <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" value="SLASS Graphs">
         <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" value="SESM Graphs">
         <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" value="SLS Graphs">
@@ -106,11 +106,18 @@
                 aria-label="Username" aria-describedby="basic-addon1">
             <input class="btn btn-primary" type="button" id="getFocusYear" value="Get">
             <input class="btn btn-primary" type="button" id="cmd" onclick="print()"value="download PDF">
+            <input class="btn btn-primary" type="button" id="cmd" onclick="editText()"value="Edit PDF Text">
             
         </div>
 
         <div id="content" style="height:60%; width:60%">
-         
+            <div class="form-group">
+                <label for="comment">Edit Pdf Texts:</label>
+                <textarea class="form-control" rows="5" id="comment">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus debitis officiis incidunt, earum adipisci optio aliquam dolorum aspernatur iste voluptate architecto fuga in modi assumenda esse labore eum, iure odit?
+                </textarea>
+              </div>
+           
             <canvas id="myChart" width="400" height="400"></canvas>
             <canvas id="myChart1" width="400" height="400"></canvas>
             <canvas id="myChart2" width="400" height="400"></canvas>

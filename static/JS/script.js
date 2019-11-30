@@ -99,7 +99,7 @@ function divide(){  //START OF JS
     console.log("hello")
     // Gets texts from the div and saves it in pdf 
     var doc = new jsPDF('portrait');
-    var elementHTML = $('#content').html();
+    var elementHTML = $('#comment').html();
     var specialElementHandlers = {
         '#elementH': function (element, renderer) {
             return true;

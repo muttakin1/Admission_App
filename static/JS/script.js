@@ -90,8 +90,9 @@ function divide(){  //START OF JS
 }
 
 
-// $('#cmd').click(function () {   
+//Generate pdf 
   function print() {
+    // Gets texts from the div and saves it in pdf 
     var doc = new jsPDF('portrait');
     var elementHTML = $('#content').html();
     var specialElementHandlers = {
@@ -150,7 +151,7 @@ function divide(){  //START OF JS
   doc.addPage();
   doc.addImage(newCanvasImg6, 'JPEG', 40, 35, 135, 100 );
   doc.addImage(newCanvasImg7, 'JPEG', 40, 145, 135, 100 );
-  
+
    // Save the PDF
   doc.save('Report.pdf');
  

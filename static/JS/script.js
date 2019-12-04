@@ -44,54 +44,167 @@ $("#getdata").click(function (event) {
 
 })
 function divide(){  //START OF JS
-		
-		
-	var lines = document.getElementById("dataInput").value.split("\n");  // THE INPUT FROM HTML
-	var texts = [];				 // SAVING THE SPLITED STRING IN THIS VARIABLE
-	var dept = [];  			 // SAVING THE SPLITED DEPT IN THIS VARIABLE
-	var major = [];				 // SAVING THE SPLITED major IN THIS VARIABLE
-	var count= [];				 // SAVING THE SPLITED count IN THIS VARIABLE
-	var paid_count= [];			 // SAVING THE SPLITED paid_count IN THIS VARIABLE
-  var yearNo=$("#yearNo").val()
-  var semesterNO=$("#semesterNum").val()
-  var semesterSlotNo=$("#semesterSlotNum").val()
-  //console.log(yearNo+semesterNO+semesterSlotNo)
-	
-		
-		for (var i=0; i < lines.length; i++) {   //STRUPPING ANY EXTRA NEW LINE EXCEPT THE VALUE
-		if (/\S/.test(lines[i])) {
-			texts.push(lines[i]);
-		  }
-		}
-	 //document.getElementById("demo").innerHTML = texts; //PRINTING THE SPLITED LINES IN HTML/ SCREEN 
-
-	/* 	THIS IS WHERE THE MAGIC HAPPENS SO PLEASE DON'T ASK ME WHAT IS HAPPENING HERE*/
-		for (var i=0;i<texts.length; i++) {
- //console.log("split data1:" + texts[i]);
-			var split_dept = texts[i].split("-");
-			dept.push(split_dept[0]);
-			var split_dept2= split_dept[1].split("   ");
-			major.push(split_dept2[0]);
-			count.push(split_dept2[1].trim());
-			paid_count.push(split_dept2[2].trim());
-			//console.log("split data2:" +split_dept2 +" ---split data2 array:" + split_dept2[1] );
-		}
-	
-		
-		// TRYING TO MAKE AN OBJECT HERE --- START
-		
-		
-		
-		var admissionInputData = new Object();
-		
-		for (var i = 0; i < texts.length; i++) {
-			admissionInputData[i] = ({year:yearNo,semester_SlotNo:semesterSlotNo,semester_no:semesterNO, dept:dept[i],major:major[i],count:count[i],paid_count:paid_count[i]});
-		};
-		console.log(admissionInputData);
-		
-   
-	
+    //START CHECKING IF DATA INPUT IS EMPTY
+if(document.getElementById("inputYear").value !="none"){
+  document.getElementById("span_inputYear").innerHTML = "";
+  if(document.getElementById("semester").value !="none"){
+    document.getElementById("span_semester").innerHTML = "";
+    if(document.getElementById("ta_inputData").value.trim()){
+      document.getElementById("span_btn_inputData").innerHTML ="";
+      
+      var lines = document.getElementById("ta_inputData").value.split("\n");  // THE INPUT FROM HTML
+      var texts = [];				 // SAVING THE SPLITED STRING IN THIS VARIABLE
+      var dept = [];  			 // SAVING THE SPLITED DEPT IN THIS VARIABLE
+      var major = [];				 // SAVING THE SPLITED major IN THIS VARIABLE
+      var count= [];				 // SAVING THE SPLITED count IN THIS VARIABLE
+      var paid_count= [];			 // SAVING THE SPLITED paid_count IN THIS VARIABLE
+      var arr = [];	
+      var school = [];
+      var year=	document.getElementById("inputYear").value;
+      var semSlot=document.getElementById("semester").value.split(" ");
+      var semester=semSlot[0];
+      var slot=semSlot[1];
+        
+        for (var i=0; i < lines.length; i++) {   //STRIPPING ANY EXTRA NEW LINE EXCEPT THE VALUE
+        if (/\S/.test(lines[i])) {
+          texts.push(lines[i]);
+          }
+        }
+      /*  document.getElementById("demo").innerHTML = texts; //PRINTING THE SPLITED LINES IN HTML/ SCREEN  */
+    
+      /* 	THIS IS WHERE THE MAGIC HAPPENS SO PLEASE DON'T ASK ME WHAT IS HAPPENING HERE*/
+        for (var i=0;i<texts.length; i++) {
+        //console    console.log("TEXT DATA:" + texts[i]);
+          var split_dept = texts[i].split("-");
+         //console  console.log("DEPT DATA AFTER SPLIT:" + split_dept);
+          dept.push(split_dept[0]);
+        //console  console.log("DEPT DATA AFTER PUSH:" + split_dept);
+          var split_dept2= split_dept[1].split("  ");
+       //console   console.log("Major DATA AFTER SPLIT:" + split_dept2);
+          major.push(split_dept2[0]);
+        //console  console.log("Major DATA AFTER PUSH:" + major);
+          var split_dept2= split_dept[1].split("  ");
+      //console    console.log("Count DATA AFTER SPLIT:" + split_dept);
+          count.push(split_dept2[1].trim());
+     //console     console.log("Count DATA AFTER PUSH:" + split_dept);
+      //console    console.log("Paid Count DATA AFTER SPLIT:" + split_dept);
+          paid_count.push(split_dept2[2].trim());
+     //console     console.log("Paid Count DATA AFTER PUSH:" + split_dept);
+          /* console.log("split data2:" +split_dept2 +" ---split data2 array:" + split_dept2[1] );//console */
+        }
+      
+        
+        //PRINTING EVERYTHING IN HTML/ SCREEN 
+      /* 	document.getElementById("demo2").innerHTML = "dept: " + dept;	
+        document.getElementById("demo3").innerHTML = "major: " + major;	
+        document.getElementById("demo4").innerHTML ="count: " + count;	 
+        document.getElementById("demo5").innerHTML = "paid count: " + paid_count;	 //  EnglishLanguageTeaching */
+          
+    
+    
+        
+        //Differentiating school based on dept START
+          for(var j=0;j<major.length;j++){
+         //console   console.log("modiMajor:" + major.length);
+            var modiMajor=major[j].trim();
+          //console  console.log("modiMajor:" + modiMajor);
+            if(modiMajor!=" " || modiMajor!=null || modiMajor!=undefined){
+              if(modiMajor=="Pharmacy") school.push("SESM");//DONE
+              else if(modiMajor=="English Language Teaching") school.push("SLASS");//DONE
+              else if(modiMajor=="English Literature") school.push("SLASS");//DONE
+              else if(modiMajor=="Anthropology") school.push("SLASS");//DONE
+              else if(modiMajor=="Accounting") school.push("SB");//DONE
+              else if(modiMajor=="Global Studiesand Governance") school.push("SLASS");//DONE
+              else if(modiMajor=="Finance") school.push("SB");//DONE
+              else if(modiMajor=="General Management") school.push("SB"); //DONE
+              else if(modiMajor=="Human Resources Management") school.push("SB"); //DONE
+              else if(modiMajor=="International Business") school.push("SB");//DONE
+              else if(modiMajor=="Investment Management") school.push("SB");//DONE
+              else if(modiMajor=="Management Information Systems") school.push("SB");//DONE
+              else if(modiMajor=="Marketing") school.push("SB");//DONE
+              else if(modiMajor=="Mediaand Communication") school.push("SLASS");//DONE
+              else if(modiMajor=="Sociology") school.push("SLASS");//DONE
+              else if(modiMajor=="Biochemistry and Biotechnology") school.push("SLS");//DONE
+              else if(modiMajor=="Biochemistry") school.push("SLS");//DONE
+              else if(modiMajor=="Computer Engineering") school.push("SECS");//DONE
+              else if(modiMajor=="Computer Science") school.push("SECS");//DONE
+              else if(modiMajor=="Computer Scienceand Engineering") school.push("SECS");//DONE
+              else if(modiMajor=="Economics") school.push("SB");//DONE
+              else if(modiMajor=="Electrical and Electronic Engineering") school.push("SECS");//DONE
+              else if(modiMajor=="Electronic and Telecommunication Engineering") school.push("SECS");//DONE
+              else if(modiMajor=="Environmental Management") school.push("SESM"); //DONE
+              else if(modiMajor=="Environmental Science") school.push("SESM");  //DONE
+              else if(modiMajor=="Microbiology") school.push("SLS");//DONE
+              else if(modiMajor=="Physics(Hons)") school.push("SECS"); //DONE
+              else if(modiMajor=="Mathematics") school.push("SECS"); //DONE
+              else if(modiMajor=="Population Environment") school.push("SESM"); //DONE
+              else if(modiMajor=="Laws(Hons)") school.push("SLASS");//DONE
+              else school.push("OTHERS");//DONE
+            }
+          }
+           //CHECKING EVERYTHING IN CONSOLE LOG
+           console.log("dept:" + dept);
+           console.log("major:" + major);
+           console.log("count:" + count);
+           console.log("paid count:" + paid_count);
+           console.log("year:" + year);
+           console.log("semester:" + semester);
+           console.log("slot:" + slot);
+           console.log("School" + school);	
+          
+        
+        //Differentiating school based on dept END
+        
+        //CLEARING ALL THE FIELDS START
+        document.getElementById("inputYear").value = "none";
+        document.getElementById("semester").value = "none";
+        document.getElementById("ta_inputData").value =" ";
+        document.getElementById("span_SuccessMsg").innerHTML = "SAVED SUCCESSFULLY";
+        setTimeout(function(){ 
+        document.getElementById("span_SuccessMsg").innerHTML = " ";
+      }, 2000);
+        //CLEARING ALL THE FIELDS END
+        
+        
+        
+        // TRYING TO MAKE AN OBJECT HERE --- START
+        
+        
+        
+         var obj = new Object();
+        
+        for (var i = 0; i < texts.length; i++) {
+          obj[i] = ({
+            key:texts[i],
+            dept:dept[i],
+            major:major[i],
+            count:count[i],
+            paid_count:paid_count[i],
+            school:school[i],
+            year:year,
+            semester:semester,
+            slot:slot,
+          });
+        };
+        console.log(obj);
+        
+      
+        // TRYING TO MAKE AN OBJECT HERE --- END
+      
+    
+    
+    }else{
+      document.getElementById("span_btn_inputData").innerHTML = "Data is empty ";
+    }
+  }else{
+    document.getElementById("span_semester").innerHTML = "Please Select a semester ";
+  }
+}else{
+  document.getElementById("span_inputYear").innerHTML = "Please Enter the year properly";
 }
+
+	
+}// END OF JS
 
 
 //Generate pdf 

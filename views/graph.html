@@ -1,64 +1,16 @@
 <html>
 
 <head>
-    <title>Form Reports</title>
+    <title>Graphs</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
-    <script src="https://github.com/devongovett/pdfkit/releases/download/v0.6.2/pdfkit.js"></script>
-    <script src="https://github.com/devongovett/blob-stream/releases/download/v0.1.2/blob-stream-v0.1.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+
 </head>
-<script>
-    var doc = new PDFDocument();
-    var stream = doc.pipe(blobStream());
-
-    function downloadPDF(blob, fileName) {
-        var a = document.createElement("a");
-        document.body.appendChild(a);
-        a.style = "display: none"; var url = window.URL.createObjectURL(blob);
-        a.href = url;
-        a.download = fileName;
-        a.click();
-        window.URL.revokeObjectURL(url);
-
-    }
-    function generatePDF() {
-
-        // doc.image(data, {width: 400});
-        doc.text('Admission Interest Data Analysis', 100, 100);
-        // end and display the document in the iframe to the right
-        var canvas = document.getElementById("myChart");
-        var canvas1 = document.getElementById("myChart1");
-        var canvas2 = document.getElementById("myChart2");
-        var canvas3 = document.getElementById("myChart3");
-        var canvas4 = document.getElementById("myChart4");
-        var canvas5 = document.getElementById("myChart5");
-
-        var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
-        doc.image(image, {width: 400});
-        doc.image(image, {width: 400});
-        doc.image(image, {width: 400});
-        doc.image(image, {width: 400});
-
-        doc.end();
-        stream.on('finish', function () {
-
-            var blob = stream.toBlob('application/pdf');
-            downloadPDF(blob, 'aa.pdf');
-
-            // iframe.src = stream.toBlobURL('application/pdf');
-        });
-
-
-
-    }
-
-
-
-</script>
 
 <body>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -87,6 +39,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="/index"> Home </a>
                 <a href="/graph"> Report/Graph Generator </a>
+                <a href= "/report"> Report Generator </a>
                 <a href="#"> Features </a>
                 <a href="/form"> Data Input </a>
                 <a href="/">Logout</a>
@@ -122,16 +75,16 @@
     <br><br>
 
     <div class="container">
-        <input class="btn btn-primary" type="button" id="getline" value="Get Number of Student over the years">
-        <input class="btn btn-primary" type="button" id="schoolWise" value="School Wise Interest over the years">
-        <input class="btn btn-primary" type="button" id="OtherWise" value="Other School Wise Interest over the years">
+        <input class="btn btn-primary" type="button" id="getline" onclick="refresh()" value="Get Number of Student over the years">
+        <input class="btn btn-primary" type="button" id="schoolWise" onclick="refresh()" value="School Wise Interest over the years">
+        <input class="btn btn-primary" type="button" id="OtherWise" onclick="refresh()" value="Other School Wise Interest over the years">
         <input class="btn btn-primary" type="button" id="barSchoolWise"
             value="School Wise Interest over the years, BAR">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" value="SECS Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" value="SLASS Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" value="SESM Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" value="SLS Graphs">
-        <input class="btn btn-primary" type="button" id="SoB" value="SoB Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick="refresh()" value="SECS Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" onclick="refresh()" value="SLASS Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" onclick="refresh()" value="SESM Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" onclick="refresh()" value="SLS Graphs">
+        <input class="btn btn-primary" type="button" id="SoB" onclick="refresh()" value="SoB Graphs">
 
         <br><br>
 
@@ -151,10 +104,33 @@
             </div>
             <input type="text" class="form-control" id="finishYearVal" placeholder="Input Finish year"
                 aria-label="Username" aria-describedby="basic-addon1">
-            <input class="btn btn-primary" type="button" id="getFocusYear" value="Get">
+
+            <input class="btn btn-primary" type="button" id="getFocusYear" onclick="getBtn()" value="Get">
+            <input class="btn btn-primary" type="button" id="DownloadBtn" onclick="print()"value="download PDF">
+            <!-- <input class="btn btn-primary" type="button" id="Textarea" onclick="editText()"value="Edit Text"> -->
+            <input class="btn btn-primary" type="button" id="EditLine" onclick="EditLine()"value="Edit Format">
+            <input class="btn btn-primary" type="button" id="SaveLine" onclick="saveEdit()"value="Save Format">
+            
         </div>
-        <button class="btn btn-sm " onclick="generatePDF()"> CREATE PDF</button>
-        <div id="graph-container" style="height:60%; width:60%">
+
+        <div id="content" style="height:60%; width:60%">
+            <div class="form-group text-center"  id="textArea2">
+                <div id="coverPage" >
+                    <!-- <h3 id="line1">Admission Interest Data Analysis <br> Independent University, Bangladesh (IUB)</h3> -->
+                    <h3 id="line1">Admission Interest Data Analysis</h3>
+                    <textarea class="form-control" rows="1" id="line1Input" name="" value="" placeholder="Edit"></textarea>  
+                    <h3 id="line2">Independent University, Bangladesh (IUB)</h3>
+                    <textarea class="form-control" rows="1" id="line2Input" name="" value="" placeholder="Edit"></textarea>  
+                    <h4 id="line3">Focus Year: <span id="fYear">FY</span> </h4> 
+                    <h4 id="line4">Period: <span id="p1">P1</span> -  <span id="p2">P2</span></h4>
+                    <h4 id="line5">Data Source: IRAS, Students appeared for the summer admission tests</h4>
+                    <textarea class="form-control" rows="2" id="line5Input" name="" value="" placeholder="Edit"></textarea>  
+
+                </div>
+            </div>
+
+
+           
             <canvas id="myChart" width="400" height="400"></canvas>
             <canvas id="myChart1" width="400" height="400"></canvas>
             <canvas id="myChart2" width="400" height="400"></canvas>
@@ -164,11 +140,14 @@
             <canvas id="myChart6" width="400" height="400"></canvas>
             <canvas id="myChart7" width="400" height="400"></canvas>
         </div>
+        <div id="elementH"></div>
+        
     </div>
 
 
     <!-- Script for navbar -->
     <script>
+        
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("main").style.marginLeft = "250px";
@@ -180,8 +159,30 @@
             document.getElementById("main").style.marginLeft = "0";
             document.body.style.backgroundColor = "white";
         }
-    </script>
+        function refresh() {
+        document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
+        } 
+        function getBtn() {
+            refresh();
+            var focusYear = document.getElementById('focusYearVal').value;
+            var per1 = document.getElementById('startYearVal').value;
+            var per2 = document.getElementById('finishYearVal').value;
+            document.getElementById('fYear').innerHTML = focusYear;
+            document.getElementById('p1').innerHTML = per1;
+            document.getElementById('p2').innerHTML = per2;
+            
+            if(focusYear== "" || per1== "" || per2== "" ){
+                alert("Please Don't Leave Any Field Empty");
+              }
+                else {
+                    $("#DownloadBtn").show();
+                    $("#EditLine").show();
+                    $("#textArea2").show();
+            }
 
+        } 
+    </script>
+    <script type="text/javascript" src="../static/JS/script.js"></script>
     <script type="text/javascript" src="../static/JS/SoB.js"></script>
     <script type="text/javascript" src="../static/JS/graph.js"></script>
     <script type="text/javascript" src="../static/JS/focusGraph.js"></script>

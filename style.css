@@ -20,7 +20,7 @@
     margin-left: 25mm;
 }
 
-#dataInput{
+/* #dataInput{
     width: 302mm;
     height: 100mm;
 }
@@ -73,7 +73,7 @@
 #submitBtn:hover span:after {
     opacity: 1;
     right: 0;
-}
+} */
 
 /* .sidenav {
     height: 100%;
@@ -119,6 +119,8 @@
     .sidenav a {font-size: 18px;}
   } */
 
+
+  
 /* The sidebar menu */
 .sidebar {
     height: 100%; /* 100% Full-height */
@@ -224,12 +226,12 @@
     height: 200px;
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /* Standard syntax (must be last) */
   /* } */
-
+/* 
   #grad {
     height: 100vh;
     background-color: #003399; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to bottom right,#ff8533, #993366, #003399); /* Standard syntax (must be last) */
-  }
+    /* background-image: linear-gradient(to bottom right,#ff8533, #993366, #003399); Standard syntax (must be last) */
+  /* } */ 
 
  
 

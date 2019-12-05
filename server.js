@@ -1,13 +1,13 @@
 var http = require('http');
 var express = require('express');
 var app = express();
-var server = http.Server(app);
+
 var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 
 var path = require('path');
 app.use(express.static(path.join(__dirname,'/')))
-var db_url = "mongodb+srv://Muttakin:12345six@cluster0-2wehj.mongodb.net/test?retryWrites=true&w=majority";
+var db_url = "mongodb+srv://Muttakin:muttakin12@cluster1-2wehj.mongodb.net/test?retryWrites=true&w=majority";
 
 
 var mongoose = require("mongoose");
@@ -23,7 +23,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 require('./routes/routes.js')(app);
 
-server.listen(process.env.PORT || 3000, process.env.IP || 'localhost', function(){
+app.listen(process.env.PORT || 3000,(err)=>{
+  if(err){
+    console.log(err)
+  }
   console.log('Server running');
 });
 

@@ -3,13 +3,13 @@
     color: cornsilk;
 }
 
-#nav-text{
+/* #nav-text{
     color: cornsilk;
 }
 
 .nav > li > a:hover{
     background-color: #00cc00;
-}
+} */
 
 #graph2019{
     margin-left: 10mm;
@@ -74,3 +74,212 @@
     opacity: 1;
     right: 0;
 }
+
+/* .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  } */
+
+/* The sidebar menu */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #111;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #ff6600;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  } 
+
+  /*Navbar*/
+ .navbar {
+    background-color: #ff6600 !important;
+    font-size: 11px;
+    height: 60px;
+} 
+
+.navbar li a, .navbar, .navbar-brand{ 
+    color: white !important;
+    /*font-size: medium;*/
+}
+.navbar-brand{
+    font-size: medium;
+}
+
+.navbar-nav li a:hover, /*.navbar-brand:hover,*/ .navbar-nav li.active a:hover {
+    color: #2F4F4F !important;
+    background-color: #A5C5C3 !important;
+}
+
+.navbar-nav li.active a {
+    color: black;
+    background-color: #429F9E !important;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.my-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* 
+#grad {
+    height: 200px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /* Standard syntax (must be last) */
+  /* } */
+
+  #grad {
+    height: 100vh;
+    background-color: #003399; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right,#ff8533, #993366, #003399); /* Standard syntax (must be last) */
+  }
+
+ 
+
+  /*  #ff751a, #ffbb99 */
+  .form-container{
+      border: 0px solid #fff;
+      padding: 40px 50px;
+      margin-top: 10vh; 
+      -webkit-box-shadow: 0px 10px 28px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 10px 28px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 10px 28px 0px rgba(0,0,0,0.75);
+  }
+
+#loginForm{
+    border: 1px solid #ddd;
+    margin: 40px 0;
+    box-shadow: 5px 10px 10px 10px #ddd;
+}
+
+#loginForm .col-md-8{
+    background-image: linear-gradient(#ffa93f4a, #f5f0eb3d), url(/bg.jpg);
+    background-position: right;
+}
+
+#loginForm .col-md-4{
+    padding: 40px 20px;
+}
+
+#loginForm label{
+    font-size: 13px;
+}
+
+#loginForm .form-control{
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    font-size: 12px;
+}
+
+#loginForm .btn{
+    background-color: #fa8333ef;
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    color: #fff;
+}
+ 
+.btn:hover{
+    opacity: 0.85 !important;
+}
+

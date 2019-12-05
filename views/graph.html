@@ -1,14 +1,15 @@
 <html>
 
 <head>
-    <title>Form Reports</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Graphs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="style.css">
-      
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@1"></script>
-        <script>"https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"</script>
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
 
 </head>
 
@@ -16,50 +17,166 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <!-- navbar -->
-    <nav class="navbar navbar-dark" style="background-color: #28a428" id="nav-text">
+    <!-- <nav class="navbar navbar-dark" style="background-color: #28a428" id="nav-text">
         <div class="navbar-header">
-            <a class="navbar-brand" id="logo">DARS</a>
+            <a class="navbar-brand" id="logo">Annex</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/" id="nav-text">Home</a></li>
+                <li class="active"><a href="/index" id="nav-text">Home</a></li>
                 <li><a href="/graph" id="nav-text">Graph</a></li>
                 <li><a href="#" id="nav-text">Features</a></li>
                 <li><a href="/form" id="nav-text">Data Input</a></li>
+                <li><a href="/" id="nav-text">Logout</a></li>
             </ul>
         </div>
+    </nav> -->
+
+    <!-- fixed nav -->
+    <nav class= "navbar navbar-default navbar-fixed-top">
+            <!-- <div class= "container-fluid"> -->
+            <!-- Side nav -->
+            <!-- <div id="mySidenav" class="sidenav">
+                <a href= "javascript:void(0)" class= "closebtn" onclick= "closeNav()">&times;</a>
+                <a href= "/index"> Home </a>
+                <a href= "/graph"> Report/Graph Generator </a>
+                <a href= "/report"> Report Generator </a>
+                <a href= "/form"> Data Input </a>
+                <a href="/">Logout</a>
+            </div> -->
+                
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href= "/index"> Home </a>
+                <a href= "/graph"> Report/Graph Generator </a>
+                <a href= "/form"> Data Input </a>
+                <a href="/">Logout</a>
+            </div>
+                  
+            <div id="main">
+                <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
+                        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+                        Annex</a> 
+          </div>
+              
+            <!-- <div id="main">
+                <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+                  Annex</a>     
+            </div> -->
+        <!-- </div> -->
     </nav>
 
+    <br><br><br><br><br>
 
-    <input class="btn btn-primary" type="button" id="getline" value="Get Number of Student over the years">
-    <input class="btn btn-primary" type="button" id="schoolWise" value="School Wise Interest over the years">
-    <input class="btn btn-primary" type="button" id="OtherWise" value="Other School Wise Interest over the years">
-    <input class="btn btn-primary" type="button" id="barSchoolWise" value="School Wise Interest over the years, BAR">
-    <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" value="Major Wise Students' interest at SECS, LINE">
-    <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" value="Major Wise Students' interest at SLASS, LINE">
-    <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" value="Major Wise Students' interest at SESM, LINE">
-    <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" value="Major Wise Students' interest at SLS, LINE">
-    
-    <div style="width:30%" class="input-group mb-3">
-        <div  class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">Focus Year</span>
+    <div class="container">
+        <!-- sample dropdown -->
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li class="divider"></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
         </div>
-        <input  type="text"  class="form-control" id="focusYearVal"placeholder="Input Focus year" aria-label="Username" aria-describedby="basic-addon1" >
-        <input class="btn btn-primary" type="button" id="getFocusYear" value="Get">
+        <!-- end of sample -->
     </div>
-    <!-- navbar -->
-    <div style="height:20%; width:40%">
-        
-        
-    <canvas id="myChart" width="200" height="200"></canvas>
-    <canvas id="myChart1" width="200" height="200" ></canvas>
-    <canvas id="myChart2" width="200" height="200" ></canvas>
-    <canvas id="myChart3" width="200" height="200" ></canvas>
-    <canvas id="myChart4" width="200" height="200" ></canvas>
-    <canvas id="myChart5" width="200" height="200" ></canvas>
 
+    <br><br>
+
+    <div class="container">
+        <input class="btn btn-primary" type="button" id="getline" value="Get Number of Student over the years">
+        <input class="btn btn-primary" type="button" id="schoolWise" value="School Wise Interest over the years">
+        <input class="btn btn-primary" type="button" id="OtherWise" value="Other School Wise Interest over the years">
+        <input class="btn btn-primary" type="button" id="barSchoolWise"
+            value="School Wise Interest over the years, BAR">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick="secsGraphs()"value="SECS Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" value="SLASS Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" value="SESM Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" value="SLS Graphs">
+        <input class="btn btn-primary" type="button" id="SoB" value="SoB Graphs">
+
+        <br><br>
+
+        <div style="width:30%" class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Start Year</span>
+            </div>
+            <input type="text" class="form-control" id="startYearVal" placeholder="Input Start year"
+                aria-label="Username" aria-describedby="basic-addon1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Focus Year</span>
+            </div>
+            <input type="text" class="form-control" id="focusYearVal" placeholder="Input Focus year"
+                aria-label="Username" aria-describedby="basic-addon1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Finish Year</span>
+            </div>
+            <input type="text" class="form-control" id="finishYearVal" placeholder="Input Finish year"
+                aria-label="Username" aria-describedby="basic-addon1">
+            <input class="btn btn-primary" type="button" id="getFocusYear" value="Get">
+            <input class="btn btn-primary" type="button" id="cmd" onclick="print()"value="download PDF">
+            <input class="btn btn-primary" type="button" id="Textarea" onclick="editText()"value="Edit Text">
+            
+        </div>
+
+        <div id="content" style="height:60%; width:60%">
+            <div class="form-group" id="textArea">
+                <label for="comment">Edit Pdf Texts:</label>
+                <textarea class="form-control" rows="5" id="comment">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus debitis officiis incidunt, earum adipisci optio aliquam dolorum aspernatur iste voluptate architecto fuga in modi assumenda esse labore eum, iure odit?
+                </textarea>
+              </div>
+           
+            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas id="myChart1" width="400" height="400"></canvas>
+            <canvas id="myChart2" width="400" height="400"></canvas>
+            <canvas id="myChart3" width="400" height="400"></canvas>
+            <canvas id="myChart4" width="400" height="400"></canvas>
+            <canvas id="myChart5" width="400" height="400"></canvas>
+            <canvas id="myChart6" width="400" height="400"></canvas>
+            <canvas id="myChart7" width="400" height="400"></canvas>
+        </div>
+        <div id="elementH"></div>
+        
     </div>
-   
+
+
+    <!-- Script for navbar -->
+
+    <!-- <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+              document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+              
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft= "0";
+              document.body.style.backgroundColor = "white";
+            }
+    </script> -->
+
+    <script>
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+        function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+    
+    <script type="text/javascript" src="../static/JS/script.js"></script>
+    <script type="text/javascript" src="../static/JS/SoB.js"></script>
     <script type="text/javascript" src="../static/JS/graph.js"></script>
     <script type="text/javascript" src="../static/JS/focusGraph.js"></script>
     <script type="text/javascript" src="../static/JS/secs.js"></script>
@@ -77,9 +194,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        
+
     <!-- Bootstrap links -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
 </body>
 
 </html>

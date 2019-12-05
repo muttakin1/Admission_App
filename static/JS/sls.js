@@ -1,165 +1,432 @@
 // Major Wise students' interest @ SECS LINE
 $("#MajorWiseStudentsSLS").click(function (event) {
-    $.ajax({
-      method: "GET",
-      url: "/data/list"
-    }).done(function (response) {
-  
+  $.ajax({
+    method: "GET",
+    url: "/data/list"
+  }).done(function (response) {
+
     //    console.log(response)
-      let noofStd = response.datas
-  
-      let counter = 0
-      let counterBiochem = 0
-      let counterMicroBio = 0
-      let counterBiochem_Biotech = 0
-      let numberOfBiochem = []
-      let numberOfMicrobio = []
-      let numberOfBiochem_Biotech = []
-     
+    let noofStd = response.datas
+    Yearvalue = $("#focusYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
 
-      for (let i = 2013; i <= 2019; i++) {
-        noofStd.forEach((item, index) => {
-          if (item.year == i && item.Major == "BSc - Biochemistry") {
-                counterBiochem = counterBiochem + Number(item.no_of_Student)
-                    // console.log(counterBiochem)
-          }
+    let counterSLSAutumn=0
+    let counterSLSSpring=0
+    let counterSLSSummer=0
 
-            else if (item.year == i && (item.Major == "BSc - Biochemistry and Biotechnology")) {
-            counterBiochem_Biotech = counterBiochem_Biotech + Number(item.no_of_Student)
-            }
+    let counterYearlyBioChem = 0
+    let counterYearlyMicroBio = 0
+    let counterYearlyBiochem_Biotech = 0
 
-            else if (item.year == i && item.Major == "BSc - Microbiology") {
-            counterMicroBio = counterMicroBio + Number(item.no_of_Student)
-                }
+    let counterBiochem = 0
+    let counterMicroBio = 0
+    let counterBiochem_Biotech = 0
 
-          
-          });
+    // Yearly semester wise SLS
+    let counterSpring = 0
+    let counterAutumn = 0
+    let counterSummer = 0
 
-  
-        numberOfBiochem.push(counterBiochem)
-        numberOfBiochem_Biotech.push(counterBiochem_Biotech)
-        numberOfMicrobio.push(counterMicroBio)
-        counterBiochem = 0
-        counterBiochem_Biotech = 0
-        counterMicroBio = 0
-      }
-    //   Line graph
-      var ctx = document.getElementById('myChart');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [{
-            label: 'Number Of Students in Biochemistry',
-            fill: false,
-            data: [numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-  
-            ],
-            borderWidth: 2
-          },
-          {
-            label: 'Number Of Students in Biochemistry and Biotechnology',
-            fill: false,
-            data: [numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
-  
-            borderColor: [
-              'rgba(180,130,0,1)',
-  
-            ],
-            borderWidth: 2
-          },
-          {
-            label: 'Number Of Students in Microbiology',
-            fill: false,
-            data: [numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
-  
-            borderColor: [
-              'rgba(180,130,0,1)',
-  
-            ],
-            borderWidth: 2
-          },
-          ]
-  
+    let numberAutumn = []
+    let numberSpring = []
+    let numberSummer = [] 
+
+
+    let numberOfBiochem = []
+    let numberOfMicrobio = []
+    let numberOfBiochem_Biotech = []
+    let numberYearlySLS=[]
+    let numberSLSsemester=[]
+
+
+    for (let i = 2013; i <= 2019; i++) {
+      noofStd.forEach((item, index) => {
+        if (item.year == i && item.Major == "BSc - Biochemistry") {
+          counterBiochem = counterBiochem + Number(item.no_of_Student)
+          // console.log(counterBiochem)
+        }
+
+        else if (item.year == i && (item.Major == "BSc - Biochemistry and Biotechnology")) {
+          counterBiochem_Biotech = counterBiochem_Biotech + Number(item.no_of_Student)
+        }
+
+        else if (item.year == i && item.Major == "BSc - Microbiology") {
+          counterMicroBio = counterMicroBio + Number(item.no_of_Student)
+        }
+
+
+        if (item.year == Yearvalue && item.Major == "BSc - Biochemistry") {
+          counterYearlyBioChem = counterYearlyBioChem + Number(item.no_of_Student)
+          // console.log(counterBiochem)
+        }
+
+        else if (item.year == Yearvalue && (item.Major == "BSc - Biochemistry and Biotechnology")) {
+          counterYearlyBiochem_Biotech = counterYearlyBiochem_Biotech + Number(item.no_of_Student)
+        }
+
+        else if (item.year == Yearvalue && item.Major == "BSc - Microbiology") {
+          counterYearlyMicroBio = counterYearlyMicroBio + Number(item.no_of_Student)
+        }
+      
+        if (item.year == Yearvalue && item.Semester == "1" && item.School=="SLS") {
+          counterSLSAutumn = counterSLSAutumn + Number(item.no_of_Student)
+
+        }
+        else if (item.year == Yearvalue && item.Semester == "2" && item.School=="SLS") {
+          counterSLSSpring = counterSLSSpring + Number(item.no_of_Student)
+        }
+
+        else if (item.year == Yearvalue && item.Semester == "3" && item.School=="SLS") {
+          counterSLSSummer = counterSLSSummer + Number(item.no_of_Student)
+        }
+
+        // Yearly semester wise SLS
+        if (item.year == i && item.Semester == "3" && item.School == "SLS") {
+          counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i && item.Semester == "1" && item.School == "SLS") {
+          counterSpring = counterSpring + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i && item.Semester == "2" && item.School == "SLS") {
+          counterSummer = counterSummer + Number(item.no_of_Student)
+
+        }
+
+      });
+      numberSLSsemester.push(counterSLSAutumn)
+      numberSLSsemester.push(counterSLSSpring)
+      numberSLSsemester.push(counterSLSSummer)
+
+      numberYearlySLS.push(counterYearlyBioChem)
+      numberYearlySLS.push(counterYearlyBiochem_Biotech)
+      numberYearlySLS.push(counterYearlyMicroBio)
+      
+      numberOfBiochem.push(counterBiochem)
+      numberOfBiochem_Biotech.push(counterBiochem_Biotech)
+      numberOfMicrobio.push(counterMicroBio)
+
+      // Yearly semester wise SLASS
+      numberAutumn.push(counterAutumn)
+      numberSpring.push(counterSpring)
+      numberSummer.push(counterSummer)
+
+
+      counterBiochem = 0
+      counterBiochem_Biotech = 0
+      counterMicroBio = 0
+      counterYearlyBioChem = 0
+      counterYearlyMicroBio = 0
+      counterYearlyBiochem_Biotech = 0
+
+      counterAutumn = 0
+      counterSpring = 0
+      counterSummer = 0
+    }
+
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+
+        labels: ['Bio-Chemistry','Bio-Chemisrtry & Bio-Technology','Micro-Biology'],
+        datasets: [{
+          label: 'Number Of Students in Slass in ' + Yearvalue,
+          data: [numberYearlySLS[0], numberYearlySLS[1], numberYearlySLS[2], ],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 2
         },
-        options: {
+        ]
+
+      },
+      options: {
+        plugins: {
+
+          datalabels: {
+
+            formatter: function (value) {
+              return value
+            }
+          }
+        },
+
+        title: {
+          display: true,
+          text: 'SLS '+ Yearvalue,
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+
+        },
+
+
+      }
+    })
+    
+
+    var ctx = document.getElementById('myChart1');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+
+        labels: ['Spring','Summer','Autumn',],
+        datasets: [{
+          label: 'Number Of Students in Slass in ' + Yearvalue,
+          data: [numberSLSsemester[0], numberSLSsemester[1], numberSLSsemester[2]],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 2
+        },
+        ]
+
+      },
+      options: {
+        plugins: {
+
+          datalabels: {
+
+            formatter: function (value) {
+              return value
+            }
+          }
+        },
+
+        title: {
+          display: true,
+          text: Yearvalue + ' @ SLS',
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+
+        },
+
+
+      }
+    });
+
+    //   Line graph
+    var ctx = document.getElementById('myChart2');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        datasets: [{
+          lineTension: 0.1,
+          label: 'Number Of Students in Biochemistry',
+          fill: false,
+          data: [numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
+          backgroundColor: ['rgba(125,152,74, 1)',],
+          borderColor: [
+            'rgba(125,152,74, 1)',
+
+          ],
+          borderWidth: 2
+        },
+        {
+          lineTension: 0.1,
+          label: 'Number Of Students in Biochemistry and Biotechnology',
+          fill: false,
+          data: [numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
+          backgroundColor: ['rgba(197,213,173,1)',],
+          borderColor: [
+            'rgba(197,213,173,1)',
+
+          ],
+          borderWidth: 2
+        },
+        {
+          lineTension: 0.1,
+          label: 'Number Of Students in Microbiology',
+          fill: false,
+          data: [numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
+          backgroundColor: ['rgba(153,185,91,1)',],
+          borderColor: [
+            'rgba(153,185,91,1)',
+
+          ],
+          borderWidth: 2
+        },
+        ]
+
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Major wise Students interest @  SLS',
           scales: {
-            yAxes: [{ 
+            yAxes: [{
               ticks: {
                 beginAtZero: true
               }
             }]
           }
         }
-      });
+      }
+    });
 
     //   Area under the graph
-      var ctx = document.getElementById('myChart1');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [          
-            {
+    var ctx = document.getElementById('myChart3');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        datasets: [
+          {
+            lineTension: 0.1,
             label: 'Number Of Students in Biochemistry',
             // fill: false,
             data: [numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
+            backgroundColor: ['rgba(125,152,74, 1)',],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-  
+              'rgba(125,152,74, 1)',
+
             ],
             borderWidth: 2
           },
           {
+            lineTension: 0.1,
             label: 'Number Of Students in Biochemistry and Biotechnology',
             // fill: false,
             data: [numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
-  
+            backgroundColor: ['rgba(197,213,173,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
-  
+              'rgba(197,213,173,1)',
+
             ],
             borderWidth: 2
           },
           {
+            lineTension: 0.1,
             label: 'Number Of Students in Microbiology',
             // fill: false,
             data: [numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
-  
+            backgroundColor: ['rgba(153,185,91,1)',],
             borderColor: [
-              'rgba(180,130,0,1)',
-  
+              'rgba(153,185,91,1)',
+
             ],
             borderWidth: 2
           },
-         
-          ]
-  
-        },
-        options: {
+
+        ]
+
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Major wise Students interest @  SLS',
           scales: {
-            yAxes: [{  stacked: true,
-              ticks: {  min: 0,
-                max: 300,
-                stepSize: 100,
+            yAxes: [{
+              stacked: true,
+              ticks: {
                 beginAtZero: true
               }
             }]
           }
         }
-      });
-
-   
-  
-    }).fail(function (response) {
-      console.log(response.responseText);
+      }
     });
 
-    
-    
-  })
-
-
+      // Yearly semester wise SLS
+      var ctx = document.getElementById('myChart4');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          datasets: [{
+            label: 'Autumn',
+            fill: false,
+            data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+            backgroundColor: ['rgba(155,187,89,1)',],
+            borderColor: [
+              'rgba(155,187,89,1)',
   
+            ],
+            borderWidth: 2
+          },
+          {
+            label: 'Spring',
+            fill: false,
+            data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+            backgroundColor: ['rgba(79,129,189, 1)',],
+            borderColor: [
+              'rgba(79,129,189, 1)',
+  
+            ],
+            borderWidth: 2
+          },
+          {
+            label: 'Summer',
+            fill: false,
+            data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+            backgroundColor: ['rgba(192,80,77, 1)',],
+            borderColor: [
+              'rgba(192,80,77, 1)',
+  
+            ],
+            borderWidth: 2
+          },
+  
+          ]
+  
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'Yearly semester wise SLS',
+            scales: {
+              xAxes: [{
+                stacked: true
+              }],
+              yAxes: [{
+                stacked: true,
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        }
+      });
+  
+
+
+
+  }).fail(function (response) {
+    console.log(response.responseText);
+  });
+
+
+
+})
+
+

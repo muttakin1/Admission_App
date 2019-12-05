@@ -1,12 +1,14 @@
-module.exports = function(app) {
+module.exports = function(server) {
 
-    var app1 = require('./../controllers/controllers.js');
-  
-    app.get('/', app1.new);
-    app.get('/form', app1.new1);
-    app.get('/graph', app1.new2);
-    app.post('/data/new',app1.create); 
-    app.get('/data/list', app1.list);
-    app.get('/data/list1', app1.listline);
+    var server1 = require('./../controllers/controllers.js');
+
+    server.get('/', server1.loginpg);
+    server.get('/index', server1.new);
+    server.get('/form', server1.new1);
+    server.get('/graph', server1.new2);
+    server.get('/report', server1.new3);
+    server.post('/data/new',server1.create); 
+    server.get('/data/list', server1.list);
+    server.get('/data/list1', server1.listline);
   
   }

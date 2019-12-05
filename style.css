@@ -130,7 +130,7 @@
 }
 
 .navbar li a, .navbar, .navbar-brand{ 
-    color: black !important;
+    color: white !important;
     /*font-size: medium;*/
 }
 .navbar-brand{

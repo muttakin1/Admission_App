@@ -119,7 +119,7 @@ function print2() {
   function print() {
 
  
-    console.log("PDF Working")
+    console.log("PDF Working");
 
   
   //LINK FOR IUB LOGO on pdf
@@ -128,11 +128,6 @@ function print2() {
 
   // Gets texts from the div and saves it in pdf 
   var doc = new jsPDF('portrait');
-
- 
-  
-
-
 
   var newCanvas = document.querySelector('#myChart');
   var newCanvas1 = document.querySelector('#myChart1');
@@ -152,6 +147,11 @@ function print2() {
   var newCanvasImg5 = newCanvas5.toDataURL("image/png", "image/octet-stream");
   var newCanvasImg6 = newCanvas6.toDataURL("image/png", "image/octet-stream");
   var newCanvasImg7 = newCanvas7.toDataURL("image/png", "image/octet-stream");
+
+
+    var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+    var pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
+    var mid= pageWidth / 2;
  
   // Cover Page 1: 
     // doc.addImage(img, 'JPEG',55,40,100,100);
@@ -161,28 +161,36 @@ function print2() {
     //         return true;
     //     }
     // };
-    // doc.fromHTML(coverPg, 50, 150, {
-    //     'width': 170,
+    // doc.fromHTML(coverPg, mid-80, 150, {
+    //     'width': 150,
     //     'elementHandlers': specialElementHandlers
     // });
 
+
   
-
-
     //////////////////
    
+    let str1 = document.getElementById('line1').innerText;
+    var str2=document.getElementById("line2").innerText;
+    var str3=document.getElementById("line3").innerText;
+    var str4=document.getElementById("line4").innerText;
+    var str5=document.getElementById("line5").innerText;
     
-  // Cover Page 2: 
-  // doc.addPage('a4','p');
-  doc.addImage(img, 'JPEG',55,40,100,100);
-  doc.setFontSize(20);
-  doc.text(55, 150, document.getElementById('line1').innerText);
-  doc.text(42, 160, document.getElementById('line2').innerHTML);
-  doc.setFontSize(14);
-  doc.text(90, 170, document.getElementById('line3').innerText  );
-  doc.text(88, 180, document.getElementById('line4').innerText);
-  doc.text(25, 190, document.getElementById('line5').innerText);
     
+
+    // Cover Page 2: 
+    doc.addImage(img, 'JPEG',55,40,100,100);
+    doc.setFontSize(20);
+    doc.text(str1, mid, 150, {maxWidth: 150, align: "center"});
+    doc.text(str2, mid, 160, {maxWidth: 150, align: "center"});
+    doc.setFontSize(14);
+    doc.text(str3, mid, 170, {maxWidth: 150, align: "center"});
+    doc.text(str4, mid, 180, {maxWidth: 150, align: "center"});
+    doc.setFontStyle("bold");
+    doc.text(str5, mid, 190, {maxWidth: 170, align: "center"});
+    doc.setFontStyle("normal");
+    
+      
   // Page 1:    
   doc.addPage('a4','p');
   doc.addImage(img, 'JPEG',160,10,30,30 );//IUB LOGO
@@ -220,9 +228,6 @@ function print2() {
  
   }
 
-  function editText() {
-    $("#textArea1").toggle()
-  }
   function EditLine() {
     var l1 = document.getElementById('line1').innerText;
     var l2 = document.getElementById('line2').innerText;
@@ -239,10 +244,7 @@ function print2() {
     $("#line5Input").toggle();
     $("#line5").toggle();
     $("#DownloadBtn").toggle();
-
-
-
-
+    $("#getFocusYear").toggle();
   }
 
   function saveEdit() {
@@ -261,8 +263,5 @@ function print2() {
     $("#line5Input").toggle();
     $("#line5").toggle();
     $("#DownloadBtn").toggle();
-
-
-
-
+    $("#getFocusYear").toggle();
   }

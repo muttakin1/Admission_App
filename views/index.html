@@ -2,70 +2,60 @@
 
 <head>
     <title>Admission Reports</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-
 
 </head>
 
 <body>
-  
-    <!-- Fixed nav -->
-    <nav class= "navbar navbar-default navbar-fixed-top">
-      <div class= "container-fluid">
-      <!-- Side nav -->
-        <div id="mySidenav" class="sidenav">
-          <a href= "javascript:void(0)" class= "closebtn" onclick= "closeNav()">&times;</a>
-          <a href= "/index"> Home </a>
-          <a href= "/graph"> Report/Graph Generator </a>
-          <a href= "/form"> Data Input </a>
-          <a href="/">Logout</a>
-        </div>
-      
-    
-        <div id="main">
-          <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
-            Annex</a>     
-        </div>
-      </div>
-    </nav>
-
-    <br><br>
-
-    <div class="container vertical-center">
-        <img src="../static/images/2019graph.jpg" width="500px" id="graph2019">
-        <br><br><br>
-        <img src="../static/images/SOB2019.jpg" width="500px" id="SOB2019">
+  <!-- fixed nav -->
+  <nav class= "navbar navbar-default navbar-fixed-top">
+    <!-- Side nav -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href= "/index"> Home </a>
+      <a href= "/graph"> Report/Graph Generator </a>
+      <a href= "/form"> Data Input </a>
+      <a href="/">Logout</a>
     </div>
+              
+    <div id="main">
+      <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+         Annex</a> 
+    </div>
+  </nav>
+
+  <br><br>
+
+  <div class="container vertical-center">
+    <img src="../static/images/2019graph.jpg" width="500px" id="graph2019">
+    <br><br><br>
+    <img src="../static/images/SOB2019.jpg" width="500px" id="SOB2019">
+  </div>
 
 
-    <!-- Script for navbar -->
-    <script>
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-      }
-        
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-        document.body.style.backgroundColor = "white";
-      }
-    </script>
+<!-- Script for navbar -->
+<script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    }
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
 
-    <!-- Bootstrap links -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <!-- Bootstrap links -->
+<!-- Bootstrap links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

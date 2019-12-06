@@ -3,6 +3,12 @@
     color: cornsilk;
 }
 
+/* #nav-text{
+    color: cornsilk;
+}
+.nav > li > a:hover{
+    background-color: #00cc00;
+} */
 
 #graph2019{
     margin-left: 10mm;
@@ -13,21 +19,18 @@
     margin-left: 25mm;
 }
 
-#dataInput{
+/* #dataInput{
     width: 302mm;
     height: 100mm;
 }
-
 #yearNo{
     width: 302mm;
     height: 10mm;
 }
-
 #semesterNum{
     width: 302mm;
     height: 10mm;
 }
-
 #submitBtn{
     background-color: #990099;
     color: white;
@@ -42,7 +45,6 @@
     cursor: pointer;
     margin: 5px;
 }
-
 #submitBtn span {
     cursor: pointer;
     display: inline-block;
@@ -66,10 +68,9 @@
 #submitBtn:hover span:after {
     opacity: 1;
     right: 0;
-}
+} */
 
-/* Side nav */
-.sidenav {
+/* .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
@@ -102,27 +103,86 @@
     font-size: 36px;
     margin-left: 50px;
   }
-
   #main {
     transition: margin-left .5s;
     padding: 16px;
   }
-
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+  } */
+
+
+  
+/* The sidebar menu */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
   }
-/* End of side nav */
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #111;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #ff6600;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  } 
 
   /*Navbar*/
-.navbar {
-    margin-bottom: 0;
-    background-color: #ff6600 !important;        
-    border: 0;
+ .navbar {
+    background-color: #ff6600 !important;
     font-size: 11px;
-    letter-spacing: 4px;
-    opacity: 0.9;
-}
+    height: 60px;
+} 
 
 .navbar li a, .navbar, .navbar-brand{ 
     color: white !important;
@@ -141,10 +201,7 @@
     color: black;
     background-color: #429F9E !important;
 }
-/* End of navbar */
 
-
-/* for the images in index.html */
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
@@ -153,11 +210,31 @@
   align-items: center;
 }
 
-/* Login form (whole) */
+.my-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* 
+#grad {
+    height: 200px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /* Standard syntax (must be last) */
+  /* } */
+/* 
+  #grad {
+    height: 100vh;
+    background-color: #003399; /* For browsers that do not support gradients */
+    /* background-image: linear-gradient(to bottom right,#ff8533, #993366, #003399); Standard syntax (must be last) */
+  /* } */ 
+
+ 
+
+  /*  #ff751a, #ffbb99 */
   .form-container{
       border: 0px solid #fff;
       padding: 40px 50px;
       margin-top: 10vh; 
+      -webkit-box-shadow: 0px 10px 28px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 10px 28px 0px rgba(0,0,0,0.75);
       box-shadow: 0px 10px 28px 0px rgba(0,0,0,0.75);
   }
 
@@ -200,5 +277,3 @@
 .btn:hover{
     opacity: 0.85 !important;
 }
-
-/* End of login from (whole) */

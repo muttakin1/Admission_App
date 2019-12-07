@@ -13,7 +13,8 @@
     "jspdf": "^1.5.3",
     "mongodb": "^3.3.4",
     "mongoose": "^5.7.11",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "pdfkit": "^0.10.0"
   },
   "devDependencies": {},
   "scripts": {

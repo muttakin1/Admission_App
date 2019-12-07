@@ -1,8 +1,6 @@
 // Major Wise students' interest @ SECS LINE
 // function secsGraphs(event) {
-$("#MajorWiseStudentsSECS").click(function (event) {
-
-
+  $("#MajorWiseStudentsSECS").click(function (event) {
 
   
   $.ajax({

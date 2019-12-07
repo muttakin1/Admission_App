@@ -9,6 +9,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "expressjs": "^1.0.1",
+    "html2canvas": "^1.0.0-rc.5",
+    "jspdf": "^1.5.3",
     "mongodb": "^3.3.4",
     "mongoose": "^5.7.11",
     "nodemon": "^1.19.4",

@@ -46,26 +46,31 @@ $("#getdata").click(function (event) {
 function divide(){  //START OF JS
     //START CHECKING IF DATA INPUT IS EMPTY
 if(document.getElementById("inputYear").value !="none"){
-  document.getElementById("span_inputYear").innerHTML = "";
-  if(document.getElementById("semester").value !="none"){
-    document.getElementById("span_semester").innerHTML = "";
-    if(document.getElementById("ta_inputData").value.trim()){
-      document.getElementById("span_btn_inputData").innerHTML ="";
-      
-      var lines = document.getElementById("ta_inputData").value.split("\n");  // THE INPUT FROM HTML
-      var texts = [];				 // SAVING THE SPLITED STRING IN THIS VARIABLE
-      var dept = [];  			 // SAVING THE SPLITED DEPT IN THIS VARIABLE
-      var major = [];				 // SAVING THE SPLITED major IN THIS VARIABLE
-      var count= [];				 // SAVING THE SPLITED count IN THIS VARIABLE
-      var paid_count= [];			 // SAVING THE SPLITED paid_count IN THIS VARIABLE
-      var arr = [];	
-      var school = [];
-      var year=	document.getElementById("inputYear").value;
-      var semSlot=document.getElementById("semester").value.split(" ");
-      var semester=semSlot[0];
-      var slot=semSlot[1];
-      var flag;
-      /* var flagDup; */
+document.getElementById("span_inputYear").innerHTML = "";
+if(document.getElementById("semester").value !="none"){
+  document.getElementById("span_semester").innerHTML = "";
+  if(document.getElementById("ta_inputData").value.trim()){
+    document.getElementById("span_btn_inputData").innerHTML ="";
+    
+    var lines = document.getElementById("ta_inputData").value.split("\n");  // THE INPUT FROM HTML
+    var texts = [];				 // SAVING THE SPLITED STRING IN THIS VARIABLE
+    var dept = [];  			 // SAVING THE SPLITED DEPT IN THIS VARIABLE
+    var major = [];				 // SAVING THE SPLITED major IN THIS VARIABLE
+    var count= [];				 // SAVING THE SPLITED count IN THIS VARIABLE
+    var paid_count= [];			 // SAVING THE SPLITED paid_count IN THIS VARIABLE
+    var arr = [];	
+    var school = [];
+    var dept_new=[];
+    var year=	document.getElementById("inputYear").value;
+    var semSlot=document.getElementById("semester").value.split(" ");
+    var semester=semSlot[0];
+    var slot=semSlot[1];
+    var flag;
+    /* var flagDup; */
+   
+    for(var i = 0; i < lines.length; i++){
+      var lineData = /(.+[^\s])\s*-\s([a-zA-Z\\(\\)\s]*)\s([0-9]{1,3})\s*([0-9]{1,3})/g.exec(lines[i])
+      var loopCount=i+1;
      
       for(var i = 0; i < lines.length; i++){
         var lineData = /(.+[^\s])\s*-\s([a-zA-Z\\(\\)\s]*)\s([0-9]{1,3})\s*([0-9]{1,3})/g.exec(lines[i])
@@ -95,51 +100,48 @@ if(document.getElementById("inputYear").value !="none"){
       }
      
       
-    
-        
-        //PRINTING EVERYTHING IN HTML/ SCREEN 
-      /* 	document.getElementById("demo2").innerHTML = "dept: " + dept;	
-        document.getElementById("demo3").innerHTML = "major: " + major;	
-        document.getElementById("demo4").innerHTML ="count: " + count;	 
-        document.getElementById("demo5").innerHTML = "paid count: " + paid_count;	 //  EnglishLanguageTeaching */
-           //Differentiating school based on dept START
-           for(var j=0;j<major.length;j++){
-            //console   console.log("modiMajor:" + major.length);
-               var modiMajor=major[j].trim();
-             //console  console.log("modiMajor:" + modiMajor);
-               if(modiMajor!=" " || modiMajor!=null || modiMajor!=undefined){
-                 if(modiMajor=="Pharmacy") school.push("SESM");//DONE
-                 else if(modiMajor=="English Language Teaching") school.push("SLASS");//DONE
-                 else if(modiMajor=="English Literature") school.push("SLASS");//DONE
-                 else if(modiMajor=="Anthropology") school.push("SLASS");//DONE
-                 else if(modiMajor=="Accounting") school.push("SB");//DONE
-                 else if(modiMajor=="Global Studiesand Governance") school.push("SLASS");//DONE
-                 else if(modiMajor=="Finance") school.push("SB");//DONE
-                 else if(modiMajor=="General Management") school.push("SB"); //DONE
-                 else if(modiMajor=="Human Resources Management") school.push("SB"); //DONE
-                 else if(modiMajor=="International Business") school.push("SB");//DONE
-                 else if(modiMajor=="Investment Management") school.push("SB");//DONE
-                 else if(modiMajor=="Management Information Systems") school.push("SB");//DONE
-                 else if(modiMajor=="Marketing") school.push("SB");//DONE
-                 else if(modiMajor=="Mediaand Communication") school.push("SLASS");//DONE
-                 else if(modiMajor=="Sociology") school.push("SLASS");//DONE
-                 else if(modiMajor=="Biochemistry and Biotechnology") school.push("SLS");//DONE
-                 else if(modiMajor=="Biochemistry") school.push("SLS");//DONE
-                 else if(modiMajor=="Computer Engineering") school.push("SECS");//DONE
-                 else if(modiMajor=="Computer Science") school.push("SECS");//DONE
-                 else if(modiMajor=="Computer Scienceand Engineering") school.push("SECS");//DONE
-                 else if(modiMajor=="Economics") school.push("SB");//DONE
-                 else if(modiMajor=="Electrical and Electronic Engineering") school.push("SECS");//DONE
-                 else if(modiMajor=="Electronic and Telecommunication Engineering") school.push("SECS");//DONE
-                 else if(modiMajor=="Environmental Management") school.push("SESM"); //DONE
-                 else if(modiMajor=="Environmental Science") school.push("SESM");  //DONE
-                 else if(modiMajor=="Microbiology") school.push("SLS");//DONE
-                 else if(modiMajor=="Physics(Hons)") school.push("SECS"); //DONE
-                 else if(modiMajor=="Mathematics") school.push("SECS"); //DONE
-                 else if(modiMajor=="Population Environment") school.push("SESM"); //DONE
-                 else if(modiMajor=="Laws(Hons)") school.push("SLASS");//DONE
-                 else school.push("OTHERS");//DONE
-               }
+      //PRINTING EVERYTHING IN HTML/ SCREEN 
+    /* 	document.getElementById("demo2").innerHTML = "dept: " + dept;	
+      document.getElementById("demo3").innerHTML = "major: " + major;	
+      document.getElementById("demo4").innerHTML ="count: " + count;	 
+      document.getElementById("demo5").innerHTML = "paid count: " + paid_count;	 //  EnglishLanguageTeaching */
+         //Differentiating school based on dept START
+         for(var j=0;j<major.length;j++){
+          //console   console.log("modiMajor:" + major.length);
+             var modiMajor=major[j].trim();
+           //console  console.log("modiMajor:" + modiMajor);
+             if(modiMajor!=" " || modiMajor!=null || modiMajor!=undefined){
+               if(modiMajor=="Pharmacy"){school.push("SESM");dept_new.push("Phar");}//DONE
+               else if(modiMajor=="English Language Teaching"){school.push("SLASS");dept_new.push("English Language Teaching");}
+               else if(modiMajor=="English Literature") {school.push("SLASS");dept_new.push("English Literature");}
+               else if(modiMajor=="Anthropology"){school.push("SLASS");dept_new.push("Anthropology");}
+               else if(modiMajor=="Accounting"){school.push("SB");dept_new.push("BBA");}//DONE
+               else if(modiMajor=="Global Studiesand Governance"){school.push("SLASS");dept_new.push("Global Studiesand Governance");}
+               else if(modiMajor=="Finance"){school.push("SB");dept_new.push("Finance");}//DONE
+               else if(modiMajor=="General Management"){school.push("SB");dept_new.push("BBA");} //DONE
+               else if(modiMajor=="Human Resources Management") {school.push("SB");dept_new.push("BBA");} //DONE
+               else if(modiMajor=="International Business") {school.push("SB");dept_new.push("BBA");}//DONE
+               else if(modiMajor=="Investment Management") {school.push("SB");dept_new.push("BBA");}//DONE
+               else if(modiMajor=="Management Information Systems") {school.push("SB");dept_new.push("BBA");}//DONE
+               else if(modiMajor=="Marketing") {school.push("SB");dept_new.push("BBA");}//DONE
+               else if(modiMajor=="Media and Communication") {school.push("SLASS");dept_new.push("Media and Communication");}
+               else if(modiMajor=="Sociology") {school.push("SLASS");dept_new.push("Sociology");}
+               else if(modiMajor=="Biochemistry and Biotechnology") {school.push("SLS");dept_new.push("Biochemistry and Biotechnology");}
+               else if(modiMajor=="Biochemistry") {school.push("SLS");dept_new.push("Biochemistry");}
+               else if(modiMajor=="Computer Engineering") {school.push("SECS");dept_new.push("CSE");}}//DONE
+               else if(modiMajor=="Computer Science") {school.push("SECS");dept_new.push("CSC");}//DONE
+               else if(modiMajor=="Computer Scienceand Engineering") {school.push("SECS");dept_new.push("CEN");}//DONE
+               else if(modiMajor=="Economics") {school.push("SB");dept_new.push("Economics");}
+               else if(modiMajor=="Electrical and Electronic Engineering") {school.push("SECS");dept_new.push("EEE");}//DONE
+               else if(modiMajor=="Electronic and Telecommunication Engineering") {school.push("SECS");dept_new.push("ETE");}//DONE
+               else if(modiMajor=="Environmental Management") {school.push("SESM");dept_new.push("Environmental Management");} //DONE
+               else if(modiMajor=="Environmental Science") {school.push("SESM");dept_new.push("ENV");}//DONE 
+               else if(modiMajor=="Microbiology") {school.push("SLS");dept_new.push("Microbiology");}//DONE
+               else if(modiMajor=="Physics(Hons)") {school.push("SECS");dept_new.push("Physics");} //DONE
+               else if(modiMajor=="Mathematics") {school.push("SECS");dept_new.push("Mathematics");}
+               else if(modiMajor=="Population Environment") {school.push("SESM");dept_new.push("Population Environment");}
+               else if(modiMajor=="Laws(Hons)") {school.push("SLASS");dept_new.push("Laws");}
+               else school.push("OTHERS");
              }
               //CHECKING EVERYTHING IN CONSOLE LOG
               console.log("dept:" + dept);
@@ -187,13 +189,58 @@ if(document.getElementById("inputYear").value !="none"){
          }, 2000);
            //CLEARING ALL THE FIELDS END
            }
-            
-    
-    
+            //CHECKING EVERYTHING IN CONSOLE LOG
+            console.log("Undergrad Type:" + dept);
+            console.log("Major:" + major);
+            console.log("Count:" + count);
+            console.log("Paid count:" + paid_count);
+            console.log("Year:" + year);
+            console.log("Semester:" + semester);
+            console.log("Slot:" + slot);
+            console.log("School" + school);
+            console.log("Department" + dept_new);		
+            console.log("Duplicate:"+hasDuplicates(texts));
+           
+         
+         //Differentiating school based on dept END
+         
         
-        
-        console.log(obj);
-        
+         
+         
+         
+         // TRYING TO MAKE AN OBJECT HERE --- START
+         
+         
+         if(flag==true && hasDuplicates(texts)==false){
+          var obj = new Object();
+         
+          for (var k = 0; k < texts.length; k++) {
+            obj[k] = ({
+              // /key:texts[k],
+              Dept:dept_new[k],
+              Major:dept[k] +' - '+major[k],
+              no:count[k],
+              no_of_Student:paid_count[k],
+              School:school[k],
+              year:year,
+              semester_no:semester+' '+slot,
+              //slot:slot,
+            });
+          };
+           //CLEARING ALL THE FIELDS START
+         document.getElementById("inputYear").value = "none";
+         document.getElementById("semester").value = "none";
+         document.getElementById("ta_inputData").value =" ";
+         document.getElementById("span_SuccessMsg").innerHTML = "SAVED SUCCESSFULLY";
+         setTimeout(function(){ 
+         document.getElementById("span_SuccessMsg").innerHTML = " ";
+       }, 2000);
+         //CLEARING ALL THE FIELDS END
+         }
+          
+  
+  
+      
       
         // TRYING TO MAKE AN OBJECT HERE --- END
       

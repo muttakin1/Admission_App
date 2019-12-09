@@ -75,7 +75,8 @@
                               <textarea type="text" class="form-control" name="ta_inputData" id="ta_inputData" rows="8" cols="50"></textarea>
                               <span class="text-danger" id="span_btn_inputData" style="margin-left: 5px;"></span>
                             </div>
-                        <input class="btn btn-warning" onclick="divide()" value="Add Data" id="btn_inputData" style="background-color: #ff944d;" name="btn_inputData" type="button" >
+                        <input class="btn btn-warning" onclick="divide()" value="Add Data"id="btn_inputData" name="btn_inputData" type="button" style="background-color: #ff944d;" >
+                        <input class="btn btn-warning"  value="Get Data" id="getdata" name="getdata" type="button" style="margin-left: 2px; background-color: #ff944d;" >
                         <span class="text-success" id="span_SuccessMsg" style="margin-left: 5px;"></span>
                       <!--   </button> -->
                        <!--  <span class="text-danger float-center" id="errorMsg" style="margin-right:10px;font-size:18px;"></span> -->
@@ -120,7 +121,7 @@
                     startYear =1993;
                     endYear = currentYear;
     
-                    for (i=endYear;i>=startYear;i--) {
+                    for (i=endYear+1;i>=startYear;i--) {
                   //  console.log(i);
                     newOption = document.createElement("option");
                     newOption.value =i;

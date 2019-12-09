@@ -39,7 +39,7 @@ $("#datainput").click(function (event) {
 
 
 $("#getdata").click(function (event) {
-  console.log("hello")
+  console.log("hellono")
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -150,15 +150,15 @@ if(document.getElementById("semester").value !="none"){
              }
            }
             //CHECKING EVERYTHING IN CONSOLE LOG
-            console.log("dept:" + dept);
-            console.log("major:" + major);
-            console.log("count:" + count);
-            console.log("paid count:" + paid_count);
-            console.log("year:" + year);
-            console.log("semester:" + semester);
-            console.log("slot:" + slot);
-            console.log("School" + school);	
-            console.log("Duplicate:"+hasDuplicates(texts))
+            // console.log("dept:" + dept);
+            // console.log("major:" + major);
+            // console.log("count:" + count);
+            // console.log("paid count:" + paid_count);
+            // console.log("year:" + year);
+            // console.log("semester:" + semester);
+            // console.log("slot:" + slot);
+            // console.log("School" + school);	
+            // console.log("Duplicate:"+hasDuplicates(texts))
          
          //Differentiating school based on dept END
          
@@ -174,15 +174,15 @@ if(document.getElementById("semester").value !="none"){
          
           for (var k = 0; k < texts.length; k++) {
             obj[k] = ({
-              key:texts[k],
-              dept:dept[k],
-              major:major[k],
-              count:count[k],
-              paid_count:paid_count[k],
-              school:school[k],
+              //key:texts[k],
+              Dept:dept[k],
+              Major:dept[k] +' - '+major[k],
+              no:count[k],
+              no_of_Student:paid_count[k],
+              School:school[k],
               year:year,
-              semester:semester,
-              slot:slot,
+              semester_no:semester+' '+slot,
+              //slot:slot,
             });
           };
            //CLEARING ALL THE FIELDS START

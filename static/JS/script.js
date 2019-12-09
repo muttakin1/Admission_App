@@ -39,6 +39,7 @@ $("#datainput").click(function (event) {
 
 
 $("#getdata").click(function (event) {
+  console.log("hello")
   $.ajax({
     method: "GET",
     url: "/data/list"

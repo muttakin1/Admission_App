@@ -1,6 +1,13 @@
 $("#getFocusYear").click(function (event) {
     
-  
+//   if(document.getElementById('startYearVal').value<2013 || 
+//   document.getElementById('focusYearVal').value<2013 ||
+//   document.getElementById('finishYearVal').value<2013){
+//    alert("Please Enter a Year Starting from 2013!");
+// }
+// else{
+// }
+
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -773,6 +780,7 @@ $("#getFocusYear").click(function (event) {
       //     }
       //   }
       // });
+
   
   
     }).fail(function (response) {

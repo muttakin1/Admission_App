@@ -173,15 +173,15 @@ if(document.getElementById("semester").value !="none"){
          
           for (var k = 0; k < texts.length; k++) {
             obj[k] = ({
-              key:texts[k],
-              dept:dept[k],
-              major:major[k],
-              count:count[k],
-              paid_count:paid_count[k],
-              school:school[k],
+              // /key:texts[k],
+              Dept:dept[k],
+              Major:dept[k] +' - '+major[k],
+              no:count[k],
+              no_of_Student:paid_count[k],
+              School:school[k],
               year:year,
-              semester:semester,
-              slot:slot,
+              semester_no:semester+' '+slot,
+              //slot:slot,
             });
           };
            //CLEARING ALL THE FIELDS START

@@ -1,9 +1,20 @@
 // Major Wise students' interest @ SECS LINE
 // function secsGraphs(event) {
-$("#MajorWiseStudentsSECS").click(function (event) {
+  var myChart1
+  $("#MajorWiseStudentsSECS").click(function (event) {
+    $(".dropdown").show();
 
+    $("#tableMenu a").click(function(e){
+      e.preventDefault(); // cancel the link behaviour
+      var selText = $(this).text();
+      $("#tableButton").text(selText);
+      console.log(selText)
+      //console.log(myChart.config.options.type)
+      myChart1.config.type = selText
+      myChart1.update()
+  });
 
-
+ 
   
   $.ajax({
     method: "GET",
@@ -17,6 +28,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
     finishYear =$("#finishYearVal").val()
     console.log(Yearvalue)
 
+    
      // Focus year graphs, Majors
     let counterYearlyPHY= 0
     let counterYearlyCSE = 0
@@ -241,6 +253,9 @@ $("#MajorWiseStudentsSECS").click(function (event) {
       counterSummer = 0
     }
     
+   
+    
+
     // Focus year graphs
     var ctx = document.getElementById('myChart');
       var myChart = new Chart(ctx, {
@@ -293,7 +308,7 @@ $("#MajorWiseStudentsSECS").click(function (event) {
           
         }
       });
-      
+
       var ctx = document.getElementById('myChart1');
       var myChart = new Chart(ctx, {
         type: 'pie',
@@ -346,92 +361,94 @@ $("#MajorWiseStudentsSECS").click(function (event) {
         }
       });
 
+      
     //   Line graph
-    var ctx = document.getElementById('myChart2');
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-        datasets: [{
-          label: 'Number Of Students in Computer Engineering',
-          fill: false,
-          data: [numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
-          backgroundColor: ['rgba(209,122,55, 1)',],
-          borderColor: [
-            'rgba(209,122,55, 1)',
+    data1={
+      labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+      datasets: [{
+        label: 'Number Of Students in Computer Engineering',
+        fill: false,
+        data: [numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
+        backgroundColor: ['rgba(209,122,55, 1)',],
+        borderColor: [
+          'rgba(209,122,55, 1)',
 
-          ],
-          borderWidth: 2
-        }, {
-          label: 'Number Of Students in Electrical and Electronic Engineering',
-          fill: false,
-          data: [numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
-          backgroundColor: ['rgba(231,135,62,1)',],
-          borderColor: [
-            'rgba(231,135,62,1)',
+        ],
+        borderWidth: 2
+      }, {
+        label: 'Number Of Students in Electrical and Electronic Engineering',
+        fill: false,
+        data: [numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
+        backgroundColor: ['rgba(231,135,62,1)',],
+        borderColor: [
+          'rgba(231,135,62,1)',
 
-          ],
-          borderWidth: 2
-        },
-        {
-          label: 'Number Of Students in Electronic and Telecommunication Engineering',
-          fill: false,
-          data: [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
-          backgroundColor: ['rgba(253,148,69,1)',],
-          borderColor: [
-            'rgba(253,148,69,1)',
-
-          ],
-          borderWidth: 2
-        },
-        {
-          label: 'Number Of Students in Computer Science and Engineering',
-          fill: false,
-          data: [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
-          backgroundColor: ['rgba(195,131,84,1)',],
-          borderColor: [
-            'rgba(195,131,84,1)',
-
-          ],
-          borderWidth: 2
-        },
-        {
-          label: 'Number Of Students in Computer Science',
-          fill: false,
-          data: [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
-          backgroundColor: ['rgba(253,173,129,1)',],
-          borderColor: [
-            'rgba(253,173,129,1)',
-
-          ],
-          borderWidth: 2
-        },
-        {
-          label: 'Number Of Students in Physics',
-          fill: false,
-          data: [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
-          backgroundColor: ['rgba(253,220,205,1)',],
-          borderColor: [
-            'rgba(253,220,205,1)',
-
-          ],
-          borderWidth: 2
-        },
-        {
-          label: 'Number Of Students in Maths',
-          fill: false,
-          data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
-          backgroundColor: ['rgba(254,194,168,1)',],
-          borderColor: [
-            'rgba(254,194,168,1)',
-
-          ],
-          borderWidth: 2
-        },
-        ]
-
+        ],
+        borderWidth: 2
       },
-      options: {
+      {
+        label: 'Number Of Students in Electronic and Telecommunication Engineering',
+        fill: false,
+        data: [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
+        backgroundColor: ['rgba(253,148,69,1)',],
+        borderColor: [
+          'rgba(253,148,69,1)',
+
+        ],
+        borderWidth: 2
+      },
+      {
+        label: 'Number Of Students in Computer Science and Engineering',
+        fill: false,
+        data: [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
+        backgroundColor: ['rgba(195,131,84,1)',],
+        borderColor: [
+          'rgba(195,131,84,1)',
+
+        ],
+        borderWidth: 2
+      },
+      {
+        label: 'Number Of Students in Computer Science',
+        fill: false,
+        data: [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
+        backgroundColor: ['rgba(253,173,129,1)',],
+        borderColor: [
+          'rgba(253,173,129,1)',
+
+        ],
+        borderWidth: 2
+      },
+      {
+        label: 'Number Of Students in Physics',
+        fill: false,
+        data: [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
+        backgroundColor: ['rgba(253,220,205,1)',],
+        borderColor: [
+          'rgba(253,220,205,1)',
+
+        ],
+        borderWidth: 2
+      },
+      {
+        label: 'Number Of Students in Maths',
+        fill: false,
+        data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
+        backgroundColor: ['rgba(254,194,168,1)',],
+        borderColor: [
+          'rgba(254,194,168,1)',
+
+        ],
+        borderWidth: 2
+      },
+      ]
+
+    }
+    var ctx = document.getElementById('myChart2');
+     myChart1 = new Chart(ctx, {
+      type: 'line',
+      data: data1,
+      options:{   
         title: {
           display: true,
           text: 'Major wise Students interest @  SECS',
@@ -445,6 +462,8 @@ $("#MajorWiseStudentsSECS").click(function (event) {
         }
       }
     });
+    console.log(myChart1)
+    
 
     //   Area under the graph
     var ctx = document.getElementById('myChart3');
@@ -736,6 +755,6 @@ $("#MajorWiseStudentsSECS").click(function (event) {
 
 
 
-}
+})
 
 

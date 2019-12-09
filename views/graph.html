@@ -5,10 +5,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 
 </head>
 
@@ -36,17 +37,35 @@
 
     <br><br><br><br><br>
 
-    <div class="container" id= "con">
-        <input class="btn btn-primary" type="button" id="getline" onclick= "refresh()" value="Get Number of Student over the years">
-        <input class="btn btn-primary" type="button" id="schoolWise" onclick= "refresh()" value="School Wise Interest over the years">
-        <input class="btn btn-primary" type="button" id="OtherWise" onclick= "refresh()" value="Other School Wise Interest over the years">
+    <div class="container" >
+        <!-- sample dropdown -->
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" id ="chartType"type="button" data-toggle="dropdown">Tutorials
+                <span class="caret"></span></button>
+            <ul id="chartMenu"class="dropdown-menu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li class="divider"></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+        <!-- end of sample -->
+    </div>
+
+    <br><br>
+
+    <div class="container">
+        <input class="btn btn-primary" type="button" id="getline" onclick="refresh()" value="Get Number of Student over the years">
+        <input class="btn btn-primary" type="button" id="schoolWise" onclick="refresh()" value="School Wise Interest over the years">
+        <input class="btn btn-primary" type="button" id="OtherWise" onclick="refresh()" value="Other School Wise Interest over the years">
         <input class="btn btn-primary" type="button" id="barSchoolWise"
             value="School Wise Interest over the years, BAR">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick= "refresh()" value="SECS Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" onclick= "refresh()" value="SLASS Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" onclick= "refresh()" value="SESM Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" onclick= "refresh()" value="SLS Graphs">
-        <input class="btn btn-primary" type="button" id="SoB" onclick= "refresh()" value="SoB Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick="refresh()" value="SECS Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" onclick="refresh()" value="SLASS Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" onclick="refresh()" value="SESM Graphs">
+        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" onclick="refresh()" value="SLS Graphs">
+        <input class="btn btn-primary" type="button" id="SoB" onclick="refresh()" value="SoB Graphs">
 
         <br><br>
 
@@ -74,6 +93,9 @@
             
         </div>
 
+              
+            
+
         <div id="content" style="height:60%; width:60%" class="text-center">
             <form>
             <div class="form-group "  id="textArea2"> 
@@ -89,22 +111,103 @@
                 </div>
              </div>
             </form>
-           
+
+            
             <canvas id="myChart" width="400" height="400"></canvas>
             <canvas id="myChart1" width="400" height="400"></canvas>
+
+            <div id="tableDiv" class="dropdown">
+                <button id="tableButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Choose Graph Type
+                    <span class="caret"></span>
+                </button>
+                <ul id="tableMenu" class="dropdown-menu">
+                    <li><a href="#">pie</a></li>
+                    <li><a href="#">line</a></li>
+                    <li><a href="#">bar</a></li>
+                </ul>
+            </div>
+
             <canvas id="myChart2" width="400" height="400"></canvas>
+
+            <div id="tableDiv" class="dropdown">
+                <button id="tableButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Choose Graph Type
+                    <span class="caret"></span>
+                </button>
+                <ul id="tableMenu" class="dropdown-menu">
+                    <li><a href="#">pie</a></li>
+                    <li><a href="#">line</a></li>
+                    <li><a href="#">bar</a></li>
+                </ul>
+            </div>
+
             <canvas id="myChart3" width="400" height="400"></canvas>
+
+            <div id="tableDiv" class="dropdown">
+                <button id="tableButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Choose Graph Type
+                    <span class="caret"></span>
+                </button>
+                <ul id="tableMenu" class="dropdown-menu">
+                    <li><a href="#">pie</a></li>
+                    <li><a href="#">line</a></li>
+                    <li><a href="#">bar</a></li>
+                </ul>
+            </div>
+
             <canvas id="myChart4" width="400" height="400"></canvas>
+
+            <div id="tableDiv" class="dropdown">
+                <button id="tableButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Choose Graph Type
+                    <span class="caret"></span>
+                </button>
+                <ul id="tableMenu" class="dropdown-menu">
+                    <li><a href="#">pie</a></li>
+                    <li><a href="#">line</a></li>
+                    <li><a href="#">bar</a></li>
+                </ul>
+            </div>
+
             <canvas id="myChart5" width="400" height="400"></canvas>
+
+            <div id="tableDiv" class="dropdown">
+                <button id="tableButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Choose Graph Type
+                    <span class="caret"></span>
+                </button>
+                <ul id="tableMenu" class="dropdown-menu">
+                    <li><a href="#">pie</a></li>
+                    <li><a href="#">line</a></li>
+                    <li><a href="#">bar</a></li>
+                </ul>
+            </div>
+
             <canvas id="myChart6" width="400" height="400"></canvas>
+
+            <div id="tableDiv" class="dropdown">
+                <button id="tableButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Choose Graph Type
+                    <span class="caret"></span>
+                </button>
+                <ul id="tableMenu" class="dropdown-menu">
+                    <li><a href="#">pie</a></li>
+                    <li><a href="#">line</a></li>
+                    <li><a href="#">bar</a></li>
+                </ul>
+            </div>
+
             <canvas id="myChart7" width="400" height="400"></canvas>
-        </div>
+    </div>
         <div id="elementH"></div>
         
     </div>
 
     <script>
-        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+       
+       
+       
         function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";

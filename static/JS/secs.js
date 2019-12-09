@@ -15,6 +15,7 @@
     finishYear =$("#finishYearVal").val()
     console.log(Yearvalue)
 
+    
      // Focus year graphs, Majors
     let counterYearlyPHY= 0
     let counterYearlyCSE = 0
@@ -344,6 +345,7 @@
         }
       });
 
+      
     //   Line graph
     var ctx = document.getElementById('myChart2');
     var myChart = new Chart(ctx, {
@@ -429,7 +431,7 @@
         ]
 
       },
-      options: {
+      options:{ legend: { verticalAlign: "center"},  // "top" , "bottom" },
         title: {
           display: true,
           text: 'Major wise Students interest @  SECS',
@@ -443,6 +445,8 @@
         }
       }
     });
+
+    
 
     //   Area under the graph
     var ctx = document.getElementById('myChart3');

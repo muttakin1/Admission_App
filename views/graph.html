@@ -10,7 +10,7 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
 
 <body>
@@ -35,70 +35,112 @@
         </div> 
     </nav>
 
-    <br><br><br><br><br>
-
-    <div class="container" >
-        <!-- sample dropdown -->
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" id ="chartType"type="button" data-toggle="dropdown">Tutorials
-                <span class="caret"></span></button>
-            <ul id="chartMenu"class="dropdown-menu">
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
-                <li class="divider"></li>
-                <li><a href="#">About Us</a></li>
-            </ul>
-        </div>
-        <!-- end of sample -->
-    </div>
-
-    <br><br>
+    <br><br><br>
 
     <div class="container">
-        <input class="btn btn-primary" type="button" id="getline" onclick="refresh()" value="Get Number of Student over the years">
-        <input class="btn btn-primary" type="button" id="schoolWise" onclick="refresh()" value="School Wise Interest over the years">
-        <input class="btn btn-primary" type="button" id="OtherWise" onclick="refresh()" value="Other School Wise Interest over the years">
-        <input class="btn btn-primary" type="button" id="barSchoolWise"
-            value="School Wise Interest over the years, BAR">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick="refresh()" value="SECS Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" onclick="refresh()" value="SLASS Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" onclick="refresh()" value="SESM Graphs">
-        <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" onclick="refresh()" value="SLS Graphs">
-        <input class="btn btn-primary" type="button" id="SoB" onclick="refresh()" value="SoB Graphs">
-
-        <br><br>
-
         <div style="width:30%" class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Start Year</span>
             </div>
             <input type="text" class="form-control" id="startYearVal" placeholder="Input Start year"
                 aria-label="Username" aria-describedby="basic-addon1">
-            <div class="input-group-prepend">
+        </div>
+
+        <div style= "width: 30%" class="input-group mb-3">
+            <div class= "input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Focus Year</span>
             </div>
             <input type="text" class="form-control" id="focusYearVal" placeholder="Input Focus year"
                 aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <div style= "width: 30%" class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Finish Year</span>
             </div>
             <input type="text" class="form-control" id="finishYearVal" placeholder="Input Finish year"
                 aria-label="Username" aria-describedby="basic-addon1">
-
-            <input class="btn btn-primary" type="button" id="getFocusYear" onclick= "getBtn()" value="Get">
-            <input class="btn btn-primary" type="button" id="DownloadBtn" onclick="print()"value="download PDF">
-            <input class="btn btn-primary" type="button" id="EditLine" onclick="EditLine()"value="Edit Format">
-            <input class="btn btn-primary" type="button" id="SaveLine" onclick="SaveEdit()"value="Save Format">
-            
         </div>
 
-              
+        <input class="btn" type="button" id="getFocusYear" style= "background:#FE9A0B;" onclick= "getBtn()" value="Get">
+        <input class="btn" type="button" id="DownloadBtn" style= "background:#FE9A0B;" onclick="print()"value="download PDF">
+        <input class="btn" type="button" id="EditLine" style= "background:#FE9A0B;" onclick="EditLine()"value="Edit Format">            
+        <input class="btn" type="button" id="SaveLine" style= "background:#FE9A0B;" onclick="SaveEdit()"value="Save Format">
+
+
+        <br><br>
             
+        <!-- <input class="btn btn-default" type="button" id="getline" onclick="refresh()" value="Get Number of Student over the years"> -->
+        <!-- <input class="btn btn-primary" type="button" id="schoolWise" onclick="refresh()" value="School Wise Interest over the years"> -->
+        <!-- <input class="btn btn-primary" type="button" id="OtherWise" onclick="refresh()" value="Other School Wise Interest over the years"> -->
+        <!-- <input class="btn btn-primary" type="button" id="barSchoolWise" -->
+            <!-- value="School Wise Interest over the years, BAR"> -->
+        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick="refresh()" value="SECS Graphs"> -->
+        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" onclick="refresh()" value="SLASS Graphs"> -->
+        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" onclick="refresh()" value="SESM Graphs"> -->
+        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" onclick="refresh()" value="SLS Graphs"> -->
+        <!-- <input class="btn btn-primary" type="button" id="SoB" onclick="refresh()" value="SoB Graphs"> -->
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="getline" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked">
+                    Get Number of Student over the years
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="schoolWise" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked">
+                School Wise Interest over the years
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="OtherWise" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked">
+                Other School Wise Interest over the years
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="barSchoolWise">
+            <label class="form-check-label" for= "onlyChecked">
+                School Wise Interest over the years (Bar Chart)
+            </label>
+        </div>
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
+                <label class="form-check-label" for= "onlyChecked">
+                    SECS Graphs
+                </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLASS" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked">
+                SLASS Graphs
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSESM" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked"> 
+                SESM Graphs
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLS" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked">
+                SLS Graphs
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="SoB" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked">
+                School of Business Graphs
+            </label>
+        </div>
+
+        <br><br>
 
         <div id="content" style="height:60%; width:60%" class="text-center">
             <form>
-            <div class="form-group "  id="textArea2"> 
+            <div class="form-group"  id="textArea2"> 
                 <div id="coverPage">
                     <h3 id="line1" >Admission Interest Data Analysis</h2>
                     <textarea class="form-control" rows="2" id="line1Input" name="Edit Cover Heading" value="" placeholder="Edit Cover Heading"></textarea>  
@@ -205,9 +247,6 @@
     </div>
 
     <script>
-       
-       
-       
         function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
@@ -218,9 +257,13 @@
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
         }
+
+        // refresh graphs
         function refresh() {
         document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
         } 
+
+        // upon pressing the get button
         function getBtn() {
             refresh();
             var focusYear = document.getElementById('focusYearVal').value;
@@ -262,16 +305,13 @@
         crossorigin="anonymous"></script>
 
     <!-- Bootstrap links -->
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
+
+</body>
 </html>

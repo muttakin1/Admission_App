@@ -7,6 +7,7 @@ $( document ).ready(function() {
   $("#EditLine").hide();
   $("#SaveLine").hide();
   $("#DownloadBtn").hide();
+  $(".dropdown").hide();
 });
 var admissionData = {
   School: $('#schoolN').val(),

@@ -1,7 +1,7 @@
 // Major Wise students' interest @ SECS LINE
 // function secsGraphs(event) {
   $("#MajorWiseStudentsSECS").click(function (event) {
-
+    $(".dropdown").show();
   
   $.ajax({
     method: "GET",
@@ -240,6 +240,17 @@
       counterSummer = 0
     }
     
+   
+    function answers()
+    {
+      var selectedanswer=document.getElementById("mySelect").selectedIndex;
+    
+      if (document.getElementsByTagName("option")[selectedanswer].value=="To measure time");{
+        console.log(selectedanswer); 
+      }
+    }
+
+
     // Focus year graphs
     var ctx = document.getElementById('myChart');
       var myChart = new Chart(ctx, {
@@ -431,7 +442,7 @@
         ]
 
       },
-      options:{ legend: { verticalAlign: "center"},  // "top" , "bottom" },
+      options:{   
         title: {
           display: true,
           text: 'Major wise Students interest @  SECS',

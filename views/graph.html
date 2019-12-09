@@ -112,6 +112,7 @@
             <input class="btn btn-primary" type="button" id="SaveLine" onclick="saveEdit()"value="Save Format">
             
         </div>
+
               
             
 
@@ -131,13 +132,78 @@
              </div>
             </form>
 
+            
             <canvas id="myChart" width="400" height="400"></canvas>
             <canvas id="myChart1" width="400" height="400"></canvas>
+
+            <form>
+                    <div class="answer1wrap">
+                      <select id="mySelect">
+                        <option value="void">Choose your answer</option>
+                        <option value="To measure time">To measure time</option>
+                        <option value="To measure distance">To measure distance</option>
+                        <option value="To measure volume">To measure volume</option>
+                      </select>
+                    </div>
+                  </form>
+                  
+                  <button class="btn btn-default" id="checkbtn" onclick="answers();" type="button"><span    class="glyphicon glyphicon-check"></span> Check answers</button>
+
             <canvas id="myChart2" width="400" height="400"></canvas>
+
+            <div class="dropdown" style="float:right";>
+                    <button class="dropbtn">Select Chart Type</button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                  </div>
+
             <canvas id="myChart3" width="400" height="400"></canvas>
+
+            <div class="dropdown" style="float:right";>
+                    <button class="dropbtn">Select Chart Type</button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                  </div>
+
             <canvas id="myChart4" width="400" height="400"></canvas>
+
+            <div class="dropdown" style="float:right";>
+                    <button class="dropbtn">Select Chart Type</button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                  </div>
+
             <canvas id="myChart5" width="400" height="400"></canvas>
+
+            <div class="dropdown" style="float:right";>
+                    <button class="dropbtn">Select Chart Type</button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                  </div>
+
             <canvas id="myChart6" width="400" height="400"></canvas>
+
+            <div class="dropdown" style="float:right";>
+                    <button class="dropbtn">Select Chart Type</button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                  </div>
+
             <canvas id="myChart7" width="400" height="400"></canvas>
     </div>
         <div id="elementH"></div>
@@ -147,7 +213,8 @@
 
     <!-- Script for navbar -->
     <script>
-        
+       
+       
        
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";

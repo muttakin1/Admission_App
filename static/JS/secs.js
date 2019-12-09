@@ -2,6 +2,14 @@
 // function secsGraphs(event) {
   $("#MajorWiseStudentsSECS").click(function (event) {
     $(".dropdown").show();
+
+    $("#tableMenu a").click(function(e){
+      e.preventDefault(); // cancel the link behaviour
+      var selText = $(this).text();
+      $("#tableButton").text(selText);
+      console.log(selText)
+      
+  });
   
   $.ajax({
     method: "GET",

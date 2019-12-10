@@ -75,6 +75,7 @@ if(document.getElementById("semester").value !="none"){
     var dept_new= [];
     var year=	document.getElementById("inputYear").value;
     var semSlot=document.getElementById("semester").value.split(" ");
+    var semesterNumber;
     var semester=semSlot[0];
     var slot=semSlot[1];
     var flag;
@@ -140,7 +141,7 @@ if(document.getElementById("semester").value !="none"){
             else if(modiMajor=="Biochemistry") {school.push("SLS");dept_new.push("SLS");}
             else if(modiMajor=="Computer Engineering") {school.push("SECS");dept_new.push("CSE");}//DONE
             else if(modiMajor=="Computer Science") {school.push("SECS");dept_new.push("CSE");}//DONE
-            else if(modiMajor=="Computer Scienceand Engineering") {school.push("SECS");dept_new.push("CSE");}//DONE
+            else if(modiMajor=="Computer Science and Engineering") {school.push("SECS");dept_new.push("CSE");}//DONE
             else if(modiMajor=="Economics") {school.push("SB");dept_new.push("ECO");}
             else if(modiMajor=="Electrical and Electronic Engineering") {school.push("SECS");dept_new.push("EEE");}//DONE
             else if(modiMajor=="Electronic and Telecommunication Engineering") {school.push("SECS");dept_new.push("EEE");}//DONE
@@ -154,7 +155,14 @@ if(document.getElementById("semester").value !="none"){
             else school.push("OTHERS");//DONE
            }
           }
-           
+
+           //Converting SEMESTER INTO NUMBER START
+          if(semester=="Summer")semesterNumber ="3";  //Winter is 1, spring is 2, summer is 3
+          else if(semester=="Spring")semesterNumber ="2";
+          else if(semester=="Autumn")semesterNumber ="1";
+            //Converting SEMESTER INTO NUMBER END
+
+
             //CHECKING EVERYTHING IN CONSOLE LOG
             console.log("dept:" + dept_new);
             console.log("major:" + major);
@@ -181,11 +189,12 @@ if(document.getElementById("semester").value !="none"){
           for (var k = 0; k < texts.length; k++) {
             obj[k] = ({
               // /key:texts[k],
-              department:dept_new[k],
-              major:dept[k] +' - '+major[k],
+              Dept:dept_new[k],
+              Major:dept[k] +' - '+major[k],
               no:count[k],
               no_of_Student:paid_count[k],
               school:school[k],
+              semester:semesterNumber,
               year:year,
               semester_no:semester+' '+slot,
               Exam_no:slot,

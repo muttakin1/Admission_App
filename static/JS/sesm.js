@@ -214,20 +214,16 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberYearlySESM[0], numberYearlySESM[1], numberYearlySESM[2], numberYearlySESM[3],],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(151, 134, 176, 1)',
+            'rgba(119, 90, 157, 1)',
+            'rgba(97, 75, 121, 1)',
+            'rgba(194, 186, 196, 1)',
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(151, 134, 176, 1)',
+            'rgba(119, 90, 157, 1)',
+            'rgba(97, 75, 121, 1)',
+            'rgba(194, 186, 196, 1)',
           ],
           borderWidth: 2
         },
@@ -265,20 +261,14 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberSESMsemester[0], numberSESMsemester[1], numberSESMsemester[2]],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(77, 127, 188, 1)',
+            'rgba(191, 79, 78, 1)',
+            'rgba(151, 186, 86, 1)',
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(77, 127, 188, 1)',
+            'rgba(191, 79, 78, 1)',
+            'rgba(151, 186, 86, 1)',
           ],
           borderWidth: 2
         },
@@ -474,67 +464,117 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       // }
     });
 
-    // Yearly semester wise SESM
-    var ctx = document.getElementById('myChart4');
-    myChart4 = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-        datasets: [{
-          label: 'Autumn',
-          fill: false,
-          data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
-          backgroundColor: ['rgba(155,187,89,1)',],
-          borderColor: [
+     // Yearly semester wise SESM
+     var ctx = document.getElementById('myChart4');
+     var myChart4 = new Chart(ctx, {
+       type: 'bar',
+       data: {
+         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+         datasets: [{
+           label: 'Autumn',
+           fill: false,
+           data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+           backgroundColor: [
+             'rgba(155,187,89,1)',
+             'rgba(155,187,89,1)',
+             'rgba(155,187,89,1)',
+             'rgba(155,187,89,1)',
+             'rgba(155,187,89,1)',
+             'rgba(155,187,89,1)',
+             'rgba(155,187,89,1)',
+             'rgba(155,187,89,1)',
+            ],
+           borderColor: [
             'rgba(155,187,89,1)',
-
-          ],
-          borderWidth: 2
-        },
-        {
-          label: 'Spring',
-          fill: false,
-          data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
-          backgroundColor: ['rgba(79,129,189, 1)',],
-          borderColor: [
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+ 
+           ],
+           borderWidth: 2
+         },
+         {
+           label: 'Spring',
+           fill: false,
+           data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+           backgroundColor: [
+             'rgba(79,129,189, 1)',
+             'rgba(79,129,189, 1)',
+             'rgba(79,129,189, 1)',
+             'rgba(79,129,189, 1)',
+             'rgba(79,129,189, 1)',
+             'rgba(79,129,189, 1)',
+             'rgba(79,129,189, 1)',
+             'rgba(79,129,189, 1)',
+            
+            ],
+           borderColor: [
             'rgba(79,129,189, 1)',
-
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+ 
+           ],
+           borderWidth: 2
+         },
+         {
+           label: 'Summer',
+           fill: false,
+           data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+           backgroundColor: [
+             'rgba(192,80,77, 1)',
+             'rgba(192,80,77, 1)',
+             'rgba(192,80,77, 1)',
+             'rgba(192,80,77, 1)',
+             'rgba(192,80,77, 1)',
+             'rgba(192,80,77, 1)',
+             'rgba(192,80,77, 1)',
+             'rgba(192,80,77, 1)',
           ],
-          borderWidth: 2
-        },
-        {
-          label: 'Summer',
-          fill: false,
-          data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
-          backgroundColor: ['rgba(192,80,77, 1)',],
-          borderColor: [
+           borderColor: [
             'rgba(192,80,77, 1)',
-
-          ],
-          borderWidth: 2
-        },
-
-        ]
-
-      },
-      options: {
-        title: {
-          display: true,
-          text: 'Yearly semester wise SESM',
-          scales: {
-            xAxes: [{
-              stacked: true
-            }],
-            yAxes: [{
-              stacked: true,
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        }
-      }
-    });
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+ 
+           ],
+           borderWidth: 2
+         },
+ 
+         ]
+ 
+       },
+       options: {
+        scales: {
+          xAxes: [{
+            stacked: true
+          }],
+          yAxes: [{
+            stacked: true,
+            ticks: {
+              beginAtZero: true
+            }
+          }],
+         title: {
+           display: true,
+           text: 'Yearly semester wise SESM',
+          
+           }
+         }
+       }
+     });
 
 
 

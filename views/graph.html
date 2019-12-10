@@ -225,8 +225,12 @@
             document.getElementById('p1').innerHTML = per1;
             document.getElementById('p2').innerHTML = per2;
             
-            if(focusYear== "" || per1== "" || per2== "" ){
+            if(focusYear== "" || per1== "" || per2== ""){
                 alert("Please Don't Leave Any Fields Empty");
+            }
+            if(focusYear<2013 || per1<2013 || per2<2013 || 
+               focusYear>2020  || per1>2020  || per2>2020 ){
+                // alert("Please Enter a Year Starting from 2013! ");
               }
             else {
                 $("#DownloadBtn").show();

@@ -25,7 +25,7 @@ function saveTitle() {
 $("#MajorWiseStudentsSLS").click(function (event) {
   $(".dropdown").show();
   $("#content").show();
-  
+
   $("#tableMenu2 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
@@ -221,7 +221,8 @@ $("#MajorWiseStudentsSLS").click(function (event) {
         title: {
           display: true,
           text: 'SLS ' + Yearvalue,
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20  
 
         },
 
@@ -268,7 +269,8 @@ $("#MajorWiseStudentsSLS").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SLS',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -325,6 +327,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
         title: {
           display: true,
           text: 'Major wise Students interest @  SLS',
+          fontSize:20  ,
           scales: {
             yAxes: [{
               ticks: {
@@ -387,6 +390,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
         title: {
           display: true,
           text: 'Major wise Students interest @  SLS',
+          fontSize:20  ,
           scales: {
             yAxes: [{
               stacked: true,
@@ -507,6 +511,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           title: {
             display: true,
             text: 'Yearly semester wise SLS',
+            fontSize:20  
             
             }
           

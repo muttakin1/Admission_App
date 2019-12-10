@@ -9,6 +9,8 @@ $( document ).ready(function() {
   $("#DownloadBtn").hide();
   $(".dropdown").hide();
   $("#chartTitle2").hide();
+  $("#chartTitle3").hide();
+  $("#chartTitle4").hide();
 
 });
 var admissionData = {
@@ -354,6 +356,8 @@ doc.save('Report.pdf');
     $("#DownloadBtn").toggle();
     $("#getFocusYear").toggle();
     $("#chartTitle2").show();
+    $("#chartTitle3").show();
+    $("#chartTitle4").show();
   }
 
   function SaveEdit() {
@@ -375,5 +379,7 @@ doc.save('Report.pdf');
     $("#getFocusYear").toggle();
     $("#chartTitle2").toggle();
     $("#chartTitle2").hide();
+    $("#chartTitle3").hide();
+    $("#chartTitle4").hide();
     saveTitle();
   }

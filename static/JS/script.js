@@ -72,6 +72,7 @@ if(document.getElementById("semester").value !="none"){
     var paid_count= [];			 // SAVING THE SPLITED paid_count IN THIS VARIABLE
     var arr = [];	
     var school = [];
+    var dept_new= [];
     var year=	document.getElementById("inputYear").value;
     var semSlot=document.getElementById("semester").value.split(" ");
     var semester=semSlot[0];
@@ -119,42 +120,43 @@ if(document.getElementById("semester").value !="none"){
           //console   console.log("modiMajor:" + major.length);
              var modiMajor=major[j].trim();
            //console  console.log("modiMajor:" + modiMajor);
-             if(modiMajor!=" " || modiMajor!=null || modiMajor!=undefined){
-               if(modiMajor=="Pharmacy") school.push("SESM");//DONE
-               else if(modiMajor=="English Language Teaching") school.push("SLASS");//DONE
-               else if(modiMajor=="English Literature") school.push("SLASS");//DONE
-               else if(modiMajor=="Anthropology") school.push("SLASS");//DONE
-               else if(modiMajor=="Accounting") school.push("SB");//DONE
-               else if(modiMajor=="Global Studiesand Governance") school.push("SLASS");//DONE
-               else if(modiMajor=="Finance") school.push("SB");//DONE
-               else if(modiMajor=="General Management") school.push("SB"); //DONE
-               else if(modiMajor=="Human Resources Management") school.push("SB"); //DONE
-               else if(modiMajor=="International Business") school.push("SB");//DONE
-               else if(modiMajor=="Investment Management") school.push("SB");//DONE
-               else if(modiMajor=="Management Information Systems") school.push("SB");//DONE
-               else if(modiMajor=="Marketing") school.push("SB");//DONE
-               else if(modiMajor=="Mediaand Communication") school.push("SLASS");//DONE
-               else if(modiMajor=="Sociology") school.push("SLASS");//DONE
-               else if(modiMajor=="Biochemistry and Biotechnology") school.push("SLS");//DONE
-               else if(modiMajor=="Biochemistry") school.push("SLS");//DONE
-               else if(modiMajor=="Computer Engineering") school.push("SECS");//DONE
-               else if(modiMajor=="Computer Science") school.push("SECS");//DONE
-               else if(modiMajor=="Computer Scienceand Engineering") school.push("SECS");//DONE
-               else if(modiMajor=="Economics") school.push("SB");//DONE
-               else if(modiMajor=="Electrical and Electronic Engineering") school.push("SECS");//DONE
-               else if(modiMajor=="Electronic and Telecommunication Engineering") school.push("SECS");//DONE
-               else if(modiMajor=="Environmental Management") school.push("SESM"); //DONE
-               else if(modiMajor=="Environmental Science") school.push("SESM");  //DONE
-               else if(modiMajor=="Microbiology") school.push("SLS");//DONE
-               else if(modiMajor=="Physics(Hons)") school.push("SECS"); //DONE
-               else if(modiMajor=="Mathematics") school.push("SECS"); //DONE
-               else if(modiMajor=="Population Environment") school.push("SESM"); //DONE
-               else if(modiMajor=="Laws(Hons)") school.push("SLASS");//DONE
-               else school.push("OTHERS");//DONE
-             }
+           if(modiMajor!=" " || modiMajor!=null || modiMajor!=undefined){
+            if(modiMajor=="Pharmacy"){school.push("SESM");dept_new.push("Phar");}//DONE
+            else if(modiMajor=="English Language Teaching"){school.push("SLASS");dept_new.push("ENG");}
+            else if(modiMajor=="English Literature") {school.push("SLASS");dept_new.push("ENG");}
+            else if(modiMajor=="Anthropology"){school.push("SLASS");dept_new.push("SOC");}
+            else if(modiMajor=="Accounting"){school.push("SB");dept_new.push("BBA");}//DONE
+            else if(modiMajor=="Global Studies and Governance"){school.push("SLASS");dept_new.push("GSG");}
+            else if(modiMajor=="Finance"){school.push("SB");dept_new.push("BBA");}//DONE
+            else if(modiMajor=="General Management"){school.push("SB");dept_new.push("BBA");} //DONE
+            else if(modiMajor=="Human Resources Management") {school.push("SB");dept_new.push("BBA");} //DONE
+            else if(modiMajor=="International Business") {school.push("SB");dept_new.push("BBA");}//DONE
+            else if(modiMajor=="Investment Management") {school.push("SB");dept_new.push("BBA");}//DONE
+            else if(modiMajor=="Management Information Systems") {school.push("SB");dept_new.push("BBA");}//DONE
+            else if(modiMajor=="Marketing") {school.push("SB");dept_new.push("BBA");}//DONE
+            else if(modiMajor=="Media and Communication") {school.push("SLASS");dept_new.push("MED");}
+            else if(modiMajor=="Sociology") {school.push("SLASS");dept_new.push("SOC");}
+            else if(modiMajor=="Biochemistry and Biotechnology") {school.push("SLS");dept_new.push("SLS");}
+            else if(modiMajor=="Biochemistry") {school.push("SLS");dept_new.push("SLS");}
+            else if(modiMajor=="Computer Engineering") {school.push("SECS");dept_new.push("CSE");}//DONE
+            else if(modiMajor=="Computer Science") {school.push("SECS");dept_new.push("CSE");}//DONE
+            else if(modiMajor=="Computer Scienceand Engineering") {school.push("SECS");dept_new.push("CSE");}//DONE
+            else if(modiMajor=="Economics") {school.push("SB");dept_new.push("ECO");}
+            else if(modiMajor=="Electrical and Electronic Engineering") {school.push("SECS");dept_new.push("EEE");}//DONE
+            else if(modiMajor=="Electronic and Telecommunication Engineering") {school.push("SECS");dept_new.push("EEE");}//DONE
+            else if(modiMajor=="Environmental Management") {school.push("SESM");dept_new.push("ESc");} //DONE
+            else if(modiMajor=="Environmental Science") {school.push("SESM");dept_new.push("EMgt");}//DONE 
+            else if(modiMajor=="Microbiology") {school.push("SLS");dept_new.push("SLS");}//DONE
+            else if(modiMajor=="Physics (Hons)") {school.push("SECS");dept_new.push("PhySci");} //DONE
+            else if(modiMajor=="Mathematics") {school.push("SECS");dept_new.push("PhySci");}//DONE
+            else if(modiMajor=="Population Environment") {school.push("SESM");dept_new.push("POP");}//DONE
+            else if(modiMajor=="Laws (Hons)") {school.push("SLASS");dept_new.push("LAW");}//DONE
+            else school.push("OTHERS");//DONE
            }
+          }
+           
             //CHECKING EVERYTHING IN CONSOLE LOG
-            console.log("dept:" + dept);
+            console.log("dept:" + dept_new);
             console.log("major:" + major);
             console.log("count:" + count);
             console.log("paid count:" + paid_count);
@@ -179,7 +181,7 @@ if(document.getElementById("semester").value !="none"){
           for (var k = 0; k < texts.length; k++) {
             obj[k] = ({
               // /key:texts[k],
-              Dept:dept[k],
+              Dept:dept_new[k],
               Major:dept[k] +' - '+major[k],
               no:count[k],
               no_of_Student:paid_count[k],

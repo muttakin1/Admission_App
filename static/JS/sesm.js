@@ -1,5 +1,27 @@
 // Major Wise students' interest @ SECS LINE
+
+var myChart2
+var myChart3
+var myChart4
+
+  function saveTitle() {
+    var chTitle2 = document.getElementById('chartTitle2').value;
+    myChart2.config.options.title.text = chTitle2;
+    console.log(chTitle2);
+    myChart2.update();
+
+    var chTitle3 = document.getElementById('chartTitle3').value;
+    myChart3.config.options.title.text = chTitle3;
+    console.log(chTitle3);
+    myChart3.update();
+
+    var chTitle4 = document.getElementById('chartTitle4').value;
+    myChart4.config.options.title.text = chTitle4;
+    console.log(chTitle4);
+    myChart4.update();
+  }
 $("#MajorWiseStudentsSESM").click(function (event) {
+  getBtn();
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -259,8 +281,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
 
     //   Line graph
-    var ctx = document.getElementById('myChart4');
-    var myChart = new Chart(ctx, {
+    var ctx = document.getElementById('myChart2');
+    myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -329,8 +351,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     });
 
     //   Area under the graph
-    var ctx = document.getElementById('myChart5');
-    var myChart = new Chart(ctx, {
+    var ctx = document.getElementById('myChart3');
+     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -421,8 +443,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     });
 
      // Yearly semester wise SESM
-     var ctx = document.getElementById('myChart6');
-     var myChart = new Chart(ctx, {
+     var ctx = document.getElementById('myChart4');
+      myChart4 = new Chart(ctx, {
        type: 'bar',
        data: {
          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],

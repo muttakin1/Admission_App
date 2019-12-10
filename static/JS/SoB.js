@@ -1,7 +1,58 @@
 
-$("#SoB").click(function (event) {
 
-  
+
+var myChart2
+var myChart3
+var myChart4
+
+function saveTitle() {
+  var chTitle2 = document.getElementById('chartTitle2').value;
+  myChart2.config.options.title.text = chTitle2;
+  console.log(chTitle2);
+  myChart2.update();
+
+  var chTitle3 = document.getElementById('chartTitle3').value;
+  myChart3.config.options.title.text = chTitle3;
+  console.log(chTitle3);
+  myChart3.update();
+
+  var chTitle4 = document.getElementById('chartTitle4').value;
+  myChart4.config.options.title.text = chTitle4;
+  console.log(chTitle4);
+  myChart4.update();
+}
+
+$("#SoB").click(function (event) {
+  getBtn();
+  $("#tableMenu2 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton2").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart2.config.type = selText
+    myChart2.update()
+  });
+
+  $("#tableMenu3 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton3").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart3.config.type = selText
+    myChart3.update()
+  });
+  $("#tableMenu4 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton4").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart4.config.type = selText
+    myChart4.update()
+  });
+
 
   $.ajax({
     method: "GET",
@@ -9,8 +60,8 @@ $("#SoB").click(function (event) {
   }).done(function (response) {
 
     Yearvalue = $("#focusYearVal").val()
-    startYear =$("#startYearVal").val()
-    finishYear =$("#finishYearVal").val()
+    startYear = $("#startYearVal").val()
+    finishYear = $("#finishYearVal").val()
     let noofStd = response.datas
 
     let counterBBAMis = 0
@@ -32,14 +83,14 @@ $("#SoB").click(function (event) {
     let counterYearlyEcn = 0
     let counterYearlyAcn = 0
 
-      // Yearly semester wise SoB
-      let counterSpring = 0
-      let counterAutumn = 0
-      let counterSummer = 0
-  
-      let numberAutumn = []
-      let numberSpring = []
-      let numberSummer = [] 
+    // Yearly semester wise SoB
+    let counterSpring = 0
+    let counterAutumn = 0
+    let counterSummer = 0
+
+    let numberAutumn = []
+    let numberSpring = []
+    let numberSummer = []
 
 
     let numberBBA = []
@@ -133,21 +184,21 @@ $("#SoB").click(function (event) {
 
         }
 
-          // Yearly semester wise SoB
-          if (item.year == i && item.Semester == "3" && item.School == "SoB") {
-            counterAutumn = counterAutumn + Number(item.no_of_Student)
-  
-          }
-  
-          if (item.year == i && item.Semester == "1" && item.School == "SoB") {
-            counterSpring = counterSpring + Number(item.no_of_Student)
-  
-          }
-  
-          if (item.year == i && item.Semester == "2" && item.School == "SoB") {
-            counterSummer = counterSummer + Number(item.no_of_Student)
-  
-          }
+        // Yearly semester wise SoB
+        if (item.year == i && item.Semester == "3" && item.School == "SoB") {
+          counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i && item.Semester == "1" && item.School == "SoB") {
+          counterSpring = counterSpring + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i && item.Semester == "2" && item.School == "SoB") {
+          counterSummer = counterSummer + Number(item.no_of_Student)
+
+        }
 
       });
 
@@ -172,10 +223,10 @@ $("#SoB").click(function (event) {
       numberBBA.push(counterMkt)
       numberBBA.push(counterEco)
 
-       // Yearly semester wise SLASS
-       numberAutumn.push(counterAutumn)
-       numberSpring.push(counterSpring)
-       numberSummer.push(counterSummer)
+      // Yearly semester wise SLASS
+      numberAutumn.push(counterAutumn)
+      numberSpring.push(counterSpring)
+      numberSummer.push(counterSummer)
 
 
 
@@ -209,7 +260,7 @@ $("#SoB").click(function (event) {
 
 
 
-    
+
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
       type: 'pie',
@@ -253,7 +304,7 @@ $("#SoB").click(function (event) {
           datalabels: {
 
             formatter: function (value) {
-              return value ;
+              return value;
             }
           }
         },
@@ -324,7 +375,7 @@ $("#SoB").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart2');
-    var myChart = new Chart(ctx, {
+    myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
 
@@ -623,7 +674,7 @@ $("#SoB").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart3');
-    var myChart = new Chart(ctx, {
+    myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
 
@@ -1042,8 +1093,9 @@ $("#SoB").click(function (event) {
             }
           }
         }
-      });
-  
+      }
+    });
+
 
 
   }).fail(function (response) {

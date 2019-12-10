@@ -1,5 +1,57 @@
 // Major Wise students' interest @ SECS LINE
+
+
+var myChart2
+var myChart3
+var myChart4
+
+function saveTitle() {
+  var chTitle2 = document.getElementById('chartTitle2').value;
+  myChart2.config.options.title.text = chTitle2;
+  console.log(chTitle2);
+  myChart2.update();
+
+  var chTitle3 = document.getElementById('chartTitle3').value;
+  myChart3.config.options.title.text = chTitle3;
+  console.log(chTitle3);
+  myChart3.update();
+
+  var chTitle4 = document.getElementById('chartTitle4').value;
+  myChart4.config.options.title.text = chTitle4;
+  console.log(chTitle4);
+  myChart4.update();
+}
+
 $("#MajorWiseStudentsSLS").click(function (event) {
+  $("#tableMenu2 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton2").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart2.config.type = selText
+    myChart2.update()
+  });
+
+  $("#tableMenu3 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton3").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart3.config.type = selText
+    myChart3.update()
+  });
+  $("#tableMenu4 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton4").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart4.config.type = selText
+    myChart4.update()
+  });
+  getBtn();
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -8,12 +60,12 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     //    console.log(response)
     let noofStd = response.datas
     Yearvalue = $("#focusYearVal").val()
-    startYear =$("#startYearVal").val()
-    finishYear =$("#finishYearVal").val()
+    startYear = $("#startYearVal").val()
+    finishYear = $("#finishYearVal").val()
 
-    let counterSLSAutumn=0
-    let counterSLSSpring=0
-    let counterSLSSummer=0
+    let counterSLSAutumn = 0
+    let counterSLSSpring = 0
+    let counterSLSSummer = 0
 
     let counterYearlyBioChem = 0
     let counterYearlyMicroBio = 0
@@ -30,14 +82,14 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
     let numberAutumn = []
     let numberSpring = []
-    let numberSummer = [] 
+    let numberSummer = []
 
 
     let numberOfBiochem = []
     let numberOfMicrobio = []
     let numberOfBiochem_Biotech = []
-    let numberYearlySLS=[]
-    let numberSLSsemester=[]
+    let numberYearlySLS = []
+    let numberSLSsemester = []
 
 
     for (let i = 2013; i <= 2019; i++) {
@@ -68,16 +120,16 @@ $("#MajorWiseStudentsSLS").click(function (event) {
         else if (item.year == Yearvalue && item.Major == "BSc - Microbiology") {
           counterYearlyMicroBio = counterYearlyMicroBio + Number(item.no_of_Student)
         }
-      
-        if (item.year == Yearvalue && item.Semester == "1" && item.School=="SLS") {
+
+        if (item.year == Yearvalue && item.Semester == "1" && item.School == "SLS") {
           counterSLSAutumn = counterSLSAutumn + Number(item.no_of_Student)
 
         }
-        else if (item.year == Yearvalue && item.Semester == "2" && item.School=="SLS") {
+        else if (item.year == Yearvalue && item.Semester == "2" && item.School == "SLS") {
           counterSLSSpring = counterSLSSpring + Number(item.no_of_Student)
         }
 
-        else if (item.year == Yearvalue && item.Semester == "3" && item.School=="SLS") {
+        else if (item.year == Yearvalue && item.Semester == "3" && item.School == "SLS") {
           counterSLSSummer = counterSLSSummer + Number(item.no_of_Student)
         }
 
@@ -105,7 +157,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
       numberYearlySLS.push(counterYearlyBioChem)
       numberYearlySLS.push(counterYearlyBiochem_Biotech)
       numberYearlySLS.push(counterYearlyMicroBio)
-      
+
       numberOfBiochem.push(counterBiochem)
       numberOfBiochem_Biotech.push(counterBiochem_Biotech)
       numberOfMicrobio.push(counterMicroBio)
@@ -133,10 +185,10 @@ $("#MajorWiseStudentsSLS").click(function (event) {
       type: 'pie',
       data: {
 
-        labels: ['Bio-Chemistry','Bio-Chemisrtry & Bio-Technology','Micro-Biology'],
+        labels: ['Bio-Chemistry', 'Bio-Chemisrtry & Bio-Technology', 'Micro-Biology'],
         datasets: [{
           label: 'Number Of Students in Slass in ' + Yearvalue,
-          data: [numberYearlySLS[0], numberYearlySLS[1], numberYearlySLS[2], ],
+          data: [numberYearlySLS[0], numberYearlySLS[1], numberYearlySLS[2],],
           backgroundColor: [
             'rgba(80, 95, 38, 1)',
             'rgba(196, 211, 154, 1)',
@@ -165,7 +217,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
         title: {
           display: true,
-          text: 'SLS '+ Yearvalue,
+          text: 'SLS ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
 
         },
@@ -173,14 +225,14 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
       }
     })
-    
+
 
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
 
-        labels: ['Spring','Summer','Autumn',],
+        labels: ['Spring', 'Summer', 'Autumn',],
         datasets: [{
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberSLSsemester[0], numberSLSsemester[1], numberSLSsemester[2]],
@@ -223,7 +275,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
     //   Line graph
     var ctx = document.getElementById('myChart2');
-    var myChart = new Chart(ctx, {
+    myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -283,7 +335,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
     //   Area under the graph
     var ctx = document.getElementById('myChart3');
-    var myChart = new Chart(ctx, {
+    myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -346,7 +398,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
       // Yearly semester wise SLS
       var ctx = document.getElementById('myChart4');
-      var myChart = new Chart(ctx, {
+      var myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -457,7 +509,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           }
         }
       });
-  
+
 
 
 
@@ -465,8 +517,4 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     console.log(response.responseText);
   });
 
-
-
 })
-
-

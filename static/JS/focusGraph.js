@@ -1,12 +1,15 @@
 $("#getFocusYear").click(function (event) {
     
-//   if(document.getElementById('startYearVal').value<2013 || 
-//   document.getElementById('focusYearVal').value<2013 ||
-//   document.getElementById('finishYearVal').value<2013){
-//    alert("Please Enter a Year Starting from 2013!");
-// }
-// else{
-// }
+  var sYear = document.getElementById('startYearVal').value;
+  var finYear = document.getElementById('startYearVal').value;
+  var focusYear = document.getElementById('startYearVal').value;
+  
+  
+    if(sYear.value<2013 || finYear<2013 || focusYear<2013 ||
+      sYear.value>2020 || finYear>2020 || focusYear>2020){
+     alert("Please Enter Year between 2013 to 2019!");
+  }
+  else{
 
     $.ajax({
       method: "GET",
@@ -787,4 +790,5 @@ $("#getFocusYear").click(function (event) {
       console.log(response.responseText);
     });
     
+  }
   })

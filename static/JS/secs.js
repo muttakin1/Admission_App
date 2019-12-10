@@ -1,18 +1,34 @@
 // Major Wise students' interest @ SECS LINE
 // function secsGraphs(event) {
-  var myChart1
+  var myChart1;
+  function saveTitle() {
+    var chTitle1 = document.getElementById('chartTitle1').value;
+    myChart1.config.options.title.text = chTitle1;
+    myChart1.update();
+  }
   $("#MajorWiseStudentsSECS").click(function (event) {
+    getBtn();
+    $("#content").show();
     $(".dropdown").show();
-
-    $("#tableMenu a").click(function(e){
+    
+    $("#tableMenu1 a").click(function(e){
       e.preventDefault(); // cancel the link behaviour
-      var selText = $(this).text();
-      $("#tableButton").text(selText);
-      console.log(selText)
-      //console.log(myChart.config.options.type)
-      myChart1.config.type = selText
-      myChart1.update()
-  });
+      var selText1 = $(this).text();
+      $("#tableButton").text(selText1);
+      console.log(selText1)
+      myChart1.config.type = selText1;
+      myChart1.update();
+    });
+
+  //   $("#tableMenu2 a").click(function(e){
+  //     e.preventDefault(); // cancel the link behaviour
+  //     var selText2 = $(this).text();
+  //     $("#tableButton").text(selText2);
+  //     console.log(selText2)
+  //     //console.log(myChart.config.options.type)
+  //     myChart1.config.type = selText2
+  //     myChart1.update()
+  // });
 
  
   

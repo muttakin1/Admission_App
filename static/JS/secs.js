@@ -25,6 +25,7 @@
   }
 
   $("#MajorWiseStudentsSECS").click(function (event) {
+    
     getBtn();
     
     $(".dropdown").show();
@@ -618,6 +619,7 @@ $("#tableMenu4 a").click(function(e){
         scales: {
           xAxes: [{ stacked: true }],
           yAxes: [{ stacked: true }],
+        },
         title: {
           display: true,
           text: 'Major wise Students interest @  SECS',
@@ -628,7 +630,7 @@ $("#tableMenu4 a").click(function(e){
               }
             }]
           }
-        }
+        
       }
     }
   });
@@ -894,11 +896,12 @@ $("#tableMenu4 a").click(function(e){
         scales: {
           xAxes: [{ stacked: true }],
           yAxes: [{ stacked: true }],
+        },
         title: {
           display: true,
           text: 'SECS Departments',
          
-          }
+          
         }
       }
     });
@@ -1006,12 +1009,12 @@ $("#tableMenu4 a").click(function(e){
             ticks: {
               beginAtZero: true
             }
-          }],
+          }],},
         title: {
           display: true,
           text: 'Yearly semester wise SECS',
          
-          }
+          
         }
       }
     });

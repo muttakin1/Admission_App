@@ -16,7 +16,7 @@ body{
     margin-left: 25mm;
 }
 #indexPara{
-  margin-left:200px;
+  min-height:200px;
 }
 
 /* The sidebar menu */

@@ -138,20 +138,14 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberYearlySLS[0], numberYearlySLS[1], numberYearlySLS[2], ],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(80, 95, 38, 1)',
+            'rgba(196, 211, 154, 1)',
+            'rgba(119, 143, 59, 1)',
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(80, 95, 38, 1)',
+            'rgba(196, 211, 154, 1)',
+            'rgba(119, 143, 59, 1)',
           ],
           borderWidth: 2
         },
@@ -191,20 +185,14 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberSLSsemester[0], numberSLSsemester[1], numberSLSsemester[2]],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(77, 127, 188, 1)',
+            'rgba(191, 79, 78, 1)',
+            'rgba(151, 186, 86, 1)',
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(77, 127, 188, 1)',
+            'rgba(191, 79, 78, 1)',
+            'rgba(151, 186, 86, 1)',
           ],
           borderWidth: 2
         },

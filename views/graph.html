@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
 
-<body>
+<body onload="foo()">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
@@ -38,6 +38,7 @@
     <br><br><br>
 
     <div class="container">
+        <!-- Input fields -->
         <div style="width:30%" class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Start Year</span>
@@ -62,76 +63,67 @@
                 aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
+        <!-- Buttons for generating and editing graphs and PDF-->
         <input class="btn" type="button" id="getFocusYear" style= "background:#FE9A0B;" onclick= "getBtn()" value="Get">
-        <input class="btn" type="button" id="DownloadBtn" style= "background:#FE9A0B;" onclick="print()"value="download PDF">
+        <input class="btn" type="button" id="DownloadBtn" style= "background:#FE9A0B;" onclick="print()"value="Download PDF">
         <input class="btn" type="button" id="EditLine" style= "background:#FE9A0B;" onclick="EditLine()"value="Edit Format">            
         <input class="btn" type="button" id="SaveLine" style= "background:#FE9A0B;" onclick="SaveEdit()"value="Save Format">
 
 
         <br><br>
-            
-        <!-- <input class="btn btn-default" type="button" id="getline" onclick="refresh()" value="Get Number of Student over the years"> -->
-        <!-- <input class="btn btn-primary" type="button" id="schoolWise" onclick="refresh()" value="School Wise Interest over the years"> -->
-        <!-- <input class="btn btn-primary" type="button" id="OtherWise" onclick="refresh()" value="Other School Wise Interest over the years"> -->
-        <!-- <input class="btn btn-primary" type="button" id="barSchoolWise" -->
-            <!-- value="School Wise Interest over the years, BAR"> -->
-        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick="refresh()" value="SECS Graphs"> -->
-        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" onclick="refresh()" value="SLASS Graphs"> -->
-        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" onclick="refresh()" value="SESM Graphs"> -->
-        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" onclick="refresh()" value="SLS Graphs"> -->
-        <!-- <input class="btn btn-primary" type="button" id="SoB" onclick="refresh()" value="SoB Graphs"> -->
 
+        <!-- Filters: Radio Button -->
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="getline" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "1">
                     Get Number of Student over the years
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="schoolWise" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "2">
                 School Wise Interest over the years
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="OtherWise" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "3">
                 Other School Wise Interest over the years
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="barSchoolWise">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "4">
                 School Wise Interest over the years (Bar Chart)
             </label>
         </div>
         <div class="form-check">
                 <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
-                <label class="form-check-label" for= "onlyChecked">
+                <label class="form-check-label" for= "onlyChecked" id= "5">
                     SECS Graphs
                 </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLASS" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "6">
                 SLASS Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSESM" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked"> 
+            <label class="form-check-label" for= "onlyChecked" id= "7"> 
                 SESM Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLS" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "8">
                 SLS Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="SoB" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "9">
                 School of Business Graphs
             </label>
         </div>
@@ -263,6 +255,28 @@
         function refresh() {
         document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
         } 
+        
+        // onload hide radio buttons
+        function foo(){
+            $("#getline").hide();
+            $("#1").hide();
+            $("#schoolWise").hide();
+            $("#2").hide();
+            $("#OtherWise").hide();
+            $("#3").hide();
+            $("#barSchoolWise").hide();
+            $("#4").hide();
+            $("#MajorWiseStudentsSECS").hide();
+            $("#5").hide();
+            $("#MajorWiseStudentsSLASS").hide();
+            $("#6").hide();
+            $("#MajorWiseStudentsSESM").hide();
+            $("#7").hide();
+            $("#MajorWiseStudentsSLS").hide();
+            $("#8").hide();
+            $("#SoB").hide();
+            $("#9").hide();
+        }
 
         // upon pressing the get button
         function getBtn() {
@@ -277,10 +291,30 @@
             if(focusYear== "" || per1== "" || per2== "" ){
                 alert("Please Don't Leave Any Fields Empty");
               }
-                else {
-                    $("#DownloadBtn").show();
-                    $("#EditLine").show();
-                    $("#textArea2").show();
+            else {
+                $("#DownloadBtn").show();
+                $("#EditLine").show();
+                $("#textArea2").show();
+
+                // show radio buttons
+                $("#getline").show();
+                $("#schoolWise").show();
+                $("#OtherWise").show();
+                $("#barSchoolWise").show();
+                $("#MajorWiseStudentsSECS").show();
+                $("#MajorWiseStudentsSLASS").show();
+                $("#MajorWiseStudentsSESM").show();
+                $("#MajorWiseStudentsSLS").show();
+                $("#SoB").show();
+                $("#1").show();
+                $("#2").show();
+                $("#3").show();
+                $("#4").show();
+                $("#5").show();
+                $("#6").show();
+                $("#7").show();
+                $("#8").show();
+                $("#9").show();
             }
         } 
     </script>
@@ -304,15 +338,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
-    <!-- Bootstrap links -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
 
 </body>
 </html>

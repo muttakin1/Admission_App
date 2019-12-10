@@ -16,6 +16,10 @@ body{
     margin-left: 25mm;
 }
 
+#indexPara{
+    min-height: 200px;
+}
+
 /* The sidebar menu */
 .sidebar {
     height: 100%; /* 100% Full-height */
@@ -250,3 +254,4 @@ body{
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+

@@ -841,7 +841,7 @@ $("#tableMenu4 a").click(function(e){
       options: {
         scales: {
           xAxes: [{ stacked: true }],
-          yAxes: [{ stacked: true }],
+          yAxes: [{ stacked: true }],},
         title: {
           display: true,
           text: 'Major wise Students interest @  SECS',
@@ -854,7 +854,7 @@ $("#tableMenu4 a").click(function(e){
             }]
           }
         }
-      }
+      
     }
     });
 

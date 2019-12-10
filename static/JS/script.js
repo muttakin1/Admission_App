@@ -134,7 +134,7 @@ if(document.getElementById("semester").value !="none"){
             else if(modiMajor=="Sociology") {school.push("SLASS");dept_new.push("SOC");}
             else if(modiMajor=="Biochemistry and Biotechnology") {school.push("SLS");dept_new.push("SLS");}
             else if(modiMajor=="Biochemistry") {school.push("SLS");dept_new.push("SLS");}
-            else if(modiMajor=="Computer Engineering") {school.push("SECS");dept_new.push("CSE");}}//DONE
+            else if(modiMajor=="Computer Engineering") {school.push("SECS");dept_new.push("CSE");}//DONE
             else if(modiMajor=="Computer Science") {school.push("SECS");dept_new.push("CSE");}//DONE
             else if(modiMajor=="Computer Scienceand Engineering") {school.push("SECS");dept_new.push("CSE");}//DONE
             else if(modiMajor=="Economics") {school.push("SB");dept_new.push("ECO");}
@@ -148,8 +148,9 @@ if(document.getElementById("semester").value !="none"){
             else if(modiMajor=="Population Environment") {school.push("SESM");dept_new.push("POP");}
             else if(modiMajor=="Laws(Hons)") {school.push("SLASS");dept_new.push("LAW");}
             else school.push("OTHERS");
-          }
            }
+          }
+           
             //CHECKING EVERYTHING IN CONSOLE LOG
             console.log("dept:" + dept_new);
             console.log("major:" + major);

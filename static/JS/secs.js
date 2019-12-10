@@ -448,9 +448,25 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           fill: false,
           data: [numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
-          backgroundColor: ['rgba(231,135,62,1)',],
+          backgroundColor: [
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+          ],
           borderColor: [
-            'rgba(231,135,62,1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
+            'rgba(242, 147, 67, 1)',
   
           ],
           borderWidth: 2
@@ -460,9 +476,25 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           fill: false,
           data: [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
-          backgroundColor: ['rgba(253,148,69,1)',],
+          backgroundColor: [
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+          ],
           borderColor: [
-            'rgba(253,148,69,1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
+            'rgba(240, 147, 67, 1)',
   
           ],
           borderWidth: 2
@@ -472,9 +504,25 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           fill: false,
           data: [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
-          backgroundColor: ['rgba(195,131,84,1)',],
+          backgroundColor: [
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+          ],
           borderColor: [
-            'rgba(195,131,84,1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
   
           ],
           borderWidth: 2
@@ -484,9 +532,25 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           fill: false,
           data: [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
-          backgroundColor: ['rgba(253,173,129,1)',],
+          backgroundColor: [
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+          ],
           borderColor: [
-            'rgba(253,173,129,1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
+            'rgba(247, 191, 164, 1)',
   
           ],
           borderWidth: 2
@@ -496,9 +560,25 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           fill: false,
           data: [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
-          backgroundColor: ['rgba(253,220,205,1)',],
+          backgroundColor: [
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+          ],
           borderColor: [
-            'rgba(253,220,205,1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
+            'rgba(173, 102, 46, 1)',
   
           ],
           borderWidth: 2
@@ -508,9 +588,25 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           fill: false,
           data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
-          backgroundColor: ['rgba(254,194,168,1)',],
+          backgroundColor: [
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+          ],
           borderColor: [
-            'rgba(254,194,168,1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
+            'rgba(199, 121, 55, 1)',
   
           ],
           borderWidth: 2
@@ -519,6 +615,9 @@ $("#tableMenu4 a").click(function(e){
   
       },
       options:{   
+        scales: {
+          xAxes: [{ stacked: true }],
+          yAxes: [{ stacked: true }],
         title: {
           display: true,
           text: 'Major wise Students interest @  SECS',
@@ -531,7 +630,8 @@ $("#tableMenu4 a").click(function(e){
           }
         }
       }
-    });
+    }
+  });
     console.log(myChart2)
     
 

@@ -276,20 +276,22 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberSlass[0], numberSlass[1], numberSlass[2], numberSlass[3], numberSlass[4], numberSlass[5], numberSlass[6],],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(54, 54, 54, 0.5)',
+            'rgba(94, 94, 94, 0.5)',
+            'rgba(177, 177, 177, 0.5)',
+            'rgba(11, 11, 11 0.5)',
+            'rgba(122, 122, 122 0.5)',
+            'rgba(215, 215, 215, 0.5)',
+            'rgba(167, 167, 167, 0.5)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(54, 54, 54, 0.5)',
+            'rgba(94, 94, 94, 0.5)',
+            'rgba(177, 177, 177, 0.5)',
+            'rgba(11, 11, 11 0.5)',
+            'rgba(122, 122, 122 0.5)',
+            'rgba(215, 215, 215, 0.5)',
+            'rgba(167, 167, 167, 0.5)'
           ],
           borderWidth: 2
         },
@@ -329,20 +331,19 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberSlassDept[0], numberSlassDept[1], numberSlassDept[2], numberSlassDept[3], numberSlassDept[4]],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(94, 94, 94, 1)',
+            'rgba(57, 57, 57, 1)',
+            'rgba(215, 215, 215, 1)',
+            'rgba(32, 32, 32, 1)',
+            'rgba(177, 177, 177, 1)',
+            
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(94, 94, 94, 1)',
+            'rgba(57, 57, 57, 1)',
+            'rgba(215, 215, 215, 1)',
+            'rgba(32, 32, 32, 1)',
+            'rgba(177, 177, 177, 1)',
           ],
           borderWidth: 2
         },

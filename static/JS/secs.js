@@ -48,9 +48,7 @@
 
 
     let noofStd = response.datas
-    Yearvalue = $("#focusYearVal").val()
-    startYear =$("#startYearVal").val()
-    finishYear =$("#finishYearVal").val()
+   
     console.log(Yearvalue)
 
     
@@ -107,9 +105,11 @@
     let numberDept=[]
     let numberSECS = []
    
-   
+    Yearvalue = $("#focusYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
 
-    for (let i = 2013; i <= 2019; i++) {
+    for (let i = startYear; i <= finishYear; i++) {
       noofStd.forEach((item, index) => {
         
         // Major wise Student's interest @ SECS
@@ -290,7 +290,8 @@
           labels: ['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',],
           datasets: [{
             label: 'Number Of Students in SECS in ' + Yearvalue,
-            data: [numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
+            data: [
+              numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -389,11 +390,13 @@
       
     //   Line graph
     data1={
-      labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+      labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
       datasets: [{
         label: 'Number Of Students in Computer Engineering',
         fill: false,
-        data: [numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
+        data: [//loop for giving indexes in the array
+          numberOfCE.forEach(function(item,i){  })],
+          //numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
         backgroundColor: ['rgba(209,122,55, 1)',],
         borderColor: [
           'rgba(209,122,55, 1)',

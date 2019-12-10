@@ -123,7 +123,6 @@ $("#tableMenu4 a").click(function(e){
     let numberSpring=[]
     let numberSummer=[]   
 
-    // Eita ki?
     let numberDept=[]
     let numberSECS = []
    
@@ -351,8 +350,8 @@ $("#tableMenu4 a").click(function(e){
           title: {
             display: true,
             text: Yearvalue + ' @ Secs Majors',
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
-  
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20  
           },
   
           
@@ -399,7 +398,8 @@ $("#tableMenu4 a").click(function(e){
           title: {
             display: true,
             text: "SECS departments "+Yearvalue ,
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20  
   
           },
   
@@ -623,6 +623,7 @@ $("#tableMenu4 a").click(function(e){
         title: {
           display: true,
           text: 'Major wise Students interest @  SECS',
+            fontSize:20  ,
           scales: {
             yAxes: [{
               ticks: {
@@ -841,10 +842,12 @@ $("#tableMenu4 a").click(function(e){
       options: {
         scales: {
           xAxes: [{ stacked: true }],
-          yAxes: [{ stacked: true }],
+          yAxes: [{ stacked: true }],},
         title: {
           display: true,
           text: 'Major wise Students interest @  SECS',
+          
+            fontSize:20  ,
           scales: {
             yAxes: [{
               stacked: true,
@@ -854,7 +857,7 @@ $("#tableMenu4 a").click(function(e){
             }]
           }
         }
-      }
+      
     }
     });
 
@@ -906,6 +909,7 @@ $("#tableMenu4 a").click(function(e){
         title: {
           display: true,
           text: 'SECS Departments',
+            fontSize:20  ,
           scales: {
             yAxes: [{
               ticks: {
@@ -1016,6 +1020,7 @@ $("#tableMenu4 a").click(function(e){
         title: {
           display: true,
           text: 'SECS Departments',
+          fontSize:20  
          
           
         }
@@ -1129,6 +1134,7 @@ $("#tableMenu4 a").click(function(e){
         title: {
           display: true,
           text: 'Yearly semester wise SECS',
+          fontSize:20  
          
           
         }

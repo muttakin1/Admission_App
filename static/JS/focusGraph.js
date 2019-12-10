@@ -281,8 +281,8 @@ $("#getFocusYear").click(function (event) {
           title: {
             display: true,
             text: Yearvalue + ' @ IUB',
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
-  
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20
           },
   
           
@@ -329,7 +329,8 @@ $("#getFocusYear").click(function (event) {
           title: {
             display: true,
             text: Yearvalue + ' School wise distribution',
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20  
   
           },
          

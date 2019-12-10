@@ -29,15 +29,34 @@
     
     $(".dropdown").show();
     $("#content").show();
-    $("#tableMenu a").click(function(e){
+    $("#tableMenu2 a").click(function(e){
       e.preventDefault(); // cancel the link behaviour
       var selText = $(this).text();
-      $("#tableButton").text(selText);
+      $("#tableButton2").text(selText);
       console.log(selText)
       //console.log(myChart.config.options.type)
       myChart2.config.type = selText
       myChart2.update()
   });
+
+  $("#tableMenu3 a").click(function(e){
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton3").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart3.config.type = selText
+    myChart3.update()
+});
+$("#tableMenu4 a").click(function(e){
+  e.preventDefault(); // cancel the link behaviour
+  var selText = $(this).text();
+  $("#tableButton4").text(selText);
+  console.log(selText)
+  //console.log(myChart.config.options.type)
+  myChart4.config.type = selText
+  myChart4.update()
+});
 
  
   

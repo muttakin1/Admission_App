@@ -1,6 +1,6 @@
 
 //Number of Students
-$("#getline").click(function (event) {
+$("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -28,7 +28,7 @@ $("#getline").click(function (event) {
       console.log(numberOfStd)
   
   
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart2');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -79,7 +79,7 @@ $("#getline").click(function (event) {
   })
   
   
-  $("#schoolWise").click(function (event) {
+  $("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -119,7 +119,7 @@ $("#getline").click(function (event) {
         counterSLS = 0
         counterSESM_PHARM = 0
       }
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart3');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -176,7 +176,7 @@ $("#getline").click(function (event) {
     
   })
   
-  $("#barSchoolWise").click(function (event) {
+  $("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -230,7 +230,7 @@ $("#getline").click(function (event) {
         counterSls = 0
         counterSlass = 0
       }
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart4');
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -323,7 +323,7 @@ $("#getline").click(function (event) {
   
   
   
-  $("#OtherWise").click(function (event) {
+  $("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -363,7 +363,7 @@ $("#getline").click(function (event) {
         counterSLS = 0
         counterSESM_PHARM = 0
       }
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart5');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {

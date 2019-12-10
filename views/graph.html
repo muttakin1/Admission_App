@@ -74,30 +74,6 @@
 
         <!-- Filters: Radio Button -->
         <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="getline" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "1">
-                    Get Number of Student over the years
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="schoolWise" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "2">
-                School Wise Interest over the years
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="OtherWise" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "3">
-                Other School Wise Interest over the years
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="barSchoolWise">
-            <label class="form-check-label" for= "onlyChecked" id= "4">
-                School Wise Interest over the years (Bar Chart)
-            </label>
-        </div>
-        <div class="form-check">
                 <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
                 <label class="form-check-label" for= "onlyChecked" id= "5">
                     SECS Graphs
@@ -264,14 +240,6 @@
         
         // onload hide radio buttons
         function foo(){
-            $("#getline").hide();
-            $("#1").hide();
-            $("#schoolWise").hide();
-            $("#2").hide();
-            $("#OtherWise").hide();
-            $("#3").hide();
-            $("#barSchoolWise").hide();
-            $("#4").hide();
             $("#MajorWiseStudentsSECS").hide();
             $("#5").hide();
             $("#MajorWiseStudentsSLASS").hide();
@@ -303,19 +271,11 @@
                 $("#textArea2").show();
 
                 // show radio buttons
-                $("#getline").show();
-                $("#schoolWise").show();
-                $("#OtherWise").show();
-                $("#barSchoolWise").show();
                 $("#MajorWiseStudentsSECS").show();
                 $("#MajorWiseStudentsSLASS").show();
                 $("#MajorWiseStudentsSESM").show();
                 $("#MajorWiseStudentsSLS").show();
                 $("#SoB").show();
-                $("#1").show();
-                $("#2").show();
-                $("#3").show();
-                $("#4").show();
                 $("#5").show();
                 $("#6").show();
                 $("#7").show();

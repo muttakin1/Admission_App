@@ -371,4 +371,3 @@ doc.save('Report.pdf');
     $("#DownloadBtn").toggle();
     $("#getFocusYear").toggle();
   }
-

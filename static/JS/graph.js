@@ -50,6 +50,10 @@ $("#getFocusYear").click(function (event) {
           }]
         },
         options: {
+          title: {
+            display: true,
+            text: 'Number of Students over the years'
+          },
           scales: {
             yAxes: [{
               ticks: {
@@ -384,13 +388,13 @@ $("#getFocusYear").click(function (event) {
               ticks: {
                 beginAtZero: true
               }
-            }],
+            }]},
            title: {
              display: true,
              text: 'Yearly semester wise SESM',
             
              }
-           }
+           
         }
       });
   
@@ -487,6 +491,10 @@ $("#getFocusYear").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'Major wise Students interest @ SLASS'
+          },
           scales: {
             yAxes: [{
               ticks: {

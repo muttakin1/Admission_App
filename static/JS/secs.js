@@ -1,11 +1,12 @@
 // Major Wise students' interest @ SECS LINE
 // function secsGraphs(event) {
-  var myChart1
+  var myChart2
 
   function saveTitle() {
-    var chTitle1 = document.getElementById('chartTitle1').value;
-    myChart1.config.options.title.text = chTitle1;
-    myChart1.update();
+    var chTitle2 = document.getElementById('chartTitle2').value;
+    myChart2.config.options.title.text = chTitle2;
+    console.log(chTitle2);
+    myChart2.update();
   }
 
   $("#MajorWiseStudentsSECS").click(function (event) {
@@ -18,8 +19,8 @@
       $("#tableButton").text(selText);
       console.log(selText)
       //console.log(myChart.config.options.type)
-      myChart1.config.type = selText
-      myChart1.update()
+      myChart2.config.type = selText
+      myChart2.update()
   });
 
  
@@ -453,7 +454,7 @@
 
     }
     var ctx = document.getElementById('myChart2');
-     myChart1 = new Chart(ctx, {
+     myChart2 = new Chart(ctx, {
       type: 'line',
       data: data1,
       options:{   
@@ -470,7 +471,7 @@
         }
       }
     });
-    console.log(myChart1)
+    // console.log(myChart2)
     
 
     //   Area under the graph

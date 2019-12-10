@@ -8,6 +8,8 @@ $( document ).ready(function() {
   $("#SaveLine").hide();
   $("#DownloadBtn").hide();
   $(".dropdown").hide();
+  $("#chartTitle2").hide();
+
 });
 var admissionData = {
   School: $('#schoolN').val(),
@@ -351,9 +353,10 @@ doc.save('Report.pdf');
     $("#line5").toggle();
     $("#DownloadBtn").toggle();
     $("#getFocusYear").toggle();
+    $("#chartTitle2").show();
   }
 
-  function saveEdit() {
+  function SaveEdit() {
     var l1New = document.getElementById('line1Input').value;
     var l2New = document.getElementById('line2Input').value;
     var l5New = document.getElementById('line5Input').value;
@@ -370,6 +373,7 @@ doc.save('Report.pdf');
     $("#line5").toggle();
     $("#DownloadBtn").toggle();
     $("#getFocusYear").toggle();
-    $("#chartTitle1").toggle();
+    $("#chartTitle2").toggle();
+    $("#chartTitle2").hide();
     saveTitle();
   }

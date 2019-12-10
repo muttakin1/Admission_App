@@ -389,93 +389,100 @@
 
       
     //   Line graph
-    data1={
-      labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
-      datasets: [{
-        label: 'Number Of Students in Computer Engineering',
-        fill: false,
-        data: [//loop for giving indexes in the array
-          numberOfCE.forEach(function(item,i){  })],
-          //numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
-        backgroundColor: ['rgba(209,122,55, 1)',],
-        borderColor: [
-          'rgba(209,122,55, 1)',
-
-        ],
-        borderWidth: 2
-      }, {
-        label: 'Number Of Students in Electrical and Electronic Engineering',
-        fill: false,
-        data: [numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
-        backgroundColor: ['rgba(231,135,62,1)',],
-        borderColor: [
-          'rgba(231,135,62,1)',
-
-        ],
-        borderWidth: 2
-      },
-      {
-        label: 'Number Of Students in Electronic and Telecommunication Engineering',
-        fill: false,
-        data: [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
-        backgroundColor: ['rgba(253,148,69,1)',],
-        borderColor: [
-          'rgba(253,148,69,1)',
-
-        ],
-        borderWidth: 2
-      },
-      {
-        label: 'Number Of Students in Computer Science and Engineering',
-        fill: false,
-        data: [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
-        backgroundColor: ['rgba(195,131,84,1)',],
-        borderColor: [
-          'rgba(195,131,84,1)',
-
-        ],
-        borderWidth: 2
-      },
-      {
-        label: 'Number Of Students in Computer Science',
-        fill: false,
-        data: [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
-        backgroundColor: ['rgba(253,173,129,1)',],
-        borderColor: [
-          'rgba(253,173,129,1)',
-
-        ],
-        borderWidth: 2
-      },
-      {
-        label: 'Number Of Students in Physics',
-        fill: false,
-        data: [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
-        backgroundColor: ['rgba(253,220,205,1)',],
-        borderColor: [
-          'rgba(253,220,205,1)',
-
-        ],
-        borderWidth: 2
-      },
-      {
-        label: 'Number Of Students in Maths',
-        fill: false,
-        data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
-        backgroundColor: ['rgba(254,194,168,1)',],
-        borderColor: [
-          'rgba(254,194,168,1)',
-
-        ],
-        borderWidth: 2
-      },
-      ]
-
-    }
+    
     var ctx = document.getElementById('myChart2');
      myChart2 = new Chart(ctx, {
       type: 'line',
-      data: data1,
+      data:{
+        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
+        datasets: [{
+          label: 'Number Of Students in Computer Engineering',
+          lineTension:0.1,
+          fill: false,
+          data: [//loop for giving indexes in the array
+            // numberOfCE.forEach(function(item,i){  })],
+            numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
+          backgroundColor: ['rgba(209,122,55, 1)',],
+          borderColor: [
+            'rgba(209,122,55, 1)',
+  
+          ],
+          borderWidth: 2
+        }, {
+          label: 'Number Of Students in Electrical and Electronic Engineering',
+          lineTension:0.1,
+          fill: false,
+          data: [numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
+          backgroundColor: ['rgba(231,135,62,1)',],
+          borderColor: [
+            'rgba(231,135,62,1)',
+  
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Number Of Students in Electronic and Telecommunication Engineering',
+          lineTension:0.1,
+          fill: false,
+          data: [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
+          backgroundColor: ['rgba(253,148,69,1)',],
+          borderColor: [
+            'rgba(253,148,69,1)',
+  
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Number Of Students in Computer Science and Engineering',
+          lineTension:0.1,
+          fill: false,
+          data: [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
+          backgroundColor: ['rgba(195,131,84,1)',],
+          borderColor: [
+            'rgba(195,131,84,1)',
+  
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Number Of Students in Computer Science',
+          lineTension:0.1,
+          fill: false,
+          data: [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
+          backgroundColor: ['rgba(253,173,129,1)',],
+          borderColor: [
+            'rgba(253,173,129,1)',
+  
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Number Of Students in Physics',
+          lineTension:0.1,
+          fill: false,
+          data: [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
+          backgroundColor: ['rgba(253,220,205,1)',],
+          borderColor: [
+            'rgba(253,220,205,1)',
+  
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Number Of Students in Maths',
+          lineTension:0.1,
+          fill: false,
+          data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
+          backgroundColor: ['rgba(254,194,168,1)',],
+          borderColor: [
+            'rgba(254,194,168,1)',
+  
+          ],
+          borderWidth: 2
+        },
+        ]
+  
+      },
       options:{   
         title: {
           display: true,
@@ -500,6 +507,7 @@
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [{
+          lineTension:0.1,
           label: 'Number Of Students in Maths',
           // fill: false,
           data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
@@ -511,7 +519,7 @@
           borderWidth: 2
         },
 
-        {
+        {  lineTension:0.1,
           label: 'Number Of Students in Computer Engineering',
           // fill: false,
           data: [numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
@@ -522,6 +530,7 @@
           ],
           borderWidth: 2
         }, {
+          lineTension:0.1,
           label: 'Number Of Students in Electrical and Electronic Engineering',
           // fill: false,
           data: [numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
@@ -532,7 +541,7 @@
           ],
           borderWidth: 2
         },
-        {
+        { lineTension:0.1,
           label: 'Number Of Students in Electronic and Telecommunication Engineering',
           // fill: false,
           data: [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
@@ -543,7 +552,7 @@
           ],
           borderWidth: 2
         },
-        {
+        { lineTension:0.1,
           label: 'Number Of Students in Computer Science and Engineering',
           // fill: false,
           data: [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
@@ -554,7 +563,7 @@
           ],
           borderWidth: 2
         },
-        {
+        { lineTension:0.1,
           label: 'Number Of Students in Computer Science',
           // fill: false,
           data: [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
@@ -565,7 +574,7 @@
           ],
           borderWidth: 2
         },
-        {
+        { lineTension:0.1,
           label: 'Number Of Students in Physics',
           // fill: false,
           data: [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
@@ -603,6 +612,7 @@
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [{
+          lineTension:0.1,
           label: 'Number Of Students in EEE',
           fill: false,
           data: [numberOfDeptEEE[0], numberOfDeptEEE[1], numberOfDeptEEE[2], numberOfDeptEEE[3], numberOfDeptEEE[4], numberOfDeptEEE[5], numberOfDeptEEE[6], numberOfDeptEEE[7],],
@@ -613,7 +623,7 @@
           ],
           borderWidth: 2
         },
-        {
+        {  lineTension:0.1,
           label: 'Number Of Students in Computer Science Engineering',
           fill: false,
           data: [numberOfDeptCSE[0], numberOfDeptCSE[1], numberOfDeptCSE[2], numberOfDeptCSE[3], numberOfDeptCSE[4], numberOfDeptCSE[5], numberOfDeptCSE[6], numberOfDeptCSE[7],],
@@ -624,6 +634,7 @@
           ],
           borderWidth: 2
         }, {
+          lineTension:0.1,
           label: 'Number Of Students in Physical Sciences',
           fill: false,
           data: [numberOfDeptPhySci[0], numberOfDeptPhySci[1], numberOfDeptPhySci[2], numberOfDeptPhySci[3], numberOfDeptPhySci[4], numberOfDeptPhySci[5], numberOfDeptPhySci[6], numberOfDeptPhySci[7],],

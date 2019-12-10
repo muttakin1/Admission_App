@@ -143,11 +143,11 @@ if(document.getElementById("semester").value !="none"){
             else if(modiMajor=="Environmental Management") {school.push("SESM");dept_new.push("ESc");} //DONE
             else if(modiMajor=="Environmental Science") {school.push("SESM");dept_new.push("EMgt");}//DONE 
             else if(modiMajor=="Microbiology") {school.push("SLS");dept_new.push("SLS");}//DONE
-            else if(modiMajor=="Physics(Hons)") {school.push("SECS");dept_new.push("PhySci");} //DONE
-            else if(modiMajor=="Mathematics") {school.push("SECS");dept_new.push("PhySci");}
-            else if(modiMajor=="Population Environment") {school.push("SESM");dept_new.push("POP");}
-            else if(modiMajor=="Laws(Hons)") {school.push("SLASS");dept_new.push("LAW");}
-            else school.push("OTHERS");
+            else if(modiMajor=="Physics (Hons)") {school.push("SECS");dept_new.push("PhySci");} //DONE
+            else if(modiMajor=="Mathematics") {school.push("SECS");dept_new.push("PhySci");}//DONE
+            else if(modiMajor=="Population Environment") {school.push("SESM");dept_new.push("POP");}//DONE
+            else if(modiMajor=="Laws (Hons)") {school.push("SLASS");dept_new.push("LAW");}//DONE
+            else school.push("OTHERS");//DONE
            }
           }
            

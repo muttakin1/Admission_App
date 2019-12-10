@@ -1085,12 +1085,12 @@ $("#SoB").click(function (event) {
               ticks: {
                 beginAtZero: true
               }
-            }],
+            }]},
           title: {
             display: true,
             text: 'Yearly semester wise SoB',
            
-            }
+            
           }
         }
       

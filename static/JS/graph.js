@@ -119,7 +119,7 @@ $("#getFocusYear").click(function (event) {
         counterSLS = 0
         counterSESM_PHARM = 0
       }
-      var ctx = document.getElementById('myChart3');
+      var ctx = document.getElementById('myChart1');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -305,12 +305,21 @@ $("#getFocusYear").click(function (event) {
         },
         options: {
           scales: {
+            xAxes: [{
+              stacked: true
+            }],
             yAxes: [{
+              stacked: true,
               ticks: {
                 beginAtZero: true
               }
-            }]
-          }
+            }],
+           title: {
+             display: true,
+             text: 'Yearly semester wise SESM',
+            
+             }
+           }
         }
       });
   
@@ -363,7 +372,7 @@ $("#getFocusYear").click(function (event) {
         counterSLS = 0
         counterSESM_PHARM = 0
       }
-      var ctx = document.getElementById('myChart5');
+      var ctx = document.getElementById('myChart3');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {

@@ -276,20 +276,22 @@
             label: 'Number Of Students in SECS in ' + Yearvalue,
             data: [numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+              'rgba(248, 192, 165, 1)', //ce
+                'rgba(247, 191, 164, 1)', //cs
+                'rgba(243, 170, 129, 1)', //cse
+                'rgba(242, 147, 67, 1)', //eee
+                'rgba(240, 147, 67, 1)', // ete
+                'rgba(199, 121, 55, 1)', //math
+                'rgba(173, 102, 46, 1)', //physics
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+              'rgba(248, 192, 165, 1)', //ce
+              'rgba(247, 191, 164, 1)', //cs
+                'rgba(243, 170, 129, 1)', //cse
+                'rgba(242, 147, 67, 1)', //eee
+                'rgba(240, 147, 67, 1)', // ete
+                'rgba(199, 121, 55, 1)', //math
+                'rgba(173, 102, 46, 1)', //physics
             ],
             borderWidth: 2
           },
@@ -328,20 +330,16 @@
             label: 'SECS Departments in ' + Yearvalue,
             data: [numberDept[0],numberDept[1],numberDept[2]],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+              'rgba(202, 121, 55, 1)',
+                'rgba(243, 148, 68, 1)',
+                'rgba(2248, 192, 165, 1)',
+                
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+              'rgba(202, 121, 55, 1)',
+                'rgba(243, 148, 68, 1)',
+                'rgba(2248, 192, 165, 1)',
+                
             ],
             borderWidth: 2
           },

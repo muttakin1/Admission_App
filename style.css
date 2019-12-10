@@ -3,14 +3,6 @@
     color: cornsilk;
 }
 
-/* #nav-text{
-    color: cornsilk;
-}
-
-.nav > li > a:hover{
-    background-color: #00cc00;
-} */
-
 #graph2019{
     margin-left: 10mm;
     margin-top: 10mm;
@@ -20,117 +12,78 @@
     margin-left: 25mm;
 }
 
-#dataInput{
-    width: 302mm;
-    height: 100mm;
-}
-
-#yearNo{
-    width: 302mm;
-    height: 10mm;
-}
-
-#semesterNum{
-    width: 302mm;
-    height: 10mm;
-}
-
-#submitBtn{
-    background-color: #990099;
-    color: white;
-    display: inline-block;
-    border-radius: 4px;
-    border: none;
-    text-align: center;
-    font-size: 15px;
-    padding: 10px;
-    width: 100px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-#submitBtn span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-#submitBtn span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-  
-#submitBtn:hover span {
-    padding-right: 25px;
-}
-  
-#submitBtn:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
+/* The sidebar menu */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    background-color: #f2f2f2; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
   }
   
-  .sidenav a {
+  /* The sidebar links */
+  .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #111;
     display: block;
     transition: 0.3s;
   }
   
-  .sidenav a:hover {
-    color: #f1f1f1;
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #ff6600;
   }
   
-  .sidenav .closebtn {
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
   }
-
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
   #main {
-    transition: margin-left .5s;
-    padding: 16px;
+    transition: margin-left .5s; /* If you want a transition effect */
   }
-
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  } 
 
   /*Navbar*/
-.navbar {
-    margin-bottom: 0;
-    background-color: #ff6600 !important;        
-    border: 0;
+ .navbar {
+    background-color: #ff6600 !important;
     font-size: 11px;
-    letter-spacing: 4px;
-    opacity: 0.9;
-}
+    height: 60px;
+} 
 
 .navbar li a, .navbar, .navbar-brand{ 
-    color: black !important;
+    color: white !important;
     /*font-size: medium;*/
 }
 .navbar-brand{
@@ -164,12 +117,12 @@
     height: 200px;
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /* Standard syntax (must be last) */
   /* } */
-
+/* 
   #grad {
     height: 100vh;
     background-color: #003399; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to bottom right,#ff8533, #993366, #003399); /* Standard syntax (must be last) */
-  }
+    /* background-image: linear-gradient(to bottom right,#ff8533, #993366, #003399); Standard syntax (must be last) */
+  /* } */ 
 
  
 

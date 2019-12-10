@@ -6,12 +6,13 @@
     myChart1.config.options.title.text = chTitle1;
     myChart1.update();
   }
+
+
   $("#MajorWiseStudentsSECS").click(function (event) {
     getBtn();
-    $("#content").show();
     $(".dropdown").show();
-    
-    $("#tableMenu1 a").click(function(e){
+    $("#content").show();
+    $("#tableMenu a").click(function(e){
       e.preventDefault(); // cancel the link behaviour
       var selText1 = $(this).text();
       $("#tableButton").text(selText1);

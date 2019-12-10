@@ -2,7 +2,8 @@
 
 <head>
     <title>Graphs</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="style.css">
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script> -->
@@ -32,27 +33,39 @@
         </div>
     </nav> -->
 
-    <!-- Fixed nav -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
+    <!-- fixed nav -->
+    <nav class= "navbar navbar-default navbar-fixed-top">
+            <!-- <div class= "container-fluid"> -->
             <!-- Side nav -->
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="/index"> Home </a>
-                <a href="/graph"> Report/Graph Generator </a>
+            <!-- <div id="mySidenav" class="sidenav">
+                <a href= "javascript:void(0)" class= "closebtn" onclick= "closeNav()">&times;</a>
+                <a href= "/index"> Home </a>
+                <a href= "/graph"> Report/Graph Generator </a>
                 <a href= "/report"> Report Generator </a>
-                <a href="#"> Features </a>
-                <a href="/form"> Data Input </a>
+                <a href= "/form"> Data Input </a>
+                <a href="/">Logout</a>
+            </div> -->
+                
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href= "/index"> Home </a>
+                <a href= "/graph"> Report/Graph Generator </a>
+                <a href= "/form"> Data Input </a>
                 <a href="/">Logout</a>
             </div>
-
-
+                  
             <div id="main">
-                <a class="navbar-brand" href="#" style="font-size: 30px;">
-                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-                    Annex</a>
-            </div>
-        </div>
+                <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
+                        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+                        Annex</a> 
+          </div>
+              
+            <!-- <div id="main">
+                <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+                  Annex</a>     
+            </div> -->
+        <!-- </div> -->
     </nav>
 
     <br><br><br><br><br>
@@ -150,7 +163,6 @@
             </div>
             <input id="chartTitle1" type="text" class="form-control" placeholder="Edit Title">
 
-
             <canvas id="myChart2" width="400" height="400"></canvas>
 
             <div id="tableDiv" class="dropdown">
@@ -229,20 +241,34 @@
 
 
     <!-- Script for navbar -->
+
+    <!-- <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+              document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+              
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft= "0";
+              document.body.style.backgroundColor = "white";
+            }
+    </script> -->
+
     <script>
        
        
        
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
         }
-
+        
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
         function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            document.body.style.backgroundColor = "white";
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
         }
         function refresh() {
         document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
@@ -267,6 +293,7 @@
 
         } 
     </script>
+    
     <script type="text/javascript" src="../static/JS/script.js"></script>
     <script type="text/javascript" src="../static/JS/SoB.js"></script>
     <script type="text/javascript" src="../static/JS/graph.js"></script>
@@ -288,7 +315,19 @@
         crossorigin="anonymous"></script>
 
     <!-- Bootstrap links -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script> -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </body>
 
 </html>

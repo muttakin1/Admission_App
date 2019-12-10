@@ -29,6 +29,8 @@
     
     $(".dropdown").show();
     $("#content").show();
+
+    //Edit graphs functions
     $("#tableMenu2 a").click(function(e){
       e.preventDefault(); // cancel the link behaviour
       var selText = $(this).text();

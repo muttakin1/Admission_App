@@ -1093,7 +1093,7 @@ $("#SoB").click(function (event) {
             }
           }
         }
-      }
+      
     });
 
 

@@ -25,6 +25,8 @@ var admissionData = {
 }
 
 
+
+
 $("#datainput").click(function (event) {
 
 
@@ -79,6 +81,9 @@ if(document.getElementById("semester").value !="none"){
     var slot=semSlot[1];
     var flag;
     /* var flagDup; */
+
+    // finding existing value from db to prevent multiple input
+   
    
     for(var i = 0; i < lines.length; i++){
       var lineData = /(.+[^\s])\s*-\s([a-zA-Z\\(\\)\s]*)\s([0-9]{1,3})\s*([0-9]{1,3})/g.exec(lines[i])
@@ -191,6 +196,8 @@ if(document.getElementById("semester").value !="none"){
               Exam_no:slot,
             });
           };
+          //Checking validity
+          db.data.find({this.year})
            //CLEARING ALL THE FIELDS START
          document.getElementById("inputYear").value = "none";
          document.getElementById("semester").value = "none";

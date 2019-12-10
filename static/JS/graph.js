@@ -11,10 +11,19 @@ $("#getFocusYear").click(function (event) {
 
       startYear =$("#startYearVal").val()
       finishYear =$("#finishYearVal").val()
+      var period = finishYear-startYear+1;
+      var years=[];
+      var y=Number(startYear);
+
+           for(let i=0;i<period;i++)
+             {
+               years[i]=y;
+               y=y+1;
+            }
   
       let counter = 0
       let numberOfStd = []
-      for (let i = 2013; i <= 2019; i++) {
+      for (let i = startYear; i <= finishYear; i++) {
         noofStd.forEach((item, index) => {
           if (item.year == i) {
             counter = counter + Number(item.no_of_Student)
@@ -26,18 +35,20 @@ $("#getFocusYear").click(function (event) {
         counter = 0
       }
       console.log(numberOfStd)
-  
+     
+      //labels
+     
   
       var ctx = document.getElementById('myChart2');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: years,
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students',
             fill: false,
-            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+            data: numberOfStd,//[numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
             backgroundColor: [
               'rgba(79, 129, 189, 0.2)',
   
@@ -91,6 +102,18 @@ $("#getFocusYear").click(function (event) {
       method: "GET",
       url: "/data/list"
     }).done(function (response) {
+
+      startYear =$("#startYearVal").val()
+      finishYear =$("#finishYearVal").val()
+      var period = finishYear-startYear+1;
+      var years=[];
+      var y=Number(startYear);
+
+           for(let i=0;i<period;i++)
+             {
+               years[i]=y;
+               y=y+1;
+            }
   
       console.log(response)
       let noofStd = response.datas
@@ -101,7 +124,7 @@ $("#getFocusYear").click(function (event) {
       let numberOfStd = []
       let numberOfSob = []
       let numberOfOth = []
-      for (let i = 2013; i <= 2019; i++) {
+      for (let i = startYear; i <= finishYear; i++) {
         noofStd.forEach((item, index) => {
           if (item.year == i && item.School == "SECS") {
             counter = counter + Number(item.no_of_Student)
@@ -130,11 +153,11 @@ $("#getFocusYear").click(function (event) {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: years,
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students in SECS',
-            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+            data: numberOfStd,//[numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
   
             borderColor: [
               'rgba(255, 99, 132, 1)',
@@ -188,6 +211,18 @@ $("#getFocusYear").click(function (event) {
       method: "GET",
       url: "/data/list"
     }).done(function (response) {
+
+      startYear =$("#startYearVal").val()
+      finishYear =$("#finishYearVal").val()
+      var period = finishYear-startYear+1;
+      var years=[];
+      var y=Number(startYear);
+
+           for(let i=0;i<period;i++)
+             {
+               years[i]=y;
+               y=y+1;
+            }
   
       console.log(response)
       let noofStd = response.datas
@@ -202,7 +237,7 @@ $("#getFocusYear").click(function (event) {
       let numberOfOth = []
       let numberOfSlass = []
       let numberOfSls = []
-      for (let i = 2013; i <= 2019; i++) {
+      for (let i = startYear; i <= finishYear; i++) {
         noofStd.forEach((item, index) => {
           if (item.year == i && item.School == "SECS") {
             counter = counter + Number(item.no_of_Student)
@@ -241,10 +276,10 @@ $("#getFocusYear").click(function (event) {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [{
             label: 'Number Of Students in SECS',
-            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+            data: numberOfStd,//[numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
   
             backgroundColor: [
               'rgba(228,108,10, 1)',
@@ -269,7 +304,7 @@ $("#getFocusYear").click(function (event) {
             borderWidth: 2
           }, {
             label: 'Number Of Students in SoB',
-            data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+            data:numberOfSob,// [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
             
             backgroundColor: [
               'rgba(31,73,125,1)',
@@ -297,7 +332,7 @@ $("#getFocusYear").click(function (event) {
           },
           {
             label: 'Number Of Students in SESM+PHARM',
-            data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+            data: numberOfOth,//[numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
             
             backgroundColor: [
               'rgba(128,100,162,1)',
@@ -325,7 +360,7 @@ $("#getFocusYear").click(function (event) {
           },
           { 
             label: 'Number Of Students in Slass',
-            data: [numberOfSlass[0], numberOfSlass[1], numberOfSlass[2], numberOfSlass[3], numberOfSlass[4], numberOfSlass[5], numberOfSlass[6], numberOfSlass[7],],
+            data: numberOfSlass,//[numberOfSlass[0], numberOfSlass[1], numberOfSlass[2], numberOfSlass[3], numberOfSlass[4], numberOfSlass[5], numberOfSlass[6], numberOfSlass[7],],
   
             backgroundColor: [
               'rgba(166,166,166,1)',
@@ -353,7 +388,7 @@ $("#getFocusYear").click(function (event) {
           },
           {
             label: 'Number Of Students in SLS',
-            data: [numberOfSls[0], numberOfSls[1], numberOfSls[2], numberOfSls[3], numberOfSls[4], numberOfSls[5], numberOfSls[6], numberOfSls[7],],
+            data: numberOfSls,//[numberOfSls[0], numberOfSls[1], numberOfSls[2], numberOfSls[3], numberOfSls[4], numberOfSls[5], numberOfSls[6], numberOfSls[7],],
   
             backgroundColor: [
               'rgba(155,187,89,1)',
@@ -416,6 +451,18 @@ $("#getFocusYear").click(function (event) {
       method: "GET",
       url: "/data/list"
     }).done(function (response) {
+
+      startYear =$("#startYearVal").val()
+      finishYear =$("#finishYearVal").val()
+      var period = finishYear-startYear+1;
+      var years=[];
+      var y=Number(startYear);
+
+           for(let i=0;i<period;i++)
+             {
+               years[i]=y;
+               y=y+1;
+            }
   
       console.log(response)
       let noofStd = response.datas
@@ -426,7 +473,7 @@ $("#getFocusYear").click(function (event) {
       let numberOfStd = []
       let numberOfSob = []
       let numberOfOth = []
-      for (let i = 2013; i <= 2019; i++) {
+      for (let i = startYear; i <= finishYear; i++) {
         noofStd.forEach((item, index) => {
           if (item.year == i && item.School == "SLASS") {
             counter = counter + Number(item.no_of_Student)
@@ -455,12 +502,12 @@ $("#getFocusYear").click(function (event) {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: years,
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students in Slass',
             fill:false,
-            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+            data: numberOfStd,//[numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
   
             borderColor: [
               'rgba(166, 166, 166, 1)',
@@ -471,7 +518,7 @@ $("#getFocusYear").click(function (event) {
             lineTension:0.1,
             label: 'Number Of Students in SLS',
             fill:false,
-            data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+            data: numberOfSob,//[numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
   
             borderColor: [
               'rgba(54,186,88,1)',
@@ -483,7 +530,7 @@ $("#getFocusYear").click(function (event) {
             lineTension:0.1,
             label: 'Number Of Students in Sesm+Phar',
             fill:false,
-            data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+            data: numberOfOth,//[numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
   
             borderColor: [
               'rgba(112, 48, 160, 1)',

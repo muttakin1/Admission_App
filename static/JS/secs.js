@@ -1,9 +1,17 @@
 // Major Wise students' interest @ SECS LINE
 // function secsGraphs(event) {
   var myChart1
-  $("#MajorWiseStudentsSECS").click(function (event) {
-    $(".dropdown").show();
 
+  function saveTitle() {
+    var chTitle1 = document.getElementById('chartTitle1').value;
+    myChart1.config.options.title.text = chTitle1;
+    myChart1.update();
+  }
+
+  $("#MajorWiseStudentsSECS").click(function (event) {
+    getBtn();
+    $(".dropdown").show();
+    $("#content").show();
     $("#tableMenu a").click(function(e){
       e.preventDefault(); // cancel the link behaviour
       var selText = $(this).text();

@@ -712,19 +712,20 @@ $("#SoB").click(function (event) {
   
         },
         options: {
+          scales: {
+            xAxes: [{
+              stacked: true
+            }],
+            yAxes: [{
+              stacked: true,
+              ticks: {
+                beginAtZero: true
+              }
+            }],
           title: {
             display: true,
             text: 'Yearly semester wise SoB',
-            scales: {
-              xAxes: [{
-                stacked: true
-              }],
-              yAxes: [{
-                stacked: true,
-                ticks: {
-                  beginAtZero: true
-                }
-              }]
+           
             }
           }
         }

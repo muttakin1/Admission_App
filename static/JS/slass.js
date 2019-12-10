@@ -22,10 +22,19 @@ function saveTitle() {
 }
 
 $("#MajorWiseStudentsSLASS").click(function (event) {
+  getBtn();
+    
+  $(".dropdown").show();
+  $("#content").show();
+
+  
+    
   $("#tableMenu2 a").click(function (e) {
+    console.log('hello')
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
     $("#tableButton2").text(selText);
+    console.log('hello')
     console.log(selText)
     //console.log(myChart.config.options.type)
     myChart2.config.type = selText

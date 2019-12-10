@@ -23,6 +23,9 @@ function saveTitle() {
 }
 
 $("#MajorWiseStudentsSLS").click(function (event) {
+  $(".dropdown").show();
+  $("#content").show();
+  
   $("#tableMenu2 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();

@@ -99,8 +99,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     let numberYearlySESM = []
 
 
-
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
         if (item.year == Yearvalue && item.Semester == "1" && item.School == "SESM") {
           counterSESMAutumn = counterSESMAutumn + Number(item.no_of_Student)
@@ -207,6 +208,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       counterSpring = 0
       counterSummer = 0
     }
+    console.log(year)
 
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
@@ -309,7 +311,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Pharmacy',
@@ -384,7 +386,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Population_ENV',
@@ -477,7 +479,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       myChart4 = new Chart(ctx, {
        type: 'bar',
        data: {
-         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+         labels: year,
          datasets: [{
            label: 'Autumn',
            fill: false,
@@ -584,9 +586,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
          
        }
      });
-
-
-
+     
   }).fail(function (response) {
     console.log(response.responseText);
   });

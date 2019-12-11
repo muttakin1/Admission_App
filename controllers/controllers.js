@@ -30,21 +30,40 @@ module.exports.new3 = function (request, response) {
 
 
 module.exports.create = function (request, response) {
-  var new_data = new Data(request.body);
-  new_data.save(function (err, data) {
-    if (err)
-      return response.status(400)
-        .json({
-          error: "Please add a School"
-        });
-    console.log(data);
-    return response.status(200)
-      .json({
-        message: "Data succesfully added"
-      });
+  console.log(request.body)
+  let bulkOps=request.body.map((item)=>{
+    return {
 
+      "insertOne":{"document":new Data(item)
+    }
+     }
   })
-  console.log(request.body);
+  Data.bulkWrite(bulkOps,{},(err,data)=>{
+    if(err){
+      return response.status(400).json({
+        error:"Could not add to database"
+      })
+      return response.status(200).json({
+        message: "Successfully Added to database"
+      })
+    }
+  })
+
+  // var new_data = new Data(request.body);
+  // new_data.save(function (err, data) {
+  //   if (err)
+  //     return response.status(400)
+  //       .json({
+  //         error: "Please add a School"
+  //       });
+  //   console.log(data);
+  //   return response.status(200)
+  //     .json({
+  //       message: "Data succesfully added"
+  //     });
+
+  // })
+  // console.log(request.body);
 }
 module.exports.list = function (request, response) {
   Data.find(function (err, data) {

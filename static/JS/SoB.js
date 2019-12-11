@@ -112,8 +112,9 @@ $("#SoB").click(function (event) {
     let numberBbaSemester = []
 
 
-
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
 
         if (item.year == Yearvalue && item.Major == "BBA - Management Information Systems") {
@@ -386,7 +387,7 @@ $("#SoB").click(function (event) {
       type: 'line',
       data: {
 
-        labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
@@ -686,7 +687,7 @@ $("#SoB").click(function (event) {
       type: 'line',
       data: {
 
-        labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
@@ -995,11 +996,13 @@ $("#SoB").click(function (event) {
 
       // Yearly semester wise SoB
       var ctx = document.getElementById('myChart4');
-      var myChart = new Chart(ctx, {
+       myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          
+          labels:year,
           datasets: [{
+            lineTension:0.1,
             label: 'Autumn',
             fill: false,
             data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
@@ -1026,7 +1029,7 @@ $("#SoB").click(function (event) {
             ],
             borderWidth: 2
           },
-          {
+          {lineTension:0.1,
             label: 'Spring',
             fill: false,
             data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
@@ -1053,7 +1056,7 @@ $("#SoB").click(function (event) {
             ],
             borderWidth: 2
           },
-          {
+          {lineTension:0.1,
             label: 'Summer',
             fill: false,
             data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],

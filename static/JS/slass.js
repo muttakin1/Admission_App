@@ -1,4 +1,4 @@
-// Major Wise students' interest @ SECS LINE
+// // Major Wise students' interest @ SECS LINE
 
 var myChart2
 var myChart3
@@ -23,23 +23,22 @@ function saveTitle() {
 
 $("#MajorWiseStudentsSLASS").click(function (event) {
   getBtn();
-    
+  
   $(".dropdown").show();
   $("#content").show();
 
   
     
-  $("#tableMenu2 a").click(function (e) {
-    console.log('hello')
+  $("#tableMenu2 a").click(function(e){
+    console.log("hello2")
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
     $("#tableButton2").text(selText);
-    console.log('hello')
     console.log(selText)
     //console.log(myChart.config.options.type)
     myChart2.config.type = selText
     myChart2.update()
-  });
+});
 
   $("#tableMenu3 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
@@ -59,7 +58,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart4.config.type = selText
     myChart4.update()
   });
-  getBtn();
+  //getBtn();
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -141,8 +140,14 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
 
 
+<<<<<<< HEAD
 
     for (let i = startYear; i <= finishYear; i++) {
+=======
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
       noofStd.forEach((item, index) => {
 
         // Major wise Student's interest @ SECS
@@ -335,7 +340,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       counterSummer = 0
     }
 
-
+    console.log(year)
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
       type: 'pie',
@@ -451,7 +456,11 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
+<<<<<<< HEAD
         labels:years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
+        labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in EngTrainingLang',
@@ -559,7 +568,11 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
+<<<<<<< HEAD
         labels:years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
+        labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Sociology',
@@ -671,7 +684,11 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
+<<<<<<< HEAD
         labels:years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
+        labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in SOC',
@@ -753,7 +770,11 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
+<<<<<<< HEAD
         labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
+        labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           label: 'Number Of Students in SOC',
           fill: false,
@@ -921,7 +942,11 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
+<<<<<<< HEAD
         labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
+        labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           label: 'Autumn',
           fill: false,
@@ -1036,6 +1061,6 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
 
 
-})
+ })
 
 

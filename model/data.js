@@ -3,15 +3,15 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var dataSchema = new Schema({
-  school: {
+  School: {
     type: String,
     required: "School name required"
   },
-  department: {
+  Dept: {
     type: String,
    
   },
-  major: {
+  Major: {
     type: String,
     
   },
@@ -19,7 +19,7 @@ var dataSchema = new Schema({
     type: String,
     
   },
-  Exam_no: {
+  no: {
     type: String,
    
   },

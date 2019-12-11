@@ -78,6 +78,7 @@
                             </div>
                         <input class="btn btn-warning" onclick="divide()" value="Add Data"id="btn_inputData" name="btn_inputData" type="button" style="background-color: #ff944d;" >
                         <input class="btn btn-warning"  value="Get Data" id="getdata" name="getdata" type="button" style="margin-left: 2px; background-color: #ff944d;" >
+                        <input class="btn btn-warning"  onclick="upadteData()" value="Update Data" id="updatedata" name="updatedata" type="button" style="margin-left: 2px; background-color: #ff944d;" >
                         <span class="text-success" id="span_SuccessMsg" style="margin-left: 5px;"></span>
                       <!--   </button> -->
                        <!--  <span class="text-danger float-center" id="errorMsg" style="margin-right:10px;font-size:18px;"></span> -->
@@ -88,6 +89,7 @@
     <br><br><br>
                
     <script type="text/javascript" src="../static/JS/script.js"></script>
+    <script type="text/javascript" src="server.js"></script>
                 
    <!-- Script for navbar -->
    <script>
@@ -218,6 +220,18 @@
                 }
                 
             }
+            function upadteData(){
+              var txt;
+              if(confirm("Data Already exists in the Database , Do you want to Update?")){
+                txt = "You pressed OK!";
+              } else {
+                txt = "You pressed Cancel!";
+              }
+              document.getElementById("span_SuccessMsg").innerHTML=txt;
+              
+        }
+
+
     </script>
 </body>
 

@@ -28,17 +28,17 @@ var admissionData = {
 $("#datainput").click(function (event) {
 
 
-  $.ajax({
-    method: "POST",
-    url: "/data/new",
+  // $.ajax({
+  //   method: "POST",
+  //   url: "/data/new",
 
-    data: admissionData
+  //   data: admissionData
 
-  }).done(function (response) {
-    console.log(response)
-  }).fail(function (response) {
-    console.log(response)
-  })
+  // }).done(function (response) {
+  //   console.log(response)
+  // }).fail(function (response) {
+  //   console.log(response)
+  // })
 })
 
 
@@ -57,10 +57,10 @@ $("#getdata").click(function (event) {
 
 function divide(){  //START OF JS
   //START CHECKING IF DATA INPUT IS EMPTY
-if(document.getElementById("inputYear").value !="none"){
-document.getElementById("span_inputYear").innerHTML = "";
-if(document.getElementById("semester").value !="none"){
-  document.getElementById("span_semester").innerHTML = "";
+  if(document.getElementById("inputYear").value !="none"){
+  document.getElementById("span_inputYear").innerHTML = "";
+    if(document.getElementById("semester").value !="none"){
+document.getElementById("span_semester").innerHTML = "";
   if(document.getElementById("ta_inputData").value.trim()){
     document.getElementById("span_btn_inputData").innerHTML ="";
     
@@ -184,22 +184,45 @@ if(document.getElementById("semester").value !="none"){
          
          
          if(flag==true && hasDuplicates(texts)==false){
-          var obj = new Object();
+          // var obj = new Object();
          
+          // for (var k = 0; k < texts.length; k++) {
+          //   obj[k] = ({
+          //     // /key:texts[k],
+          //     School:school[k],
+          //     Dept:dept_new[k],
+          //     Major:dept[k] +' - '+major[k],
+          //     no_of_Student:paid_count[k],
+          //     no:count[k],
+          //   //  no_of_Student:paid_count[k],
+          //    // school:school[k],
+          //    year:year,
+          //     //semester:semesterNumber,
+          //     //year:year,
+          //     semester_no:semester+' '+slot,
+          //     Semester:semesterNumber,
+          //   });
+          // };
+
+          // data input should be in an array 
+          var dataList=[]
           for (var k = 0; k < texts.length; k++) {
-            obj[k] = ({
-              // /key:texts[k],
-              Dept:dept_new[k],
-              Major:dept[k] +' - '+major[k],
-              no:count[k],
-              no_of_Student:paid_count[k],
-              school:school[k],
-              semester:semesterNumber,
-              year:year,
-              semester_no:semester+' '+slot,
-              Exam_no:slot,
-            });
-          };
+           dataList.push({
+             // /key:texts[k],
+             School:school[k],
+             Dept:dept_new[k],
+             Major:dept[k] +' - '+major[k],
+             no_of_Student:paid_count[k],
+             no:count[k],
+           //  no_of_Student:paid_count[k],
+            // school:school[k],
+            year:year,
+             //semester:semesterNumber,
+             //year:year,
+             semester_no:semester+' '+slot,
+             Semester:semesterNumber,
+           });
+         };
            //CLEARING ALL THE FIELDS START
          document.getElementById("inputYear").value = "none";
          document.getElementById("semester").value = "none";
@@ -210,18 +233,20 @@ if(document.getElementById("semester").value !="none"){
        }, 2000);
          //CLEARING ALL THE FIELDS END
          }
-          
+        
   
   
       
       
-      console.log(obj);
-      
+      console.log(dataList);
+      //posting the data into the database
   $.ajax({
     method: "POST",
     url: "/data/new",
-
-    data: obj
+    headers:{
+      'Content-Type':'application/json'
+    },
+    data: JSON.stringify(dataList)
 
   }).done(function (response) {
     console.log(response)
@@ -274,6 +299,39 @@ var newCanvas5 = document.querySelector('#myChart5');
 var newCanvas6 = document.querySelector('#myChart6');
 var newCanvas7 = document.querySelector('#myChart7');
 
+var newCanvas8 = document.querySelector('#myChart8');
+var newCanvas9 = document.querySelector('#myChart9');
+var newCanvas10 = document.querySelector('#myChart10');
+var newCanvas11 = document.querySelector('#myChart1');
+var newCanvas12 = document.querySelector('#myChart12');
+var newCanvas13 = document.querySelector('#myChart13');
+var newCanvas14 = document.querySelector('#myChart14');
+var newCanvas15 = document.querySelector('#myChart15');
+
+var newCanvas16 = document.querySelector('#myChart16');
+var newCanvas17 = document.querySelector('#myChart17');
+var newCanvas18 = document.querySelector('#myChart18');
+var newCanvas19 = document.querySelector('#myChart19');
+var newCanvas20 = document.querySelector('#myChart20');
+var newCanvas21 = document.querySelector('#myChart21');
+var newCanvas22 = document.querySelector('#myChart22');
+var newCanvas23 = document.querySelector('#myChart23');
+
+var newCanvas24 = document.querySelector('#myChart24');
+var newCanvas25 = document.querySelector('#myChart25');
+var newCanvas26 = document.querySelector('#myChart26');
+var newCanvas27 = document.querySelector('#myChart27');
+var newCanvas28 = document.querySelector('#myChart28');
+var newCanvas29 = document.querySelector('#myChart29');
+var newCanvas30 = document.querySelector('#myChart30');
+var newCanvas31 = document.querySelector('#myChart31');
+
+var newCanvas32 = document.querySelector('#myChart32');
+var newCanvas33 = document.querySelector('#myChart33');
+var newCanvas34 = document.querySelector('#myChart34');
+var newCanvas35 = document.querySelector('#myChart35');
+var newCanvas36 = document.querySelector('#myChart36');
+
 //create image from dummy canvas
 var newCanvasImg0 = newCanvas.toDataURL("image/png", "image/octet-stream");
 var newCanvasImg1 = newCanvas1.toDataURL("image/png", "image/octet-stream");
@@ -284,10 +342,42 @@ var newCanvasImg5 = newCanvas5.toDataURL("image/png", "image/octet-stream");
 var newCanvasImg6 = newCanvas6.toDataURL("image/png", "image/octet-stream");
 var newCanvasImg7 = newCanvas7.toDataURL("image/png", "image/octet-stream");
 
+var newCanvasImg8 = newCanvas8.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg9 = newCanvas9.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg10 = newCanvas10.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg11 = newCanvas11.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg12 = newCanvas12.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg13 = newCanvas13.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg14 = newCanvas14.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg15 = newCanvas15.toDataURL("image/png", "image/octet-stream");
+
+var newCanvasImg16 = newCanvas16.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg17 = newCanvas17.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg18 = newCanvas18.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg19 = newCanvas19.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg20 = newCanvas20.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg21 = newCanvas21.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg22 = newCanvas22.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg23 = newCanvas23.toDataURL("image/png", "image/octet-stream");
+
+var newCanvasImg24 = newCanvas24.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg25 = newCanvas25.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg26 = newCanvas26.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg27 = newCanvas27.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg28 = newCanvas28.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg29 = newCanvas29.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg30 = newCanvas30.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg31 = newCanvas31.toDataURL("image/png", "image/octet-stream");
+
+var newCanvasImg32 = newCanvas32.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg33 = newCanvas33.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg34 = newCanvas34.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg35 = newCanvas35.toDataURL("image/png", "image/octet-stream");
+var newCanvasImg36 = newCanvas36.toDataURL("image/png", "image/octet-stream");
 
 
 
-var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newCanvasImg4, newCanvasImg5, newCanvasImg6, newCanvasImg7];
+var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newCanvasImg4, newCanvasImg5, newCanvasImg6, newCanvasImg7, newCanvasImg8,newCanvasImg9, newCanvasImg10, newCanvasImg11, newCanvasImg12, newCanvasImg13, newCanvasImg14, newCanvasImg15,newCanvasImg16,newCanvasImg17,newCanvasImg18,newCanvasImg19,newCanvasImg20,newCanvasImg21,newCanvasImg22,newCanvasImg23,newCanvasImg24,newCanvasImg25,newCanvasImg26,newCanvasImg27,newCanvasImg28,newCanvasImg29,newCanvasImg30,newCanvasImg31,newCanvasImg32,newCanvasImg33,newCanvasImg34,newCanvasImg35,newCanvasImg36];
 
 
   var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
@@ -316,20 +406,21 @@ var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newC
   doc.text(str5, mid, 190, {maxWidth: 170, align: "center"});
   doc.setFontStyle("normal");
 
-for(i = 0; i <8; i+=2) { 
+for(i = 0; i <36; i+=2) { 
       if(imgArray[i]!=emptyImg){
-        console.log("full ");
+        console.log("full");
         // Graph Page Start:    
         doc.addPage('a4','p');
         doc.addImage(img, 'JPEG',160,10,30,30 );
         doc.addImage(imgArray[i], 'JPEG', 50, 40, 115, 100 );
 
          if(imgArray[i+1]!=emptyImg){
+          console.log("full");
            doc.addImage(imgArray[i+1], 'JPEG', 50, 155, 115, 100 );
          }
       }
       else {
-        console.log("empty");
+        console.log(imgArray[i] + " Canvas is Empty");
       }
   }
 
@@ -366,9 +457,11 @@ doc.save('Report.pdf');
     $("#chartTitle2").show();
     $("#chartTitle3").show();
     $("#chartTitle4").show();
+    editTitle();
   }
 
   function SaveEdit() {
+    saveTitle();
     var l1New = document.getElementById('line1Input').value;
     var l2New = document.getElementById('line2Input').value;
     var l5New = document.getElementById('line5Input').value;
@@ -385,9 +478,8 @@ doc.save('Report.pdf');
     $("#line5").toggle();
     $("#DownloadBtn").toggle();
     $("#getFocusYear").toggle();
-    $("#chartTitle2").toggle();
     $("#chartTitle2").hide();
     $("#chartTitle3").hide();
     $("#chartTitle4").hide();
-    saveTitle();
   }
+    

@@ -25,6 +25,7 @@ function saveTitle() {
 $("#MajorWiseStudentsSLS").click(function (event) {
   $(".dropdown").show();
   $("#content").show();
+  getBtn();
 
   $("#tableMenu2 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
@@ -54,7 +55,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     myChart4.config.type = selText
     myChart4.update()
   });
-  getBtn();
+ 
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -104,8 +105,13 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     let numberYearlySLS = []
     let numberSLSsemester = []
 
+    let year=[]
 
     for (let i = startYear; i <= finishYear; i++) {
+<<<<<<< HEAD
+=======
+      year.push(Number(i))
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
       noofStd.forEach((item, index) => {
         if (item.year == i && item.Major == "BSc - Biochemistry") {
           counterBiochem = counterBiochem + Number(item.no_of_Student)
@@ -293,7 +299,11 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
+<<<<<<< HEAD
         labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
+        labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Biochemistry',
@@ -354,7 +364,11 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
+<<<<<<< HEAD
         labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
+        labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [
           {
             lineTension: 0.1,
@@ -415,10 +429,14 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
       // Yearly semester wise SLS
       var ctx = document.getElementById('myChart4');
-      var myChart4 = new Chart(ctx, {
+       myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
+<<<<<<< HEAD
           labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
+          labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
           datasets: [{
             label: 'Autumn',
             fill: false,

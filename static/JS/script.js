@@ -28,17 +28,17 @@ var admissionData = {
 $("#datainput").click(function (event) {
 
 
-  $.ajax({
-    method: "POST",
-    url: "/data/new",
+  // $.ajax({
+  //   method: "POST",
+  //   url: "/data/new",
 
-    data: admissionData
+  //   data: admissionData
 
-  }).done(function (response) {
-    console.log(response)
-  }).fail(function (response) {
-    console.log(response)
-  })
+  // }).done(function (response) {
+  //   console.log(response)
+  // }).fail(function (response) {
+  //   console.log(response)
+  // })
 })
 
 
@@ -184,25 +184,45 @@ if(document.getElementById("semester").value !="none"){
          
          
          if(flag==true && hasDuplicates(texts)==false){
-          var obj = new Object();
+          // var obj = new Object();
          
+          // for (var k = 0; k < texts.length; k++) {
+          //   obj[k] = ({
+          //     // /key:texts[k],
+          //     School:school[k],
+          //     Dept:dept_new[k],
+          //     Major:dept[k] +' - '+major[k],
+          //     no_of_Student:paid_count[k],
+          //     no:count[k],
+          //   //  no_of_Student:paid_count[k],
+          //    // school:school[k],
+          //    year:year,
+          //     //semester:semesterNumber,
+          //     //year:year,
+          //     semester_no:semester+' '+slot,
+          //     Semester:semesterNumber,
+          //   });
+          // };
+
+          // data input should be in an array 
+          var dataList=[]
           for (var k = 0; k < texts.length; k++) {
-            obj[k] = ({
-              // /key:texts[k],
-              School:school[k],
-              Dept:dept_new[k],
-              Major:dept[k] +' - '+major[k],
-              no_of_Student:paid_count[k],
-              no:count[k],
-            //  no_of_Student:paid_count[k],
-             // school:school[k],
-             year:year,
-              //semester:semesterNumber,
-              //year:year,
-              semester_no:semester+' '+slot,
-              Semester:semesterNumber,
-            });
-          };
+           dataList.push({
+             // /key:texts[k],
+             School:school[k],
+             Dept:dept_new[k],
+             Major:dept[k] +' - '+major[k],
+             no_of_Student:paid_count[k],
+             no:count[k],
+           //  no_of_Student:paid_count[k],
+            // school:school[k],
+            year:year,
+             //semester:semesterNumber,
+             //year:year,
+             semester_no:semester+' '+slot,
+             Semester:semesterNumber,
+           });
+         };
            //CLEARING ALL THE FIELDS START
          document.getElementById("inputYear").value = "none";
          document.getElementById("semester").value = "none";
@@ -213,24 +233,26 @@ if(document.getElementById("semester").value !="none"){
        }, 2000);
          //CLEARING ALL THE FIELDS END
          }
-          
+        
   
   
       
       
-      console.log(obj);
-      
-  // $.ajax({
-  //   method: "POST",
-  //   url: "/data/new",
+      console.log(dataList);
+      //posting the data into the database
+  $.ajax({
+    method: "POST",
+    url: "/data/new",
+    headers:{
+      'Content-Type':'application/json'
+    },
+    data: JSON.stringify(dataList)
 
-  //   data: obj
-
-  // }).done(function (response) {
-  //   console.log(response)
-  // }).fail(function (response) {
-  //   console.log(response)
-  // })
+  }).done(function (response) {
+    console.log(response)
+  }).fail(function (response) {
+    console.log(response)
+  })
       
     
       // TRYING TO MAKE AN OBJECT HERE --- END

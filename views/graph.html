@@ -8,8 +8,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
@@ -38,23 +36,13 @@
             </a> 
         </div> 
     </nav>
+    <div id= "con" onclick= "closeNav()">
 
     <br><br><br>
-    <div class="dropdown">
-            <button  type="button" class="btn dropdown-toggle" style= "background:#FE9A0B;" data-toggle="dropdown">
-              Choose Graph Type
-              <span class="caret"></span>
-            </button>
-            <div class="dropdown-menu" >
-              <a class="dropdown-item" href="#">pie</a>
-              <a class="dropdown-item" href="#">line</a>
-              <a class="dropdown-item" href="#">bar</a>
-            </div>
-          </div>
 
     <div class="container">
         <!-- Input fields -->
-        <div style="width:30%" class="input-group mb-3">
+        <div style="width:50%" class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Start Year</span>
             </div>
@@ -62,7 +50,7 @@
                 aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
-        <div style= "width: 30%" class="input-group mb-3">
+        <div style= "width: 50%" class="input-group mb-3">
             <div class= "input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Focus Year</span>
             </div>
@@ -70,7 +58,7 @@
                 aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
-        <div style= "width: 30%" class="input-group mb-3">
+        <div style= "width: 50%" class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Finish Year</span>
             </div>
@@ -139,23 +127,25 @@
 
             
             <canvas id="myChart" width="400" height="400"></canvas>
+            <br><br>
             <canvas id="myChart1" width="400" height="400"></canvas>
+            <br><br>
 
             <div id="tableDiv" class="dropdown">
                 <button id="tableButton2" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
                     Choose Graph Type
                     <span class="caret"></span>
                 </button>
-                <ul id="tableMenu2" class="dropdown-menu">
-                   
+                <ul id="tableMenu" class="dropdown-menu">
+                    
                     <li><a href="#">line</a></li>
                     <li><a href="#">bar</a></li>
                 </ul>
             </div>
             <input id="chartTitle2" type="text" class="form-control" placeholder="Edit Title">
-            
+            <br><br>
             <canvas id="myChart2" width="400" height="400"></canvas>
-
+            <br><br>
             <div id="tableDiv" class="dropdown">
                 <button id="tableButton3" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
                     Choose Graph Type
@@ -167,11 +157,11 @@
                     <li><a href="#">bar</a></li>
                 </ul>
             </div>
-
+            <br><br>
             <input id="chartTitle3" type="text" class="form-control" placeholder="Edit Title">
-            
+            <br><br>
             <canvas id="myChart3" width="400" height="400"></canvas>
-
+            <br><br>
             <div id="tableDiv" class="dropdown">
                 <button id="tableButton4" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
                     Choose Graph Type
@@ -183,16 +173,20 @@
                     <li><a href="#">bar</a></li>
                 </ul>
             </div>
-
+            <br><br>
             <input id="chartTitle4" type="text" class="form-control" placeholder="Edit Title">
-
+            <br><br>
             <canvas id="myChart4" width="400" height="400"></canvas>
+            <br><br>
             <canvas id="myChart5" width="400" height="400"></canvas>
+            <br><br>
             <canvas id="myChart6" width="400" height="400"></canvas>
+            <br><br>
             <canvas id="myChart7" width="400" height="400"></canvas>
+            <br><br>
     </div>
         <div id="elementH"></div>
-        
+        </div>
     </div>
 
     <script>
@@ -205,6 +199,7 @@
         function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("con").style.marginLeft = "0"; 
         }
 
         // refresh graphs

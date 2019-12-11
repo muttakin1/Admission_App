@@ -15,12 +15,9 @@ body{
 #SOB2019{
     margin-left: 25mm;
 }
-#indexPara{
-  min-height:200px;
-}
 
 #indexPara{
-    min-height: 200px;
+  min-height:200px;
 }
 
 /* The sidebar menu */
@@ -91,6 +88,7 @@ body{
     background-color: #ff6600 !important;
     font-size: 11px;
     height: 60px;
+    padding-top: 0;
 } 
 
 .navbar li a, .navbar, .navbar-brand{ 
@@ -257,4 +255,3 @@ body{
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
-

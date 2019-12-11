@@ -21,6 +21,9 @@ function saveTitle() {
   myChart4.update();
 }
 $("#MajorWiseStudentsSESM").click(function (event) {
+  $(".dropdown").show();
+  $("#content").show();
+
   $("#tableMenu2 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
@@ -244,7 +247,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SESM',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20  
 
         },
 
@@ -289,7 +293,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SESM',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -358,7 +363,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         title: {
           display: true,
           text: 'Major wise Students interest @ SESM+Pharmacy',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
         },
         scales: {
           yAxes: [{
@@ -434,7 +440,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       options: {
         title: {
           display: true,
-          text: 'Major wise Students interest @ SESM+Pharmacy'
+          text: 'Major wise Students interest @ SESM+Pharmacy',
+          fontSize:20  
         },
         scales: {
           yAxes: [{
@@ -570,6 +577,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
          title: {
            display: true,
            text: 'Yearly semester wise SESM',
+           fontSize:20  
           
            }
          

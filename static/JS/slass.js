@@ -22,10 +22,19 @@ function saveTitle() {
 }
 
 $("#MajorWiseStudentsSLASS").click(function (event) {
+  getBtn();
+    
+  $(".dropdown").show();
+  $("#content").show();
+
+  
+    
   $("#tableMenu2 a").click(function (e) {
+    console.log('hello')
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
     $("#tableButton2").text(selText);
+    console.log('hello')
     console.log(selText)
     //console.log(myChart.config.options.type)
     myChart2.config.type = selText
@@ -363,7 +372,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SLASS Majors',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -415,7 +425,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'SLASS Departments ' + Yearvalue,
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -521,6 +532,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'Major wise Students interest @ SLASS',
+          fontSize:20  ,
           scales: {
             yAxes: [{
               ticks: {
@@ -629,7 +641,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       options: {
         title: {
           display: true,
-          text: 'Major wise Students interest @ SLASS'
+          text: 'Major wise Students interest @ SLASS',
+          fontSize:20  
         },
         scales: {
           yAxes: [{
@@ -714,6 +727,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'SLASS Departments',
+          fontSize:20  ,
           scales: {
             yAxes: [{
               ticks: {
@@ -885,6 +899,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'SLASS Departments',
+          fontSize:20  
          
           
         }
@@ -996,6 +1011,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'Yearly semester wise SLASS',
+          fontSize:20  
          
           }
         

@@ -197,10 +197,10 @@ if(document.getElementById("semester").value !="none"){
             //  no_of_Student:paid_count[k],
              // school:school[k],
              year:year,
-              semester:semesterNumber,
+              //semester:semesterNumber,
               //year:year,
               semester_no:semester+' '+slot,
-              Semester:slot,
+              Semester:semesterNumber,
             });
           };
            //CLEARING ALL THE FIELDS START

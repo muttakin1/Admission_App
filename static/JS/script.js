@@ -189,15 +189,18 @@ if(document.getElementById("semester").value !="none"){
           for (var k = 0; k < texts.length; k++) {
             obj[k] = ({
               // /key:texts[k],
+              School:school[k],
               Dept:dept_new[k],
               Major:dept[k] +' - '+major[k],
-              no:count[k],
               no_of_Student:paid_count[k],
-              school:school[k],
+              no:count[k],
+            //  no_of_Student:paid_count[k],
+             // school:school[k],
+             year:year,
               semester:semesterNumber,
-              year:year,
+              //year:year,
               semester_no:semester+' '+slot,
-              Exam_no:slot,
+              Semester:slot,
             });
           };
            //CLEARING ALL THE FIELDS START
@@ -217,17 +220,17 @@ if(document.getElementById("semester").value !="none"){
       
       console.log(obj);
       
-  $.ajax({
-    method: "POST",
-    url: "/data/new",
+  // $.ajax({
+  //   method: "POST",
+  //   url: "/data/new",
 
-    data: obj
+  //   data: obj
 
-  }).done(function (response) {
-    console.log(response)
-  }).fail(function (response) {
-    console.log(response)
-  })
+  // }).done(function (response) {
+  //   console.log(response)
+  // }).fail(function (response) {
+  //   console.log(response)
+  // })
       
     
       // TRYING TO MAKE AN OBJECT HERE --- END

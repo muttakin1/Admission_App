@@ -361,7 +361,7 @@ $("#tableMenu4 a").click(function(e){
           
           title: {
             display: true,
-            text: Yearvalue + ' @ Secs Majors',
+            text: 'SECS Majors ' + Yearvalue,
             fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
             fontSize:20  
           },

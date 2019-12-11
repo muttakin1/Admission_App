@@ -86,7 +86,7 @@ body{
   /*Navbar*/
  .navbar {
     background-color: #ff6600 !important;
-    font-size: 11px;
+    font-size: 30px;
     height: 60px;
     padding-top: 0;
 } 
@@ -169,20 +169,20 @@ body{
 }
 
  /* Style The Dropdown Button */
- .dropbtn {
+.dropbtn {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
+}
   
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
     position: relative;
     display: inline-block;
-  }
+}
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
@@ -272,3 +272,53 @@ body{
     border-radius: 10px;
     font-size: 18px;
   }
+  #indexcontainer{
+      margin-left: 40px;
+      margin-right: 40px;
+  }
+
+#indexChartdiv{
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+#indexChart{
+    position: absolute;
+    left: 100px;
+}
+
+#indexChart1{
+    position: absolute;
+    left: 650px;
+}
+
+#indexChart2{
+    position: absolute;
+    left: 100px;
+    top: 600px;
+}
+
+#indexChart3{
+    position: absolute;
+    left: 650px;
+    top: 600px;
+}
+
+#indexChart4{
+    position: absolute;
+    top: 1200px;
+    left: 100px;
+}
+
+#indexChart5{
+    position: absolute;
+    top: 1200px;
+    left: 600px;
+}
+
+#indexChart6{
+    position: absolute;
+    top: 1800px;
+    left: 350px;
+}

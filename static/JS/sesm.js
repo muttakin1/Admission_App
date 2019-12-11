@@ -249,7 +249,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
         title: {
           display: true,
-          text: Yearvalue + ' @ SESM',
+          text: 'SESM Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
             fontSize:20  
 

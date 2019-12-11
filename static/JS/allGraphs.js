@@ -1010,7 +1010,7 @@ $("#getFocusYear").click(function (event) {
               
               title: {
                 display: true,
-                text: Yearvalue + ' @ Secs Majors',
+                text: 'SECS Majors ' + Yearvalue,
                 fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
                 fontSize:20  
               },
@@ -2003,7 +2003,7 @@ $("#getFocusYear").click(function (event) {
 
         title: {
           display: true,
-          text: Yearvalue + ' @ SESM',
+          text: 'SESM Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
             fontSize:20  
 
@@ -2660,7 +2660,7 @@ $("#getFocusYear").click(function (event) {
 
         title: {
           display: true,
-          text: Yearvalue + ' @ SLASS Majors',
+          text: 'SLASS Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
           fontSize:20  
 
@@ -3481,7 +3481,7 @@ $("#getFocusYear").click(function (event) {
 
         title: {
           display: true,
-          text: 'SLS ' + Yearvalue,
+          text: 'SLS Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
             fontSize:20  
 
@@ -4007,26 +4007,26 @@ $("#getFocusYear").click(function (event) {
           data: [numberBBA[0], numberBBA[1], numberBBA[2], numberBBA[3], numberBBA[4], numberBBA[5], numberBBA[6], numberBBA[7], numberBBA[8]],
           backgroundColor: [
             'rgba(44, 77, 117, 1)', //mis
-            'rgba(192, 80, 77, 1)', // finance
-            'rgba(247, 150, 70, 1)', //investment banking
-            'rgba(79, 129, 189, 1)', // accounting
-            'rgba(155, 187, 89, 1)', //general management
-            'rgba(128, 100, 162, 1)', //hrm
-            'rgba(75, 172, 198, 1)', //IB
-            'rgba(119, 44, 42, 1)', //marketing
-            'rgba(95, 117, 48, 1)', // econ
-          ],
-          borderColor: [
-            'rgba(44, 77, 117, 1)',
-            'rgba((192, 80, 77, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(95, 117, 48, 1)',
-          ],
+                'rgb(89, 135, 192)', // finance
+                'rgb(107, 148, 199)', //investment banking
+                'rgb(163, 188, 220)', // accounting
+                'rgb(0, 134, 179)', //general management
+                'rgb(0, 153, 204)', //hrm
+                'rgb(102, 181, 255)', //IB
+                'rgb(153, 204, 255)', //marketing
+                'rgb(204, 230, 255)', // econ
+              ],
+              borderColor: [
+                'rgba(44, 77, 117, 1)',
+                'rgb(89, 135, 192)',
+                'rgb(107, 148, 199)',
+                'rgb(163, 188, 220)',
+                'rgb(0, 134, 179)',
+                'rgb(0, 153, 204)',
+                'rgb(102, 181, 255)',
+                'rgb(153, 204, 255)',
+                'rgb(204, 230, 255)',
+              ],
           borderWidth: 2
         },
         ]
@@ -4045,7 +4045,7 @@ $("#getFocusYear").click(function (event) {
 
         title: {
           display: true,
-          text: Yearvalue + ' @ SOB',
+          text: 'SOB Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
           fontSize:20  
 

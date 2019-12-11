@@ -370,7 +370,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
         title: {
           display: true,
-          text: Yearvalue + ' @ SLASS Majors',
+          text: 'SLASS Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
           fontSize:20  
 

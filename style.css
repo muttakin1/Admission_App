@@ -262,6 +262,47 @@ body{
   }
 
 #indexChartdiv{
-    width: 300px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+#indexChart{
+    position: absolute;
+    left: 100px;
+}
+
+#indexChart1{
+    position: absolute;
+    left: 650px;
+}
+
+#indexChart2{
+    position: absolute;
+    left: 100px;
+    top: 600px;
+}
+
+#indexChart3{
+    position: absolute;
+    left: 650px;
+    top: 600px;
+}
+
+#indexChart4{
+    position: absolute;
+    top: 1200px;
+    left: 100px;
+}
+
+#indexChart5{
+    position: absolute;
+    top: 1200px;
+    left: 600px;
+}
+
+#indexChart6{
+    position: absolute;
+    top: 1800px;
+    left: 350px;
 }

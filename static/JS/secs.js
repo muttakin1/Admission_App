@@ -272,19 +272,18 @@ $("#tableMenu4 a").click(function(e){
       numberSECS.push(counterYearlyPHY)
       
       //Find the Total Number of Student in SECS (why doesn't work?)
-      let total=counterYearlyCE+counterYearlyCS+counterYearlyCSE+counterYearlyEEE+counterYearlyETE+counterYearlyMATH+counterYearlyPHY;
+     /* let total=counterYearlyCE+counterYearlyCS+counterYearlyCSE+counterYearlyEEE+counterYearlyETE+counterYearlyMATH+counterYearlyPHY;
       console.log("Total: "+ total);
 
-      let s=0;
-      for(let i=0;i<=numberSECS.length;i++)
-      {
-        
-        s=String(Math.round((numberSECS[i]*100)/total))+'%';
-        val.push(s);
-        console.log("Val: "+ val[i]);
-      }
+      numberSECS.forEach(myFunction)
 
-      
+            function myFunction(item, index, arr) {
+            var s= (item * 100)/total;
+            arr[index] =s+" "+"%";
+            }
+
+      //var majorSecs=['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',];
+      */
       
       // Focus year graphs, Departments
       numberDept.push(counterYearlyDeptCSE)
@@ -346,11 +345,10 @@ $("#tableMenu4 a").click(function(e){
         type: 'pie',
         data: {
           
-          labels: ['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',],
+          labels:['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',],
           datasets: [{
             label: 'Number Of Students in SECS in ' + Yearvalue,
-            data: [
-              numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
+            data: [numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
             backgroundColor: [
               'rgba(248, 192, 165, 1)', //ce
                 'rgba(247, 191, 164, 1)', //cs
@@ -452,11 +450,7 @@ $("#tableMenu4 a").click(function(e){
      myChart2 = new Chart(ctx, {
       type: 'line',
       data:{
-<<<<<<< HEAD
         labels: years, //['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
-=======
-        labels: year,
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           label: 'Number Of Students in Computer Engineering',
           lineTension:0.1,
@@ -685,11 +679,7 @@ $("#tableMenu4 a").click(function(e){
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-<<<<<<< HEAD
         labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-=======
-        labels:year,
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in Maths',
@@ -912,11 +902,7 @@ $("#tableMenu4 a").click(function(e){
      myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
-<<<<<<< HEAD
         labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-=======
-        labels: year,
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in EEE',
@@ -976,11 +962,7 @@ $("#tableMenu4 a").click(function(e){
     myChart5 = new Chart(ctx, {
       type: 'bar',
       data: {
-<<<<<<< HEAD
         labels: years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-=======
-        labels: year,
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           label: 'Number Of Students in EEE',
           fill: false,
@@ -1086,11 +1068,7 @@ $("#tableMenu4 a").click(function(e){
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-<<<<<<< HEAD
         labels:years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-=======
-        labels: year,
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           label: 'Autumn',
           fill: false,

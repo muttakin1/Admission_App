@@ -21,6 +21,7 @@ function saveTitle() {
   myChart4.update();
 }
 $("#MajorWiseStudentsSESM").click(function (event) {
+  getBtn();
   $(".dropdown").show();
   $("#content").show();
 
@@ -52,7 +53,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart4.config.type = selText
     myChart4.update()
   });
-  getBtn();
+  
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -473,7 +474,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
      // Yearly semester wise SESM
      var ctx = document.getElementById('myChart4');
-     var myChart4 = new Chart(ctx, {
+      myChart4 = new Chart(ctx, {
        type: 'bar',
        data: {
          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],

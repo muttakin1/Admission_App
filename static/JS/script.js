@@ -366,9 +366,11 @@ doc.save('Report.pdf');
     $("#chartTitle2").show();
     $("#chartTitle3").show();
     $("#chartTitle4").show();
+    editTitle();
   }
 
   function SaveEdit() {
+    saveTitle();
     var l1New = document.getElementById('line1Input').value;
     var l2New = document.getElementById('line2Input').value;
     var l5New = document.getElementById('line5Input').value;
@@ -385,9 +387,7 @@ doc.save('Report.pdf');
     $("#line5").toggle();
     $("#DownloadBtn").toggle();
     $("#getFocusYear").toggle();
-    $("#chartTitle2").toggle();
     $("#chartTitle2").hide();
     $("#chartTitle3").hide();
     $("#chartTitle4").hide();
-    saveTitle();
   }

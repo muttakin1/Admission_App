@@ -5,6 +5,15 @@
   var myChart4
   var myChart5
 
+  function editTitle() {
+    var t2= myChart2.config.options.title.text;
+    var t3= myChart3.config.options.title.text;
+    var t4= myChart4.config.options.title.text;
+    document.getElementById("chartTitle2").value=t2;
+    document.getElementById("chartTitle3").value=t3;
+    document.getElementById("chartTitle4").value=t4;
+  }
+
   function saveTitle() {
     var chTitle2 = document.getElementById('chartTitle2').value;
     myChart2.config.options.title.text = chTitle2;
@@ -20,8 +29,6 @@
     myChart4.config.options.title.text = chTitle4;
     console.log(chTitle4);
     myChart4.update();
-
-    
   }
 
   $("#MajorWiseStudentsSECS").click(function (event) {
@@ -71,7 +78,7 @@ $("#tableMenu4 a").click(function(e){
 
     let noofStd = response.datas
    
-    console.log(Yearvalue)
+    // console.log(Yearvalue)
 
     
      // Focus year graphs, Majors

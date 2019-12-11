@@ -1,282 +1,294 @@
-<html>
+    <html>
 
-<head>
-    <title>Graphs</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-    <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-</head>
+    <head>
+        <title>Graphs</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+        <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    </head>
 
-<body onload="foo()">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- <head>
+            <title>Graphs</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+            <link rel="stylesheet" href="style.css">
+        
+        </head> -->
 
-    <!-- fixed nav -->
-    <nav class= "navbar navbar-default navbar-fixed-top">
-        <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href= "/index"> Home </a>
-            <a href= "/graph"> Report/Graph Generator </a>
-            <a href= "/form"> Data Input </a>
-            <a href="/">Logout</a>
-        </div>
-                  
-        <div id="main">
-            <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
-                Annex
-            </a> 
-        </div> 
-    </nav>
-    <div id= "con" onclick= "closeNav()">
+    <body onload="foo()">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-    <br><br><br>
-
-    <div class="container">
-        <!-- Input fields -->
-        <div style="width:50%" class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Start Year</span>
+        <!-- fixed nav -->
+        <nav class= "navbar navbar-default navbar-fixed-top">
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href= "/index"> Home </a>
+                <a href= "/graph"> Report/Graph Generator </a>
+                <a href= "/form"> Data Input </a>
+                <a href="/">Logout</a>
             </div>
-            <input type="text" class="form-control" id="startYearVal" placeholder="Input Start year"
-                aria-label="Username" aria-describedby="basic-addon1">
-        </div>
+                    
+            <div id="main">
+                <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+                    Annex
+                </a> 
+            </div> 
+        </nav>
+        <div id= "con" onclick= "closeNav()">
 
-        <div style= "width: 50%" class="input-group mb-3">
-            <div class= "input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Focus Year</span>
-            </div>
-            <input type="text" class="form-control" id="focusYearVal" placeholder="Input Focus year"
-                aria-label="Username" aria-describedby="basic-addon1">
-        </div>
+        <br><br><br>
 
-        <div style= "width: 50%" class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Finish Year</span>
-            </div>
-            <input type="text" class="form-control" id="finishYearVal" placeholder="Input Finish year"
-                aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-
-        <!-- Buttons for generating and editing graphs and PDF-->
-        <input class="btn" type="button" id="getFocusYear" style= "background:#FE9A0B;" onclick= "getBtn()" value="Get">
-        <input class="btn" type="button" id="DownloadBtn" style= "background:#FE9A0B;" onclick="print()"value="Download PDF">
-        <input class="btn" type="button" id="EditLine" style= "background:#FE9A0B;" onclick="EditLine()"value="Edit Format">            
-        <input class="btn" type="button" id="SaveLine" style= "background:#FE9A0B;" onclick="SaveEdit()"value="Save Format">
-
-
-        <br><br>
-
-        <!-- Filters: Radio Button -->
-        <div class="form-check">
-                <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
-                <label class="form-check-label" for= "onlyChecked" id= "5">
-                    SECS Graphs
-                </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLASS" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "6">
-                SLASS Graphs
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSESM" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "7"> 
-                SESM Graphs
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLS" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "8">
-                SLS Graphs
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="SoB" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "9">
-                School of Business Graphs
-            </label>
-        </div>
-
-        <br><br>
-
-        <div id="content" style="height:60%; width:60%" class="text-center">
-            <form>
-            <div class="form-group"  id="textArea2"> 
-                <div id="coverPage">
-                    <h3 id="line1" >Admission Interest Data Analysis</h2>
-                    <textarea class="form-control" rows="2" id="line1Input" name="Edit Cover Heading" value="" placeholder="Edit Cover Heading"></textarea>  
-                    <h3 id="line2">Independent University, Bangladesh (IUB)</h3>
-                    <textarea class="form-control" rows="1" id="line2Input" name="Edit Cover Content 1" value="" placeholder="Edit"></textarea>  
-                    <h4 id="line3">Focus Year: <span id="fYear">FY</span> </h4> 
-                    <h4 id="line4">Period: <span id="p1">P1</span> -  <span id="p2">P2</span></h4>
-                    <h4 id="line5">Data Source: IRAS, Students appeared for the summer admission tests</h4>
-                    <textarea class="form-control" rows="2" id="line5Input" name="Edit Cover Content 3" value="" placeholder="Edit"></textarea>  
+        <div class="container">
+            <!-- Input fields -->
+            <div style="width:50%" class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Start Year</span>
                 </div>
-             </div>
-            </form>
+                <input type="text" class="form-control" id="startYearVal" placeholder="Input Start year"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
 
-            
-            <canvas id="myChart" width="400" height="400"></canvas>
-            <br><br>
-            <canvas id="myChart1" width="400" height="400"></canvas>
+            <div style= "width: 50%" class="input-group mb-3">
+                <div class= "input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Focus Year</span>
+                </div>
+                <input type="text" class="form-control" id="focusYearVal" placeholder="Input Focus year"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div style= "width: 50%" class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Finish Year</span>
+                </div>
+                <input type="text" class="form-control" id="finishYearVal" placeholder="Input Finish year"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <!-- Buttons for generating and editing graphs and PDF-->
+            <input class="btn" type="button" id="getFocusYearSTOP" style= "background:#FE9A0B;" onclick= "getBtn()" value="Get">
+            <input class="btn" type="button" id="DownloadBtn" style= "background:#FE9A0B;" onclick="print()"value="Download PDF">
+            <input class="btn" type="button" id="EditLine" style= "background:#FE9A0B;" onclick="EditLine()"value="Edit Format">            
+            <input class="btn" type="button" id="SaveLine" style= "background:#FE9A0B;" onclick="SaveEdit()"value="Save Format">
+
+
             <br><br>
 
-            <div id="tableDiv" class="dropdown">
-                <button id="tableButton2" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
-                    Choose Graph Type
-                    <span class="caret"></span>
-                </button>
-                <ul id="tableMenu" class="dropdown-menu">
+            <!-- Filters: Radio Button -->
+            <div class="form-check">
+                    <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
+                    <label class="form-check-label" for= "onlyChecked" id= "5">
+                        SECS Graphs
+                    </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLASS" onclick="refresh()">
+                <label class="form-check-label" for= "onlyChecked" id= "6">
+                    SLASS Graphs
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSESM" onclick="refresh()">
+                <label class="form-check-label" for= "onlyChecked" id= "7"> 
+                    SESM Graphs
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLS" onclick="refresh()">
+                <label class="form-check-label" for= "onlyChecked" id= "8">
+                    SLS Graphs
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name= "onlyChecked" id="SoB" onclick="refresh()">
+                <label class="form-check-label" for= "onlyChecked" id= "9">
+                    School of Business Graphs
+                </label>
+            </div>
+
+            <br><br>
+
+            <div id="content" style="height:60%; width:60%" class="text-center">
+                <form>
+                <div class="form-group"  id="textArea2"> 
+                    <div id="coverPage">
+                        <h3 id="line1" >Admission Interest Data Analysis</h2>
+                        <textarea class="form-control" rows="2" id="line1Input" name="Edit Cover Heading" value="" placeholder="Edit Cover Heading"></textarea>  
+                        <h3 id="line2">Independent University, Bangladesh (IUB)</h3>
+                        <textarea class="form-control" rows="1" id="line2Input" name="Edit Cover Content 1" value="" placeholder="Edit"></textarea>  
+                        <h4 id="line3">Focus Year: <span id="fYear">FY</span> </h4> 
+                        <h4 id="line4">Period: <span id="p1">P1</span> -  <span id="p2">P2</span></h4>
+                        <h4 id="line5">Data Source: IRAS, Students appeared for the summer admission tests</h4>
+                        <textarea class="form-control" rows="2" id="line5Input" name="Edit Cover Content 3" value="" placeholder="Edit"></textarea>  
+                    </div>
+                </div>
+                </form>
+
+                
+                <canvas id="myChart" width="400" height="400"></canvas>
+                <br><br>
+                <canvas id="myChart1" width="400" height="400"></canvas>
+                <br><br>
+
+                <div id="tableDiv" class="dropdown">
+                    <button id="tableButton2" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
+                        Choose Graph Type
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="tableMenu2" class="dropdown-menu">
+                        
+                        <li><a href="#">line</a></li>
+                        <li><a href="#">bar</a></li>
+                    </ul>
+                </div>
+                    <input id="chartTitle2" value="" type="text" class="form-control" placeholder="Edit Title">
+                <br><br>
+                <canvas id="myChart2" width="400" height="400"></canvas>
+                <br><br>
+                <div id="tableDiv" class="dropdown">
+                    <button id="tableButton3" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
+                        Choose Graph Type
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="tableMenu3" class="dropdown-menu">
+                        
+                        <li><a href="#">line</a></li>
+                        <li><a href="#">bar</a></li>
+                    </ul>
+                </div>
+                <br><br>
+                <input id="chartTitle3" type="text" class="form-control" placeholder="Edit Title">
+                <br><br>
+                <canvas id="myChart3" width="400" height="400"></canvas>
+                <br><br>
+                <div id="tableDiv" class="dropdown">
+                    <button id="tableButton4" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
+                        Choose Graph Type
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="tableMenu4" class="dropdown-menu">
                     
-                    <li><a href="#">line</a></li>
-                    <li><a href="#">bar</a></li>
-                </ul>
-            </div>
-            <input id="chartTitle2" type="text" class="form-control" placeholder="Edit Title">
-            <br><br>
-            <canvas id="myChart2" width="400" height="400"></canvas>
-            <br><br>
-            <div id="tableDiv" class="dropdown">
-                <button id="tableButton3" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
-                    Choose Graph Type
-                    <span class="caret"></span>
-                </button>
-                <ul id="tableMenu3" class="dropdown-menu">
-                    
-                    <li><a href="#">line</a></li>
-                    <li><a href="#">bar</a></li>
-                </ul>
-            </div>
-            <br><br>
-            <input id="chartTitle3" type="text" class="form-control" placeholder="Edit Title">
-            <br><br>
-            <canvas id="myChart3" width="400" height="400"></canvas>
-            <br><br>
-            <div id="tableDiv" class="dropdown">
-                <button id="tableButton4" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
-                    Choose Graph Type
-                    <span class="caret"></span>
-                </button>
-                <ul id="tableMenu4" class="dropdown-menu">
-                  
-                    <li><a href="#">line</a></li>
-                    <li><a href="#">bar</a></li>
-                </ul>
-            </div>
-            <br><br>
-            <input id="chartTitle4" type="text" class="form-control" placeholder="Edit Title">
-            <br><br>
-            <canvas id="myChart4" width="400" height="400"></canvas>
-            <br><br>
-            <canvas id="myChart5" width="400" height="400"></canvas>
-            <br><br>
-            <canvas id="myChart6" width="400" height="400"></canvas>
-            <br><br>
-            <canvas id="myChart7" width="400" height="400"></canvas>
-            <br><br>
-    </div>
-        <div id="elementH"></div>
+                        <li><a href="#">line</a></li>
+                        <li><a href="#">bar</a></li>
+                    </ul>
+                </div>
+                <br><br>
+                <input id="chartTitle4" type="text" class="form-control" placeholder="Edit Title">
+                <br><br>
+                <canvas id="myChart4" width="400" height="400"></canvas>
+                <br><br>
+                <canvas id="myChart5" width="400" height="400"></canvas>
+                <br><br>
+                <canvas id="myChart6" width="400" height="400"></canvas>
+                <br><br>
+                <canvas id="myChart7" width="400" height="400"></canvas>
+                <br><br>
         </div>
-    </div>
+            <div id="elementH"></div>
+            </div>
+        </div>
 
-    <script>
-        function openNav() {
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        }
-        
-        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-        function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.getElementById("con").style.marginLeft = "0"; 
-        }
-
-        // refresh graphs
-        function refresh() {
-        document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
-        } 
-        
-        // onload hide radio buttons
-        function foo(){
-            $("#MajorWiseStudentsSECS").hide();
-            $("#5").hide();
-            $("#MajorWiseStudentsSLASS").hide();
-            $("#6").hide();
-            $("#MajorWiseStudentsSESM").hide();
-            $("#7").hide();
-            $("#MajorWiseStudentsSLS").hide();
-            $("#8").hide();
-            $("#SoB").hide();
-            $("#9").hide();
-        }
-
-        // upon pressing the get button
-        function getBtn() {
-            refresh();
-            var focusYear = document.getElementById('focusYearVal').value;
-            var per1 = document.getElementById('startYearVal').value;
-            var per2 = document.getElementById('finishYearVal').value;
-            document.getElementById('fYear').innerHTML = focusYear;
-            document.getElementById('p1').innerHTML = per1;
-            document.getElementById('p2').innerHTML = per2;
+        <script>
+            function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            }
             
-            if(focusYear== "" || per1== "" || per2== ""){
-                alert("Please Don't Leave Any Fields Empty");
+            /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+            function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("con").style.marginLeft = "0"; 
             }
-            if(focusYear<2013 || per1<2013 || per2<2013 || 
-               focusYear>2020  || per1>2020  || per2>2020 ){
-                // alert("Please Enter a Year Starting from 2013! ");
-              }
-            else {
-                $("#DownloadBtn").show();
-                $("#EditLine").show();
-                $("#textArea2").show();
 
-                // show radio buttons
-                $("#MajorWiseStudentsSECS").show();
-                $("#MajorWiseStudentsSLASS").show();
-                $("#MajorWiseStudentsSESM").show();
-                $("#MajorWiseStudentsSLS").show();
-                $("#SoB").show();
-                $("#5").show();
-                $("#6").show();
-                $("#7").show();
-                $("#8").show();
-                $("#9").show();
+            // refresh graphs
+            function refresh() {
+            document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
+            } 
+            
+            // onload hide radio buttons
+            function foo(){
+                $("#MajorWiseStudentsSECS").hide();
+                $("#5").hide();
+                $("#MajorWiseStudentsSLASS").hide();
+                $("#6").hide();
+                $("#MajorWiseStudentsSESM").hide();
+                $("#7").hide();
+                $("#MajorWiseStudentsSLS").hide();
+                $("#8").hide();
+                $("#SoB").hide();
+                $("#9").hide();
             }
-        } 
-    </script>
-    
-    <script type="text/javascript" src="../static/JS/script.js"></script>
-    <script type="text/javascript" src="../static/JS/SoB.js"></script>
-    <script type="text/javascript" src="../static/JS/graph.js"></script>
-    <script type="text/javascript" src="../static/JS/focusGraph.js"></script>
-    <script type="text/javascript" src="../static/JS/secs.js"></script>
-    <script type="text/javascript" src="../static/JS/slass.js"></script>
-    <script type="text/javascript" src="../static/JS/sesm.js"></script>
-    <script type="text/javascript" src="../static/JS/sls.js"></script>
+
+            // function radiocl(){
+            //     alert("radio clicked");
+            //     refresh();
+            // }
+
+            // upon pressing the get button
+            function getBtn() {
+                refresh();
+                var focusYear = document.getElementById('focusYearVal').value;
+                var per1 = document.getElementById('startYearVal').value;
+                var per2 = document.getElementById('finishYearVal').value;
+                document.getElementById('fYear').innerHTML = focusYear;
+                document.getElementById('p1').innerHTML = per1;
+                document.getElementById('p2').innerHTML = per2;
+                
+                if(focusYear== "" || per1== "" || per2== ""){
+                    alert("Please Don't Leave Any Fields Empty");
+                }
+                if(focusYear<2013 || per1<2013 || per2<2013 || 
+                focusYear>2020  || per1>2020  || per2>2020 ){
+                    // alert("Please Enter a Year Starting from 2013! ");
+                }
+                else {
+                    $("#DownloadBtn").show();
+                    $("#EditLine").show();
+                    $("#textArea2").show();
+
+                    // show radio buttons
+                    $("#MajorWiseStudentsSECS").show();
+                    $("#MajorWiseStudentsSLASS").show();
+                    $("#MajorWiseStudentsSESM").show();
+                    $("#MajorWiseStudentsSLS").show();
+                    $("#SoB").show();
+                    $("#5").show();
+                    $("#6").show();
+                    $("#7").show();
+                    $("#8").show();
+                    $("#9").show();
+                }
+            } 
+        </script>
+        
+        <script type="text/javascript" src="../static/JS/script.js"></script>
+        <script type="text/javascript" src="../static/JS/SoB.js"></script>
+        <script type="text/javascript" src="../static/JS/graph.js"></script>
+        <script type="text/javascript" src="../static/JS/focusGraph.js"></script>
+        <script type="text/javascript" src="../static/JS/secs.js"></script>
+        <script type="text/javascript" src="../static/JS/slass.js"></script>
+        <script type="text/javascript" src="../static/JS/sesm.js"></script>
+        <script type="text/javascript" src="../static/JS/sls.js"></script>
 
 
-    <!-- Bootstrap links -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        <!-- Bootstrap links -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
-</body>
-</html>
+    </body>
+    </html>

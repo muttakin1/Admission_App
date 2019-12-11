@@ -353,8 +353,8 @@ $("#tableMenu4 a").click(function(e){
           labels: ['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',],
           datasets: [{
             label: 'Number Of Students in SECS in ' + Yearvalue,
-            data: val , /*[
-              numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],*/
+            data: [
+              numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
             backgroundColor: [
               'rgba(248, 192, 165, 1)', //ce
                 'rgba(247, 191, 164, 1)', //cs

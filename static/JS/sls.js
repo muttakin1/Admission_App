@@ -62,9 +62,19 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
     //    console.log(response)
     let noofStd = response.datas
+
     Yearvalue = $("#focusYearVal").val()
-    startYear = $("#startYearVal").val()
-    finishYear = $("#finishYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
+    var period = finishYear-startYear+1;
+    var years=[];
+    var y=Number(startYear);
+
+         for(let i=0;i<period;i++)
+           {
+             years[i]=y;
+             y=y+1;
+          }
 
     let counterSLSAutumn = 0
     let counterSLSSpring = 0
@@ -95,7 +105,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     let numberSLSsemester = []
 
 
-    for (let i = 2013; i <= 2019; i++) {
+    for (let i = startYear; i <= finishYear; i++) {
       noofStd.forEach((item, index) => {
         if (item.year == i && item.Major == "BSc - Biochemistry") {
           counterBiochem = counterBiochem + Number(item.no_of_Student)
@@ -283,12 +293,12 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Biochemistry',
           fill: false,
-          data: [numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
+          data: numberOfBiochem,//[numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
           backgroundColor: ['rgba(125,152,74, 1)',],
           borderColor: [
             'rgba(125,152,74, 1)',
@@ -300,7 +310,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           lineTension: 0.1,
           label: 'Number Of Students in Biochemistry and Biotechnology',
           fill: false,
-          data: [numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
+          data: numberOfBiochem_Biotech,//[numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
           backgroundColor: ['rgba(197,213,173,1)',],
           borderColor: [
             'rgba(197,213,173,1)',
@@ -312,7 +322,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           lineTension: 0.1,
           label: 'Number Of Students in Microbiology',
           fill: false,
-          data: [numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
+          data: numberOfMicrobio,//[numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
           backgroundColor: ['rgba(153,185,91,1)',],
           borderColor: [
             'rgba(153,185,91,1)',
@@ -344,13 +354,13 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [
           {
             lineTension: 0.1,
             label: 'Number Of Students in Biochemistry',
             // fill: false,
-            data: [numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
+            data: numberOfBiochem,// [numberOfBiochem[0], numberOfBiochem[1], numberOfBiochem[2], numberOfBiochem[3], numberOfBiochem[4], numberOfBiochem[5], numberOfBiochem[6], numberOfBiochem[7],],
             backgroundColor: ['rgba(125,152,74, 1)',],
             borderColor: [
               'rgba(125,152,74, 1)',
@@ -362,7 +372,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
             lineTension: 0.1,
             label: 'Number Of Students in Biochemistry and Biotechnology',
             // fill: false,
-            data: [numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
+            data: numberOfBiochem_Biotech,//[numberOfBiochem_Biotech[0], numberOfBiochem_Biotech[1], numberOfBiochem_Biotech[2], numberOfBiochem_Biotech[3], numberOfBiochem_Biotech[4], numberOfBiochem_Biotech[5], numberOfBiochem_Biotech[6], numberOfBiochem_Biotech[7],],
             backgroundColor: ['rgba(197,213,173,1)',],
             borderColor: [
               'rgba(197,213,173,1)',
@@ -374,7 +384,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
             lineTension: 0.1,
             label: 'Number Of Students in Microbiology',
             // fill: false,
-            data: [numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
+            data: numberOfMicrobio,// [numberOfMicrobio[0], numberOfMicrobio[1], numberOfMicrobio[2], numberOfMicrobio[3], numberOfMicrobio[4], numberOfMicrobio[5], numberOfMicrobio[6], numberOfMicrobio[7],],
             backgroundColor: ['rgba(153,185,91,1)',],
             borderColor: [
               'rgba(153,185,91,1)',
@@ -408,11 +418,11 @@ $("#MajorWiseStudentsSLS").click(function (event) {
       var myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
           datasets: [{
             label: 'Autumn',
             fill: false,
-            data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+            data: numberAutumn,//[numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
             backgroundColor: [
               'rgba(155,187,89,1)',
               'rgba(155,187,89,1)',
@@ -440,7 +450,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           {
             label: 'Spring',
             fill: false,
-            data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+            data: numberSpring,//[numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
             backgroundColor: [
               'rgba(79,129,189, 1)',
               'rgba(79,129,189, 1)',
@@ -468,7 +478,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
           {
             label: 'Summer',
             fill: false,
-            data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+            data: numberSummer,//[numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
             backgroundColor: [
               'rgba(192,80,77, 1)',
               'rgba(192,80,77, 1)',

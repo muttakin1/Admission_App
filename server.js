@@ -12,7 +12,7 @@ var db_url = "mongodb+srv://Muttakin:muttakin12@cluster1-2wehj.mongodb.net/test?
 
 var mongoose = require("mongoose");
 
-mongoose.connect(db_url, { useNewUrlParser: true });
+mongoose.connect(db_url, { useNewUrlParser: true ,useUnifiedTopology:true});
 mongoose.connection.on('error', function(err){
   console.log(err);
   console.log('Could not connect to mongodb');

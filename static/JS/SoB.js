@@ -672,14 +672,9 @@ $("#SoB").click(function (event) {
         },
 
         scales: {
-          yAxes: [{
-            stacked: true,
-            ticks: {
-
-              beginAtZero: true
-            }
-          }]
-        }
+          xAxes: [{ stacked: true }],
+          yAxes: [{ stacked: true }],
+        },
       }
     });
     var ctx = document.getElementById('myChart3');

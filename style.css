@@ -260,3 +260,8 @@ body{
       margin-left: 40px;
       margin-right: 40px;
   }
+
+#indexChartdiv{
+    width: 300px;
+    height: 400px;
+}

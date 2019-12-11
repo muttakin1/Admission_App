@@ -130,8 +130,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
 
 
-
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
 
         // Major wise Student's interest @ SECS
@@ -324,7 +325,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       counterSummer = 0
     }
 
-
+    console.log(year)
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
       type: 'pie',

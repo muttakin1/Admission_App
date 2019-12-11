@@ -1373,7 +1373,7 @@ $("#getFocusYear").click(function (event) {
           }
         }
       });
-        console.log(myChart2)
+      //  console.log(myChart2)
         
     
         //   Area under the graph

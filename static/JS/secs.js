@@ -640,7 +640,7 @@ $("#tableMenu4 a").click(function(e){
       }
     }
   });
-    console.log(myChart2)
+    //console.log(myChart2)
     
 
     //   Area under the graph
@@ -648,7 +648,7 @@ $("#tableMenu4 a").click(function(e){
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels:year,
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in Maths',
@@ -871,7 +871,7 @@ $("#tableMenu4 a").click(function(e){
      myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in EEE',
@@ -931,7 +931,7 @@ $("#tableMenu4 a").click(function(e){
     myChart5 = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Number Of Students in EEE',
           fill: false,
@@ -1037,7 +1037,7 @@ $("#tableMenu4 a").click(function(e){
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Autumn',
           fill: false,

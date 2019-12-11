@@ -11,7 +11,8 @@ $("#overall").click(function (event) {
        alert("Please Enter Year between 2013 to 2019!");
     }
     else{
-  
+      
+      // Get method for focusgraphs
       $.ajax({
         method: "GET",
         url: "/data/list"
@@ -42,17 +43,17 @@ $("#overall").click(function (event) {
         let numberYearlyAcn=[]
         let numberYearlyMgt=[]
         
-        let numberSchools=[]
+        let numberSemester=[]
   
         let SemesterDist=[]
        
         let numberOfAutumn = []
         let numberOfSummer = []
         let numberOfSpring = []
+
         
-        let year=[]
-        for (let i = startYear; i <= finishYear; i++) {
-          year.push(Number(i))
+        
+        for (let i = 2013; i <= 2019; i++) {
           noofStd.forEach((item, index) => {
             if (item.year == Yearvalue && item.Semester == "1") {
               counterAutumn = counterAutumn + Number(item.no_of_Student)
@@ -86,11 +87,11 @@ $("#overall").click(function (event) {
           });        
         
           
-           numberSchools.push(counterSlass)
-           numberSchools.push(counterSob)
-           numberSchools.push(counterOther)
-           numberSchools.push(counterSecs)
-          numberSchools.push(counterSls)
+           numberSemester.push(counterSlass)
+           numberSemester.push(counterSob)
+           numberSemester.push(counterOther)
+           numberSemester.push(counterSecs)
+          numberSemester.push(counterSls)
           
           SemesterDist.push(counterAutumn)
           SemesterDist.push(counterSpring)
@@ -165,7 +166,7 @@ $("#overall").click(function (event) {
             labels: ['SLASS', 'SoB','SESM+Pharm','SECS','SLS'],
             datasets: [{
               label: 'Number Of Students in ' + Yearvalue,
-              data: [numberSchools[0], numberSchools[1], numberSchools[2],numberSchools[3],numberSchools[4],],
+              data: [numberSemester[0], numberSemester[1], numberSemester[2],numberSemester[3],numberSemester[4]],
               backgroundColor: [
                 'rgba(162, 162, 162, 1)',
                 'rgba(30, 70, 122, 1)',
@@ -224,9 +225,19 @@ $("#overall").click(function (event) {
   
       startYear =$("#startYearVal").val()
       finishYear =$("#finishYearVal").val()
-    
+      
+     // Yearly semester wise SECS
+    let counterSpring = 0
+    let counterAutumn = 0
+    let counterSummer = 0
+
+    let numberAutumn=[]
+    let numberSpring=[]
+    let numberSummer=[]   
+
       let counter = 0
       let numberOfStd = []
+     
       let year=[]
       for (let i = startYear; i <= finishYear; i++) {
         year.push(Number(i))
@@ -234,10 +245,35 @@ $("#overall").click(function (event) {
             if (item.year == i) {
               counter = counter + Number(item.no_of_Student)
             }
+
+              // Yearly semester wise SECS
+        if (item.year == i  && item.Semester == "3") {
+          counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i  && item.Semester == "1") {
+          counterSpring = counterSpring + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i  && item.Semester == "2") {
+          counterSummer = counterSummer + Number(item.no_of_Student)
+
+        }
           }
         );
         numberOfStd.push(counter)
-        counter = 0
+      // Yearly semester wise SECS
+      numberAutumn.push(counterAutumn)
+      numberSpring.push(counterSpring)
+      numberSummer.push(counterSummer) 
+
+      // reinitializing the counter
+      counterAutumn = 0
+      counterSpring = 0
+      counterSummer = 0
+      counter = 0
       }
       console.log(numberOfStd)
     
@@ -289,6 +325,121 @@ $("#overall").click(function (event) {
           }
         }
       });
+
+       // Yearly semester wise SECS
+    var ctx = document.getElementById('myChart6');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: year,
+        datasets: [{
+          label: 'Autumn',
+          fill: false,
+          data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+          backgroundColor: [
+        
+          'rgba(155,187,89,1)', 
+          'rgba(155,187,89,1)', 
+          'rgba(155,187,89,1)',
+          'rgba(155,187,89,1)', 
+          'rgba(155,187,89,1)', 
+          'rgba(155,187,89,1)',
+          'rgba(155,187,89,1)', 
+          'rgba(155,187,89,1)',         
+        
+        ],
+          borderColor: [
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Spring',
+          fill: false,
+          data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+          backgroundColor: [
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+          ],
+          borderColor: [
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+
+          ],
+          borderWidth: 2
+        },
+        {
+          label: 'Summer',
+          fill: false,
+          data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+          backgroundColor: [
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+          ],
+          borderColor: [
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+
+          ],
+          borderWidth: 2
+        },
+
+        ]
+
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            stacked: true
+          }],
+          yAxes: [{
+            stacked: true,
+            ticks: {
+              beginAtZero: true
+            }
+          }],},
+        title: {
+          display: true,
+          text: 'Yearly semester wise Number of Students',
+          fontSize:20  
+         
+          
+        }
+      }
+    });
+
     }).fail(function (response) {
       console.log(response.responseText);
     });   
@@ -310,7 +461,9 @@ $("#overall").click(function (event) {
           let numberOfSob = []
           let numberOfOth = []
             
-          for (let i = 2013; i <= 2019; i++) {
+          let year=[]
+          for (let i = startYear; i <= finishYear; i++) {
+            year.push(Number(i))
             noofStd.forEach((item, index) => {
               if (item.year == i && item.School == "SECS") {
                 counter = counter + Number(item.no_of_Student)
@@ -334,7 +487,7 @@ $("#overall").click(function (event) {
           var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-              labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+              labels: year,
               datasets: [{
                 lineTension:0.1,
                 label: 'Number Of Students in SECS',
@@ -386,6 +539,7 @@ $("#overall").click(function (event) {
             }
           });
       
+  
     }).fail(function (response) {
       console.log(response.responseText);
     });  
@@ -411,9 +565,7 @@ $("#overall").click(function (event) {
         let numberOfOth = []
         let numberOfSlass = []
         let numberOfSls = []
-        Yearvalue = $("#focusYearVal").val()
-        startYear =$("#startYearVal").val()
-        finishYear =$("#finishYearVal").val()
+        
         let year=[]
         for (let i = startYear; i <= finishYear; i++) {
           year.push(Number(i))
@@ -638,10 +790,7 @@ $("#overall").click(function (event) {
         let numberOfStd = []
         let numberOfSob = []
         let numberOfOth = []
-        Yearvalue = $("#focusYearVal").val()
-        startYear =$("#startYearVal").val()
-        finishYear =$("#finishYearVal").val()
-          
+        
         let year=[]
         for (let i = startYear; i <= finishYear; i++) {
           year.push(Number(i))
@@ -715,7 +864,7 @@ $("#overall").click(function (event) {
           options: {
             title: {
               display: true,
-              text: 'Other Schools',
+              text: 'Number of Students of SLASS, SLS, SESM+Pharma',
               fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
               fontSize:20  
             },
@@ -734,4 +883,3 @@ $("#overall").click(function (event) {
       });
       
     })
-  

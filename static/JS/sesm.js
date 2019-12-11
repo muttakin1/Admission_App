@@ -99,8 +99,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     let numberYearlySESM = []
 
 
-
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
         if (item.year == Yearvalue && item.Semester == "1" && item.School == "SESM") {
           counterSESMAutumn = counterSESMAutumn + Number(item.no_of_Student)
@@ -138,15 +139,15 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Environmental Management") {
-          counterYearlyENV_management = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyENV_management = counterYearlyENV_management + Number(item.no_of_Student)
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Environmental Science") {
-          counterYearlyENV = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyENV = counterYearlyENV + Number(item.no_of_Student)
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Population Environment") {
-          counterYearlyPopulation_Env = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyPopulation_Env = counterYearlyPopulation_Env + Number(item.no_of_Student)
         }
 
         // Yearly semester wise SESM
@@ -179,6 +180,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       numberOfPoplation_Env.push(counterPopulation_Env)
 
       numberYearlySESM.push(counterYearlyENV)
+      console.log('SESM number'+numberYearlySESM[0])
       numberYearlySESM.push(counterYearlyENV_management)
       numberYearlySESM.push(counterYearlyPharmacy)
       numberYearlySESM.push(counterYearlyPopulation_Env)
@@ -191,7 +193,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       // reinitializing the counter
       counterYearlyPharmacy = 0
       counterYearlyENV_management = 0
-      counterYealryENV = 0
+      counterYearlyENV = 0
       counterYearlyPopulation_Env = 0
 
       counterPharmacy = 0
@@ -207,6 +209,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       counterSpring = 0
       counterSummer = 0
     }
+    console.log(year)
 
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
@@ -309,7 +312,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Pharmacy',
@@ -384,7 +387,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Population_ENV',
@@ -477,7 +480,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       myChart4 = new Chart(ctx, {
        type: 'bar',
        data: {
-         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+         labels: year,
          datasets: [{
            label: 'Autumn',
            fill: false,

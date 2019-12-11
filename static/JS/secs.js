@@ -5,6 +5,15 @@
   var myChart4
   var myChart5
 
+  function editTitle() {
+    var t2= myChart2.config.options.title.text;
+    var t3= myChart3.config.options.title.text;
+    var t4= myChart4.config.options.title.text;
+    document.getElementById("chartTitle2").value=t2;
+    document.getElementById("chartTitle3").value=t3;
+    document.getElementById("chartTitle4").value=t4;
+  }
+
   function saveTitle() {
     var chTitle2 = document.getElementById('chartTitle2').value;
     myChart2.config.options.title.text = chTitle2;
@@ -20,8 +29,6 @@
     myChart4.config.options.title.text = chTitle4;
     console.log(chTitle4);
     myChart4.update();
-
-    
   }
 
   $("#MajorWiseStudentsSECS").click(function (event) {
@@ -72,7 +79,7 @@ $("#tableMenu4 a").click(function(e){
 
     let noofStd = response.datas
    
-    console.log(Yearvalue)
+    // console.log(Yearvalue)
 
     
      // Focus year graphs, Majors
@@ -640,7 +647,7 @@ $("#tableMenu4 a").click(function(e){
       }
     }
   });
-    console.log(myChart2)
+    //console.log(myChart2)
     
 
     //   Area under the graph
@@ -648,7 +655,7 @@ $("#tableMenu4 a").click(function(e){
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels:year,
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in Maths',
@@ -871,15 +878,31 @@ $("#tableMenu4 a").click(function(e){
      myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in EEE',
           fill: false,
           data: [numberOfDeptEEE[0], numberOfDeptEEE[1], numberOfDeptEEE[2], numberOfDeptEEE[3], numberOfDeptEEE[4], numberOfDeptEEE[5], numberOfDeptEEE[6], numberOfDeptEEE[7],],
-          backgroundColor: ['rgba(253,148,69,1)',],
+          backgroundColor: [
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+          ],
           borderColor: [
-            'rgba(253,148,69,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
+            'rgba(247,150,70,1)',
 
           ],
           borderWidth: 2
@@ -888,9 +911,25 @@ $("#tableMenu4 a").click(function(e){
           label: 'Number Of Students in Computer Science Engineering',
           fill: false,
           data: [numberOfDeptCSE[0], numberOfDeptCSE[1], numberOfDeptCSE[2], numberOfDeptCSE[3], numberOfDeptCSE[4], numberOfDeptCSE[5], numberOfDeptCSE[6], numberOfDeptCSE[7],],
-          backgroundColor: ['rgba(209,122,55, 1)',],
+          backgroundColor: [
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+          ],
           borderColor: [
-            'rgba(209,122,55, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
+            'rgba(243, 170, 129, 1)',
 
           ],
           borderWidth: 2
@@ -899,9 +938,25 @@ $("#tableMenu4 a").click(function(e){
           label: 'Number Of Students in Physical Sciences',
           fill: false,
           data: [numberOfDeptPhySci[0], numberOfDeptPhySci[1], numberOfDeptPhySci[2], numberOfDeptPhySci[3], numberOfDeptPhySci[4], numberOfDeptPhySci[5], numberOfDeptPhySci[6], numberOfDeptPhySci[7],],
-          backgroundColor: ['rgba(254,194,168, 1)',],
+          backgroundColor: [
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+          ],
           borderColor: [
-            'rgba(254,194,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
+            'rgba(250,195,168, 1)',
 
           ],
           borderWidth: 2
@@ -931,7 +986,7 @@ $("#tableMenu4 a").click(function(e){
     myChart5 = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Number Of Students in EEE',
           fill: false,
@@ -1037,7 +1092,7 @@ $("#tableMenu4 a").click(function(e){
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Autumn',
           fill: false,

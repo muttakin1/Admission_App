@@ -24,6 +24,10 @@ function saveTitle() {
 
 $("#SoB").click(function (event) {
   getBtn();
+    
+  $(".dropdown").show();
+  $("#content").show();
+  
   $("#tableMenu2 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
@@ -43,6 +47,7 @@ $("#SoB").click(function (event) {
     myChart3.config.type = selText
     myChart3.update()
   });
+
   $("#tableMenu4 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
@@ -312,7 +317,8 @@ $("#SoB").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SOB',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -361,7 +367,8 @@ $("#SoB").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SOB',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -658,7 +665,8 @@ $("#SoB").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SOB',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -970,7 +978,8 @@ $("#SoB").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SOB',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -1089,6 +1098,7 @@ $("#SoB").click(function (event) {
           title: {
             display: true,
             text: 'Yearly semester wise SoB',
+            fontSize:20  
            
             
           }

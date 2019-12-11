@@ -25,6 +25,7 @@ function saveTitle() {
 $("#MajorWiseStudentsSLS").click(function (event) {
   $(".dropdown").show();
   $("#content").show();
+  getBtn();
 
   $("#tableMenu2 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
@@ -54,7 +55,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     myChart4.config.type = selText
     myChart4.update()
   });
-  getBtn();
+ 
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -405,7 +406,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
 
       // Yearly semester wise SLS
       var ctx = document.getElementById('myChart4');
-      var myChart4 = new Chart(ctx, {
+       myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],

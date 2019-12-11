@@ -42,7 +42,7 @@ $("#getFocusYear").click(function (event) {
         let numberYearlyAcn=[]
         let numberYearlyMgt=[]
         
-        let numberBbaSemester=[]
+        let numberSemester=[]
   
         let SemesterDist=[]
        
@@ -84,11 +84,11 @@ $("#getFocusYear").click(function (event) {
           });        
         
           
-           numberBbaSemester.push(counterSlass)
-           numberBbaSemester.push(counterSob)
-           numberBbaSemester.push(counterOther)
-           numberBbaSemester.push(counterSecs)
-          numberBbaSemester.push(counterSls)
+           numberSemester.push(counterSlass)
+           numberSemester.push(counterSob)
+           numberSemester.push(counterOther)
+           numberSemester.push(counterSecs)
+          numberSemester.push(counterSls)
           
           SemesterDist.push(counterAutumn)
           SemesterDist.push(counterSpring)
@@ -163,7 +163,7 @@ $("#getFocusYear").click(function (event) {
             labels: ['SLASS', 'SoB','SESM+Pharm','SECS','SLS'],
             datasets: [{
               label: 'Number Of Students in ' + Yearvalue,
-              data: [numberBbaSemester[0], numberBbaSemester[1], numberBbaSemester[2],numberBbaSemester[3],numberBbaSemester[4],numberBbaSemester[5]],
+              data: [numberSemester[0], numberSemester[1], numberSemester[2],numberSemester[3],numberSemester[4]],
               backgroundColor: [
                 'rgba(162, 162, 162, 1)',
                 'rgba(30, 70, 122, 1)',
@@ -3915,7 +3915,7 @@ $("#getFocusYear").click(function (event) {
     let numberYearlyAcn = []
     let numberYearlyMgt = []
 
-    let numberBbaSemester = []
+    let numberSemester = []
 
 
 

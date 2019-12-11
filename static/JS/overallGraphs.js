@@ -42,7 +42,7 @@ $("#overall").click(function (event) {
         let numberYearlyAcn=[]
         let numberYearlyMgt=[]
         
-        let numberBbaSemester=[]
+        let numberSchools=[]
   
         let SemesterDist=[]
        
@@ -86,11 +86,11 @@ $("#overall").click(function (event) {
           });        
         
           
-           numberBbaSemester.push(counterSlass)
-           numberBbaSemester.push(counterSob)
-           numberBbaSemester.push(counterOther)
-           numberBbaSemester.push(counterSecs)
-          numberBbaSemester.push(counterSls)
+           numberSchools.push(counterSlass)
+           numberSchools.push(counterSob)
+           numberSchools.push(counterOther)
+           numberSchools.push(counterSecs)
+          numberSchools.push(counterSls)
           
           SemesterDist.push(counterAutumn)
           SemesterDist.push(counterSpring)
@@ -165,7 +165,7 @@ $("#overall").click(function (event) {
             labels: ['SLASS', 'SoB','SESM+Pharm','SECS','SLS'],
             datasets: [{
               label: 'Number Of Students in ' + Yearvalue,
-              data: [numberBbaSemester[0], numberBbaSemester[1], numberBbaSemester[2],numberBbaSemester[3],numberBbaSemester[4],numberBbaSemester[5]],
+              data: [numberSchools[0], numberSchools[1], numberSchools[2],numberSchools[3],numberSchools[4],],
               backgroundColor: [
                 'rgba(162, 162, 162, 1)',
                 'rgba(30, 70, 122, 1)',

@@ -76,6 +76,12 @@
         <label id= "filters">Filters:</label><br>
         <!-- Filters: Radio Button -->
         <div class="form-check">
+                <input class="form-check-input" type="radio" name= "onlyChecked" id="all" onclick="refresh()">
+                <label class="form-check-label" for= "onlyChecked" id= "label">
+                    All
+                </label>
+        </div>
+        <div class="form-check">
                 <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
                 <label class="form-check-label" for= "onlyChecked" id= "label1">
                     SECS Graphs
@@ -124,7 +130,8 @@
              </div>
             </form>
 
-            
+
+            <!-- Canvas and Edit textarea -->
             <canvas id="myChart" width="400" height="400"></canvas>
             <br><br>
             <canvas id="myChart1" width="400" height="400"></canvas>
@@ -255,16 +262,10 @@
             <br><br>
             <canvas id="myChart35" width="400" height="400"></canvas>
             <br><br>
-
             <br><br>
             <canvas id="myChart36" width="400" height="400"></canvas>
             <br><br>
-           <canvas id="myChart37" width="400" height="400"></canvas>
-            <br><br>
-            <canvas id="myChart38" width="400" height="400"></canvas>
-            <br><br>
-            <canvas id="myChart39" width="400" height="400"></canvas>
-            <br><br>
+            
     </div>
         <div id="elementH"></div>
         </div>
@@ -301,6 +302,8 @@
             $("#SoB").hide();
             $("#label5").hide();
             $("#filters").hide();
+            $("#all").hide();
+            $("#label").hide();
         }
 
         // upon pressing the get button
@@ -337,6 +340,8 @@
                 $("#label4").show();
                 $("#label5").show();
                 $("#filters").show();
+                $("#label").show();
+                $("#all").show();
             }
         } 
     </script>
@@ -349,6 +354,8 @@
     <script type="text/javascript" src="../static/JS/slass.js"></script>
     <script type="text/javascript" src="../static/JS/sesm.js"></script>
     <script type="text/javascript" src="../static/JS/sls.js"></script>
+    <script type="text/javascript" src="../static/JS/allGraphs.js"></script>
+    <script type="text/javascript" src="../static/JS/all.js"></script>
 
 
     <!-- Bootstrap links -->

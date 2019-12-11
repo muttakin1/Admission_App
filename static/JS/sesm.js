@@ -584,9 +584,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
          
        }
      });
-
-
-
+     
   }).fail(function (response) {
     console.log(response.responseText);
   });

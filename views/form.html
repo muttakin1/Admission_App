@@ -11,37 +11,58 @@
 </head>
 
 <body>
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>    
 
-    <!-- fixed nav -->
-    <nav class= "navbar navbar-default navbar-fixed-top">
-            <!-- <div class= "container-fluid"> -->
-            <!-- Side nav -->
-                
-            <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href= "/index"> Home </a>
-                <a href= "/graph"> Report/Graph Generator </a>
-                <a href= "/form"> Data Input </a>
-                <a href="/">Logout</a>
-            </div>
+  <!-- fixed nav -->
+  <nav class= "navbar navbar-default navbar-fixed-top">
+    <!-- Side nav -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href= "/index"> Home </a>
+      <a href= "/graph"> Report/Graph Generator </a>
+      <a href= "/form"> Data Input </a>
+      <a href="/">Logout</a>
+    </div>
                   
-            <div id="main">
-                <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
-                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
-                    Annex</a> 
-          </div>
-    </nav>
-    <br> <br>
+    <div id="main">
+      <a class= "navbar-brand" href= "#" style="font-size: 30px;"> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+          Annex</a> 
+    </div>
+  </nav>
+  <div id= "con" onclick= "closeNav()">
+    <br><br>
 
     <div class="container">
-            <div class="card">
-              <div class="card-header">
-                <span style="font-size:18px;">Input Data</span>
+      <div class="card">
+        <div class="card-header">
+          <span style="font-size:18px;">Input Data</span>
+        </div>
+        <div class="card-body">
+          <form id="allDatasI" >
+            <div class="form-row">
+              <div class="form-group col-md-8">
+                <label for="inputYear">Year</label>
+                <select class="form-control" id="inputYear"  name="inputYear" onfocus="getCurrYear()">
+                  <option value="none" selected>Select Year</option>
+                </select>
+                <span class="text-danger" id="span_inputYear"></span> 
               </div>
+              <div class="form-group col-md-4">
+                <label for="semester">Semester</label>
+                  <select type="text" class="form-control" id="semester"  name="semester">
+                    <option value="none" selected >Select Semester</option>
+                    <option value="Summer 01">Summer 01</option>
+                    <option value="Summer 02">Summer 02</option>
+                    <option value="Autumn 01">Autumn 01</option>
+                    <option value="Autumn 02">Autumn 02</option>
+                    <option value="Winter 01">Winter 01</option>
+                    <option value="Winter 02">Winter 02</option>
+                  </select>
+                  <span class="text-danger" id="span_semester"></span>
+              </div>
+
               <div class="card-body">
                     <form id="allDatasI" >
                         <div class="form-row">
@@ -84,32 +105,46 @@
                          </div>
                         </form>
             </div>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="ta_inputData">Input Data</label>
+                <textarea type="text" class="form-control" name="ta_inputData" id="ta_inputData" rows="8" cols="50"></textarea>
+                <span class="text-danger" id="span_btn_inputData" style="margin-left: 5px;"></span>
+              </div>
+              <input class="btn btn-warning" onclick="divide()" value="Add Data"id="btn_inputData" name="btn_inputData" type="button" style="background-color: #ff944d;" >
+              <input class="btn btn-warning"  value="Get Data" id="getdata" name="getdata" type="button" style="margin-left: 2px; background-color: #ff944d;" >
+              <span class="text-success" id="span_SuccessMsg" style="margin-left: 5px;"></span>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    <br><br><br>
+  </div>
                
-    <script type="text/javascript" src="../static/JS/script.js"></script>
+  <script type="text/javascript" src="../static/JS/script.js"></script>
                 
-   <!-- Script for navbar -->
-   <script>
-        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-        function openNav() {
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        }
-        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-        function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
+  <!-- Script for navbar -->
+  <script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.getElementById("con").style.marginLeft = "0";
+    }
+  </script>
 
-    <!-- Bootstrap links -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+  <!-- Bootstrap links -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
         
 
     <script>
@@ -222,5 +257,7 @@
             }
     </script>
 </body>
+
+
 
 </html>

@@ -50,6 +50,12 @@ $("#getFocusYear").click(function (event) {
           }]
         },
         options: {
+          title: {
+            display: true,
+            text: 'Number of Students over the years',
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20  
+          },
           scales: {
             yAxes: [{
               ticks: {
@@ -384,13 +390,15 @@ $("#getFocusYear").click(function (event) {
               ticks: {
                 beginAtZero: true
               }
-            }],
+            }]},
            title: {
              display: true,
              text: 'Yearly semester wise SESM',
+             fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+             fontSize:20  
             
              }
-           }
+           
         }
       });
   
@@ -487,6 +495,12 @@ $("#getFocusYear").click(function (event) {
   
         },
         options: {
+          title: {
+            display: true,
+            text: 'Major wise Students interest @ SLASS',
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20  
+          },
           scales: {
             yAxes: [{
               ticks: {

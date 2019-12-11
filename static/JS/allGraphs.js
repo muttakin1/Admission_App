@@ -225,7 +225,10 @@ $("#getFocusYear").click(function (event) {
     
       let counter = 0
       let numberOfStd = []
-      for (let i = 2013; i <= 2019; i++) {
+     
+      let year=[]
+      for (let i = startYear; i <= finishYear; i++) {
+        year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i) {
               counter = counter + Number(item.no_of_Student)
@@ -241,7 +244,7 @@ $("#getFocusYear").click(function (event) {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students',
@@ -306,7 +309,9 @@ $("#getFocusYear").click(function (event) {
           let numberOfSob = []
           let numberOfOth = []
             
-          for (let i = 2013; i <= 2019; i++) {
+          let year=[]
+          for (let i = startYear; i <= finishYear; i++) {
+            year.push(Number(i))
             noofStd.forEach((item, index) => {
               if (item.year == i && item.School == "SECS") {
                 counter = counter + Number(item.no_of_Student)
@@ -330,7 +335,7 @@ $("#getFocusYear").click(function (event) {
           var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-              labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+              labels: year,
               datasets: [{
                 lineTension:0.1,
                 label: 'Number Of Students in SECS',
@@ -408,7 +413,10 @@ $("#getFocusYear").click(function (event) {
         let numberOfOth = []
         let numberOfSlass = []
         let numberOfSls = []
-        for (let i = 2013; i <= 2019; i++) {
+        
+        let year=[]
+        for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i && item.School == "SECS") {
               counter = counter + Number(item.no_of_Student)
@@ -447,7 +455,7 @@ $("#getFocusYear").click(function (event) {
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               label: 'Number Of Students in SECS',
               data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
@@ -630,7 +638,10 @@ $("#getFocusYear").click(function (event) {
         let numberOfStd = []
         let numberOfSob = []
         let numberOfOth = []
-        for (let i = 2013; i <= 2019; i++) {
+        
+        let year=[]
+        for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i && item.School == "SLASS") {
               counter = counter + Number(item.no_of_Student)
@@ -659,7 +670,7 @@ $("#getFocusYear").click(function (event) {
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               lineTension:0.1,
               label: 'Number Of Students in Slass',
@@ -792,7 +803,9 @@ $("#getFocusYear").click(function (event) {
         startYear =$("#startYearVal").val()
         finishYear =$("#finishYearVal").val()
     
+        let year=[]
         for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             
             // Major wise Student's interest @ SECS
@@ -1076,7 +1089,7 @@ $("#getFocusYear").click(function (event) {
          myChart8 = new Chart(ctx, {
           type: 'line',
           data:{
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
+            labels: year,
             datasets: [{
               label: 'Number Of Students in Computer Engineering',
               lineTension:0.1,
@@ -1305,7 +1318,7 @@ $("#getFocusYear").click(function (event) {
         myChart9 = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               lineTension:0.1,
               label: 'Number Of Students in Maths',
@@ -1528,7 +1541,7 @@ $("#getFocusYear").click(function (event) {
          myChart10 = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               lineTension:0.1,
               label: 'Number Of Students in EEE',
@@ -1588,7 +1601,7 @@ $("#getFocusYear").click(function (event) {
         myChart11 = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               label: 'Number Of Students in EEE',
               fill: false,
@@ -1694,7 +1707,7 @@ $("#getFocusYear").click(function (event) {
         var myChart12 = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               label: 'Autumn',
               fill: false,
@@ -1857,7 +1870,9 @@ $("#getFocusYear").click(function (event) {
 
 
 
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
         if (item.year == Yearvalue && item.Semester == "1" && item.School == "SESM") {
           counterSESMAutumn = counterSESMAutumn + Number(item.no_of_Student)
@@ -2066,7 +2081,7 @@ $("#getFocusYear").click(function (event) {
     myChart15 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Pharmacy',
@@ -2141,7 +2156,7 @@ $("#getFocusYear").click(function (event) {
     myChart16 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Population_ENV',
@@ -2234,7 +2249,7 @@ $("#getFocusYear").click(function (event) {
       myChart17 = new Chart(ctx, {
        type: 'bar',
        data: {
-         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+         labels: year,
          datasets: [{
            label: 'Autumn',
            fill: false,
@@ -2422,7 +2437,9 @@ $("#getFocusYear").click(function (event) {
 
 
 
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
 
         // Major wise Student's interest @ SECS
@@ -2731,7 +2748,7 @@ $("#getFocusYear").click(function (event) {
     myChart20 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in EngTrainingLang',
@@ -2839,7 +2856,7 @@ $("#getFocusYear").click(function (event) {
     myChart21 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Sociology',
@@ -2951,7 +2968,7 @@ $("#getFocusYear").click(function (event) {
     myChart22 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in SOC',
@@ -3033,7 +3050,7 @@ $("#getFocusYear").click(function (event) {
     var myChart23 = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Number Of Students in SOC',
           fill: false,
@@ -3201,7 +3218,7 @@ $("#getFocusYear").click(function (event) {
     var myChart24 = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Autumn',
           fill: false,
@@ -3357,7 +3374,9 @@ $("#getFocusYear").click(function (event) {
     let numberSLSsemester = []
 
 
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
         if (item.year == i && item.Major == "BSc - Biochemistry") {
           counterBiochem = counterBiochem + Number(item.no_of_Student)
@@ -3545,7 +3564,7 @@ $("#getFocusYear").click(function (event) {
     myChart27 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Biochemistry',
@@ -3606,7 +3625,7 @@ $("#getFocusYear").click(function (event) {
     myChart28 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [
           {
             lineTension: 0.1,
@@ -3670,7 +3689,7 @@ $("#getFocusYear").click(function (event) {
        myChart29 = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             label: 'Autumn',
             fill: false,
@@ -3843,7 +3862,9 @@ $("#getFocusYear").click(function (event) {
 
 
 
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
 
         if (item.year == Yearvalue && item.Major == "BBA - Management Information Systems") {
@@ -4116,7 +4137,7 @@ $("#getFocusYear").click(function (event) {
       type: 'line',
       data: {
 
-        labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
@@ -4416,7 +4437,7 @@ $("#getFocusYear").click(function (event) {
       type: 'line',
       data: {
 
-        labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
@@ -4728,7 +4749,7 @@ $("#getFocusYear").click(function (event) {
       var myChart34 = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             label: 'Autumn',
             fill: false,

@@ -907,10 +907,6 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           label: 'Number Of Students in EEE',
           fill: false,
-<<<<<<< HEAD
-          data:numberOfEEE,// [numberOfDeptEEE[0], numberOfDeptEEE[1], numberOfDeptEEE[2], numberOfDeptEEE[3], numberOfDeptEEE[4], numberOfDeptEEE[5], numberOfDeptEEE[6], numberOfDeptEEE[7],],
-          backgroundColor: ['rgba(253,148,69,1)',],
-=======
           data: [numberOfDeptEEE[0], numberOfDeptEEE[1], numberOfDeptEEE[2], numberOfDeptEEE[3], numberOfDeptEEE[4], numberOfDeptEEE[5], numberOfDeptEEE[6], numberOfDeptEEE[7],],
           backgroundColor: [
             'rgba(247,150,70,1)',
@@ -922,7 +918,6 @@ $("#tableMenu4 a").click(function(e){
             'rgba(247,150,70,1)',
             'rgba(247,150,70,1)',
           ],
->>>>>>> bba621dc33ec076c616a1980f98b64e52d293459
           borderColor: [
             'rgba(247,150,70,1)',
             'rgba(247,150,70,1)',
@@ -939,10 +934,6 @@ $("#tableMenu4 a").click(function(e){
         {  lineTension:0.1,
           label: 'Number Of Students in Computer Science Engineering',
           fill: false,
-<<<<<<< HEAD
-          data:numberOfDeptCSE,// [numberOfDeptCSE[0], numberOfDeptCSE[1], numberOfDeptCSE[2], numberOfDeptCSE[3], numberOfDeptCSE[4], numberOfDeptCSE[5], numberOfDeptCSE[6], numberOfDeptCSE[7],],
-          backgroundColor: ['rgba(209,122,55, 1)',],
-=======
           data: [numberOfDeptCSE[0], numberOfDeptCSE[1], numberOfDeptCSE[2], numberOfDeptCSE[3], numberOfDeptCSE[4], numberOfDeptCSE[5], numberOfDeptCSE[6], numberOfDeptCSE[7],],
           backgroundColor: [
             'rgba(243, 170, 129, 1)',
@@ -954,7 +945,6 @@ $("#tableMenu4 a").click(function(e){
             'rgba(243, 170, 129, 1)',
             'rgba(243, 170, 129, 1)',
           ],
->>>>>>> bba621dc33ec076c616a1980f98b64e52d293459
           borderColor: [
             'rgba(243, 170, 129, 1)',
             'rgba(243, 170, 129, 1)',
@@ -971,10 +961,6 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           label: 'Number Of Students in Physical Sciences',
           fill: false,
-<<<<<<< HEAD
-          data:numberOfDeptPhySci,// [numberOfDeptPhySci[0], numberOfDeptPhySci[1], numberOfDeptPhySci[2], numberOfDeptPhySci[3], numberOfDeptPhySci[4], numberOfDeptPhySci[5], numberOfDeptPhySci[6], numberOfDeptPhySci[7],],
-          backgroundColor: ['rgba(254,194,168, 1)',],
-=======
           data: [numberOfDeptPhySci[0], numberOfDeptPhySci[1], numberOfDeptPhySci[2], numberOfDeptPhySci[3], numberOfDeptPhySci[4], numberOfDeptPhySci[5], numberOfDeptPhySci[6], numberOfDeptPhySci[7],],
           backgroundColor: [
             'rgba(250,195,168, 1)',
@@ -986,7 +972,6 @@ $("#tableMenu4 a").click(function(e){
             'rgba(250,195,168, 1)',
             'rgba(250,195,168, 1)',
           ],
->>>>>>> bba621dc33ec076c616a1980f98b64e52d293459
           borderColor: [
             'rgba(250,195,168, 1)',
             'rgba(250,195,168, 1)',

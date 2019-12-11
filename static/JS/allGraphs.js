@@ -225,7 +225,10 @@ $("#getFocusYear").click(function (event) {
     
       let counter = 0
       let numberOfStd = []
-      for (let i = 2013; i <= 2019; i++) {
+     
+      let year=[]
+      for (let i = startYear; i <= finishYear; i++) {
+        year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i) {
               counter = counter + Number(item.no_of_Student)
@@ -241,7 +244,7 @@ $("#getFocusYear").click(function (event) {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students',
@@ -293,158 +296,97 @@ $("#getFocusYear").click(function (event) {
   // myChart3: Schoolwise Interest in IUB (line)
   $("#getFocusYear").click(function (event) {
     $.ajax({
-      method: "GET",
-      url: "/data/list"
-    }).done(function (response) {
-      console.log(response)
-      let noofStd = response.datas
-
-      let counter = 0
-      let counterSLS = 0
-      let counterSESM_PHARM = 0
-      let counterSlass = 0
-      let counterSls = 0
-      let numberOfStd = []
-      let numberOfSob = []
-      let numberOfOth = []
-      let numberOfSlass = []
-      let numberOfSls = []
+          method: "GET",
+          url: "/data/list"
+        }).done(function (response) {
+          console.log(response)
+          let noofStd = response.datas
         
-      for (let i = 2013; i <= 2019; i++) {
-        noofStd.forEach((item, index) => {
-          if (item.year == i && item.School == "SECS") {
-            counter = counter + Number(item.no_of_Student)
-          }
-          else if (item.year == i && item.School == "SoB") {
-            counterSLS = counterSLS + Number(item.no_of_Student)
-          }
-          
-          else if (item.year == i && (item.School == "Phar" || item.School == "SESM")) {
-            counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
-          }
-          else if (item.year == i && item.School == "SLASS") {
-            counterSlass = counterSlass + Number(item.no_of_Student)
-          }
-          else if (item.year == i && item.School == "SLS") {
-            counterSls = counterSls + Number(item.no_of_Student)
-          }
-        });
-    
-        // numberOfStd.push(counter)
-        // numberOfSob.push(counterSLS)
-        // numberOfOth.push(counterSESM_PHARM)
-        // counter = 0
-        // counterSLS = 0
-        // counterSESM_PHARM = 0
-
-        numberOfStd.push(counter)
-        numberOfSob.push(counterSLS)
-        numberOfOth.push(counterSESM_PHARM)
-        numberOfSlass.push(counterSlass)
-        numberOfSls.push(counterSls)
-        counter = 0
-        counterSLS = 0
-        counterSESM_PHARM = 0
-        counterSls = 0
-        counterSlass = 0
-      }
-      var ctx = document.getElementById('myChart3');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data:
-        {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [{
-            lineTension:0.1,
-            label: 'Number Of Students in SECS',
-            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-    
-            backgroundColor: [
-                'rgba(228,108,10, 1)',
-            ],
-            borderColor: [
-              'rgba(228,108,10, 1)',
-            ],
-            borderWidth: 2
-          }, 
-          {
-            lineTension:0.1,
-            label: 'Number Of Students in SoB',
-            data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
-    
-            backgroundColor: [
-                'rgba(31,73,125,1)',
-            ],
-            borderColor: [
-              'rgba(31,73,125,1)',
-            ],
-            borderWidth: 2
-          },
-       
-        {
-            lineTension:0.1,
-            label: 'Number Of Students in SESM+PHARM',
-            data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+          let counter = 0
+          let counterSLS = 0
+          let counterSESM_PHARM = 0
+          let numberOfStd = []
+          let numberOfSob = []
+          let numberOfOth = []
             
-            backgroundColor: [
-              'rgba(128,100,162,1)',
-            ],
-            borderColor: [
-              'rgba(128,100,162,1)',
-            ],
-            borderWidth: 2
-          },
-          { 
-            lineTension:0.1,
-            label: 'Number Of Students in Slass',
-            data: [numberOfSlass[0], numberOfSlass[1], numberOfSlass[2], numberOfSlass[3], numberOfSlass[4], numberOfSlass[5], numberOfSlass[6], numberOfSlass[7],],
-  
-            backgroundColor: [
-              'rgba(0, 0, 0, 0.5)',
-            ],
-
-            borderColor: [
-              'rgba(0, 0, 0, 0.5)',
-            ],
-            borderWidth: 2
-          },
-          {
-            lineTension:0.1,
-            label: 'Number Of Students in SLS',
-            data: [numberOfSls[0], numberOfSls[1], numberOfSls[2], numberOfSls[3], numberOfSls[4], numberOfSls[5], numberOfSls[6], numberOfSls[7],],
-  
-            backgroundColor: [
-              'rgba(155,187,89,1)',
-            ],
-
-            borderColor: [
-              'rgba(155,187,89,1)',
-  
-            ],
-            borderWidth: 2
-            },
-            ]
-    
-          },
-        options: {
-          scales: {
-            xAxes: [{
-            }],
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
+          let year=[]
+          for (let i = startYear; i <= finishYear; i++) {
+            year.push(Number(i))
+            noofStd.forEach((item, index) => {
+              if (item.year == i && item.School == "SECS") {
+                counter = counter + Number(item.no_of_Student)
               }
-            }]
-          },
-          title: {
-            display: true,
-            text: 'Schoolwise interest in IUB',
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-            fontSize:20    
+              else if (item.year == i && item.School == "SoB") {
+                counterSLS = counterSLS + Number(item.no_of_Student)
+              }
+              else if (item.year == i && (item.School == "Phar" || item.School == "SESM" || item.School == "SLASS" || item.School == "SLS")) {
+                counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
+              }
+            });
+        
+            numberOfStd.push(counter)
+            numberOfSob.push(counterSLS)
+            numberOfOth.push(counterSESM_PHARM)
+            counter = 0
+            counterSLS = 0
+            counterSESM_PHARM = 0
           }
-             
-        }
-      });
+          var ctx = document.getElementById('myChart3');
+          var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: year,
+              datasets: [{
+                lineTension:0.1,
+                label: 'Number Of Students in SECS',
+                data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+        
+                borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 2
+              }, 
+              {
+                lineTension:0.1,
+                label: 'Number Of Students in SoB',
+                data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+        
+                borderColor: [
+                  'rgba(220,180,0,1)',
+                ],
+                borderWidth: 2
+              },
+              {
+                lineTension:0.1,
+                label: 'Number Of Students in Others',
+                data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+        
+                borderColor: [
+                  'rgba(180,130,0,1)',
+                ],
+                borderWidth: 2
+              },
+            ]},
+            options: {
+              scales: {
+                xAxes: [{
+                }],
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              },
+              title: {
+                display: true,
+                text: 'Schoolwise interest in IUB',
+                fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+                fontSize:20    
+              }
+                 
+            }
+          });
+      
   
     }).fail(function (response) {
       console.log(response.responseText);
@@ -471,7 +413,10 @@ $("#getFocusYear").click(function (event) {
         let numberOfOth = []
         let numberOfSlass = []
         let numberOfSls = []
-        for (let i = 2013; i <= 2019; i++) {
+        
+        let year=[]
+        for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i && item.School == "SECS") {
               counter = counter + Number(item.no_of_Student)
@@ -510,7 +455,7 @@ $("#getFocusYear").click(function (event) {
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               label: 'Number Of Students in SECS',
               data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
@@ -693,7 +638,10 @@ $("#getFocusYear").click(function (event) {
         let numberOfStd = []
         let numberOfSob = []
         let numberOfOth = []
-        for (let i = 2013; i <= 2019; i++) {
+        
+        let year=[]
+        for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i && item.School == "SLASS") {
               counter = counter + Number(item.no_of_Student)
@@ -722,7 +670,7 @@ $("#getFocusYear").click(function (event) {
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               lineTension:0.1,
               label: 'Number Of Students in Slass',
@@ -855,7 +803,9 @@ $("#getFocusYear").click(function (event) {
         startYear =$("#startYearVal").val()
         finishYear =$("#finishYearVal").val()
     
+        let year=[]
         for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             
             // Major wise Student's interest @ SECS
@@ -1074,7 +1024,7 @@ $("#getFocusYear").click(function (event) {
               
               title: {
                 display: true,
-                text: Yearvalue + ' @ Secs Majors',
+                text: 'SECS Majors ' + Yearvalue,
                 fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
                 fontSize:20  
               },
@@ -1139,7 +1089,7 @@ $("#getFocusYear").click(function (event) {
          myChart8 = new Chart(ctx, {
           type: 'line',
           data:{
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
+            labels: year,
             datasets: [{
               label: 'Number Of Students in Computer Engineering',
               lineTension:0.1,
@@ -1368,7 +1318,7 @@ $("#getFocusYear").click(function (event) {
         myChart9 = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               lineTension:0.1,
               label: 'Number Of Students in Maths',
@@ -1591,7 +1541,7 @@ $("#getFocusYear").click(function (event) {
          myChart10 = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               lineTension:0.1,
               label: 'Number Of Students in EEE',
@@ -1651,7 +1601,7 @@ $("#getFocusYear").click(function (event) {
         myChart11 = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               label: 'Number Of Students in EEE',
               fill: false,
@@ -1757,7 +1707,7 @@ $("#getFocusYear").click(function (event) {
         var myChart12 = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               label: 'Autumn',
               fill: false,
@@ -1919,8 +1869,9 @@ $("#getFocusYear").click(function (event) {
     let numberYearlySESM = []
 
 
-
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
         if (item.year == Yearvalue && item.Semester == "1" && item.School == "SESM") {
           counterSESMAutumn = counterSESMAutumn + Number(item.no_of_Student)
@@ -1958,15 +1909,15 @@ $("#getFocusYear").click(function (event) {
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Environmental Management") {
-          counterYearlyENV_management = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyENV_management = counterYearlyENV_management + Number(item.no_of_Student)
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Environmental Science") {
-          counterYearlyENV = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyENV = counterYearlyENV + Number(item.no_of_Student)
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Population Environment") {
-          counterYearlyPopulation_Env = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyPopulation_Env = counterYearlyPopulation_Env + Number(item.no_of_Student)
         }
 
         // Yearly semester wise SESM
@@ -1999,6 +1950,7 @@ $("#getFocusYear").click(function (event) {
       numberOfPoplation_Env.push(counterPopulation_Env)
 
       numberYearlySESM.push(counterYearlyENV)
+      console.log('SESM number'+numberYearlySESM[0])
       numberYearlySESM.push(counterYearlyENV_management)
       numberYearlySESM.push(counterYearlyPharmacy)
       numberYearlySESM.push(counterYearlyPopulation_Env)
@@ -2011,7 +1963,7 @@ $("#getFocusYear").click(function (event) {
       // reinitializing the counter
       counterYearlyPharmacy = 0
       counterYearlyENV_management = 0
-      counterYealryENV = 0
+      counterYearlyENV = 0
       counterYearlyPopulation_Env = 0
 
       counterPharmacy = 0
@@ -2027,6 +1979,7 @@ $("#getFocusYear").click(function (event) {
       counterSpring = 0
       counterSummer = 0
     }
+    console.log(year)
 
     var ctx = document.getElementById('myChart13');
     var myChart = new Chart(ctx, {
@@ -2067,7 +2020,7 @@ $("#getFocusYear").click(function (event) {
 
         title: {
           display: true,
-          text: Yearvalue + ' @ SESM',
+          text: 'SESM Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
             fontSize:20  
 
@@ -2129,7 +2082,7 @@ $("#getFocusYear").click(function (event) {
     myChart15 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Pharmacy',
@@ -2204,7 +2157,7 @@ $("#getFocusYear").click(function (event) {
     myChart16 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Population_ENV',
@@ -2297,7 +2250,7 @@ $("#getFocusYear").click(function (event) {
       myChart17 = new Chart(ctx, {
        type: 'bar',
        data: {
-         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+         labels: year,
          datasets: [{
            label: 'Autumn',
            fill: false,
@@ -2410,6 +2363,7 @@ $("#getFocusYear").click(function (event) {
   });
 })
 
+
 // SLASS Graphs myChart18 to myChart24
 
 $("#getFocusYear").click(function (event) {
@@ -2485,7 +2439,9 @@ $("#getFocusYear").click(function (event) {
 
 
 
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
 
         // Major wise Student's interest @ SECS
@@ -2724,7 +2680,7 @@ $("#getFocusYear").click(function (event) {
 
         title: {
           display: true,
-          text: Yearvalue + ' @ SLASS Majors',
+          text: 'SLASS Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
           fontSize:20  
 
@@ -2794,7 +2750,7 @@ $("#getFocusYear").click(function (event) {
     myChart20 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in EngTrainingLang',
@@ -2902,7 +2858,7 @@ $("#getFocusYear").click(function (event) {
     myChart21 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Sociology',
@@ -3014,7 +2970,7 @@ $("#getFocusYear").click(function (event) {
     myChart22 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in SOC',
@@ -3096,7 +3052,7 @@ $("#getFocusYear").click(function (event) {
     var myChart23 = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Number Of Students in SOC',
           fill: false,
@@ -3264,7 +3220,7 @@ $("#getFocusYear").click(function (event) {
     var myChart24 = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Autumn',
           fill: false,
@@ -3420,7 +3376,9 @@ $("#getFocusYear").click(function (event) {
     let numberSLSsemester = []
 
 
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
         if (item.year == i && item.Major == "BSc - Biochemistry") {
           counterBiochem = counterBiochem + Number(item.no_of_Student)
@@ -3545,7 +3503,7 @@ $("#getFocusYear").click(function (event) {
 
         title: {
           display: true,
-          text: 'SLS ' + Yearvalue,
+          text: 'SLS Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
             fontSize:20  
 
@@ -3608,7 +3566,7 @@ $("#getFocusYear").click(function (event) {
     myChart27 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Biochemistry',
@@ -3669,7 +3627,7 @@ $("#getFocusYear").click(function (event) {
     myChart28 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [
           {
             lineTension: 0.1,
@@ -3733,7 +3691,7 @@ $("#getFocusYear").click(function (event) {
        myChart29 = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             label: 'Autumn',
             fill: false,
@@ -3906,7 +3864,9 @@ $("#getFocusYear").click(function (event) {
 
 
 
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
 
         if (item.year == Yearvalue && item.Major == "BBA - Management Information Systems") {
@@ -4071,26 +4031,26 @@ $("#getFocusYear").click(function (event) {
           data: [numberBBA[0], numberBBA[1], numberBBA[2], numberBBA[3], numberBBA[4], numberBBA[5], numberBBA[6], numberBBA[7], numberBBA[8]],
           backgroundColor: [
             'rgba(44, 77, 117, 1)', //mis
-            'rgba(192, 80, 77, 1)', // finance
-            'rgba(247, 150, 70, 1)', //investment banking
-            'rgba(79, 129, 189, 1)', // accounting
-            'rgba(155, 187, 89, 1)', //general management
-            'rgba(128, 100, 162, 1)', //hrm
-            'rgba(75, 172, 198, 1)', //IB
-            'rgba(119, 44, 42, 1)', //marketing
-            'rgba(95, 117, 48, 1)', // econ
-          ],
-          borderColor: [
-            'rgba(44, 77, 117, 1)',
-            'rgba((192, 80, 77, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(95, 117, 48, 1)',
-          ],
+                'rgb(89, 135, 192)', // finance
+                'rgb(107, 148, 199)', //investment banking
+                'rgb(163, 188, 220)', // accounting
+                'rgb(0, 134, 179)', //general management
+                'rgb(0, 153, 204)', //hrm
+                'rgb(102, 181, 255)', //IB
+                'rgb(153, 204, 255)', //marketing
+                'rgb(204, 230, 255)', // econ
+              ],
+              borderColor: [
+                'rgba(44, 77, 117, 1)',
+                'rgb(89, 135, 192)',
+                'rgb(107, 148, 199)',
+                'rgb(163, 188, 220)',
+                'rgb(0, 134, 179)',
+                'rgb(0, 153, 204)',
+                'rgb(102, 181, 255)',
+                'rgb(153, 204, 255)',
+                'rgb(204, 230, 255)',
+              ],
           borderWidth: 2
         },
         ]
@@ -4109,7 +4069,7 @@ $("#getFocusYear").click(function (event) {
 
         title: {
           display: true,
-          text: Yearvalue + ' @ SOB',
+          text: 'SOB Majors ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
           fontSize:20  
 
@@ -4179,7 +4139,7 @@ $("#getFocusYear").click(function (event) {
       type: 'line',
       data: {
 
-        labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
@@ -4479,7 +4439,7 @@ $("#getFocusYear").click(function (event) {
       type: 'line',
       data: {
 
-        labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
@@ -4791,7 +4751,7 @@ $("#getFocusYear").click(function (event) {
       var myChart34 = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             label: 'Autumn',
             fill: false,

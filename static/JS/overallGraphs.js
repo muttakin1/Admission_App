@@ -42,7 +42,7 @@ $("#overall").click(function (event) {
         let numberYearlyAcn=[]
         let numberYearlyMgt=[]
         
-        let numberSchools=[]
+        let numberSemester=[]
   
         let SemesterDist=[]
        
@@ -50,9 +50,7 @@ $("#overall").click(function (event) {
         let numberOfSummer = []
         let numberOfSpring = []
         
-        let year=[]
-        for (let i = startYear; i <= finishYear; i++) {
-          year.push(Number(i))
+        for (let i = 2013; i <= 2019; i++) {
           noofStd.forEach((item, index) => {
             if (item.year == Yearvalue && item.Semester == "1") {
               counterAutumn = counterAutumn + Number(item.no_of_Student)
@@ -86,11 +84,11 @@ $("#overall").click(function (event) {
           });        
         
           
-           numberSchools.push(counterSlass)
-           numberSchools.push(counterSob)
-           numberSchools.push(counterOther)
-           numberSchools.push(counterSecs)
-          numberSchools.push(counterSls)
+           numberSemester.push(counterSlass)
+           numberSemester.push(counterSob)
+           numberSemester.push(counterOther)
+           numberSemester.push(counterSecs)
+          numberSemester.push(counterSls)
           
           SemesterDist.push(counterAutumn)
           SemesterDist.push(counterSpring)
@@ -165,7 +163,7 @@ $("#overall").click(function (event) {
             labels: ['SLASS', 'SoB','SESM+Pharm','SECS','SLS'],
             datasets: [{
               label: 'Number Of Students in ' + Yearvalue,
-              data: [numberSchools[0], numberSchools[1], numberSchools[2],numberSchools[3],numberSchools[4],],
+              data: [numberSemester[0], numberSemester[1], numberSemester[2],numberSemester[3],numberSemester[4]],
               backgroundColor: [
                 'rgba(162, 162, 162, 1)',
                 'rgba(30, 70, 122, 1)',
@@ -227,6 +225,7 @@ $("#overall").click(function (event) {
     
       let counter = 0
       let numberOfStd = []
+     
       let year=[]
       for (let i = startYear; i <= finishYear; i++) {
         year.push(Number(i))
@@ -310,7 +309,9 @@ $("#overall").click(function (event) {
           let numberOfSob = []
           let numberOfOth = []
             
-          for (let i = 2013; i <= 2019; i++) {
+          let year=[]
+          for (let i = startYear; i <= finishYear; i++) {
+            year.push(Number(i))
             noofStd.forEach((item, index) => {
               if (item.year == i && item.School == "SECS") {
                 counter = counter + Number(item.no_of_Student)
@@ -334,7 +335,7 @@ $("#overall").click(function (event) {
           var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-              labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+              labels: year,
               datasets: [{
                 lineTension:0.1,
                 label: 'Number Of Students in SECS',
@@ -386,6 +387,7 @@ $("#overall").click(function (event) {
             }
           });
       
+  
     }).fail(function (response) {
       console.log(response.responseText);
     });  
@@ -411,9 +413,7 @@ $("#overall").click(function (event) {
         let numberOfOth = []
         let numberOfSlass = []
         let numberOfSls = []
-        Yearvalue = $("#focusYearVal").val()
-        startYear =$("#startYearVal").val()
-        finishYear =$("#finishYearVal").val()
+        
         let year=[]
         for (let i = startYear; i <= finishYear; i++) {
           year.push(Number(i))
@@ -638,10 +638,7 @@ $("#overall").click(function (event) {
         let numberOfStd = []
         let numberOfSob = []
         let numberOfOth = []
-        Yearvalue = $("#focusYearVal").val()
-        startYear =$("#startYearVal").val()
-        finishYear =$("#finishYearVal").val()
-          
+        
         let year=[]
         for (let i = startYear; i <= finishYear; i++) {
           year.push(Number(i))
@@ -734,4 +731,3 @@ $("#overall").click(function (event) {
       });
       
     })
-  

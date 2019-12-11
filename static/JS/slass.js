@@ -1,4 +1,4 @@
-// Major Wise students' interest @ SECS LINE
+// // Major Wise students' interest @ SECS LINE
 
 var myChart2
 var myChart3
@@ -22,7 +22,15 @@ function saveTitle() {
 }
 
 $("#MajorWiseStudentsSLASS").click(function (event) {
-  $("#tableMenu2 a").click(function (e) {
+  getBtn();
+  
+  $(".dropdown").show();
+  $("#content").show();
+
+  
+    
+  $("#tableMenu2 a").click(function(e){
+    console.log("hello2")
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
     $("#tableButton2").text(selText);
@@ -30,7 +38,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     //console.log(myChart.config.options.type)
     myChart2.config.type = selText
     myChart2.update()
-  });
+});
 
   $("#tableMenu3 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
@@ -50,7 +58,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart4.config.type = selText
     myChart4.update()
   });
-  getBtn();
+  //getBtn();
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -122,8 +130,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
 
 
-
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
 
         // Major wise Student's interest @ SECS
@@ -316,7 +325,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       counterSummer = 0
     }
 
-
+    console.log(year)
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
       type: 'pie',
@@ -363,7 +372,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SLASS Majors',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -415,7 +425,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'SLASS Departments ' + Yearvalue,
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -430,7 +441,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in EngTrainingLang',
@@ -521,6 +532,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'Major wise Students interest @ SLASS',
+          fontSize:20  ,
           scales: {
             yAxes: [{
               ticks: {
@@ -537,7 +549,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Sociology',
@@ -629,7 +641,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       options: {
         title: {
           display: true,
-          text: 'Major wise Students interest @ SLASS'
+          text: 'Major wise Students interest @ SLASS',
+          fontSize:20  
         },
         scales: {
           yAxes: [{
@@ -648,7 +661,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in SOC',
@@ -714,6 +727,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'SLASS Departments',
+          fontSize:20  ,
           scales: {
             yAxes: [{
               ticks: {
@@ -729,7 +743,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Number Of Students in SOC',
           fill: false,
@@ -885,6 +899,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'SLASS Departments',
+          fontSize:20  
          
           
         }
@@ -896,7 +911,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Autumn',
           fill: false,
@@ -996,6 +1011,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         title: {
           display: true,
           text: 'Yearly semester wise SLASS',
+          fontSize:20  
          
           }
         
@@ -1010,6 +1026,6 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
 
 
-})
+ })
 
 

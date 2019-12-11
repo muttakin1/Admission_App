@@ -21,6 +21,10 @@ function saveTitle() {
   myChart4.update();
 }
 $("#MajorWiseStudentsSESM").click(function (event) {
+  getBtn();
+  $(".dropdown").show();
+  $("#content").show();
+
   $("#tableMenu2 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
@@ -49,7 +53,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart4.config.type = selText
     myChart4.update()
   });
-  getBtn();
+  
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -95,8 +99,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     let numberYearlySESM = []
 
 
-
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
         if (item.year == Yearvalue && item.Semester == "1" && item.School == "SESM") {
           counterSESMAutumn = counterSESMAutumn + Number(item.no_of_Student)
@@ -203,6 +208,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       counterSpring = 0
       counterSummer = 0
     }
+    console.log(year)
 
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
@@ -244,7 +250,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SESM',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20  
 
         },
 
@@ -289,7 +296,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         title: {
           display: true,
           text: Yearvalue + ' @ SESM',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
 
         },
 
@@ -303,7 +311,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Pharmacy',
@@ -358,7 +366,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
         title: {
           display: true,
           text: 'Major wise Students interest @ SESM+Pharmacy',
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
         },
         scales: {
           yAxes: [{
@@ -377,7 +386,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Population_ENV',
@@ -434,7 +443,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       options: {
         title: {
           display: true,
-          text: 'Major wise Students interest @ SESM+Pharmacy'
+          text: 'Major wise Students interest @ SESM+Pharmacy',
+          fontSize:20  
         },
         scales: {
           yAxes: [{
@@ -466,10 +476,10 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
      // Yearly semester wise SESM
      var ctx = document.getElementById('myChart4');
-     var myChart4 = new Chart(ctx, {
+      myChart4 = new Chart(ctx, {
        type: 'bar',
        data: {
-         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+         labels: year,
          datasets: [{
            label: 'Autumn',
            fill: false,
@@ -570,14 +580,13 @@ $("#MajorWiseStudentsSESM").click(function (event) {
          title: {
            display: true,
            text: 'Yearly semester wise SESM',
+           fontSize:20  
           
            }
          
        }
      });
-
-
-
+     
   }).fail(function (response) {
     console.log(response.responseText);
   });

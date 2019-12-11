@@ -995,7 +995,7 @@ $("#SoB").click(function (event) {
 
       // Yearly semester wise SoB
       var ctx = document.getElementById('myChart4');
-      var myChart = new Chart(ctx, {
+       myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],

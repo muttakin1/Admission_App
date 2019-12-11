@@ -33,6 +33,7 @@
 
     //Edit graphs functions
     $("#tableMenu2 a").click(function(e){
+      console.log("hello")
       e.preventDefault(); // cancel the link behaviour
       var selText = $(this).text();
       $("#tableButton2").text(selText);

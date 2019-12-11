@@ -1,4 +1,4 @@
-// Major Wise students' interest @ SECS LINE
+// // Major Wise students' interest @ SECS LINE
 
 var myChart2
 var myChart3
@@ -23,23 +23,22 @@ function saveTitle() {
 
 $("#MajorWiseStudentsSLASS").click(function (event) {
   getBtn();
-    
+  
   $(".dropdown").show();
   $("#content").show();
 
   
     
-  $("#tableMenu2 a").click(function (e) {
-    console.log('hello')
+  $("#tableMenu2 a").click(function(e){
+    console.log("hello2")
     e.preventDefault(); // cancel the link behaviour
     var selText = $(this).text();
     $("#tableButton2").text(selText);
-    console.log('hello')
     console.log(selText)
     //console.log(myChart.config.options.type)
     myChart2.config.type = selText
     myChart2.update()
-  });
+});
 
   $("#tableMenu3 a").click(function (e) {
     e.preventDefault(); // cancel the link behaviour
@@ -59,7 +58,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart4.config.type = selText
     myChart4.update()
   });
-  getBtn();
+  //getBtn();
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -1026,6 +1025,6 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
 
 
-})
+ })
 
 

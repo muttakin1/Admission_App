@@ -1869,7 +1869,6 @@ $("#getFocusYear").click(function (event) {
     let numberYearlySESM = []
 
 
-
     let year=[]
     for (let i = startYear; i <= finishYear; i++) {
       year.push(Number(i))
@@ -1910,15 +1909,15 @@ $("#getFocusYear").click(function (event) {
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Environmental Management") {
-          counterYearlyENV_management = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyENV_management = counterYearlyENV_management + Number(item.no_of_Student)
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Environmental Science") {
-          counterYearlyENV = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyENV = counterYearlyENV + Number(item.no_of_Student)
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Population Environment") {
-          counterYearlyPopulation_Env = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyPopulation_Env = counterYearlyPopulation_Env + Number(item.no_of_Student)
         }
 
         // Yearly semester wise SESM
@@ -1951,6 +1950,7 @@ $("#getFocusYear").click(function (event) {
       numberOfPoplation_Env.push(counterPopulation_Env)
 
       numberYearlySESM.push(counterYearlyENV)
+      console.log('SESM number'+numberYearlySESM[0])
       numberYearlySESM.push(counterYearlyENV_management)
       numberYearlySESM.push(counterYearlyPharmacy)
       numberYearlySESM.push(counterYearlyPopulation_Env)
@@ -1963,7 +1963,7 @@ $("#getFocusYear").click(function (event) {
       // reinitializing the counter
       counterYearlyPharmacy = 0
       counterYearlyENV_management = 0
-      counterYealryENV = 0
+      counterYearlyENV = 0
       counterYearlyPopulation_Env = 0
 
       counterPharmacy = 0
@@ -1979,6 +1979,7 @@ $("#getFocusYear").click(function (event) {
       counterSpring = 0
       counterSummer = 0
     }
+    console.log(year)
 
     var ctx = document.getElementById('myChart13');
     var myChart = new Chart(ctx, {
@@ -2361,6 +2362,7 @@ $("#getFocusYear").click(function (event) {
     console.log(response.responseText);
   });
 })
+
 
 // SLASS Graphs myChart18 to myChart24
 

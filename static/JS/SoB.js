@@ -112,8 +112,9 @@ $("#SoB").click(function (event) {
     let numberBbaSemester = []
 
 
-
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
 
         if (item.year == Yearvalue && item.Major == "BBA - Management Information Systems") {
@@ -386,7 +387,7 @@ $("#SoB").click(function (event) {
       type: 'line',
       data: {
 
-        labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
@@ -686,7 +687,7 @@ $("#SoB").click(function (event) {
       type: 'line',
       data: {
 
-        labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
@@ -998,7 +999,7 @@ $("#SoB").click(function (event) {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels:year,
           datasets: [{
             label: 'Autumn',
             fill: false,

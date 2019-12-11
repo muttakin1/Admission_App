@@ -50,7 +50,9 @@ $("#overall").click(function (event) {
         let numberOfSummer = []
         let numberOfSpring = []
         
-        for (let i = 2013; i <= 2019; i++) {
+        let year=[]
+        for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == Yearvalue && item.Semester == "1") {
               counterAutumn = counterAutumn + Number(item.no_of_Student)
@@ -225,7 +227,9 @@ $("#overall").click(function (event) {
     
       let counter = 0
       let numberOfStd = []
-      for (let i = 2013; i <= 2019; i++) {
+      let year=[]
+      for (let i = startYear; i <= finishYear; i++) {
+        year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i) {
               counter = counter + Number(item.no_of_Student)
@@ -241,7 +245,7 @@ $("#overall").click(function (event) {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students',
@@ -310,8 +314,14 @@ $("#overall").click(function (event) {
       let numberOfSlass = []
       let numberOfSls = []
         
-      for (let i = 2013; i <= 2019; i++) {
+      Yearvalue = $("#focusYearVal").val()
+      startYear =$("#startYearVal").val()
+      finishYear =$("#finishYearVal").val()
+        
+      let year=[]
+      for (let i = startYear; i <= finishYear; i++) {
         noofStd.forEach((item, index) => {
+          year.push(Number(i))
           if (item.year == i && item.School == "SECS") {
             counter = counter + Number(item.no_of_Student)
           }
@@ -353,7 +363,7 @@ $("#overall").click(function (event) {
         type: 'line',
         data:
         {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students in SECS',
@@ -484,7 +494,12 @@ $("#overall").click(function (event) {
         let numberOfOth = []
         let numberOfSlass = []
         let numberOfSls = []
-        for (let i = 2013; i <= 2019; i++) {
+        Yearvalue = $("#focusYearVal").val()
+        startYear =$("#startYearVal").val()
+        finishYear =$("#finishYearVal").val()
+        let year=[]
+        for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i && item.School == "SECS") {
               counter = counter + Number(item.no_of_Student)
@@ -523,7 +538,7 @@ $("#overall").click(function (event) {
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               label: 'Number Of Students in SECS',
               data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
@@ -706,7 +721,13 @@ $("#overall").click(function (event) {
         let numberOfStd = []
         let numberOfSob = []
         let numberOfOth = []
-        for (let i = 2013; i <= 2019; i++) {
+        Yearvalue = $("#focusYearVal").val()
+        startYear =$("#startYearVal").val()
+        finishYear =$("#finishYearVal").val()
+          
+        let year=[]
+        for (let i = startYear; i <= finishYear; i++) {
+          year.push(Number(i))
           noofStd.forEach((item, index) => {
             if (item.year == i && item.School == "SLASS") {
               counter = counter + Number(item.no_of_Student)
@@ -735,7 +756,7 @@ $("#overall").click(function (event) {
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+            labels: year,
             datasets: [{
               lineTension:0.1,
               label: 'Number Of Students in Slass',

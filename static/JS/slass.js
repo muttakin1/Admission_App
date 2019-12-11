@@ -441,7 +441,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in EngTrainingLang',
@@ -549,7 +549,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Sociology',
@@ -661,7 +661,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in SOC',
@@ -743,7 +743,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Number Of Students in SOC',
           fill: false,
@@ -911,7 +911,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           label: 'Autumn',
           fill: false,

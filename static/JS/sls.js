@@ -108,10 +108,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     let year=[]
 
     for (let i = startYear; i <= finishYear; i++) {
-<<<<<<< HEAD
-=======
       year.push(Number(i))
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
       noofStd.forEach((item, index) => {
         if (item.year == i && item.Major == "BSc - Biochemistry") {
           counterBiochem = counterBiochem + Number(item.no_of_Student)
@@ -299,11 +296,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
-<<<<<<< HEAD
-        labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-=======
         labels: year,
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Biochemistry',
@@ -364,11 +357,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-<<<<<<< HEAD
-        labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-=======
         labels: year,
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [
           {
             lineTension: 0.1,
@@ -432,11 +421,7 @@ $("#MajorWiseStudentsSLS").click(function (event) {
        myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
-<<<<<<< HEAD
-          labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-=======
           labels: year,
->>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
           datasets: [{
             label: 'Autumn',
             fill: false,

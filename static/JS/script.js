@@ -377,7 +377,7 @@ var newCanvasImg36 = newCanvas36.toDataURL("image/png", "image/octet-stream");
 
 
 
-var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newCanvasImg4, newCanvasImg5, newCanvasImg6, newCanvasImg7, newCanvasImg8,newCanvasImg9, newCanvasImg10, newCanvasImg11];
+var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newCanvasImg4, newCanvasImg5, newCanvasImg6, newCanvasImg7, newCanvasImg8,newCanvasImg9, newCanvasImg10, newCanvasImg11, newCanvasImg12, newCanvasImg13, newCanvasImg14, newCanvasImg15,newCanvasImg16,newCanvasImg17,newCanvasImg18,newCanvasImg19,newCanvasImg20,newCanvasImg21,newCanvasImg22,newCanvasImg23,newCanvasImg24,newCanvasImg25,newCanvasImg26,newCanvasImg27,newCanvasImg28,newCanvasImg29,newCanvasImg30,newCanvasImg31,newCanvasImg32,newCanvasImg33,newCanvasImg34,newCanvasImg35,newCanvasImg36];
 
 
   var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
@@ -408,18 +408,19 @@ var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newC
 
 for(i = 0; i <36; i+=2) { 
       if(imgArray[i]!=emptyImg){
-        console.log("full ");
+        console.log("full");
         // Graph Page Start:    
         doc.addPage('a4','p');
         doc.addImage(img, 'JPEG',160,10,30,30 );
         doc.addImage(imgArray[i], 'JPEG', 50, 40, 115, 100 );
 
          if(imgArray[i+1]!=emptyImg){
+          console.log("full");
            doc.addImage(imgArray[i+1], 'JPEG', 50, 155, 115, 100 );
          }
       }
       else {
-        console.log("empty");
+        console.log(imgArray[i] + " Canvas is Empty");
       }
   }
 

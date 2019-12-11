@@ -76,31 +76,31 @@
         <!-- Filters: Radio Button -->
         <div class="form-check">
                 <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
-                <label class="form-check-label" for= "onlyChecked" id= "5">
+                <label class="form-check-label" for= "onlyChecked" id= "label1">
                     SECS Graphs
                 </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLASS" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "6">
+            <label class="form-check-label" for= "onlyChecked" id= "label2">
                 SLASS Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSESM" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "7"> 
+            <label class="form-check-label" for= "onlyChecked" id= "label3"> 
                 SESM Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLS" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "8">
+            <label class="form-check-label" for= "onlyChecked" id= "label4">
                 SLS Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="SoB" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked" id= "9">
+            <label class="form-check-label" for= "onlyChecked" id= "label5">
                 School of Business Graphs
             </label>
         </div>
@@ -208,15 +208,15 @@
         // onload hide radio buttons
         function foo(){
             $("#MajorWiseStudentsSECS").hide();
-            $("#5").hide();
+            $("#label1").hide();
             $("#MajorWiseStudentsSLASS").hide();
-            $("#6").hide();
+            $("#label2").hide();
             $("#MajorWiseStudentsSESM").hide();
-            $("#7").hide();
+            $("#label3").hide();
             $("#MajorWiseStudentsSLS").hide();
-            $("#8").hide();
+            $("#label4").hide();
             $("#SoB").hide();
-            $("#9").hide();
+            $("#label5").hide();
         }
 
         // upon pressing the get button
@@ -247,11 +247,11 @@
                 $("#MajorWiseStudentsSESM").show();
                 $("#MajorWiseStudentsSLS").show();
                 $("#SoB").show();
-                $("#5").show();
-                $("#6").show();
-                $("#7").show();
-                $("#8").show();
-                $("#9").show();
+                $("#label1").show();
+                $("#label2").show();
+                $("#label3").show();
+                $("#label4").show();
+                $("#label5").show();
             }
         } 
     </script>

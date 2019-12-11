@@ -1269,157 +1269,158 @@ $(document).ready(function(){
 
         $(document).ready(function() { 
             $.ajax({
-              method: "GET",
-              url: "/data/list"
-            }).done(function (response) {
-          
-              //    console.log(response)
-              let noofStd = response.datas 
-
-              console.log(2019)
-          
-              let counterSESMAutumn = 0
-              let counterSESMSpring = 0
-              let counterSESMSummer = 0
-              let counterYearlyPharmacy = 0
-              let counterYearlyENV = 0
-              let counterYearlyENV_management = 0
-              let counterYearlyPopulation_Env = 0
-          
-              // Major wise Students' interest @ SESM
-              let counterPharmacy = 0
-              let counterENV = 0
-              let counterENV_management = 0
-              let counterPopulation_Env = 0
-          
-              let numberOfPharmacy = []
-              let numberOfENV = []
-              let numberOfENV_management = []
-              let numberOfPoplation_Env = []
-          
-              // Yearly semester wise SESM
-              let counterSpring = 0
-              let counterAutumn = 0
-              let counterSummer = 0
-          
-              let numberAutumn = []
-              let numberSpring = []
-              let numberSummer = []
-          
-          
-              let numberSESMsemester = []
-              let numberYearlySESM = []
-          
-          
-          
-              for (let i = 2013; i <= 2019; i++) {
-                noofStd.forEach((item, index) => {
-                  if (item.year == 2019 && item.Semester == "1" && item.School == "SESM") {
-                    counterSESMAutumn = counterSESMAutumn + Number(item.no_of_Student)
-          
-                  }
-                  else if (item.year == 2019 && item.Semester == "2" && item.School == "SESM") {
-                    counterSESMSpring = counterSESMSpring + Number(item.no_of_Student)
-                  }
-          
-                  else if (item.year == 2019 && item.Semester == "3" && item.School == "SESM") {
-                    counterSESMSummer = counterSESMSummer + Number(item.no_of_Student)
-                  }
-          
-                  // Major wise Student's interest @ SESM
-                  if (item.year == i && item.Major == "B.Pharm - Pharmacy") {
-                    counterPharmacy = counterPharmacy + Number(item.no_of_Student)
-          
-                  }
-          
-                  else if (item.year == i && (item.Major == "BSc - Environmental Management")) {
-                    counterENV_management = counterENV_management + Number(item.no_of_Student)
-                  }
-          
-                  else if (item.year == i && item.Major == "BSc - Environmental Science") {
-                    counterENV = counterENV + Number(item.no_of_Student)
-                  }
-          
-                  else if (item.year == i && (item.Major == "BSc - Population Environment")) {
-                    counterPopulation_Env = counterPopulation_Env + Number(item.no_of_Student)
-                  }
-          
-                  if (item.year == 2019 && item.Major == "B.Pharm - Pharmacy") {
-                    counterYearlyPharmacy = counterYearlyPharmacy + Number(item.no_of_Student)
-          
-                  }
-          
-                  else if (item.year == 2019 && item.Major == "BSc - Environmental Management") {
-                    counterYearlyENV_management = counterYearlyPharmacy + Number(item.no_of_Student)
-                  }
-          
-                  else if (item.year == 2019 && item.Major == "BSc - Environmental Science") {
-                    counterYearlyENV = counterYearlyPharmacy + Number(item.no_of_Student)
-                  }
-          
-                  else if (item.year == 2019 && item.Major == "BSc - Population Environment") {
-                    counterYearlyPopulation_Env = counterYearlyPharmacy + Number(item.no_of_Student)
-                  }
-          
-                  // Yearly semester wise SESM
-                  if (item.year == i && item.Semester == "3" && item.School == "SESM") {
-                    counterAutumn = counterAutumn + Number(item.no_of_Student)
-          
-                  }
-          
-                  if (item.year == i && item.Semester == "1" && item.School == "SESM") {
-                    counterSpring = counterSpring + Number(item.no_of_Student)
-          
-                  }
-          
-                  if (item.year == i && item.Semester == "2" && item.School == "SESM") {
-                    counterSummer = counterSummer + Number(item.no_of_Student)
-          
-                  }
-          
-          
-                });
-          
-                numberSESMsemester.push(counterSESMAutumn)
-                numberSESMsemester.push(counterSESMSpring)
-                numberSESMsemester.push(counterSESMSummer)
-          
-                // Major wise Students' interest @ SECS
-                numberOfPharmacy.push(counterPharmacy)
-                numberOfENV_management.push(counterENV_management)
-                numberOfENV.push(counterENV)
-                numberOfPoplation_Env.push(counterPopulation_Env)
-          
-                numberYearlySESM.push(counterYearlyENV)
-                numberYearlySESM.push(counterYearlyENV_management)
-                numberYearlySESM.push(counterYearlyPharmacy)
-                numberYearlySESM.push(counterYearlyPopulation_Env)
-          
+                method: "GET",
+                url: "/data/list"
+              }).done(function (response) {
+            
+                //    console.log(response)
+                
+                let noofStd = response.datas
+            
+                let counterSESMAutumn = 0
+                let counterSESMSpring = 0
+                let counterSESMSummer = 0
+                let counterYearlyPharmacy = 0
+                let counterYearlyENV = 0
+                let counterYearlyENV_management = 0
+                let counterYearlyPopulation_Env = 0
+            
+                // Major wise Students' interest @ SESM
+                let counterPharmacy = 0
+                let counterENV = 0
+                let counterENV_management = 0
+                let counterPopulation_Env = 0
+            
+                let numberOfPharmacy = []
+                let numberOfENV = []
+                let numberOfENV_management = []
+                let numberOfPoplation_Env = []
+            
                 // Yearly semester wise SESM
-                numberAutumn.push(counterAutumn)
-                numberSpring.push(counterSpring)
-                numberSummer.push(counterSummer)
-          
-                // reinitializing the counter
-                counterYearlyPharmacy = 0
-                counterYearlyENV_management = 0
-                counterYealryENV = 0
-                counterYearlyPopulation_Env = 0
-          
-                counterPharmacy = 0
-                counterENV_management = 0
-                counterENV = 0
-                counterPopulation_Env = 0
-          
-                counterSESMSummer = 0
-                counterSESMSpring = 0
-                counterSESMAutumn = 0
-          
-                counterAutumn = 0
-                counterSpring = 0
-                counterSummer = 0
-              }
-          
+                let counterSpring = 0
+                let counterAutumn = 0
+                let counterSummer = 0
+            
+                let numberAutumn = []
+                let numberSpring = []
+                let numberSummer = []
+            
+            
+                let numberSESMsemester = []
+                let numberYearlySESM = []
+            
+            
+                let year=[]
+                for (let i = 2013; i <= 2019; i++) {
+                  year.push(Number(i))
+                  noofStd.forEach((item, index) => {
+                    if (item.year == 2019 && item.Semester == "1" && item.School == "SESM") {
+                      counterSESMAutumn = counterSESMAutumn + Number(item.no_of_Student)
+            
+                    }
+                    else if (item.year == 2019 && item.Semester == "2" && item.School == "SESM") {
+                      counterSESMSpring = counterSESMSpring + Number(item.no_of_Student)
+                    }
+            
+                    else if (item.year == 2019 && item.Semester == "3" && item.School == "SESM") {
+                      counterSESMSummer = counterSESMSummer + Number(item.no_of_Student)
+                    }
+            
+                    // Major wise Student's interest @ SESM
+                    if (item.year == i && item.Major == "B.Pharm - Pharmacy") {
+                      counterPharmacy = counterPharmacy + Number(item.no_of_Student)
+            
+                    }
+            
+                    else if (item.year == i && (item.Major == "BSc - Environmental Management")) {
+                      counterENV_management = counterENV_management + Number(item.no_of_Student)
+                    }
+            
+                    else if (item.year == i && item.Major == "BSc - Environmental Science") {
+                      counterENV = counterENV + Number(item.no_of_Student)
+                    }
+            
+                    else if (item.year == i && (item.Major == "BSc - Population Environment")) {
+                      counterPopulation_Env = counterPopulation_Env + Number(item.no_of_Student)
+                    }
+            
+                    if (item.year == 2019 && item.Major == "B.Pharm - Pharmacy") {
+                      counterYearlyPharmacy = counterYearlyPharmacy + Number(item.no_of_Student)
+            
+                    }
+            
+                    else if (item.year == 2019 && item.Major == "BSc - Environmental Management") {
+                      counterYearlyENV_management = counterYearlyENV_management + Number(item.no_of_Student)
+                    }
+            
+                    else if (item.year == 2019 && item.Major == "BSc - Environmental Science") {
+                      counterYearlyENV = counterYearlyENV + Number(item.no_of_Student)
+                    }
+            
+                    else if (item.year == 2019 && item.Major == "BSc - Population Environment") {
+                      counterYearlyPopulation_Env = counterYearlyPopulation_Env + Number(item.no_of_Student)
+                    }
+            
+                    // Yearly semester wise SESM
+                    if (item.year == i && item.Semester == "3" && item.School == "SESM") {
+                      counterAutumn = counterAutumn + Number(item.no_of_Student)
+            
+                    }
+            
+                    if (item.year == i && item.Semester == "1" && item.School == "SESM") {
+                      counterSpring = counterSpring + Number(item.no_of_Student)
+            
+                    }
+            
+                    if (item.year == i && item.Semester == "2" && item.School == "SESM") {
+                      counterSummer = counterSummer + Number(item.no_of_Student)
+            
+                    }
+            
+            
+                  });
+            
+                  numberSESMsemester.push(counterSESMAutumn)
+                  numberSESMsemester.push(counterSESMSpring)
+                  numberSESMsemester.push(counterSESMSummer)
+            
+                  // Major wise Students' interest @ SECS
+                  numberOfPharmacy.push(counterPharmacy)
+                  numberOfENV_management.push(counterENV_management)
+                  numberOfENV.push(counterENV)
+                  numberOfPoplation_Env.push(counterPopulation_Env)
+            
+                  numberYearlySESM.push(counterYearlyENV)
+                  console.log('SESM number'+numberYearlySESM[0])
+                  numberYearlySESM.push(counterYearlyENV_management)
+                  numberYearlySESM.push(counterYearlyPharmacy)
+                  numberYearlySESM.push(counterYearlyPopulation_Env)
+            
+                  // Yearly semester wise SESM
+                  numberAutumn.push(counterAutumn)
+                  numberSpring.push(counterSpring)
+                  numberSummer.push(counterSummer)
+            
+                  // reinitializing the counter
+                  counterYearlyPharmacy = 0
+                  counterYearlyENV_management = 0
+                  counterYearlyENV = 0
+                  counterYearlyPopulation_Env = 0
+            
+                  counterPharmacy = 0
+                  counterENV_management = 0
+                  counterENV = 0
+                  counterPopulation_Env = 0
+            
+                  counterSESMSummer = 0
+                  counterSESMSpring = 0
+                  counterSESMAutumn = 0
+            
+                  counterAutumn = 0
+                  counterSpring = 0
+                  counterSummer = 0
+                }
+
               var ctx = document.getElementById('indexChart6');
               var indexChart = new Chart(ctx, {
                 type: 'pie',
@@ -1461,8 +1462,8 @@ $(document).ready(function(){
                     display: true,
                     text: 'SESM Majors 2019',
                     fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-                      fontSize:20,
-                      fontColor: 'rgb(0,0,0)'          
+                      fontSize:20  
+          
                   },
           
           

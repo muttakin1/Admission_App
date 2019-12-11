@@ -406,7 +406,7 @@ var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newC
   doc.text(str5, mid, 190, {maxWidth: 170, align: "center"});
   doc.setFontStyle("normal");
 
-for(i = 0; i <8; i+=2) { 
+for(i = 0; i <36; i+=2) { 
       if(imgArray[i]!=emptyImg){
         console.log("full ");
         // Graph Page Start:    

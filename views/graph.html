@@ -80,10 +80,16 @@
         <label id= "filters">Filters:</label><br>
         <!-- Filters: Radio Button -->
         <div class="form-check">
-                <input class="form-check-input" type="radio" name= "onlyChecked" id="all" onclick="refresh()">
-                <label class="form-check-label" for= "onlyChecked" id= "label">
-                    All
-                </label>
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="all" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked" id= "label">
+                All
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name= "onlyChecked" id="overall" onclick="refresh()">
+            <label class="form-check-label" for= "onlyChecked" id= "label6">
+                Overall Graphs
+            </label>
         </div>
         <div class="form-check">
                 <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
@@ -308,6 +314,8 @@
             $("#filters").hide();
             $("#all").hide();
             $("#label").hide();
+            $("#overall").hide();
+            $("#label6").hide();
         }
 
         // upon pressing the get button
@@ -346,6 +354,8 @@
                 $("#filters").show();
                 $("#label").show();
                 $("#all").show();
+                $("#label6").show();
+                $("#overall").show();
             }
         }
         
@@ -381,7 +391,7 @@
     <script type="text/javascript" src="../static/JS/sls.js"></script>
     <script type="text/javascript" src="../static/JS/allGraphs.js"></script>
     <script type="text/javascript" src="../static/JS/all.js"></script>
-
+    <script type="text/javascript" src="../static/JS/overallGraphs.js"></script>
 
     <!-- Bootstrap links -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"

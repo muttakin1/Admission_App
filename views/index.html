@@ -2,9 +2,17 @@
 
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
 
 <body>
@@ -27,14 +35,16 @@
   </nav>
 
   <div id= "con" onclick= "closeNav()">
-  <br><br>
+  <br>
 
-  <div class="container">
-    <h2 class="text-center"></h2>
+  <div id="indexcontainer">
+    <h1>Dashboard</h1>
+    <hr style="border-width: 2px; background-color: #737373;">
     <br><br><br>
-    
   </div>
 
+  <canvas id="myChart" width="200" height="200"></canvas>
+  <canvas id="myChart1" width="200" height="200"></canvas>
 <!-- Script for navbar -->
 <script>
     /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
@@ -49,6 +59,9 @@
     document.getElementById("con").style.marginLeft = "0";
     }
 </script>
+
+<script type="text/javascript" src="../static/JS/script.js"></script>
+<script type="text/javascript" src="../static/JS/indexGraph.js"></script>
 
 <!-- Bootstrap links -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

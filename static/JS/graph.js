@@ -1,6 +1,6 @@
 
 //Number of Students
-$("#getline").click(function (event) {
+$("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -28,7 +28,7 @@ $("#getline").click(function (event) {
       console.log(numberOfStd)
   
   
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart2');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -36,13 +36,14 @@ $("#getline").click(function (event) {
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students',
+            fill: false,
             data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
+              'rgba(79, 129, 189, 0.2)',
   
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(79, 129, 189, 1)',
   
             ],
             borderWidth: 2
@@ -79,7 +80,7 @@ $("#getline").click(function (event) {
   })
   
   
-  $("#schoolWise").click(function (event) {
+  $("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -119,7 +120,7 @@ $("#getline").click(function (event) {
         counterSLS = 0
         counterSESM_PHARM = 0
       }
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart1');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -176,7 +177,7 @@ $("#getline").click(function (event) {
     
   })
   
-  $("#barSchoolWise").click(function (event) {
+  $("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -230,7 +231,7 @@ $("#getline").click(function (event) {
         counterSls = 0
         counterSlass = 0
       }
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart4');
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -240,32 +241,50 @@ $("#getline").click(function (event) {
             data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
   
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
+              'rgba(228,108,10, 1)',
             ],
             borderWidth: 2
           }, {
             label: 'Number Of Students in SoB',
             data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
-  
+            
+            backgroundColor: [
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+            ],
+
             borderColor: [
-              'rgba(220,180,0,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
+              'rgba(31,73,125,1)',
   
             ],
             borderWidth: 2
@@ -273,9 +292,27 @@ $("#getline").click(function (event) {
           {
             label: 'Number Of Students in SESM+PHARM',
             data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
-  
+            
+            backgroundColor: [
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+            ],
+
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
+              'rgba(128,100,162,1)',
   
             ],
             borderWidth: 2
@@ -284,8 +321,26 @@ $("#getline").click(function (event) {
             label: 'Number Of Students in Slass',
             data: [numberOfSlass[0], numberOfSlass[1], numberOfSlass[2], numberOfSlass[3], numberOfSlass[4], numberOfSlass[5], numberOfSlass[6], numberOfSlass[7],],
   
+            backgroundColor: [
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+            ],
+
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
+              'rgba(166,166,166,1)',
   
             ],
             borderWidth: 2
@@ -294,8 +349,26 @@ $("#getline").click(function (event) {
             label: 'Number Of Students in SLS',
             data: [numberOfSls[0], numberOfSls[1], numberOfSls[2], numberOfSls[3], numberOfSls[4], numberOfSls[5], numberOfSls[6], numberOfSls[7],],
   
+            backgroundColor: [
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+            ],
+
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)',
   
             ],
             borderWidth: 2
@@ -305,12 +378,19 @@ $("#getline").click(function (event) {
         },
         options: {
           scales: {
+            xAxes: [{
+            }],
             yAxes: [{
               ticks: {
                 beginAtZero: true
               }
-            }]
-          }
+            }],
+           title: {
+             display: true,
+             text: 'Yearly semester wise SESM',
+            
+             }
+           }
         }
       });
   
@@ -323,7 +403,7 @@ $("#getline").click(function (event) {
   
   
   
-  $("#OtherWise").click(function (event) {
+  $("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -363,7 +443,7 @@ $("#getline").click(function (event) {
         counterSLS = 0
         counterSESM_PHARM = 0
       }
-      var ctx = document.getElementById('myChart');
+      var ctx = document.getElementById('myChart3');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -371,20 +451,22 @@ $("#getline").click(function (event) {
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students in Slass',
+            fill:false,
             data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
   
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(166, 166, 166, 1)',
   
             ],
             borderWidth: 2
           }, {
             lineTension:0.1,
             label: 'Number Of Students in SLS',
+            fill:false,
             data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
   
             borderColor: [
-              'rgba(220,180,0,1)',
+              'rgba(54,186,88,1)',
   
             ],
             borderWidth: 2
@@ -392,10 +474,11 @@ $("#getline").click(function (event) {
           {
             lineTension:0.1,
             label: 'Number Of Students in Sesm+Phar',
+            fill:false,
             data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
   
             borderColor: [
-              'rgba(180,130,0,1)',
+              'rgba(112, 48, 160, 1)',
   
             ],
             borderWidth: 2

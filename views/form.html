@@ -47,21 +47,21 @@
                     <div class="form-row">
                         <div class="form-group col-md-8">
                             <label for="inputYear">Year</label>
-                            <select class="form-control" id="inputYear"  name="inputYear" onfocus="getCurrYear()">
+                            <select class="form-control" id="inputYear"  name="inputYear" onclick="getSemester()" onfocus="getCurrYear()">
                                 <option value="none" selected>Select Year</option>
                             </select>
                             <span class="text-danger" id="span_inputYear"></span>                             
                             </div>
                             <div class="form-group col-md-4">
-                              <label for="semester">Semester</label>
+                              <label for="semester">Tests</label>
                               <select type="text" class="form-control" id="semester"  name="semester">
                                   <option value="none" selected >Select Semester</option>
-                                  <option value="Summer 01">Summer 01</option>
+                                  <!-- <option value="Summer 01">Summer 01</option>
                                   <option value="Summer 02">Summer 02</option>
                                   <option value="Autumn 01">Autumn 01</option>
                                   <option value="Autumn 02">Autumn 02</option>
-                                  <option value="Winter 01">Winter 01</option>
-                                  <option value="Winter 02">Winter 02</option>
+                                  <option value="Spring 01">Spring 01</option>
+                                  <option value="Spring 02">Spring 02</option> -->
                               </select>
                               <span class="text-danger" id="span_semester"></span>
                             </div>
@@ -69,6 +69,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                               <label for="ta_inputData">Input Data</label>
+                              <span class="text float-right" id="format">Input Format: Dept-Major Count PAID COUNT</span>
                               <textarea type="text" class="form-control" name="ta_inputData" id="ta_inputData" rows="8" cols="50"></textarea>
                               <span class="text-danger" id="span_btn_inputData" style="margin-left: 5px;"></span>
                             </div>
@@ -129,7 +130,92 @@
                     } */
                     inputYear.appendChild(newOption);
                     }
-                    
+            }
+            function getSemester(){
+                document.getElementById("semester").innerHTML=" "
+                var inputYear,currentYear,currentMonth;
+                var newOption,newOption2,newOption3,newOption4,newOption5,newOption6;
+                currentYear = new Date().getFullYear();
+                currentMonth= new Date().getMonth();
+                /* console.log("currentMonth:"+currentMonth); */
+                inputYear = document.getElementById("inputYear").value;
+                inputSemester = document.getElementById("semester");
+                
+                /* document.getElementById("span_inputYear").innerHTML=inputYear; */
+                if(inputYear <= currentYear){
+                   /*  console.log("inputYear:"+inputYear);
+                    console.log("currentYear:"+currentYear); */
+                    if(currentMonth>=8){
+                        newOption = document.createElement("option");
+                        newOption2 = document.createElement("option");
+                        newOption3 = document.createElement("option");
+                        newOption4 = document.createElement("option");
+                        newOption5 = document.createElement("option");
+                        newOption6 = document.createElement("option");
+                        newOption.value ="Spring 01";
+                         newOption.innerHTML ="Spring 01";
+                         newOption2.value ="Spring 02";
+                         newOption2.innerHTML ="Spring 02";
+                         newOption3.value ="Autumn 01";
+                         newOption3.innerHTML ="Autumn 01";
+                         newOption4.value ="Autumn 02";
+                         newOption4.innerHTML ="Autumn 02";
+                         newOption5.value ="Summer 01";
+                         newOption5.innerHTML ="Summer 01";
+                         newOption6.value ="Summer 02";
+                         newOption6.innerHTML ="Summer 02";
+                         inputSemester.appendChild(newOption);
+                         inputSemester.appendChild(newOption2);
+                         inputSemester.appendChild(newOption3);
+                         inputSemester.appendChild(newOption4);
+                         inputSemester.appendChild(newOption5);
+                         inputSemester.appendChild(newOption6);
+                    }
+                    else if(currentMonth>=4){
+                        newOption = document.createElement("option");
+                        newOption2 = document.createElement("option");
+                        newOption3 = document.createElement("option");
+                        newOption4 = document.createElement("option");
+                        
+                      
+                         newOption.value ="Spring 01";
+                         newOption.innerHTML ="Spring 01";
+                         newOption2.value ="Spring 02";
+                         newOption2.innerHTML ="Spring 02";
+                         newOption3.value ="Autumn 01";
+                         newOption3.innerHTML ="Autumn 01";
+                         newOption4.value ="Autumn 02";
+                         newOption4.innerHTML ="Autumn 02";
+                         inputSemester.appendChild(newOption);
+                         inputSemester.appendChild(newOption2);
+                         inputSemester.appendChild(newOption3);
+                         inputSemester.appendChild(newOption4);
+                    }
+                    else{
+                        newOption = document.createElement("option");
+                        newOption2 = document.createElement("option");
+                        newOption.value ="Spring 01";
+                         newOption.innerHTML ="Spring 01";
+                         newOption2.value ="Spring 02";
+                         newOption2.innerHTML ="Spring 02";
+                         inputSemester.appendChild(newOption);
+                         inputSemester.appendChild(newOption2);
+                    }
+                }else{
+                    newOption = document.createElement("option");
+                    newOption2 = document.createElement("option");
+                 
+
+                         newOption.value ="Spring 01";
+                         newOption.innerHTML ="Spring 01";
+                         newOption2.value ="Spring 02";
+                         newOption2.innerHTML ="Spring 02";
+                         inputSemester.appendChild(newOption);
+                         inputSemester.appendChild(newOption2);
+                  
+
+                }
+                
             }
     </script>
 </body>

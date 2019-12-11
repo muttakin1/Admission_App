@@ -1,7 +1,58 @@
 
-$("#SoB").click(function (event) {
 
-  
+
+var myChart2
+var myChart3
+var myChart4
+
+function saveTitle() {
+  var chTitle2 = document.getElementById('chartTitle2').value;
+  myChart2.config.options.title.text = chTitle2;
+  console.log(chTitle2);
+  myChart2.update();
+
+  var chTitle3 = document.getElementById('chartTitle3').value;
+  myChart3.config.options.title.text = chTitle3;
+  console.log(chTitle3);
+  myChart3.update();
+
+  var chTitle4 = document.getElementById('chartTitle4').value;
+  myChart4.config.options.title.text = chTitle4;
+  console.log(chTitle4);
+  myChart4.update();
+}
+
+$("#SoB").click(function (event) {
+  getBtn();
+  $("#tableMenu2 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton2").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart2.config.type = selText
+    myChart2.update()
+  });
+
+  $("#tableMenu3 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton3").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart3.config.type = selText
+    myChart3.update()
+  });
+  $("#tableMenu4 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton4").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart4.config.type = selText
+    myChart4.update()
+  });
+
 
   $.ajax({
     method: "GET",
@@ -9,8 +60,8 @@ $("#SoB").click(function (event) {
   }).done(function (response) {
 
     Yearvalue = $("#focusYearVal").val()
-    startYear =$("#startYearVal").val()
-    finishYear =$("#finishYearVal").val()
+    startYear = $("#startYearVal").val()
+    finishYear = $("#finishYearVal").val()
     let noofStd = response.datas
 
     let counterBBAMis = 0
@@ -32,14 +83,14 @@ $("#SoB").click(function (event) {
     let counterYearlyEcn = 0
     let counterYearlyAcn = 0
 
-      // Yearly semester wise SoB
-      let counterSpring = 0
-      let counterAutumn = 0
-      let counterSummer = 0
-  
-      let numberAutumn = []
-      let numberSpring = []
-      let numberSummer = [] 
+    // Yearly semester wise SoB
+    let counterSpring = 0
+    let counterAutumn = 0
+    let counterSummer = 0
+
+    let numberAutumn = []
+    let numberSpring = []
+    let numberSummer = []
 
 
     let numberBBA = []
@@ -133,21 +184,21 @@ $("#SoB").click(function (event) {
 
         }
 
-          // Yearly semester wise SoB
-          if (item.year == i && item.Semester == "3" && item.School == "SoB") {
-            counterAutumn = counterAutumn + Number(item.no_of_Student)
-  
-          }
-  
-          if (item.year == i && item.Semester == "1" && item.School == "SoB") {
-            counterSpring = counterSpring + Number(item.no_of_Student)
-  
-          }
-  
-          if (item.year == i && item.Semester == "2" && item.School == "SoB") {
-            counterSummer = counterSummer + Number(item.no_of_Student)
-  
-          }
+        // Yearly semester wise SoB
+        if (item.year == i && item.Semester == "3" && item.School == "SoB") {
+          counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i && item.Semester == "1" && item.School == "SoB") {
+          counterSpring = counterSpring + Number(item.no_of_Student)
+
+        }
+
+        if (item.year == i && item.Semester == "2" && item.School == "SoB") {
+          counterSummer = counterSummer + Number(item.no_of_Student)
+
+        }
 
       });
 
@@ -172,10 +223,10 @@ $("#SoB").click(function (event) {
       numberBBA.push(counterMkt)
       numberBBA.push(counterEco)
 
-       // Yearly semester wise SLASS
-       numberAutumn.push(counterAutumn)
-       numberSpring.push(counterSpring)
-       numberSummer.push(counterSummer)
+      // Yearly semester wise SLASS
+      numberAutumn.push(counterAutumn)
+      numberSpring.push(counterSpring)
+      numberSummer.push(counterSummer)
 
 
 
@@ -209,7 +260,7 @@ $("#SoB").click(function (event) {
 
 
 
-    
+
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
       type: 'pie',
@@ -221,20 +272,26 @@ $("#SoB").click(function (event) {
           label: 'Number Of Students in ' + Yearvalue,
           data: [numberBBA[0], numberBBA[1], numberBBA[2], numberBBA[3], numberBBA[4], numberBBA[5], numberBBA[6], numberBBA[7], numberBBA[8]],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(44, 77, 117, 1)', //mis
+            'rgba(192, 80, 77, 1)', // finance
+            'rgba(247, 150, 70, 1)', //investment banking
+            'rgba(79, 129, 189, 1)', // accounting
+            'rgba(155, 187, 89, 1)', //general management
+            'rgba(128, 100, 162, 1)', //hrm
+            'rgba(75, 172, 198, 1)', //IB
+            'rgba(119, 44, 42, 1)', //marketing
+            'rgba(95, 117, 48, 1)', // econ
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(44, 77, 117, 1)',
+            'rgba((192, 80, 77, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(95, 117, 48, 1)',
           ],
           borderWidth: 2
         },
@@ -247,7 +304,7 @@ $("#SoB").click(function (event) {
           datalabels: {
 
             formatter: function (value) {
-              return value ;
+              return value;
             }
           }
         },
@@ -273,20 +330,26 @@ $("#SoB").click(function (event) {
           label: 'School of Business ' + Yearvalue,
           data: [numberBBA[0], numberBBA[1], numberBBA[2], numberBBA[3], numberBBA[4], numberBBA[5], numberBBA[6], numberBBA[7], numberBBA[8]],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(44, 77, 117, 1)', //mis
+            'rgba(192, 80, 77, 1)', // finance
+            'rgba(247, 150, 70, 1)', //investment banking
+            'rgba(79, 129, 189, 1)', // accounting
+            'rgba(155, 187, 89, 1)', //general management
+            'rgba(128, 100, 162, 1)', //hrm
+            'rgba(75, 172, 198, 1)', //IB
+            'rgba(119, 44, 42, 1)', //marketing
+            'rgba(95, 117, 48, 1)', // econ
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(44, 77, 117, 1)', //mis
+            'rgba(192, 80, 77, 1)', // finance
+            'rgba(247, 150, 70, 1)', //investment banking
+            'rgba(79, 129, 189, 1)', // accounting
+            'rgba(155, 187, 89, 1)', //general management
+            'rgba(128, 100, 162, 1)', //hrm
+            'rgba(75, 172, 198, 1)', //IB
+            'rgba(119, 44, 42, 1)', //marketing
+            'rgba(95, 117, 48, 1)', // econ
           ],
           borderWidth: 2
         },
@@ -312,7 +375,7 @@ $("#SoB").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart2');
-    var myChart = new Chart(ctx, {
+    myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
 
@@ -322,11 +385,25 @@ $("#SoB").click(function (event) {
           label: 'Management Information System',
           data: [numberYearlyMis[0], numberYearlyMis[1], numberYearlyMis[2], numberYearlyMis[3], numberYearlyMis[4], numberYearlyMis[5], numberYearlyMis[6], numberYearlyMis[7],],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
 
           ],
           borderWidth: 2
@@ -337,11 +414,26 @@ $("#SoB").click(function (event) {
           label: 'Marketing',
           data: [numberYearlyMkt[0], numberYearlyMkt[1], numberYearlyMkt[2], numberYearlyMkt[3], numberYearlyMkt[4], numberYearlyMkt[5], numberYearlyMkt[6], numberYearlyMkt[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
 
           ],
           borderWidth: 2
@@ -353,11 +445,25 @@ $("#SoB").click(function (event) {
           label: 'Accounting',
           data: [numberYearlyAcn[0], numberYearlyAcn[1], numberYearlyAcn[2], numberYearlyAcn[3], numberYearlyAcn[4], numberYearlyAcn[5], numberYearlyAcn[6], numberYearlyAcn[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
 
           ],
           borderWidth: 2
@@ -368,11 +474,25 @@ $("#SoB").click(function (event) {
           label: 'Finance',
           data: [numberYearlyFin[0], numberYearlyFin[1], numberYearlyFin[2], numberYearlyFin[3], numberYearlyFin[4], numberYearlyFin[5], numberYearlyFin[6], numberYearlyFin[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
 
           ],
           borderWidth: 2
@@ -384,11 +504,25 @@ $("#SoB").click(function (event) {
           label: 'General Management',
           data: [numberYearlyMgt[0], numberYearlyMgt[1], numberYearlyMgt[2], numberYearlyMgt[3], numberYearlyMgt[4], numberYearlyMgt[5], numberYearlyMgt[6], numberYearlyMgt[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
-
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
 
           ],
           borderWidth: 2
@@ -400,11 +534,25 @@ $("#SoB").click(function (event) {
           label: 'Human Resources Management',
           data: [numberYearlyHrm[0], numberYearlyHrm[1], numberYearlyHrm[2], numberYearlyHrm[3], numberYearlyHrm[4], numberYearlyHrm[5], numberYearlyHrm[6], numberYearlyHrm[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
 
           ],
           borderWidth: 2
@@ -416,11 +564,25 @@ $("#SoB").click(function (event) {
           label: 'International Business',
           data: [numberYearlyIb[0], numberYearlyIb[1], numberYearlyIb[2], numberYearlyIb[3], numberYearlyIb[4], numberYearlyIb[5], numberYearlyIb[6], numberYearlyIb[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
 
           ],
           borderWidth: 2
@@ -432,11 +594,25 @@ $("#SoB").click(function (event) {
           label: 'Investment Management',
           data: [numberYearlyInvest[0], numberYearlyInvest[1], numberYearlyInvest[2], numberYearlyInvest[3], numberYearlyInvest[4], numberYearlyInvest[5], numberYearlyInvest[6], numberYearlyInvest[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
 
           ],
           borderWidth: 2
@@ -447,11 +623,25 @@ $("#SoB").click(function (event) {
           label: 'Economics',
           data: [numberYearlyEcn[0], numberYearlyEcn[1], numberYearlyEcn[2], numberYearlyEcn[3], numberYearlyEcn[4], numberYearlyEcn[5], numberYearlyEcn[6], numberYearlyEcn[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
 
           ],
           borderWidth: 2
@@ -484,7 +674,7 @@ $("#SoB").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart3');
-    var myChart = new Chart(ctx, {
+    myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
 
@@ -495,11 +685,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyMis[0], numberYearlyMis[1], numberYearlyMis[2], numberYearlyMis[3], numberYearlyMis[4], numberYearlyMis[5], numberYearlyMis[6], numberYearlyMis[7],],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
 
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
+            'rgba(44, 77, 117, 1)',
 
           ],
           borderWidth: 2
@@ -511,11 +715,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyMkt[0], numberYearlyMkt[1], numberYearlyMkt[2], numberYearlyMkt[3], numberYearlyMkt[4], numberYearlyMkt[5], numberYearlyMkt[6], numberYearlyMkt[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
+            'rgba(119, 44, 42, 1)',
 
           ],
           borderWidth: 2
@@ -528,11 +746,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyAcn[0], numberYearlyAcn[1], numberYearlyAcn[2], numberYearlyAcn[3], numberYearlyAcn[4], numberYearlyAcn[5], numberYearlyAcn[6], numberYearlyAcn[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
+            'rgba(79, 129, 189, 1)',
 
           ],
           borderWidth: 2
@@ -544,11 +776,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyFin[0], numberYearlyFin[1], numberYearlyFin[2], numberYearlyFin[3], numberYearlyFin[4], numberYearlyFin[5], numberYearlyFin[6], numberYearlyFin[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
+            'rgba(192, 80, 77, 1)',
 
           ],
           borderWidth: 2
@@ -561,11 +807,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyMgt[0], numberYearlyMgt[1], numberYearlyMgt[2], numberYearlyMgt[3], numberYearlyMgt[4], numberYearlyMgt[5], numberYearlyMgt[6], numberYearlyMgt[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
+            'rgba(155, 187, 89, 1)',
 
           ],
           borderWidth: 2
@@ -578,11 +838,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyHrm[0], numberYearlyHrm[1], numberYearlyHrm[2], numberYearlyHrm[3], numberYearlyHrm[4], numberYearlyHrm[5], numberYearlyHrm[6], numberYearlyHrm[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
+            'rgba(128, 100, 162, 1)',
 
           ],
           borderWidth: 2
@@ -595,11 +869,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyIb[0], numberYearlyIb[1], numberYearlyIb[2], numberYearlyIb[3], numberYearlyIb[4], numberYearlyIb[5], numberYearlyIb[6], numberYearlyIb[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
+            'rgba(75, 172, 198, 1)',
 
           ],
           borderWidth: 2
@@ -612,11 +900,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyInvest[0], numberYearlyInvest[1], numberYearlyInvest[2], numberYearlyInvest[3], numberYearlyInvest[4], numberYearlyInvest[5], numberYearlyInvest[6], numberYearlyInvest[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
+            'rgba(247, 150, 70, 1)',
 
           ],
           borderWidth: 2
@@ -628,11 +930,25 @@ $("#SoB").click(function (event) {
           fill: false,
           data: [numberYearlyEcn[0], numberYearlyEcn[1], numberYearlyEcn[2], numberYearlyEcn[3], numberYearlyEcn[4], numberYearlyEcn[5], numberYearlyEcn[6], numberYearlyEcn[7],],
           backgroundColor: [
-            'rgba(38, 185, 154, 0.31)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
 
           ],
           borderColor: [
-            'rgba(38, 185, 154, 0.7)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
+            'rgba(95, 117, 48, 1)',
 
           ],
           borderWidth: 2
@@ -678,9 +994,25 @@ $("#SoB").click(function (event) {
             label: 'Autumn',
             fill: false,
             data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
-            backgroundColor: ['rgba(155,187,89,1)',],
-            borderColor: [
+            backgroundColor: [
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)', 
               'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',   
+            ],
+            borderColor: [
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',   
   
             ],
             borderWidth: 2
@@ -689,8 +1021,24 @@ $("#SoB").click(function (event) {
             label: 'Spring',
             fill: false,
             data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
-            backgroundColor: ['rgba(79,129,189, 1)',],
+            backgroundColor: [
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+            ],
             borderColor: [
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
+              'rgba(79,129,189, 1)',
               'rgba(79,129,189, 1)',
   
             ],
@@ -700,9 +1048,25 @@ $("#SoB").click(function (event) {
             label: 'Summer',
             fill: false,
             data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
-            backgroundColor: ['rgba(192,80,77, 1)',],
+            backgroundColor: [
+              'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            ],
             borderColor: [
               'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
   
             ],
             borderWidth: 2
@@ -712,24 +1076,26 @@ $("#SoB").click(function (event) {
   
         },
         options: {
+          scales: {
+            xAxes: [{
+              stacked: true
+            }],
+            yAxes: [{
+              stacked: true,
+              ticks: {
+                beginAtZero: true
+              }
+            }]},
           title: {
             display: true,
             text: 'Yearly semester wise SoB',
-            scales: {
-              xAxes: [{
-                stacked: true
-              }],
-              yAxes: [{
-                stacked: true,
-                ticks: {
-                  beginAtZero: true
-                }
-              }]
-            }
+           
+            
           }
         }
-      });
-  
+      
+    });
+
 
 
   }).fail(function (response) {

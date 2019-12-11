@@ -17,7 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
 
-<body>
+<body onload="foo()">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
@@ -53,6 +53,7 @@
           </div>
 
     <div class="container">
+        <!-- Input fields -->
         <div style="width:30%" class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Start Year</span>
@@ -77,76 +78,43 @@
                 aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
+        <!-- Buttons for generating and editing graphs and PDF-->
         <input class="btn" type="button" id="getFocusYear" style= "background:#FE9A0B;" onclick= "getBtn()" value="Get">
-        <input class="btn" type="button" id="DownloadBtn" style= "background:#FE9A0B;" onclick="print()"value="download PDF">
+        <input class="btn" type="button" id="DownloadBtn" style= "background:#FE9A0B;" onclick="print()"value="Download PDF">
         <input class="btn" type="button" id="EditLine" style= "background:#FE9A0B;" onclick="EditLine()"value="Edit Format">            
         <input class="btn" type="button" id="SaveLine" style= "background:#FE9A0B;" onclick="SaveEdit()"value="Save Format">
 
 
         <br><br>
-            
-        <!-- <input class="btn btn-default" type="button" id="getline" onclick="refresh()" value="Get Number of Student over the years"> -->
-        <!-- <input class="btn btn-primary" type="button" id="schoolWise" onclick="refresh()" value="School Wise Interest over the years"> -->
-        <!-- <input class="btn btn-primary" type="button" id="OtherWise" onclick="refresh()" value="Other School Wise Interest over the years"> -->
-        <!-- <input class="btn btn-primary" type="button" id="barSchoolWise" -->
-            <!-- value="School Wise Interest over the years, BAR"> -->
-        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSECS" onclick="refresh()" value="SECS Graphs"> -->
-        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLASS" onclick="refresh()" value="SLASS Graphs"> -->
-        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSESM" onclick="refresh()" value="SESM Graphs"> -->
-        <!-- <input class="btn btn-primary" type="button" id="MajorWiseStudentsSLS" onclick="refresh()" value="SLS Graphs"> -->
-        <!-- <input class="btn btn-primary" type="button" id="SoB" onclick="refresh()" value="SoB Graphs"> -->
 
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="getline" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
-                    Get Number of Student over the years
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="schoolWise" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
-                School Wise Interest over the years
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="OtherWise" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
-                Other School Wise Interest over the years
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name= "onlyChecked" id="barSchoolWise">
-            <label class="form-check-label" for= "onlyChecked">
-                School Wise Interest over the years (Bar Chart)
-            </label>
-        </div>
+        <!-- Filters: Radio Button -->
         <div class="form-check">
                 <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSECS" onclick="refresh()">
-                <label class="form-check-label" for= "onlyChecked">
+                <label class="form-check-label" for= "onlyChecked" id= "5">
                     SECS Graphs
                 </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLASS" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "6">
                 SLASS Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSESM" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked"> 
+            <label class="form-check-label" for= "onlyChecked" id= "7"> 
                 SESM Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="MajorWiseStudentsSLS" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "8">
                 SLS Graphs
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name= "onlyChecked" id="SoB" onclick="refresh()">
-            <label class="form-check-label" for= "onlyChecked">
+            <label class="form-check-label" for= "onlyChecked" id= "9">
                 School of Business Graphs
             </label>
         </div>
@@ -173,89 +141,54 @@
             <canvas id="myChart" width="400" height="400"></canvas>
             <canvas id="myChart1" width="400" height="400"></canvas>
 
-            <div class="dropdown" id="tableDiv">
-                    <button id="tableButton" type="button" class="btn dropdown-toggle" style= "background:#FE9A0B;" data-toggle="dropdown">
-                      Choose Graph Type
-                      <span class="caret"></span>
-                    </button>
-                    <div class="dropdown-menu" id="tableMenu">
-                      <a class="dropdown-item" href="#">pie</a>
-                      <a class="dropdown-item" href="#">line</a>
-                      <a class="dropdown-item" href="#">bar</a>
-                    </div>
-                  </div>
+            <div id="tableDiv" class="dropdown">
+                <button id="tableButton2" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
+                    Choose Graph Type
+                    <span class="caret"></span>
+                </button>
+                <ul id="tableMenu2" class="dropdown-menu">
+                   
+                    <li><a href="#">line</a></li>
+                    <li><a href="#">bar</a></li>
+                </ul>
+            </div>
             <input id="chartTitle2" type="text" class="form-control" placeholder="Edit Title">
             
             <canvas id="myChart2" width="400" height="400"></canvas>
 
             <div id="tableDiv" class="dropdown">
-                <button id="tableButton" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
+                <button id="tableButton3" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
                     Choose Graph Type
                     <span class="caret"></span>
                 </button>
-                <ul id="tableMenu" class="dropdown-menu">
-                    <li><a href="#">pie</a></li>
+                <ul id="tableMenu3" class="dropdown-menu">
+                    
                     <li><a href="#">line</a></li>
                     <li><a href="#">bar</a></li>
                 </ul>
             </div>
 
+            <input id="chartTitle3" type="text" class="form-control" placeholder="Edit Title">
+            
             <canvas id="myChart3" width="400" height="400"></canvas>
 
             <div id="tableDiv" class="dropdown">
-                <button id="tableButton" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
+                <button id="tableButton4" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
                     Choose Graph Type
                     <span class="caret"></span>
                 </button>
-                <ul id="tableMenu" class="dropdown-menu">
-                    <li><a href="#">pie</a></li>
+                <ul id="tableMenu4" class="dropdown-menu">
+                  
                     <li><a href="#">line</a></li>
                     <li><a href="#">bar</a></li>
                 </ul>
             </div>
+
+            <input id="chartTitle4" type="text" class="form-control" placeholder="Edit Title">
 
             <canvas id="myChart4" width="400" height="400"></canvas>
-
-            <div id="tableDiv" class="dropdown">
-                <button id="tableButton" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
-                    Choose Graph Type
-                    <span class="caret"></span>
-                </button>
-                <ul id="tableMenu" class="dropdown-menu">
-                    <li><a href="#">pie</a></li>
-                    <li><a href="#">line</a></li>
-                    <li><a href="#">bar</a></li>
-                </ul>
-            </div>
-
             <canvas id="myChart5" width="400" height="400"></canvas>
-
-            <div id="tableDiv" class="dropdown">
-                <button id="tableButton" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
-                    Choose Graph Type
-                    <span class="caret"></span>
-                </button>
-                <ul id="tableMenu" class="dropdown-menu">
-                    <li><a href="#">pie</a></li>
-                    <li><a href="#">line</a></li>
-                    <li><a href="#">bar</a></li>
-                </ul>
-            </div>
-
             <canvas id="myChart6" width="400" height="400"></canvas>
-
-            <div id="tableDiv" class="dropdown">
-                <button id="tableButton" class="btn dropdown-toggle" style= "background:#FE9A0B;" type="button" data-toggle="dropdown">
-                    Choose Graph Type
-                    <span class="caret"></span>
-                </button>
-                <ul id="tableMenu" class="dropdown-menu">
-                    <li><a href="#">pie</a></li>
-                    <li><a href="#">line</a></li>
-                    <li><a href="#">bar</a></li>
-                </ul>
-            </div>
-
             <canvas id="myChart7" width="400" height="400"></canvas>
     </div>
         <div id="elementH"></div>
@@ -278,6 +211,20 @@
         function refresh() {
         document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
         } 
+        
+        // onload hide radio buttons
+        function foo(){
+            $("#MajorWiseStudentsSECS").hide();
+            $("#5").hide();
+            $("#MajorWiseStudentsSLASS").hide();
+            $("#6").hide();
+            $("#MajorWiseStudentsSESM").hide();
+            $("#7").hide();
+            $("#MajorWiseStudentsSLS").hide();
+            $("#8").hide();
+            $("#SoB").hide();
+            $("#9").hide();
+        }
 
         // upon pressing the get button
         function getBtn() {
@@ -289,13 +236,29 @@
             document.getElementById('p1').innerHTML = per1;
             document.getElementById('p2').innerHTML = per2;
             
-            if(focusYear== "" || per1== "" || per2== "" ){
+            if(focusYear== "" || per1== "" || per2== ""){
                 alert("Please Don't Leave Any Fields Empty");
+            }
+            if(focusYear<2013 || per1<2013 || per2<2013 || 
+               focusYear>2020  || per1>2020  || per2>2020 ){
+                // alert("Please Enter a Year Starting from 2013! ");
               }
-                else {
-                    $("#DownloadBtn").show();
-                    $("#EditLine").show();
-                    $("#textArea2").show();
+            else {
+                $("#DownloadBtn").show();
+                $("#EditLine").show();
+                $("#textArea2").show();
+
+                // show radio buttons
+                $("#MajorWiseStudentsSECS").show();
+                $("#MajorWiseStudentsSLASS").show();
+                $("#MajorWiseStudentsSESM").show();
+                $("#MajorWiseStudentsSLS").show();
+                $("#SoB").show();
+                $("#5").show();
+                $("#6").show();
+                $("#7").show();
+                $("#8").show();
+                $("#9").show();
             }
         } 
     </script>
@@ -311,13 +274,14 @@
 
 
     <!-- Bootstrap links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

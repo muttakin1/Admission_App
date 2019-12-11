@@ -1,12 +1,15 @@
 $("#getFocusYear").click(function (event) {
     
-//   if(document.getElementById('startYearVal').value<2013 || 
-//   document.getElementById('focusYearVal').value<2013 ||
-//   document.getElementById('finishYearVal').value<2013){
-//    alert("Please Enter a Year Starting from 2013!");
-// }
-// else{
-// }
+  var sYear = document.getElementById('startYearVal').value;
+  var finYear = document.getElementById('startYearVal').value;
+  var focusYear = document.getElementById('startYearVal').value;
+  
+  
+    if(sYear.value<2013 || finYear<2013 || focusYear<2013 ||
+      sYear.value>2020 || finYear>2020 || focusYear>2020){
+     alert("Please Enter Year between 2013 to 2019!");
+  }
+  else{
 
     $.ajax({
       method: "GET",
@@ -251,14 +254,14 @@ $("#getFocusYear").click(function (event) {
             label: 'Number Of Students in ' + Yearvalue,
             data: [SemesterDist[0], SemesterDist[1], SemesterDist[2]],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
+              'rgba(77, 127, 188, 1)',
+            'rgba(191, 79, 78, 1)',
+            'rgba(151, 186, 86, 1)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
+              'rgba(77, 127, 188, 1)',
+              'rgba(191, 79, 78, 1)',
+              'rgba(151, 186, 86, 1)',
             ],
             borderWidth: 2
           },
@@ -290,19 +293,23 @@ $("#getFocusYear").click(function (event) {
         type: 'pie',
         data: {
          
-          labels: ['Slass', 'SoB','Others','Secs','Sls'],
+          labels: ['SLASS', 'SoB','SESM+Pharm','SECS','SLS'],
           datasets: [{
             label: 'Number Of Students in ' + Yearvalue,
             data: [numberBbaSemester[0], numberBbaSemester[1], numberBbaSemester[2],numberBbaSemester[3],numberBbaSemester[4],numberBbaSemester[5]],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
+              'rgba(162, 162, 162, 1)',
+              'rgba(30, 70, 122, 1)',
+              'rgba(124, 96, 157, 1)',
+              'rgba(242, 147, 67, 1)',
+              'rgba(151, 186, 86, 1)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
+              'rgba(162, 162, 162, 1)',
+              'rgba(30, 70, 122, 1)',
+              'rgba(124, 96, 157, 1)',
+              'rgba(242, 147, 67, 1)',
+              'rgba(151, 186, 86, 1)',
             ],
             borderWidth: 2
           },
@@ -787,4 +794,5 @@ $("#getFocusYear").click(function (event) {
       console.log(response.responseText);
     });
     
+  }
   })

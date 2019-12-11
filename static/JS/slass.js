@@ -1,5 +1,56 @@
 // Major Wise students' interest @ SECS LINE
+
+var myChart2
+var myChart3
+var myChart4
+
+function saveTitle() {
+  var chTitle2 = document.getElementById('chartTitle2').value;
+  myChart2.config.options.title.text = chTitle2;
+  console.log(chTitle2);
+  myChart2.update();
+
+  var chTitle3 = document.getElementById('chartTitle3').value;
+  myChart3.config.options.title.text = chTitle3;
+  console.log(chTitle3);
+  myChart3.update();
+
+  var chTitle4 = document.getElementById('chartTitle4').value;
+  myChart4.config.options.title.text = chTitle4;
+  console.log(chTitle4);
+  myChart4.update();
+}
+
 $("#MajorWiseStudentsSLASS").click(function (event) {
+  $("#tableMenu2 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton2").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart2.config.type = selText
+    myChart2.update()
+  });
+
+  $("#tableMenu3 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton3").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart3.config.type = selText
+    myChart3.update()
+  });
+  $("#tableMenu4 a").click(function (e) {
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton4").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart4.config.type = selText
+    myChart4.update()
+  });
+  getBtn();
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -8,10 +59,10 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     let noofStd = response.datas
     Yearvalue = $("#focusYearVal").val()
-    startYear =$("#startYearVal").val()
-    finishYear =$("#finishYearVal").val()
+    startYear = $("#startYearVal").val()
+    finishYear = $("#finishYearVal").val()
 
-     // Focus year graphs, Majors
+    // Focus year graphs, Majors
     let counterYearlyEngLang = 0
     let counterYearlyAnt = 0
     let counterYearlyMedia_Com = 0
@@ -20,14 +71,14 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     let counterYearlyGSG = 0
     let counterYearlySOC = 0
 
-      // Focus year graphs, Departments
-    let counterYearlyDeptENG=0
+    // Focus year graphs, Departments
+    let counterYearlyDeptENG = 0
     let counterYearlyDeptSOC = 0
     let counterYearlyDeptGSG = 0
     let counterYearlyDeptMed = 0
     let counterYearlyDeptLaw = 0
 
-     // Major wise Students' interest @ SLASS
+    // Major wise Students' interest @ SLASS
     let counterEngTrainingLang = 0
     let counterANT = 0
     let counterMedia_Com = 0
@@ -64,18 +115,18 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     let numberAutumn = []
     let numberSpring = []
-    let numberSummer = [] 
+    let numberSummer = []
 
-    let numberSlassDept=[]
+    let numberSlassDept = []
     let numberSlass = []
 
-   
-   
+
+
 
     for (let i = 2013; i <= 2019; i++) {
       noofStd.forEach((item, index) => {
-        
-         // Major wise Student's interest @ SECS
+
+        // Major wise Student's interest @ SECS
         if (item.year == i && item.Major == "BA - English Language Teaching") {
           counterEngTrainingLang = counterEngTrainingLang + Number(item.no_of_Student)
           // console.log(counterEngTrainingLang)
@@ -133,9 +184,9 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         else if (item.year == Yearvalue && (item.Major == "BSS - Sociology")) {
           counterYearlySOC = counterYearlySOC + Number(item.no_of_Student)
         }
-        
-         // SECS Department
-        if (item.year == i && item.Dept == "Eng" ) {
+
+        // SECS Department
+        if (item.year == i && item.Dept == "Eng") {
           counterDeptENG = counterDeptENG + Number(item.no_of_Student)
 
         }
@@ -157,7 +208,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
         }
 
         // Focus year graphs
-        if (item.year == Yearvalue && item.Dept == "Eng" ||item.Dept == "ENG" ) {
+        if (item.year == Yearvalue && item.Dept == "Eng" || item.Dept == "ENG") {
           counterYearlyDeptENG = counterYearlyDeptENG + Number(item.no_of_Student)
 
         }
@@ -197,14 +248,14 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
       });
 
-       // Focus year graphs, Departments
+      // Focus year graphs, Departments
       numberSlassDept.push(counterYearlyDeptENG)
       numberSlassDept.push(counterYearlyDeptGSG)
       numberSlassDept.push(counterYearlyDeptLaw)
       numberSlassDept.push(counterYearlyDeptMed)
       numberSlassDept.push(counterYearlyDeptSOC)
-     
-       // Focus year graphs, Majors
+
+      // Focus year graphs, Majors
       numberSlass.push(counterYearlyAnt)
       numberSlass.push(counterYearlyEngLang)
       numberSlass.push(counterYearlyEngLit)
@@ -212,8 +263,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       numberSlass.push(counterYearlyLaw)
       numberSlass.push(counterYearlyMedia_Com)
       numberSlass.push(counterYearlySOC)
-     
-       // Major wise Students' interest @ SECS
+
+      // Major wise Students' interest @ SECS
       numberOfEngTrainingLang.push(counterEngTrainingLang)
       numberOfGSG.push(counterGSG)
       numberOfMedia_Com.push(counterMedia_Com)
@@ -222,17 +273,17 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       numberOfSOC.push(counterSOC)
       numberOfEngLit.push(counterEngLit)
 
-       // Department graphs
+      // Department graphs
       numberOfDeptENG.push(counterDeptENG)
       numberOfDeptSOC.push(counterDeptSOC)
       numberOfDeptGSG.push(counterDeptGSG)
       numberOfDeptMed.push(counterDeptMed)
       numberOfDeptLaw.push(counterLaw)
 
-       // Yearly semester wise SLASS
-       numberAutumn.push(counterAutumn)
-       numberSpring.push(counterSpring)
-       numberSummer.push(counterSummer)
+      // Yearly semester wise SLASS
+      numberAutumn.push(counterAutumn)
+      numberSpring.push(counterSpring)
+      numberSummer.push(counterSummer)
 
       // reinitializing the counter
       counterYearlyDeptENG = 0
@@ -276,20 +327,22 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberSlass[0], numberSlass[1], numberSlass[2], numberSlass[3], numberSlass[4], numberSlass[5], numberSlass[6],],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(54, 54, 54, 0.5)',
+            'rgba(94, 94, 94, 0.5)',
+            'rgba(177, 177, 177, 0.5)',
+            'rgba(11, 11, 11 0.5)',
+            'rgba(122, 122, 122 0.5)',
+            'rgba(215, 215, 215, 0.5)',
+            'rgba(167, 167, 167, 0.5)'
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(54, 54, 54, 0.5)',
+            'rgba(94, 94, 94, 0.5)',
+            'rgba(177, 177, 177, 0.5)',
+            'rgba(11, 11, 11 0.5)',
+            'rgba(122, 122, 122 0.5)',
+            'rgba(215, 215, 215, 0.5)',
+            'rgba(167, 167, 167, 0.5)'
           ],
           borderWidth: 2
         },
@@ -317,8 +370,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
       }
     });
-    
-   
+
+
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
       type: 'pie',
@@ -329,20 +382,19 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in Slass in ' + Yearvalue,
           data: [numberSlassDept[0], numberSlassDept[1], numberSlassDept[2], numberSlassDept[3], numberSlassDept[4]],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
+            'rgba(94, 94, 94, 1)',
+            'rgba(57, 57, 57, 1)',
+            'rgba(215, 215, 215, 1)',
+            'rgba(32, 32, 32, 1)',
+            'rgba(177, 177, 177, 1)',
+            
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(94, 94, 94, 1)',
+            'rgba(57, 57, 57, 1)',
+            'rgba(215, 215, 215, 1)',
+            'rgba(32, 32, 32, 1)',
+            'rgba(177, 177, 177, 1)',
           ],
           borderWidth: 2
         },
@@ -362,7 +414,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
         title: {
           display: true,
-          text: 'SLASS Departments '+Yearvalue,
+          text: 'SLASS Departments ' + Yearvalue,
           fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"
 
         },
@@ -375,7 +427,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     //   Line graph
     var ctx = document.getElementById('myChart2');
-    var myChart = new Chart(ctx, {
+    myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -482,7 +534,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     //   Area under the graph
     var ctx = document.getElementById('myChart3');
-    var myChart = new Chart(ctx, {
+    myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -593,7 +645,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     //   SLASS Dept
     var ctx = document.getElementById('myChart4');
-    var myChart = new Chart(ctx, {
+    myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
         labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -682,8 +734,25 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in SOC',
           fill: false,
           data: [numberOfDeptSOC[0], numberOfDeptSOC[1], numberOfDeptSOC[2], numberOfDeptSOC[3], numberOfDeptSOC[4], numberOfDeptSOC[5], numberOfDeptSOC[6], numberOfDeptSOC[7],],
-          backgroundColor: ['rgba(179,179,179,1)',],
+          backgroundColor: [
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+
+          ],
           borderColor: [
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
+            'rgba(179,179,179,1)',
             'rgba(179,179,179,1)',
 
           ],
@@ -693,8 +762,24 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in ENG',
           fill: false,
           data: [numberOfDeptENG[0], numberOfDeptENG[1], numberOfDeptENG[2], numberOfDeptENG[3], numberOfDeptENG[4], numberOfDeptENG[5], numberOfDeptENG[6], numberOfDeptENG[7],],
-          backgroundColor: ['rgba(95,95,95, 1)',],
+          backgroundColor: [
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+          ],
           borderColor: [
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
+            'rgba(95,95,95, 1)',
             'rgba(95,95,95, 1)',
 
           ],
@@ -703,8 +788,26 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in GSG',
           fill: false,
           data: [numberOfDeptGSG[0], numberOfDeptGSG[1], numberOfDeptGSG[2], numberOfDeptGSG[3], numberOfDeptGSG[4], numberOfDeptGSG[5], numberOfDeptGSG[6], numberOfDeptGSG[7],],
-          backgroundColor: ['rgba(137,137,137, 1)',],
+          backgroundColor: [
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+        ],
           borderColor: [
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
+            'rgba(137,137,137, 1)',
             'rgba(137,137,137, 1)',
 
           ],
@@ -713,8 +816,25 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in Media and Com',
           fill: false,
           data: [numberOfDeptMed[0], numberOfDeptMed[1], numberOfDeptMed[2], numberOfDeptMed[3], numberOfDeptMed[4], numberOfDeptMed[5], numberOfDeptMed[6], numberOfDeptMed[7],],
-          backgroundColor: ['rgba(33,33,33, 1)',],
+          backgroundColor: [
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+
+          ],
           borderColor: [
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
+            'rgba(33,33,33, 1)',
             'rgba(33,33,33, 1)',
 
           ],
@@ -723,8 +843,25 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Number Of Students in Law',
           fill: false,
           data: [numberOfDeptLaw[0], numberOfDeptLaw[1], numberOfDeptLaw[2], numberOfDeptLaw[3], numberOfDeptLaw[4], numberOfDeptLaw[5], numberOfDeptLaw[6], numberOfDeptLaw[7],],
-          backgroundColor: ['rgba(218,218,218, 1)',],
+          backgroundColor: [
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+
+          ],
           borderColor: [
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
+            'rgba(218,218,218, 1)',
             'rgba(218,218,218, 1)',
 
           ],
@@ -735,20 +872,21 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
       },
       options: {
+        scales: {
+          xAxes: [{
+            stacked: true
+          }],
+          yAxes: [{
+            stacked: true,
+            ticks: {
+              beginAtZero: true
+            }
+          }]},
         title: {
           display: true,
           text: 'SLASS Departments',
-          scales: {
-            xAxes: [{
-              stacked: true
-            }],
-            yAxes: [{
-              stacked: true,
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
+         
+          
         }
       }
     });
@@ -763,8 +901,24 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Autumn',
           fill: false,
           data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
-          backgroundColor: ['rgba(155,187,89,1)',],
+          backgroundColor: [
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+          ],
           borderColor: [
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
+            'rgba(155,187,89,1)',
             'rgba(155,187,89,1)',
 
           ],
@@ -774,8 +928,24 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Spring',
           fill: false,
           data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
-          backgroundColor: ['rgba(79,129,189, 1)',],
+          backgroundColor: [
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+          ],
           borderColor: [
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
+            'rgba(79,129,189, 1)',
             'rgba(79,129,189, 1)',
 
           ],
@@ -785,8 +955,24 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
           label: 'Summer',
           fill: false,
           data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
-          backgroundColor: ['rgba(192,80,77, 1)',],
+          backgroundColor: [
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+          ],
           borderColor: [
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
+            'rgba(192,80,77, 1)',
             'rgba(192,80,77, 1)',
 
           ],
@@ -797,21 +983,22 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
       },
       options: {
+        scales: {
+          xAxes: [{
+            stacked: true
+          }],
+          yAxes: [{
+            stacked: true,
+            ticks: {
+              beginAtZero: true
+            }
+          }]},
         title: {
           display: true,
           text: 'Yearly semester wise SLASS',
-          scales: {
-            xAxes: [{
-              stacked: true
-            }],
-            yAxes: [{
-              stacked: true,
-              ticks: {
-                beginAtZero: true
-              }
-            }]
+         
           }
-        }
+        
       }
     });
 

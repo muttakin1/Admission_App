@@ -62,8 +62,18 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     //    console.log(response)
     let noofStd = response.datas
     Yearvalue = $("#focusYearVal").val()
-    startYear = $("#startYearVal").val()
-    finishYear = $("#finishYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
+    var period = finishYear-startYear+1;
+    var years=[];
+    var y=Number(startYear);
+
+         for(let i=0;i<period;i++)
+           {
+             years[i]=y;
+             y=y+1;
+          }
+
     console.log(Yearvalue)
 
     let counterSESMAutumn = 0
@@ -99,9 +109,14 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     let numberYearlySESM = []
 
 
+<<<<<<< HEAD
+
+    for (let i = startYear; i <= finishYear; i++) {
+=======
     let year=[]
     for (let i = startYear; i <= finishYear; i++) {
       year.push(Number(i))
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
       noofStd.forEach((item, index) => {
         if (item.year == Yearvalue && item.Semester == "1" && item.School == "SESM") {
           counterSESMAutumn = counterSESMAutumn + Number(item.no_of_Student)
@@ -312,12 +327,16 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
+<<<<<<< HEAD
+        labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
         labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Pharmacy',
           fill: false,
-          data: [numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
+          data: numberOfPharmacy,//[numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
           borderColor: [
             'rgba(100, 79, 126, 1)',
 
@@ -328,7 +347,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           lineTension: 0.1,
           label: 'Number Of Students in Env Management',
           fill: false,
-          data: [numberOfENV_management[0], numberOfENV_management[1], numberOfENV_management[2], numberOfENV_management[3], numberOfENV_management[4], numberOfENV_management[5], numberOfENV_management[6], numberOfENV_management[7],],
+          data:numberOfENV_management,// [numberOfENV_management[0], numberOfENV_management[1], numberOfENV_management[2], numberOfENV_management[3], numberOfENV_management[4], numberOfENV_management[5], numberOfENV_management[6], numberOfENV_management[7],],
 
           borderColor: [
             'rgba(120, 96, 150, 1)',
@@ -340,7 +359,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           lineTension: 0.1,
           label: 'Number Of Students in ENV',
           fill: false,
-          data: [numberOfENV[0], numberOfENV[1], numberOfENV[2], numberOfENV[3], numberOfENV[4], numberOfENV[5], numberOfENV[6], numberOfENV[7],],
+          data:numberOfENV,// [numberOfENV[0], numberOfENV[1], numberOfENV[2], numberOfENV[3], numberOfENV[4], numberOfENV[5], numberOfENV[6], numberOfENV[7],],
 
           borderColor: [
             'rgba(156,139,179,1)',
@@ -352,7 +371,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           lineTension: 0.1,
           label: 'Number Of Students in Population_Env',
           fill: false,
-          data: [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
+          data:numberOfPoplation_Env,// [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
 
           borderColor: [
             'rgba(195,187,208,1)',
@@ -387,12 +406,16 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
+<<<<<<< HEAD
+        labels:years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
         labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Number Of Students in Population_ENV',
           // fill: false,
-          data: [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
+          data:numberOfPoplation_Env,// [numberOfPoplation_Env[0], numberOfPoplation_Env[1], numberOfPoplation_Env[2], numberOfPoplation_Env[3], numberOfPoplation_Env[4], numberOfPoplation_Env[5], numberOfPoplation_Env[6], numberOfPoplation_Env[7],],
           backgroundColor: ['rgba(195,187,208, 1)',],
           borderColor: [
             'rgba(195,187,208,1)',
@@ -404,7 +427,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           lineTension: 0.1,
           label: 'Number Of Students in ENV_Management',
           // fill: false,
-          data: [numberOfENV_management[0], numberOfENV_management[1], numberOfENV_management[2], numberOfENV_management[3], numberOfENV_management[4], numberOfENV_management[5], numberOfENV_management[6], numberOfENV_management[7],],
+          data:numberOfENV_management,// [numberOfENV_management[0], numberOfENV_management[1], numberOfENV_management[2], numberOfENV_management[3], numberOfENV_management[4], numberOfENV_management[5], numberOfENV_management[6], numberOfENV_management[7],],
           backgroundColor: ['rgba(120, 96, 150, 1)',],
           borderColor: [
             'rgba(120, 96, 150,1)',
@@ -416,7 +439,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           lineTension: 0.1,
           label: 'Number Of Students in ENV',
           // fill: false,
-          data: [numberOfENV[0], numberOfENV[1], numberOfENV[2], numberOfENV[3], numberOfENV[4], numberOfENV[5], numberOfENV[6], numberOfENV[7],],
+          data:numberOfENV,// [numberOfENV[0], numberOfENV[1], numberOfENV[2], numberOfENV[3], numberOfENV[4], numberOfENV[5], numberOfENV[6], numberOfENV[7],],
           backgroundColor: ['rgba(156,139,179, 1)',],
           borderColor: [
             'rgba(156,139,179,1)',
@@ -429,7 +452,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
           lineTension: 0.1,
           label: 'Number Of Students in Pharmacy',
           // fill: false,
-          data: [numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
+          data:numberOfPharmacy,// [numberOfPharmacy[0], numberOfPharmacy[1], numberOfPharmacy[2], numberOfPharmacy[3], numberOfPharmacy[4], numberOfPharmacy[5], numberOfPharmacy[6], numberOfPharmacy[7],],
           backgroundColor: ['rgba(100, 79, 126, 1)',],
           borderColor: [
             'rgba(100, 79, 126, 1)',
@@ -480,11 +503,15 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       myChart4 = new Chart(ctx, {
        type: 'bar',
        data: {
+<<<<<<< HEAD
+         labels:years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
          labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
          datasets: [{
            label: 'Autumn',
            fill: false,
-           data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+           data:numberAutumn,// [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
            backgroundColor: [
              'rgba(155,187,89,1)',
              'rgba(155,187,89,1)',
@@ -511,7 +538,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
          {
            label: 'Spring',
            fill: false,
-           data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+           data:numberSpring,// [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
            backgroundColor: [
              'rgba(79,129,189, 1)',
              'rgba(79,129,189, 1)',
@@ -539,7 +566,7 @@ $("#MajorWiseStudentsSESM").click(function (event) {
          {
            label: 'Summer',
            fill: false,
-           data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+           data:numberSummer,// [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
            backgroundColor: [
              'rgba(192,80,77, 1)',
              'rgba(192,80,77, 1)',
@@ -595,5 +622,4 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
 
 })
-
 

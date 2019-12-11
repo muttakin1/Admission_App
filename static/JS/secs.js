@@ -113,6 +113,8 @@ $("#tableMenu4 a").click(function(e){
     let numberOfCS = []
     let numberOfEEE = []
 
+    let val =[]
+
      // Department graphs
     let counterDeptCSE = 0
     let counterDeptEEE = 0
@@ -137,6 +139,15 @@ $("#tableMenu4 a").click(function(e){
     Yearvalue = $("#focusYearVal").val()
     startYear =$("#startYearVal").val()
     finishYear =$("#finishYearVal").val()
+    var period = finishYear-startYear+1;
+    var years=[];
+    var y=Number(startYear);
+
+         for(let i=0;i<period;i++)
+           {
+             years[i]=y;
+             y=y+1;
+          }
 
     let year=[]
     for (let i = startYear; i <= finishYear; i++) {
@@ -259,7 +270,21 @@ $("#tableMenu4 a").click(function(e){
       numberSECS.push(counterYearlyETE)
       numberSECS.push(counterYearlyMATH)
       numberSECS.push(counterYearlyPHY)
+      
+      //Find the Total Number of Student in SECS (why doesn't work?)
+     /* let total=counterYearlyCE+counterYearlyCS+counterYearlyCSE+counterYearlyEEE+counterYearlyETE+counterYearlyMATH+counterYearlyPHY;
+      console.log("Total: "+ total);
 
+      numberSECS.forEach(myFunction)
+
+            function myFunction(item, index, arr) {
+            var s= (item * 100)/total;
+            arr[index] =s+" "+"%";
+            }
+
+      //var majorSecs=['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',];
+      */
+      
       // Focus year graphs, Departments
       numberDept.push(counterYearlyDeptCSE)
       numberDept.push(counterYearlyDeptEEE)
@@ -320,11 +345,10 @@ $("#tableMenu4 a").click(function(e){
         type: 'pie',
         data: {
           
-          labels: ['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',],
+          labels:['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',],
           datasets: [{
             label: 'Number Of Students in SECS in ' + Yearvalue,
-            data: [
-              numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
+            data: [numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
             backgroundColor: [
               'rgba(248, 192, 165, 1)', //ce
                 'rgba(247, 191, 164, 1)', //cs
@@ -426,14 +450,14 @@ $("#tableMenu4 a").click(function(e){
      myChart2 = new Chart(ctx, {
       type: 'line',
       data:{
-        labels: year,
+        labels: years, //['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
         datasets: [{
           label: 'Number Of Students in Computer Engineering',
           lineTension:0.1,
           fill: false,
-          data: [//loop for giving indexes in the array
+          data: numberOfCE, //[//loop for giving indexes in the array
             // numberOfCE.forEach(function(item,i){  })],
-            numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
+           // numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
           backgroundColor: [
             'rgba(248, 192, 165, 1)',
             'rgba(248, 192, 165, 1)',
@@ -460,7 +484,7 @@ $("#tableMenu4 a").click(function(e){
           label: 'Number Of Students in Electrical and Electronic Engineering',
           lineTension:0.1,
           fill: false,
-          data: [numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
+          data: numberOfEEE,//[numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
           backgroundColor: [
             'rgba(242, 147, 67, 1)',
             'rgba(242, 147, 67, 1)',
@@ -488,7 +512,7 @@ $("#tableMenu4 a").click(function(e){
           label: 'Number Of Students in Electronic and Telecommunication Engineering',
           lineTension:0.1,
           fill: false,
-          data: [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
+          data: numberOfETE,//[numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
           backgroundColor: [
             'rgba(240, 147, 67, 1)',
             'rgba(240, 147, 67, 1)',
@@ -516,7 +540,7 @@ $("#tableMenu4 a").click(function(e){
           label: 'Number Of Students in Computer Science and Engineering',
           lineTension:0.1,
           fill: false,
-          data: [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
+          data:numberOfCSE,// [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
           backgroundColor: [
             'rgba(243, 170, 129, 1)',
             'rgba(243, 170, 129, 1)',
@@ -544,7 +568,7 @@ $("#tableMenu4 a").click(function(e){
           label: 'Number Of Students in Computer Science',
           lineTension:0.1,
           fill: false,
-          data: [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
+          data:numberOfCS,// [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
           backgroundColor: [
             'rgba(247, 191, 164, 1)',
             'rgba(247, 191, 164, 1)',
@@ -572,7 +596,7 @@ $("#tableMenu4 a").click(function(e){
           label: 'Number Of Students in Physics',
           lineTension:0.1,
           fill: false,
-          data: [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
+          data: numberOfPhy,//[numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
           backgroundColor: [
             'rgba(173, 102, 46, 1)',
             'rgba(173, 102, 46, 1)',
@@ -600,7 +624,7 @@ $("#tableMenu4 a").click(function(e){
           label: 'Number Of Students in Maths',
           lineTension:0.1,
           fill: false,
-          data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
+          data:numberOfmaths,// [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
           backgroundColor: [
             'rgba(199, 121, 55, 1)',
             'rgba(199, 121, 55, 1)',
@@ -655,12 +679,12 @@ $("#tableMenu4 a").click(function(e){
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels:year,
+        labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in Maths',
           // fill: false,
-          data: [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
+          data: numberOfmaths,// [numberOfmaths[0], numberOfmaths[1], numberOfmaths[2], numberOfmaths[3], numberOfmaths[4], numberOfmaths[5], numberOfmaths[6], numberOfmaths[7],],
           backgroundColor: [
             'rgba(199, 121, 55, 1)',
             'rgba(199, 121, 55, 1)',
@@ -688,7 +712,7 @@ $("#tableMenu4 a").click(function(e){
         {  lineTension:0.1,
           label: 'Number Of Students in Computer Engineering',
           // fill: false,
-          data: [numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
+          data: numberOfCE,//[numberOfCE[0], numberOfCE[1], numberOfCE[2], numberOfCE[3], numberOfCE[4], numberOfCE[5], numberOfCE[6], numberOfCE[7],],
           backgroundColor: [
             'rgba(248, 192, 165, 1)',
             'rgba(248, 192, 165, 1)',
@@ -715,7 +739,7 @@ $("#tableMenu4 a").click(function(e){
           lineTension:0.1,
           label: 'Number Of Students in Electrical and Electronic Engineering',
           // fill: false,
-          data: [numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
+          data: numberOfEEE,//[numberOfEEE[0], numberOfEEE[1], numberOfEEE[2], numberOfEEE[3], numberOfEEE[4], numberOfEEE[5], numberOfEEE[6], numberOfEEE[7],],
           backgroundColor: [
             'rgba(242, 147, 67, 1)',
             'rgba(242, 147, 67, 1)',
@@ -742,7 +766,7 @@ $("#tableMenu4 a").click(function(e){
         { lineTension:0.1,
           label: 'Number Of Students in Electronic and Telecommunication Engineering',
           // fill: false,
-          data: [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
+          data:numberOfETE,// [numberOfETE[0], numberOfETE[1], numberOfETE[2], numberOfETE[3], numberOfETE[4], numberOfETE[5], numberOfETE[6], numberOfETE[7],],
           backgroundColor: [
             'rgba(240, 147, 67, 1)',
             'rgba(240, 147, 67, 1)',
@@ -769,7 +793,7 @@ $("#tableMenu4 a").click(function(e){
         { lineTension:0.1,
           label: 'Number Of Students in Computer Science and Engineering',
           // fill: false,
-          data: [numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
+          data: numberOfCSE,//[numberOfCSE[0], numberOfCSE[1], numberOfCSE[2], numberOfCSE[3], numberOfCSE[4], numberOfCSE[5], numberOfCSE[6], numberOfCSE[7],],
           backgroundColor: [
             'rgba(243, 170, 129, 1)',
             'rgba(243, 170, 129, 1)',
@@ -796,7 +820,7 @@ $("#tableMenu4 a").click(function(e){
         { lineTension:0.1,
           label: 'Number Of Students in Computer Science',
           // fill: false,
-          data: [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
+          data: numberOfCS,// [numberOfCS[0], numberOfCS[1], numberOfCS[2], numberOfCS[3], numberOfCS[4], numberOfCS[5], numberOfCS[6], numberOfCS[7],],
           backgroundColor: [
             'rgba(247, 191, 164, 1)',
             'rgba(247, 191, 164, 1)',
@@ -823,7 +847,7 @@ $("#tableMenu4 a").click(function(e){
         { lineTension:0.1,
           label: 'Number Of Students in Physics',
           // fill: false,
-          data: [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
+          data:numberOfPhy,// [numberOfPhy[0], numberOfPhy[1], numberOfPhy[2], numberOfPhy[3], numberOfPhy[4], numberOfPhy[5], numberOfPhy[6], numberOfPhy[7],],
           backgroundColor: [
             'rgba(173, 102, 46, 1)',
             'rgba(173, 102, 46, 1)',
@@ -878,7 +902,7 @@ $("#tableMenu4 a").click(function(e){
      myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: year,
+        labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in EEE',
@@ -986,11 +1010,11 @@ $("#tableMenu4 a").click(function(e){
     myChart5 = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: year,
+        labels: years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [{
           label: 'Number Of Students in EEE',
           fill: false,
-          data: [numberOfDeptEEE[0], numberOfDeptEEE[1], numberOfDeptEEE[2], numberOfDeptEEE[3], numberOfDeptEEE[4], numberOfDeptEEE[5], numberOfDeptEEE[6], numberOfDeptEEE[7],],
+          data: numberOfDeptEEE,//[numberOfDeptEEE[0], numberOfDeptEEE[1], numberOfDeptEEE[2], numberOfDeptEEE[3], numberOfDeptEEE[4], numberOfDeptEEE[5], numberOfDeptEEE[6], numberOfDeptEEE[7],],
           backgroundColor: [
             'rgba(253,148,69,1)',
             'rgba(253,148,69,1)',
@@ -1017,7 +1041,7 @@ $("#tableMenu4 a").click(function(e){
         {
           label: 'Number Of Students in Computer Science Engineering',
           fill: false,
-          data: [numberOfDeptCSE[0], numberOfDeptCSE[1], numberOfDeptCSE[2], numberOfDeptCSE[3], numberOfDeptCSE[4], numberOfDeptCSE[5], numberOfDeptCSE[6], numberOfDeptCSE[7],],
+          data:numberOfDeptCSE,// [numberOfDeptCSE[0], numberOfDeptCSE[1], numberOfDeptCSE[2], numberOfDeptCSE[3], numberOfDeptCSE[4], numberOfDeptCSE[5], numberOfDeptCSE[6], numberOfDeptCSE[7],],
           backgroundColor: [
             'rgba(209,122,55, 1)',
             'rgba(209,122,55, 1)',
@@ -1044,7 +1068,7 @@ $("#tableMenu4 a").click(function(e){
         {
           label: 'Number Of Students in Physical Sciences',
           fill: false,
-          data: [numberOfDeptPhySci[0], numberOfDeptPhySci[1], numberOfDeptPhySci[2], numberOfDeptPhySci[3], numberOfDeptPhySci[4], numberOfDeptPhySci[5], numberOfDeptPhySci[6], numberOfDeptPhySci[7],],
+          data:numberOfDeptPhySci,// [numberOfDeptPhySci[0], numberOfDeptPhySci[1], numberOfDeptPhySci[2], numberOfDeptPhySci[3], numberOfDeptPhySci[4], numberOfDeptPhySci[5], numberOfDeptPhySci[6], numberOfDeptPhySci[7],],
           backgroundColor: [
             'rgba(254,194,168, 1)',
             'rgba(254,194,168, 1)',
@@ -1092,11 +1116,11 @@ $("#tableMenu4 a").click(function(e){
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: year,
+        labels:years,// ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
         datasets: [{
           label: 'Autumn',
           fill: false,
-          data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+          data:numberAutumn,// [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
           backgroundColor: [
         
           'rgba(155,187,89,1)', 
@@ -1125,7 +1149,7 @@ $("#tableMenu4 a").click(function(e){
         {
           label: 'Spring',
           fill: false,
-          data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+          data: numberSpring,//[numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
           backgroundColor: [
             'rgba(79,129,189, 1)',
             'rgba(79,129,189, 1)',
@@ -1152,7 +1176,7 @@ $("#tableMenu4 a").click(function(e){
         {
           label: 'Summer',
           fill: false,
-          data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+          data:numberSummer,// [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
           backgroundColor: [
             'rgba(192,80,77, 1)',
             'rgba(192,80,77, 1)',

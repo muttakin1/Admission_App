@@ -1,6 +1,3 @@
-
-
-
 var myChart2
 var myChart3
 var myChart4
@@ -64,9 +61,20 @@ $("#SoB").click(function (event) {
     url: "/data/list"
   }).done(function (response) {
 
+
     Yearvalue = $("#focusYearVal").val()
-    startYear = $("#startYearVal").val()
-    finishYear = $("#finishYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
+    var period = finishYear-startYear+1;
+    var years=[];
+    var y=Number(startYear);
+
+         for(let i=0;i<period;i++)
+           {
+             years[i]=y;
+             y=y+1;
+          }
+
     let noofStd = response.datas
 
     let counterBBAMis = 0
@@ -112,9 +120,14 @@ $("#SoB").click(function (event) {
     let numberBbaSemester = []
 
 
+<<<<<<< HEAD
+
+    for (let i = startYear; i <= finishYear; i++) {
+=======
     let year=[]
     for (let i = startYear; i <= finishYear; i++) {
       year.push(Number(i))
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
       noofStd.forEach((item, index) => {
 
         if (item.year == Yearvalue && item.Major == "BBA - Management Information Systems") {
@@ -326,7 +339,7 @@ $("#SoB").click(function (event) {
 
       }
     });
-    var ctx = document.getElementById('myChart1');
+    var ctx = document.getElementById('myChart5');
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -335,7 +348,8 @@ $("#SoB").click(function (event) {
         datasets: [{
 
           label: 'School of Business ' + Yearvalue,
-          data: [numberBBA[0], numberBBA[1], numberBBA[2], numberBBA[3], numberBBA[4], numberBBA[5], numberBBA[6], numberBBA[7], numberBBA[8]],
+          data: numberBBA,
+          //[numberBBA[0], numberBBA[1], numberBBA[2], numberBBA[3], numberBBA[4], numberBBA[5], numberBBA[6], numberBBA[7], numberBBA[8]],
           backgroundColor: [
             'rgba(44, 77, 117, 1)', //mis
             'rgba(192, 80, 77, 1)', // finance
@@ -387,11 +401,15 @@ $("#SoB").click(function (event) {
       type: 'line',
       data: {
 
+<<<<<<< HEAD
+        labels: years,//[2013, 2014, 2015, 2016, 2017, 2018, 2019],
+=======
         labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
-          data: [numberYearlyMis[0], numberYearlyMis[1], numberYearlyMis[2], numberYearlyMis[3], numberYearlyMis[4], numberYearlyMis[5], numberYearlyMis[6], numberYearlyMis[7],],
+          data: numberYearlyMis,//[numberYearlyMis[0], numberYearlyMis[1], numberYearlyMis[2], numberYearlyMis[3], numberYearlyMis[4], numberYearlyMis[5], numberYearlyMis[6], numberYearlyMis[7],],
           backgroundColor: [
             'rgba(44, 77, 117, 1)',
             'rgba(44, 77, 117, 1)',
@@ -420,7 +438,7 @@ $("#SoB").click(function (event) {
         {
           lineTension: 0.1,
           label: 'Marketing',
-          data: [numberYearlyMkt[0], numberYearlyMkt[1], numberYearlyMkt[2], numberYearlyMkt[3], numberYearlyMkt[4], numberYearlyMkt[5], numberYearlyMkt[6], numberYearlyMkt[7],],
+          data: numberYearlyMkt,//[numberYearlyMkt[0], numberYearlyMkt[1], numberYearlyMkt[2], numberYearlyMkt[3], numberYearlyMkt[4], numberYearlyMkt[5], numberYearlyMkt[6], numberYearlyMkt[7],],
           backgroundColor: [
             'rgba(119, 44, 42, 1)',
             'rgba(119, 44, 42, 1)',
@@ -451,7 +469,7 @@ $("#SoB").click(function (event) {
         {
           lineTension: 0.1,
           label: 'Accounting',
-          data: [numberYearlyAcn[0], numberYearlyAcn[1], numberYearlyAcn[2], numberYearlyAcn[3], numberYearlyAcn[4], numberYearlyAcn[5], numberYearlyAcn[6], numberYearlyAcn[7],],
+          data: numberYearlyAcn,//[numberYearlyAcn[0], numberYearlyAcn[1], numberYearlyAcn[2], numberYearlyAcn[3], numberYearlyAcn[4], numberYearlyAcn[5], numberYearlyAcn[6], numberYearlyAcn[7],],
           backgroundColor: [
             'rgba(79, 129, 189, 1)',
             'rgba(79, 129, 189, 1)',
@@ -480,7 +498,7 @@ $("#SoB").click(function (event) {
         }, {
           lineTension: 0.1,
           label: 'Finance',
-          data: [numberYearlyFin[0], numberYearlyFin[1], numberYearlyFin[2], numberYearlyFin[3], numberYearlyFin[4], numberYearlyFin[5], numberYearlyFin[6], numberYearlyFin[7],],
+          data:numberYearlyFin,//[numberYearlyFin[0], numberYearlyFin[1], numberYearlyFin[2], numberYearlyFin[3], numberYearlyFin[4], numberYearlyFin[5], numberYearlyFin[6], numberYearlyFin[7],],
           backgroundColor: [
             'rgba(192, 80, 77, 1)',
             'rgba(192, 80, 77, 1)',
@@ -510,7 +528,7 @@ $("#SoB").click(function (event) {
         {
           lineTension: 0.1,
           label: 'General Management',
-          data: [numberYearlyMgt[0], numberYearlyMgt[1], numberYearlyMgt[2], numberYearlyMgt[3], numberYearlyMgt[4], numberYearlyMgt[5], numberYearlyMgt[6], numberYearlyMgt[7],],
+          data: numberYearlyMgt,//[numberYearlyMgt[0], numberYearlyMgt[1], numberYearlyMgt[2], numberYearlyMgt[3], numberYearlyMgt[4], numberYearlyMgt[5], numberYearlyMgt[6], numberYearlyMgt[7],],
           backgroundColor: [
             'rgba(155, 187, 89, 1)',
             'rgba(155, 187, 89, 1)',
@@ -540,7 +558,7 @@ $("#SoB").click(function (event) {
         {
           lineTension: 0.1,
           label: 'Human Resources Management',
-          data: [numberYearlyHrm[0], numberYearlyHrm[1], numberYearlyHrm[2], numberYearlyHrm[3], numberYearlyHrm[4], numberYearlyHrm[5], numberYearlyHrm[6], numberYearlyHrm[7],],
+          data: numberYearlyHrm,//[numberYearlyHrm[0], numberYearlyHrm[1], numberYearlyHrm[2], numberYearlyHrm[3], numberYearlyHrm[4], numberYearlyHrm[5], numberYearlyHrm[6], numberYearlyHrm[7],],
           backgroundColor: [
             'rgba(128, 100, 162, 1)',
             'rgba(128, 100, 162, 1)',
@@ -570,7 +588,7 @@ $("#SoB").click(function (event) {
         {
           lineTension: 0.1,
           label: 'International Business',
-          data: [numberYearlyIb[0], numberYearlyIb[1], numberYearlyIb[2], numberYearlyIb[3], numberYearlyIb[4], numberYearlyIb[5], numberYearlyIb[6], numberYearlyIb[7],],
+          data: numberYearlyIb,//[numberYearlyIb[0], numberYearlyIb[1], numberYearlyIb[2], numberYearlyIb[3], numberYearlyIb[4], numberYearlyIb[5], numberYearlyIb[6], numberYearlyIb[7],],
           backgroundColor: [
             'rgba(75, 172, 198, 1)',
             'rgba(75, 172, 198, 1)',
@@ -600,7 +618,7 @@ $("#SoB").click(function (event) {
         {
           lineTension: 0.1,
           label: 'Investment Management',
-          data: [numberYearlyInvest[0], numberYearlyInvest[1], numberYearlyInvest[2], numberYearlyInvest[3], numberYearlyInvest[4], numberYearlyInvest[5], numberYearlyInvest[6], numberYearlyInvest[7],],
+          data: numberYearlyInvest,//[numberYearlyInvest[0], numberYearlyInvest[1], numberYearlyInvest[2], numberYearlyInvest[3], numberYearlyInvest[4], numberYearlyInvest[5], numberYearlyInvest[6], numberYearlyInvest[7],],
           backgroundColor: [
             'rgba(247, 150, 70, 1)',
             'rgba(247, 150, 70, 1)',
@@ -629,7 +647,7 @@ $("#SoB").click(function (event) {
         }, {
           lineTension: 0.1,
           label: 'Economics',
-          data: [numberYearlyEcn[0], numberYearlyEcn[1], numberYearlyEcn[2], numberYearlyEcn[3], numberYearlyEcn[4], numberYearlyEcn[5], numberYearlyEcn[6], numberYearlyEcn[7],],
+          data: numberYearlyEcn,// [numberYearlyEcn[0], numberYearlyEcn[1], numberYearlyEcn[2], numberYearlyEcn[3], numberYearlyEcn[4], numberYearlyEcn[5], numberYearlyEcn[6], numberYearlyEcn[7],],
           backgroundColor: [
             'rgba(95, 117, 48, 1)',
             'rgba(95, 117, 48, 1)',
@@ -682,17 +700,21 @@ $("#SoB").click(function (event) {
         }
       }
     });
-    var ctx = document.getElementById('myChart3');
+    var ctx = document.getElementById('myChart2');
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
 
+<<<<<<< HEAD
+        labels: years,//[2013, 2014, 2015, 2016, 2017, 2018, 2019],
+=======
         labels: year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
         datasets: [{
           lineTension: 0.1,
           label: 'Management Information System',
           fill: false,
-          data: [numberYearlyMis[0], numberYearlyMis[1], numberYearlyMis[2], numberYearlyMis[3], numberYearlyMis[4], numberYearlyMis[5], numberYearlyMis[6], numberYearlyMis[7],],
+          data: numberYearlyMis,//[numberYearlyMis[0], numberYearlyMis[1], numberYearlyMis[2], numberYearlyMis[3], numberYearlyMis[4], numberYearlyMis[5], numberYearlyMis[6], numberYearlyMis[7],],
           backgroundColor: [
             'rgba(44, 77, 117, 1)',
             'rgba(44, 77, 117, 1)',
@@ -722,7 +744,7 @@ $("#SoB").click(function (event) {
           lineTension: 0.1,
           label: 'Marketing',
           fill: false,
-          data: [numberYearlyMkt[0], numberYearlyMkt[1], numberYearlyMkt[2], numberYearlyMkt[3], numberYearlyMkt[4], numberYearlyMkt[5], numberYearlyMkt[6], numberYearlyMkt[7],],
+          data: numberYearlyMkt,//[numberYearlyMkt[0], numberYearlyMkt[1], numberYearlyMkt[2], numberYearlyMkt[3], numberYearlyMkt[4], numberYearlyMkt[5], numberYearlyMkt[6], numberYearlyMkt[7],],
           backgroundColor: [
             'rgba(119, 44, 42, 1)',
             'rgba(119, 44, 42, 1)',
@@ -753,7 +775,7 @@ $("#SoB").click(function (event) {
           lineTension: 0.1,
           label: 'Accounting',
           fill: false,
-          data: [numberYearlyAcn[0], numberYearlyAcn[1], numberYearlyAcn[2], numberYearlyAcn[3], numberYearlyAcn[4], numberYearlyAcn[5], numberYearlyAcn[6], numberYearlyAcn[7],],
+          data: numberYearlyAcn,//[numberYearlyAcn[0], numberYearlyAcn[1], numberYearlyAcn[2], numberYearlyAcn[3], numberYearlyAcn[4], numberYearlyAcn[5], numberYearlyAcn[6], numberYearlyAcn[7],],
           backgroundColor: [
             'rgba(79, 129, 189, 1)',
             'rgba(79, 129, 189, 1)',
@@ -783,7 +805,7 @@ $("#SoB").click(function (event) {
           lineTension: 0.1,
           label: 'Finance',
           fill: false,
-          data: [numberYearlyFin[0], numberYearlyFin[1], numberYearlyFin[2], numberYearlyFin[3], numberYearlyFin[4], numberYearlyFin[5], numberYearlyFin[6], numberYearlyFin[7],],
+          data: numberYearlyFin,//[numberYearlyFin[0], numberYearlyFin[1], numberYearlyFin[2], numberYearlyFin[3], numberYearlyFin[4], numberYearlyFin[5], numberYearlyFin[6], numberYearlyFin[7],],
           backgroundColor: [
             'rgba(192, 80, 77, 1)',
             'rgba(192, 80, 77, 1)',
@@ -814,7 +836,7 @@ $("#SoB").click(function (event) {
           lineTension: 0.1,
           label: 'General Management',
           fill: false,
-          data: [numberYearlyMgt[0], numberYearlyMgt[1], numberYearlyMgt[2], numberYearlyMgt[3], numberYearlyMgt[4], numberYearlyMgt[5], numberYearlyMgt[6], numberYearlyMgt[7],],
+          data: numberYearlyMgt, //[numberYearlyMgt[0], numberYearlyMgt[1], numberYearlyMgt[2], numberYearlyMgt[3], numberYearlyMgt[4], numberYearlyMgt[5], numberYearlyMgt[6], numberYearlyMgt[7],],
           backgroundColor: [
             'rgba(155, 187, 89, 1)',
             'rgba(155, 187, 89, 1)',
@@ -845,7 +867,7 @@ $("#SoB").click(function (event) {
           lineTension: 0.1,
           label: 'Human Resources Management',
           fill: false,
-          data: [numberYearlyHrm[0], numberYearlyHrm[1], numberYearlyHrm[2], numberYearlyHrm[3], numberYearlyHrm[4], numberYearlyHrm[5], numberYearlyHrm[6], numberYearlyHrm[7],],
+          data: numberYearlyHrm,//[numberYearlyHrm[0], numberYearlyHrm[1], numberYearlyHrm[2], numberYearlyHrm[3], numberYearlyHrm[4], numberYearlyHrm[5], numberYearlyHrm[6], numberYearlyHrm[7],],
           backgroundColor: [
             'rgba(128, 100, 162, 1)',
             'rgba(128, 100, 162, 1)',
@@ -876,7 +898,7 @@ $("#SoB").click(function (event) {
           lineTension: 0.1,
           label: 'International Business',
           fill: false,
-          data: [numberYearlyIb[0], numberYearlyIb[1], numberYearlyIb[2], numberYearlyIb[3], numberYearlyIb[4], numberYearlyIb[5], numberYearlyIb[6], numberYearlyIb[7],],
+          data: numberYearlyIb,//[numberYearlyIb[0], numberYearlyIb[1], numberYearlyIb[2], numberYearlyIb[3], numberYearlyIb[4], numberYearlyIb[5], numberYearlyIb[6], numberYearlyIb[7],],
           backgroundColor: [
             'rgba(75, 172, 198, 1)',
             'rgba(75, 172, 198, 1)',
@@ -907,7 +929,7 @@ $("#SoB").click(function (event) {
           lineTension: 0.1,
           label: 'Investment Management',
           fill: false,
-          data: [numberYearlyInvest[0], numberYearlyInvest[1], numberYearlyInvest[2], numberYearlyInvest[3], numberYearlyInvest[4], numberYearlyInvest[5], numberYearlyInvest[6], numberYearlyInvest[7],],
+          data: numberYearlyInvest,//[numberYearlyInvest[0], numberYearlyInvest[1], numberYearlyInvest[2], numberYearlyInvest[3], numberYearlyInvest[4], numberYearlyInvest[5], numberYearlyInvest[6], numberYearlyInvest[7],],
           backgroundColor: [
             'rgba(247, 150, 70, 1)',
             'rgba(247, 150, 70, 1)',
@@ -937,7 +959,7 @@ $("#SoB").click(function (event) {
           lineTension: 0.1,
           label: 'Economics',
           fill: false,
-          data: [numberYearlyEcn[0], numberYearlyEcn[1], numberYearlyEcn[2], numberYearlyEcn[3], numberYearlyEcn[4], numberYearlyEcn[5], numberYearlyEcn[6], numberYearlyEcn[7],],
+          data: numberYearlyEcn,//[numberYearlyEcn[0], numberYearlyEcn[1], numberYearlyEcn[2], numberYearlyEcn[3], numberYearlyEcn[4], numberYearlyEcn[5], numberYearlyEcn[6], numberYearlyEcn[7],],
           backgroundColor: [
             'rgba(95, 117, 48, 1)',
             'rgba(95, 117, 48, 1)',
@@ -995,17 +1017,25 @@ $("#SoB").click(function (event) {
     });
 
       // Yearly semester wise SoB
+<<<<<<< HEAD
+      var ctx = document.getElementById('myChart5');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+=======
       var ctx = document.getElementById('myChart4');
        myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
           
           labels:year,
+>>>>>>> 55de8dbf8416b61c84317ec678e769e11abf2da8
           datasets: [{
             lineTension:0.1,
             label: 'Autumn',
             fill: false,
-            data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+            data: numberAutumn,//[numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
             backgroundColor: [
               'rgba(155,187,89,1)', 
               'rgba(155,187,89,1)', 
@@ -1032,7 +1062,7 @@ $("#SoB").click(function (event) {
           {lineTension:0.1,
             label: 'Spring',
             fill: false,
-            data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+            data: numberSpring,//[numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
             backgroundColor: [
               'rgba(79,129,189, 1)',
               'rgba(79,129,189, 1)',
@@ -1059,7 +1089,7 @@ $("#SoB").click(function (event) {
           {lineTension:0.1,
             label: 'Summer',
             fill: false,
-            data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+            data: numberSummer,//[numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
             backgroundColor: [
               'rgba(192,80,77, 1)',
             'rgba(192,80,77, 1)',

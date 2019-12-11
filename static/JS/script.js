@@ -57,10 +57,10 @@ $("#getdata").click(function (event) {
 
 function divide(){  //START OF JS
   //START CHECKING IF DATA INPUT IS EMPTY
-if(document.getElementById("inputYear").value !="none"){
-document.getElementById("span_inputYear").innerHTML = "";
-if(document.getElementById("semester").value !="none"){
-  document.getElementById("span_semester").innerHTML = "";
+  if(document.getElementById("inputYear").value !="none"){
+  document.getElementById("span_inputYear").innerHTML = "";
+    if(document.getElementById("semester").value !="none"){
+document.getElementById("span_semester").innerHTML = "";
   if(document.getElementById("ta_inputData").value.trim()){
     document.getElementById("span_btn_inputData").innerHTML ="";
     
@@ -492,3 +492,4 @@ doc.save('Report.pdf');
     $("#chartTitle3").hide();
     $("#chartTitle4").hide();
   }
+    

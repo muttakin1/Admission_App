@@ -1,188 +1,180 @@
 
-//Number of Students
+//myChart2: Number of Students
 $("#getFocusYear").click(function (event) {
-    $.ajax({
-      method: "GET",
-      url: "/data/list"
-    }).done(function (response) {
-  
-   
-      let noofStd = response.datas
+  $.ajax({
+    method: "GET",
+    url: "/data/list"
+  }).done(function (response) { 
+    let noofStd = response.datas
 
-      startYear =$("#startYearVal").val()
-      finishYear =$("#finishYearVal").val()
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
   
-      let counter = 0
-      let numberOfStd = []
-      for (let i = 2013; i <= 2019; i++) {
+    let counter = 0
+    let numberOfStd = []
+    for (let i = 2013; i <= 2019; i++) {
         noofStd.forEach((item, index) => {
           if (item.year == i) {
             counter = counter + Number(item.no_of_Student)
           }
         }
+      );
+      numberOfStd.push(counter)
+      counter = 0
+    }
+    console.log(numberOfStd)
   
-        );
-        numberOfStd.push(counter)
-        counter = 0
-      }
-      console.log(numberOfStd)
-  
-  
-      var ctx = document.getElementById('myChart2');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [{
-            lineTension:0.1,
-            label: 'Number Of Students',
-            fill: false,
-            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-            backgroundColor: [
-              'rgba(79, 129, 189, 0.2)',
-  
-            ],
-            borderColor: [
-              'rgba(79, 129, 189, 1)',
-  
-            ],
-            borderWidth: 2
+    var ctx = document.getElementById('myChart2');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        datasets: [{
+          lineTension:0.1,
+          label: 'Number Of Students',
+          fill: false,
+          data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+          backgroundColor: [
+            'rgba(79, 129, 189, 0.2)',
+          ],
+          borderColor: [
+            'rgba(79, 129, 189, 1)',
+          ],
+          borderWidth: 2
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Number of Students over the years',
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20  
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
           }]
         },
-        options: {
-          title: {
-            display: true,
-            text: 'Number of Students over the years',
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-            fontSize:20  
-          },
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          },
-          tooltips: {
-            callbacks: {
-              label: function(tooltipItem, data) {
-                var dataset = data.datasets[tooltipItem.datasetIndex];
-                var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
-                  return previousValue + currentValue;
-                });
-                var currentValue = dataset.data[tooltipItem.index];
-                var percentage = Math.floor(((currentValue/total) * 100)+0.5);         
-                return percentage + "%";
-              }
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var dataset = data.datasets[tooltipItem.datasetIndex];
+              var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                return previousValue + currentValue;
+              });
+              var currentValue = dataset.data[tooltipItem.index];
+              var percentage = Math.floor(((currentValue/total) * 100)+0.5);         
+              return percentage + "%";
             }
           }
         }
-      });
-  
-    }).fail(function (response) {
-      console.log(response.responseText);
-    });
-    
-  })
-  
-  
-  $("#getFocusYear").click(function (event) {
-    $.ajax({
-      method: "GET",
-      url: "/data/list"
-    }).done(function (response) {
-  
-      console.log(response)
-      let noofStd = response.datas
-  
-      let counter = 0
-      let counterSLS = 0
-      let counterSESM_PHARM = 0
-      let numberOfStd = []
-      let numberOfSob = []
-      let numberOfOth = []
-      for (let i = 2013; i <= 2019; i++) {
-        noofStd.forEach((item, index) => {
-          if (item.year == i && item.School == "SECS") {
-            counter = counter + Number(item.no_of_Student)
-  
-          }
-          else if (item.year == i && item.School == "SoB") {
-            counterSLS = counterSLS + Number(item.no_of_Student)
-          }
-  
-          else if (item.year == i && (item.School == "Phar" || item.School == "SESM" || item.School == "SLASS" || item.School == "SLS")) {
-            counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
-          }
-  
-        }
-  
-        );
-  
-        numberOfStd.push(counter)
-        numberOfSob.push(counterSLS)
-        numberOfOth.push(counterSESM_PHARM)
-        counter = 0
-        counterSLS = 0
-        counterSESM_PHARM = 0
       }
-      var ctx = document.getElementById('myChart1');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [{
-            lineTension:0.1,
-            label: 'Number Of Students in SECS',
-            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+    });
+  }).fail(function (response) {
+    console.log(response.responseText);
+  });   
+})
   
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
+// myChart3: Schoolwise Interest in IUB (line)
+$("#getFocusYear").click(function (event) {
+  $.ajax({
+    method: "GET",
+    url: "/data/list"
+  }).done(function (response) {
+    console.log(response)
+    let noofStd = response.datas
   
-            ],
-            borderWidth: 2
-          }, {
-            lineTension:0.1,
-            label: 'Number Of Students in SoB',
-            data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
-  
-            borderColor: [
-              'rgba(220,180,0,1)',
-  
-            ],
-            borderWidth: 2
-          },
-          {
-            lineTension:0.1,
-            label: 'Number Of Students in Others',
-            data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
-  
-            borderColor: [
-              'rgba(180,130,0,1)',
-  
-            ],
-            borderWidth: 2
-          },
-          ]
-  
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
+    let counter = 0
+    let counterSLS = 0
+    let counterSESM_PHARM = 0
+    let numberOfStd = []
+    let numberOfSob = []
+    let numberOfOth = []
+      
+    for (let i = 2013; i <= 2019; i++) {
+      noofStd.forEach((item, index) => {
+        if (item.year == i && item.School == "SECS") {
+          counter = counter + Number(item.no_of_Student)
+        }
+        else if (item.year == i && item.School == "SoB") {
+          counterSLS = counterSLS + Number(item.no_of_Student)
+        }
+        else if (item.year == i && (item.School == "Phar" || item.School == "SESM" || item.School == "SLASS" || item.School == "SLS")) {
+          counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
         }
       });
   
-    }).fail(function (response) {
-      console.log(response.responseText);
-    });
-    
-  })
+      numberOfStd.push(counter)
+      numberOfSob.push(counterSLS)
+      numberOfOth.push(counterSESM_PHARM)
+      counter = 0
+      counterSLS = 0
+      counterSESM_PHARM = 0
+    }
+    var ctx = document.getElementById('myChart3');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        datasets: [{
+          lineTension:0.1,
+          label: 'Number Of Students in SECS',
+          data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
   
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+          ],
+          borderWidth: 2
+        }, 
+        {
+          lineTension:0.1,
+          label: 'Number Of Students in SoB',
+          data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+  
+          borderColor: [
+            'rgba(220,180,0,1)',
+          ],
+          borderWidth: 2
+        },
+        {
+          lineTension:0.1,
+          label: 'Number Of Students in Others',
+          data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+  
+          borderColor: [
+            'rgba(180,130,0,1)',
+          ],
+          borderWidth: 2
+        },
+      ]},
+      options: {
+        scales: {
+          xAxes: [{
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        },
+        title: {
+          display: true,
+          text: 'Schoolwise interest in IUB',
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20    
+        }
+           
+      }
+    });
+
+  }).fail(function (response) {
+    console.log(response.responseText);
+  });  
+})
+  
+  // myChart4: Schoolwise Interest in IUB (bar)
   $("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
@@ -393,7 +385,7 @@ $("#getFocusYear").click(function (event) {
             }]},
            title: {
              display: true,
-             text: 'Yearly semester wise SESM',
+             text: 'Schoolwise interest in IUB',
              fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
              fontSize:20  
             
@@ -408,9 +400,7 @@ $("#getFocusYear").click(function (event) {
   
   })
   
-  
-  
-  
+  // myChart5: Other Schools
   $("#getFocusYear").click(function (event) {
     $.ajax({
       method: "GET",
@@ -451,7 +441,7 @@ $("#getFocusYear").click(function (event) {
         counterSLS = 0
         counterSESM_PHARM = 0
       }
-      var ctx = document.getElementById('myChart3');
+      var ctx = document.getElementById('myChart5');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -497,7 +487,7 @@ $("#getFocusYear").click(function (event) {
         options: {
           title: {
             display: true,
-            text: 'Major wise Students interest @ SLASS',
+            text: 'Other Schools',
             fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
             fontSize:20  
           },
@@ -516,5 +506,3 @@ $("#getFocusYear").click(function (event) {
     });
     
   })
-  
-  

@@ -131,8 +131,11 @@ $("#tableMenu4 a").click(function(e){
     startYear =$("#startYearVal").val()
     finishYear =$("#finishYearVal").val()
 
+    let year=[]
     for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
+        
         
         // Major wise Student's interest @ SECS
         if (item.year == i && item.Major == "BSc - Computer Engineering") {
@@ -239,6 +242,7 @@ $("#tableMenu4 a").click(function(e){
 
 
       });
+      
 
       // Focus year graphs, Majors
       numberSECS.push(counterYearlyCE)
@@ -300,7 +304,7 @@ $("#tableMenu4 a").click(function(e){
       counterSummer = 0
     }
     
-   
+    console.log(year)
     
 
     // Focus year graphs
@@ -415,7 +419,7 @@ $("#tableMenu4 a").click(function(e){
      myChart2 = new Chart(ctx, {
       type: 'line',
       data:{
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
+        labels: year,
         datasets: [{
           label: 'Number Of Students in Computer Engineering',
           lineTension:0.1,

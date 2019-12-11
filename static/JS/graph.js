@@ -14,7 +14,9 @@ $("#getFocusYear").click(function (event) {
   
       let counter = 0
       let numberOfStd = []
-      for (let i = 2013; i <= 2019; i++) {
+      let year=[]
+      for (let i = startYear; i <= finishYear; i++) {
+        year.push(Number(i))
         noofStd.forEach((item, index) => {
           if (item.year == i) {
             counter = counter + Number(item.no_of_Student)
@@ -25,14 +27,15 @@ $("#getFocusYear").click(function (event) {
         numberOfStd.push(counter)
         counter = 0
       }
-      console.log(numberOfStd)
+      console.log(year)
+      //console.log(numberOfStd)
   
   
       var ctx = document.getElementById('myChart2');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+          labels: year,
           datasets: [{
             lineTension:0.1,
             label: 'Number Of Students',

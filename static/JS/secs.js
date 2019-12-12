@@ -33,6 +33,9 @@
 
   $("#MajorWiseStudentsSECS").click(function (event) {
     
+    $(".chartPDFunique").hide()
+    $(".chartPDFunique").removeClass("chartPDFunique")
+    
     getBtn();
     
     $(".dropdown").show();
@@ -341,14 +344,20 @@ $("#tableMenu4 a").click(function(e){
 
     // Focus year graphs
     var ctx = document.getElementById('myChart');
-      var myChart = new Chart(ctx, {
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
+    var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
           
           labels:['Computer Engineering', 'Computer Science', 'Computer Science & Engineering','Electrical and Electronic Engineering', 'Electronic and Telecommunication Engineering','Mathematics', 'Physics',],
           datasets: [{
             label: 'Number Of Students in SECS in ' + Yearvalue,
+<<<<<<< HEAD
             data: [numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
+=======
+            data:[numberSECS[0],numberSECS[1],numberSECS[2],numberSECS[3],numberSECS[4],numberSECS[5],numberSECS[6],],
+>>>>>>> 9146a1c6fc09a84735929c58657652322082f49b
             backgroundColor: [
               'rgba(248, 192, 165, 1)', //ce
                 'rgba(247, 191, 164, 1)', //cs
@@ -395,6 +404,8 @@ $("#tableMenu4 a").click(function(e){
       });
 
       var ctx = document.getElementById('myChart1');
+       $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
       var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -447,7 +458,9 @@ $("#tableMenu4 a").click(function(e){
     //   Line graph
     
     var ctx = document.getElementById('myChart2');
-     myChart2 = new Chart(ctx, {
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
+    myChart2 = new Chart(ctx, {
       type: 'line',
       data:{
         labels: years, //['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020',],
@@ -676,6 +689,8 @@ $("#tableMenu4 a").click(function(e){
 
     //   Area under the graph
     var ctx = document.getElementById('myChart3');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -899,7 +914,9 @@ $("#tableMenu4 a").click(function(e){
 
     //   SECS Dept Line Chart
     var ctx = document.getElementById('myChart4');
-     myChart4 = new Chart(ctx, {
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
+    myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
         labels: years,//['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
@@ -1007,6 +1024,8 @@ $("#tableMenu4 a").click(function(e){
 
     //SECS dept bar chart
     var ctx = document.getElementById('myChart5');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     myChart5 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -1113,6 +1132,8 @@ $("#tableMenu4 a").click(function(e){
 
     // Yearly semester wise SECS
     var ctx = document.getElementById('myChart6');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {

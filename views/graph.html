@@ -293,7 +293,6 @@
         document.getElementById("main").style.marginLeft = "0";
         document.getElementById("con").style.marginLeft = "0"; 
         }
-
         // refresh graphs
         function refresh() {
         document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
@@ -317,7 +316,6 @@
             $("#overall").hide();
             $("#label6").hide();
         }
-
         // upon pressing the get button
         function getBtn() {
             refresh();
@@ -339,7 +337,6 @@
                 $("#DownloadBtn").show();
                 $("#EditLine").show();
                 $("#textArea2").show();
-
                 // show radio buttons
                 $("#MajorWiseStudentsSECS").show();
                 $("#MajorWiseStudentsSLASS").show();
@@ -362,10 +359,8 @@
         // script for top of the page button
         //Get the button
         var mybutton = document.getElementById("topBtn");
-
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function() {scrollFunction()};
-
         function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             mybutton.style.display = "block";
@@ -373,7 +368,6 @@
             mybutton.style.display = "none";
         }
         }
-
         // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
         document.body.scrollTop = 0;

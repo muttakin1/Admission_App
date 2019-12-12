@@ -1113,6 +1113,8 @@ $("#SoB").click(function (event) {
       
     });
 
+    removeCanvas();
+
 
 
   }).fail(function (response) {

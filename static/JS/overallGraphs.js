@@ -951,6 +951,8 @@ $("#overall").click(function (event) {
             }
           }
         });
+        removeCanvas();
+
     
       }).fail(function (response) {
         console.log(response.responseText);

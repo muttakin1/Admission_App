@@ -602,6 +602,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     console.log(response.responseText);
   });
 
+  removeCanvas();
+
 
 
 })

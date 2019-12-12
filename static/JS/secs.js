@@ -1153,6 +1153,38 @@ $("#tableMenu4 a").click(function(e){
       }
     });
 
+
+    // $('#myChart7').remove();
+    // $('#myChart8').remove();
+    // $('#myChart9').remove();
+    // $('#myChart10').remove();
+    // $('#myChart11').remove();
+    // $('#myChart12').remove();
+    // $('#myChart13').remove();
+    // $('#myChart14').remove();
+    // $('#myChart15').remove();
+    // $('#myChart16').remove();
+    // $('#myChart17').remove();
+    // $('#myChart18').remove();
+    // $('#myChart19').remove();
+    // $('#myChart20').remove();
+    // $('#myChart21').remove();
+    // $('#myChart22').remove();
+    // $('#myChart23').remove();
+    // $('#myChart24').remove();
+    // $('#myChart25').remove();
+    // $('#myChart26').remove();
+    // $('#myChart27').remove();
+    // $('#myChart28').remove();
+    // $('#myChart29').remove();
+    // $('#myChart30').remove();
+    // $('#myChart31').remove();
+    // $('#myChart33').remove();
+    // $('#myChart34').remove();
+    // $('#myChart35').remove();
+    // $('#myChart36').remove();
+
+
   }).fail(function (response) {
     console.log(response.responseText);
   });

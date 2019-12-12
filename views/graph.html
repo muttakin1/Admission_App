@@ -140,6 +140,7 @@
              </div>
             </form>
 
+        <div id="canvasItems" class="canvasIt">
 
             <!-- Canvas and Edit textarea -->
             <canvas id="myChart" width="400" height="400"></canvas>
@@ -203,7 +204,7 @@
 
         
 
-            <br><br>
+            <!-- <br><br>
             <canvas id="myChart8" width="400" height="400"></canvas>
             <br><br>
            <canvas id="myChart9" width="400" height="400"></canvas>
@@ -274,7 +275,9 @@
             <br><br>
             <br><br>
             <canvas id="myChart36" width="400" height="400"></canvas>
-            <br><br>
+            <br><br> -->
+
+        </div>
 
     </div>
         <div id="elementH"></div>
@@ -296,8 +299,47 @@
 
         // refresh graphs
         function refresh() {
-        document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
+            document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
+            // appendCan();
         } 
+
+        function appendCan() {
+              var c8 ='<br><br><canvas id="myChart8" width="400" height="400"></canvas><br><br>'
+              var c9 ='<br><br><canvas id="myChart9" width="400" height="400"></canvas><br><br>'
+              var c10 ='<br><br><canvas id="myChart10" width="400" height="400"></canvas><br><br>'
+              var c11 ='<br><br><canvas id="myChart11" width="400" height="400"></canvas><br><br>'
+              var c12 ='<br><br><canvas id="myChart12" width="400" height="400"></canvas><br><br>'
+              var c13 ='<br><br><canvas id="myChart13" width="400" height="400"></canvas><br><br>'
+              var c14 ='<br><br><canvas id="myChart14" width="400" height="400"></canvas><br><br>'
+              var c15 ='<br><br><canvas id="myChart15" width="400" height="400"></canvas><br><br>'
+              var c16 ='<br><br><canvas id="myChart16" width="400" height="400"></canvas><br><br>'
+              var c17 ='<br><br><canvas id="myChart17" width="400" height="400"></canvas><br><br>'
+              var c18 ='<br><br><canvas id="myChart18" width="400" height="400"></canvas><br><br>'
+              var c19 ='<br><br><canvas id="myChart19" width="400" height="400"></canvas><br><br>'
+              var c20 ='<br><br><canvas id="myChart20" width="400" height="400"></canvas><br><br>'
+              var c21 ='<br><br><canvas id="myChart21" width="400" height="400"></canvas><br><br>'
+              var c22 ='<br><br><canvas id="myChart22" width="400" height="400"></canvas><br><br>'
+              var c23 ='<br><br><canvas id="myChart23" width="400" height="400"></canvas><br><br>'
+              var c24 ='<br><br><canvas id="myChart24" width="400" height="400"></canvas><br><br>'
+              var c25 ='<br><br><canvas id="myChart25" width="400" height="400"></canvas><br><br>'
+              var c26 ='<br><br><canvas id="myChart26" width="400" height="400"></canvas><br><br>'
+              var c27 ='<br><br><canvas id="myChart27" width="400" height="400"></canvas><br><br>'
+              var c28 ='<br><br><canvas id="myChart28" width="400" height="400"></canvas><br><br>'
+              var c29 ='<br><br><canvas id="myChart29" width="400" height="400"></canvas><br><br>'
+              var c30 ='<br><br><canvas id="myChart30" width="400" height="400"></canvas><br><br>'
+              var c31 ='<br><br><canvas id="myChart31" width="400" height="400"></canvas><br><br>'
+              var c32 ='<br><br><canvas id="myChart32" width="400" height="400"></canvas><br><br>'
+              var c33 ='<br><br><canvas id="myChart33" width="400" height="400"></canvas><br><br>'
+              var c34 ='<br><br><canvas id="myChart34" width="400" height="400"></canvas><br><br>'
+              var c35 ='<br><br><canvas id="myChart35" width="400" height="400"></canvas><br><br>'
+              var c36 ='<br><br><canvas id="myChart36" width="400" height="400"></canvas><br><br>'
+              
+              for(i = 8; i <37; i++) { 
+              $("#canvasItems").append(c8, c9, c10, c11,c12,c13,c14, c15, c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30, c31, c32, c33,c34,c35,c36); 
+
+            }
+        }
+
         
         // onload hide radio buttons
         function foo(){
@@ -321,6 +363,8 @@
         // upon pressing the get button
         function getBtn() {
             refresh();
+            appendCan();
+
             var focusYear = document.getElementById('focusYearVal').value;
             var per1 = document.getElementById('startYearVal').value;
             var per2 = document.getElementById('finishYearVal').value;

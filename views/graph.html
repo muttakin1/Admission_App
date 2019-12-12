@@ -69,7 +69,7 @@
         </div>
 
         <!-- Buttons for generating and editing graphs and PDF-->
-        <input class="btn" type="button" id="getFocusYear" style= "background:#FE9A0B;" onclick= "getBtn()" value="Get All Graphs">
+        <input class="btn" type="button" id="getFocusYearTT" style= "background:#FE9A0B;" onclick= "getBtn()" value="Get All Graphs">
         <input class="btn" type="button" id="DownloadBtn" style= "background:#FE9A0B;" onclick="print()"value="Download PDF">
         <input class="btn" type="button" id="EditLine" style= "background:#FE9A0B;" onclick="EditLine()"value="Edit Format">            
         <input class="btn" type="button" id="SaveLine" style= "background:#FE9A0B;" onclick="SaveEdit()"value="Save Format">
@@ -302,6 +302,14 @@
             document.getElementById("content").innerHTML = document.getElementById("content").innerHTML ;
             // appendCan();
         } 
+        document.getElementById("all").click(
+            appendCan()
+        );
+        document.getElementById("MajorWiseStudentsSECS").click(
+            removeCanvas()
+            // console.log("MajorWiseStudentsSECS")
+
+        );
 
         function appendCan() {
               var c8 ='<br><br><canvas id="myChart8" width="400" height="400"></canvas><br><br>'
@@ -334,11 +342,47 @@
               var c35 ='<br><br><canvas id="myChart35" width="400" height="400"></canvas><br><br>'
               var c36 ='<br><br><canvas id="myChart36" width="400" height="400"></canvas><br><br>'
               
+
               for(i = 8; i <37; i++) { 
               $("#canvasItems").append(c8, c9, c10, c11,c12,c13,c14, c15, c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30, c31, c32, c33,c34,c35,c36); 
 
             }
         }
+
+        function removeCanvas() {
+            console.log("removeCanvas");
+            // $('#myChart6').remove();
+            // $('#myChart7').remove();
+            $('#myChart8').remove();
+            $('#myChart9').remove();
+            $('#myChart10').remove();
+            $('#myChart11').remove();
+            $('#myChart12').remove();
+            $('#myChart13').remove();
+            $('#myChart14').remove();
+            $('#myChart15').remove();
+            $('#myChart16').remove();
+            $('#myChart17').remove();
+            $('#myChart18').remove();
+            $('#myChart19').remove();
+            $('#myChart20').remove();
+            $('#myChart21').remove();
+            $('#myChart22').remove();
+            $('#myChart23').remove();
+            $('#myChart24').remove();
+            $('#myChart25').remove();
+            $('#myChart26').remove();
+            $('#myChart27').remove();
+            $('#myChart28').remove();
+            $('#myChart29').remove();
+            $('#myChart30').remove();
+            $('#myChart31').remove();
+            $('#myChart33').remove();
+            $('#myChart34').remove();
+            $('#myChart35').remove();
+            $('#myChart36').remove();
+        }
+
 
         
         // onload hide radio buttons
@@ -363,7 +407,6 @@
         // upon pressing the get button
         function getBtn() {
             refresh();
-            appendCan();
 
             var focusYear = document.getElementById('focusYearVal').value;
             var per1 = document.getElementById('startYearVal').value;

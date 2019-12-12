@@ -1154,7 +1154,7 @@ $("#tableMenu4 a").click(function(e){
     });
 
 
-    // $('#myChart7').remove();
+    removeCanvas();
     // $('#myChart8').remove();
     // $('#myChart9').remove();
     // $('#myChart10').remove();

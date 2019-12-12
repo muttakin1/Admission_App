@@ -296,101 +296,101 @@ $("#getFocusYear").click(function (event) {
   // myChart3: Schoolwise Interest in IUB (line)
   $("#getFocusYear").click(function (event) {
     $.ajax({
-          method: "GET",
-          url: "/data/list"
-        }).done(function (response) {
-          console.log(response)
-          let noofStd = response.datas
+      method: "GET",
+      url: "/data/list"
+    }).done(function (response) {
+      console.log(response)
+      let noofStd = response.datas
+    
+      let counter = 0
+      let counterSLS = 0
+      let counterSESM_PHARM = 0
+      let numberOfStd = []
+      let numberOfSob = []
+      let numberOfOth = []
         
-          let counter = 0
-          let counterSLS = 0
-          let counterSESM_PHARM = 0
-          let numberOfStd = []
-          let numberOfSob = []
-          let numberOfOth = []
-            
-          let year=[]
-          for (let i = startYear; i <= finishYear; i++) {
-            year.push(Number(i))
-            noofStd.forEach((item, index) => {
-              if (item.year == i && item.School == "SECS") {
-                counter = counter + Number(item.no_of_Student)
-              }
-              else if (item.year == i && item.School == "SoB") {
-                counterSLS = counterSLS + Number(item.no_of_Student)
-              }
-              else if (item.year == i && (item.School == "Phar" || item.School == "SESM" || item.School == "SLASS" || item.School == "SLS")) {
-                counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
-              }
-            });
-        
-            numberOfStd.push(counter)
-            numberOfSob.push(counterSLS)
-            numberOfOth.push(counterSESM_PHARM)
-            counter = 0
-            counterSLS = 0
-            counterSESM_PHARM = 0
+      let year=[]
+      for (let i = startYear; i <= finishYear; i++) {
+        year.push(Number(i))
+        noofStd.forEach((item, index) => {
+          if (item.year == i && item.School == "SECS") {
+            counter = counter + Number(item.no_of_Student)
           }
-          var ctx = document.getElementById('myChart3');
-          var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-              labels: year,
-              datasets: [{
-                lineTension:0.1,
-                label: 'Number Of Students in SECS',
-                data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-        
-                borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                ],
-                borderWidth: 2
-              }, 
-              {
-                lineTension:0.1,
-                label: 'Number Of Students in SoB',
-                data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
-        
-                borderColor: [
-                  'rgba(220,180,0,1)',
-                ],
-                borderWidth: 2
-              },
-              {
-                lineTension:0.1,
-                label: 'Number Of Students in Others',
-                data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
-        
-                borderColor: [
-                  'rgba(180,130,0,1)',
-                ],
-                borderWidth: 2
-              },
-            ]},
-            options: {
-              scales: {
-                xAxes: [{
-                }],
-                yAxes: [{
-                  ticks: {
-                    beginAtZero: true
-                  }
-                }]
-              },
-              title: {
-                display: true,
-                text: 'Schoolwise interest in IUB',
-                fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-                fontSize:20    
+          else if (item.year == i && item.School == "SoB") {
+            counterSLS = counterSLS + Number(item.no_of_Student)
+          }
+          else if (item.year == i && (item.School == "Phar" || item.School == "SESM" || item.School == "SLASS" || item.School == "SLS")) {
+            counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
+          }
+        });
+    
+        numberOfStd.push(counter)
+        numberOfSob.push(counterSLS)
+        numberOfOth.push(counterSESM_PHARM)
+        counter = 0
+        counterSLS = 0
+        counterSESM_PHARM = 0
+      }
+      var ctx = document.getElementById('myChart3');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: year,
+          datasets: [{
+            lineTension:0.1,
+            label: 'Number Of Students in SECS',
+            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+    
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+            ],
+            borderWidth: 2
+          }, 
+          {
+            lineTension:0.1,
+            label: 'Number Of Students in SoB',
+            data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+    
+            borderColor: [
+              'rgba(220,180,0,1)',
+            ],
+            borderWidth: 2
+          },
+          {
+            lineTension:0.1,
+            label: 'Number Of Students in Others',
+            data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+    
+            borderColor: [
+              'rgba(180,130,0,1)',
+            ],
+            borderWidth: 2
+          },
+        ]},
+        options: {
+          scales: {
+            xAxes: [{
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
               }
-                 
-            }
-          });
-      
+            }]
+          },
+          title: {
+            display: true,
+            text: 'Schoolwise interest in IUB',
+            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize:20    
+          }
+             
+        }
+      });
   
-    }).fail(function (response) {
-      console.log(response.responseText);
-    });  
+
+}).fail(function (response) {
+  console.log(response.responseText);
+});  
   })
     
     // myChart4: Schoolwise Interest in IUB (bar)

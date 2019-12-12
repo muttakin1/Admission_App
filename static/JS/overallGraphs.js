@@ -277,7 +277,7 @@ $("#overall").click(function (event) {
       }
       console.log(numberOfStd)
     
-      var ctx = document.getElementById('myChart2');
+      var ctx = document.getElementById('myChart3');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -326,8 +326,8 @@ $("#overall").click(function (event) {
         }
       });
 
-       // Yearly semester wise SECS
-    var ctx = document.getElementById('myChart6');
+       // Yearly semester wise Number of Students
+    var ctx = document.getElementById('myChart2');
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -503,7 +503,7 @@ $("#overall").click(function (event) {
       counterSls = 0
       counterSlass = 0
     }
-    var ctx = document.getElementById('myChart3');
+    var ctx = document.getElementById('myChart4');
     var myChart = new Chart(ctx, {
       type: 'line',
       data:
@@ -677,7 +677,7 @@ $("#overall").click(function (event) {
           counterSls = 0
           counterSlass = 0
         }
-        var ctx = document.getElementById('myChart4');
+        var ctx = document.getElementById('myChart5');
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -892,7 +892,7 @@ $("#overall").click(function (event) {
           counterSLS = 0
           counterSESM_PHARM = 0
         }
-        var ctx = document.getElementById('myChart5');
+        var ctx = document.getElementById('myChart6');
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {

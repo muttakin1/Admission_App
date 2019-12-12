@@ -211,6 +211,190 @@ $("#getFocusYear").click(function (event) {
     }
     })
 
+
+//myChart2: Number of Students
+$("#getFocusYear").click(function (event) {
+  $.ajax({
+    method: "GET",
+    url: "/data/list"
+  }).done(function (response) { 
+    let noofStd = response.datas
+
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
+    
+   // Yearly semester wise SECS
+  let counterSpring = 0
+  let counterAutumn = 0
+  let counterSummer = 0
+
+  let numberAutumn=[]
+  let numberSpring=[]
+  let numberSummer=[]   
+
+    let counter = 0
+    let numberOfStd = []
+   
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
+        noofStd.forEach((item, index) => {
+          if (item.year == i) {
+            counter = counter + Number(item.no_of_Student)
+          }
+
+            // Yearly semester wise SECS
+      if (item.year == i  && item.Semester == "3") {
+        counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+      }
+
+      if (item.year == i  && item.Semester == "1") {
+        counterSpring = counterSpring + Number(item.no_of_Student)
+
+      }
+
+      if (item.year == i  && item.Semester == "2") {
+        counterSummer = counterSummer + Number(item.no_of_Student)
+
+      }
+        }
+      );
+      numberOfStd.push(counter)
+    // Yearly semester wise SECS
+    numberAutumn.push(counterAutumn)
+    numberSpring.push(counterSpring)
+    numberSummer.push(counterSummer) 
+
+    // reinitializing the counter
+    counterAutumn = 0
+    counterSpring = 0
+    counterSummer = 0
+    counter = 0
+    }
+    console.log(numberOfStd)
+
+        // Yearly semester wise Number of Students
+        var ctx = document.getElementById('myChart2');
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: year,
+            datasets: [{
+              label: 'Autumn',
+              fill: false,
+              data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+              backgroundColor: [
+            
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',         
+            
+            ],
+              borderColor: [
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+    
+              ],
+              borderWidth: 2
+            },
+            {
+              label: 'Spring',
+              fill: false,
+              data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+              backgroundColor: [
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+              ],
+              borderColor: [
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+    
+              ],
+              borderWidth: 2
+            },
+            {
+              label: 'Summer',
+              fill: false,
+              data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+              backgroundColor: [
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+              ],
+              borderColor: [
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+    
+              ],
+              borderWidth: 2
+            },
+    
+            ]
+    
+          },
+          options: {
+            scales: {
+              xAxes: [{
+                stacked: true
+              }],
+              yAxes: [{
+                stacked: true,
+                ticks: {
+                  beginAtZero: true
+                }
+              }],},
+            title: {
+              display: true,
+              text: 'Yearly semester wise Number of Students',
+              fontSize:20  
+             
+              
+            }
+          }
+        });
+    
+        }).fail(function (response) {
+          console.log(response.responseText);
+        });   
+      })
+
+
+
     
 //myChart2: Number of Students
 $("#getFocusYear").click(function (event) {
@@ -240,7 +424,7 @@ $("#getFocusYear").click(function (event) {
       }
       console.log(numberOfStd)
     
-      var ctx = document.getElementById('myChart2');
+      var ctx = document.getElementById('myChart3');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -351,7 +535,7 @@ $("#getFocusYear").click(function (event) {
       counterSls = 0
       counterSlass = 0
     }
-    var ctx = document.getElementById('myChart3');
+    var ctx = document.getElementById('myChart4');
     var myChart = new Chart(ctx, {
       type: 'line',
       data:
@@ -525,7 +709,7 @@ $("#getFocusYear").click(function (event) {
           counterSls = 0
           counterSlass = 0
         }
-        var ctx = document.getElementById('myChart4');
+        var ctx = document.getElementById('myChart5');
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -740,7 +924,7 @@ $("#getFocusYear").click(function (event) {
           counterSLS = 0
           counterSESM_PHARM = 0
         }
-        var ctx = document.getElementById('myChart5');
+        var ctx = document.getElementById('myChart6');
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
@@ -1052,7 +1236,7 @@ $("#getFocusYear").click(function (event) {
         
     
         // Focus year graphs
-        var ctx = document.getElementById('myChart6');
+        var ctx = document.getElementById('myChart7');
           var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -1107,7 +1291,7 @@ $("#getFocusYear").click(function (event) {
             }
           });
     
-          var ctx = document.getElementById('myChart7');
+          var ctx = document.getElementById('myChart9');
           var myChart7 = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -1388,7 +1572,7 @@ $("#getFocusYear").click(function (event) {
         
     
         //   Area under the graph
-        var ctx = document.getElementById('myChart9');
+        var ctx = document.getElementById('myChart10');
         myChart9 = new Chart(ctx, {
           type: 'line',
           data: {
@@ -1611,7 +1795,7 @@ $("#getFocusYear").click(function (event) {
         });
     
         //   SECS Dept Line Chart
-        var ctx = document.getElementById('myChart10');
+        var ctx = document.getElementById('myChart11');
          myChart10 = new Chart(ctx, {
           type: 'line',
           data: {
@@ -1671,7 +1855,7 @@ $("#getFocusYear").click(function (event) {
         });
     
         //SECS dept bar chart
-        var ctx = document.getElementById('myChart11');
+        var ctx = document.getElementById('myChart12');
         myChart11 = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -1777,7 +1961,7 @@ $("#getFocusYear").click(function (event) {
         });
     
         // Yearly semester wise SECS
-        var ctx = document.getElementById('myChart12');
+        var ctx = document.getElementById('myChart13');
         var myChart12 = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -2055,7 +2239,7 @@ $("#getFocusYear").click(function (event) {
     }
     console.log(year)
 
-    var ctx = document.getElementById('myChart13');
+    var ctx = document.getElementById('myChart14');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2103,7 +2287,7 @@ $("#getFocusYear").click(function (event) {
 
       }
     });
-    var ctx = document.getElementById('myChart14');
+    var ctx = document.getElementById('myChart15');
     var myChart14 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2152,7 +2336,7 @@ $("#getFocusYear").click(function (event) {
 
 
     //   Line graph
-    var ctx = document.getElementById('myChart15');
+    var ctx = document.getElementById('myChart16');
     myChart15 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2227,7 +2411,7 @@ $("#getFocusYear").click(function (event) {
     });
 
     //   Area under the graph
-    var ctx = document.getElementById('myChart16');
+    var ctx = document.getElementById('myChart17');
     myChart16 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2320,7 +2504,7 @@ $("#getFocusYear").click(function (event) {
     });
 
      // Yearly semester wise SESM
-     var ctx = document.getElementById('myChart17');
+     var ctx = document.getElementById('myChart18');
       myChart17 = new Chart(ctx, {
        type: 'bar',
        data: {
@@ -2709,7 +2893,7 @@ $("#getFocusYear").click(function (event) {
     }
 
 
-    var ctx = document.getElementById('myChart18');
+    var ctx = document.getElementById('myChart19');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2765,7 +2949,7 @@ $("#getFocusYear").click(function (event) {
     });
 
 
-    var ctx = document.getElementById('myChart19');
+    var ctx = document.getElementById('myChart20');
     var myChart19 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2820,7 +3004,7 @@ $("#getFocusYear").click(function (event) {
 
 
     //   Line graph
-    var ctx = document.getElementById('myChart20');
+    var ctx = document.getElementById('myChart21');
     myChart20 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2928,7 +3112,7 @@ $("#getFocusYear").click(function (event) {
     });
 
     //   Area under the graph
-    var ctx = document.getElementById('myChart21');
+    var ctx = document.getElementById('myChart22');
     myChart21 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3040,7 +3224,7 @@ $("#getFocusYear").click(function (event) {
     });
 
     //   SLASS Dept
-    var ctx = document.getElementById('myChart22');
+    var ctx = document.getElementById('myChart23');
     myChart22 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3122,7 +3306,7 @@ $("#getFocusYear").click(function (event) {
       }
     });
 
-    var ctx = document.getElementById('myChart23');
+    var ctx = document.getElementById('myChart24');
     var myChart23 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -3290,7 +3474,7 @@ $("#getFocusYear").click(function (event) {
     });
 
     // Yearly semester wise SLASS
-    var ctx = document.getElementById('myChart24');
+    var ctx = document.getElementById('myChart25');
     var myChart24 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -3540,7 +3724,7 @@ $("#getFocusYear").click(function (event) {
       counterSummer = 0
     }
 
-    var ctx = document.getElementById('myChart25');
+    var ctx = document.getElementById('myChart26');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -3588,7 +3772,7 @@ $("#getFocusYear").click(function (event) {
     })
 
 
-    var ctx = document.getElementById('myChart26');
+    var ctx = document.getElementById('myChart27');
     var myChart26 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -3636,7 +3820,7 @@ $("#getFocusYear").click(function (event) {
     });
 
     //   Line graph
-    var ctx = document.getElementById('myChart27');
+    var ctx = document.getElementById('myChart28');
     myChart27 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3697,7 +3881,7 @@ $("#getFocusYear").click(function (event) {
     });
 
     //   Area under the graph
-    var ctx = document.getElementById('myChart28');
+    var ctx = document.getElementById('myChart29');
     myChart28 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3761,7 +3945,7 @@ $("#getFocusYear").click(function (event) {
     });
 
       // Yearly semester wise SLS
-      var ctx = document.getElementById('myChart29');
+      var ctx = document.getElementById('myChart30');
        myChart29 = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -4093,7 +4277,7 @@ $("#getFocusYear").click(function (event) {
 
 
 
-    var ctx = document.getElementById('myChart30');
+    var ctx = document.getElementById('myChart31');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -4152,7 +4336,7 @@ $("#getFocusYear").click(function (event) {
 
       }
     });
-    var ctx = document.getElementById('myChart31');
+    var ctx = document.getElementById('myChart32');
     var myChart31 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -4208,7 +4392,7 @@ $("#getFocusYear").click(function (event) {
         }
       }
     });
-    var ctx = document.getElementById('myChart32');
+    var ctx = document.getElementById('myChart33');
     myChart32 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -4508,7 +4692,7 @@ $("#getFocusYear").click(function (event) {
         }
       }
     });
-    var ctx = document.getElementById('myChart33');
+    var ctx = document.getElementById('myChart34');
     myChart33 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -4821,7 +5005,7 @@ $("#getFocusYear").click(function (event) {
     });
 
       // Yearly semester wise SoB
-      var ctx = document.getElementById('myChart34');
+      var ctx = document.getElementById('myChart35');
       var myChart34 = new Chart(ctx, {
         type: 'bar',
         data: {

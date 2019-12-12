@@ -11,6 +11,41 @@ $("#getFocusYear").click(function (event) {
        alert("Please Enter Year between 2013 to 2019!");
     }
     else{
+
+      $(".dropdown").show();
+      $("#content").show();
+  
+      //Edit graphs functions
+      $("#tableMenu2 a").click(function(e){
+        console.log("hello")
+        e.preventDefault(); // cancel the link behaviour
+        var selText = $(this).text();
+        $("#tableButton2").text(selText);
+        console.log(selText)
+        //console.log(myChart.config.options.type)
+        myChart2.config.type = selText
+        myChart2.update()
+    });
+  
+    $("#tableMenu3 a").click(function(e){
+      e.preventDefault(); // cancel the link behaviour
+      var selText = $(this).text();
+      $("#tableButton3").text(selText);
+      console.log(selText)
+      //console.log(myChart.config.options.type)
+      myChart3.config.type = selText
+      myChart3.update()
+  });
+  $("#tableMenu4 a").click(function(e){
+    e.preventDefault(); // cancel the link behaviour
+    var selText = $(this).text();
+    $("#tableButton4").text(selText);
+    console.log(selText)
+    //console.log(myChart.config.options.type)
+    myChart4.config.type = selText
+    myChart4.update()
+  });
+  
   
       $.ajax({
         method: "GET",

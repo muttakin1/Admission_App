@@ -334,7 +334,7 @@ $("#SoB").click(function (event) {
 
       }
     });
-    var ctx = document.getElementById('myChart5');
+    var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -686,7 +686,7 @@ $("#SoB").click(function (event) {
         },
       }
     });
-    var ctx = document.getElementById('myChart2');
+    var ctx = document.getElementById('myChart3');
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {

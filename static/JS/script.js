@@ -292,101 +292,107 @@ var emptyImg2= "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcsAAAHLCAYAAACnAr
 // Gets texts from the div and saves it in pdf 
 var doc = new jsPDF('portrait');
 
-var newCanvas = document.querySelector('#myChart');
-var newCanvas1 = document.querySelector('#myChart1');
-var newCanvas2 = document.querySelector('#myChart2');
-var newCanvas3 = document.querySelector('#myChart3');
-var newCanvas4 = document.querySelector('#myChart4');
-var newCanvas5 = document.querySelector('#myChart5');
-var newCanvas6 = document.querySelector('#myChart6');
-var newCanvas7 = document.querySelector('#myChart7');
+// var newCanvas = document.querySelector('#myChart');
+// var newCanvas1 = document.querySelector('#myChart1');
+// var newCanvas2 = document.querySelector('#myChart2');
+// var newCanvas3 = document.querySelector('#myChart3');
+// var newCanvas4 = document.querySelector('#myChart4');
+// var newCanvas5 = document.querySelector('#myChart5');
+// var newCanvas6 = document.querySelector('#myChart6');
+// var newCanvas7 = document.querySelector('#myChart7');
 
-var newCanvas8 = document.querySelector('#myChart8');
-var newCanvas9 = document.querySelector('#myChart9');
-var newCanvas10 = document.querySelector('#myChart10');
-var newCanvas11 = document.querySelector('#myChart11');
-var newCanvas12 = document.querySelector('#myChart12');
-var newCanvas13 = document.querySelector('#myChart13');
-var newCanvas14 = document.querySelector('#myChart14');
-var newCanvas15 = document.querySelector('#myChart15');
+// var newCanvas8 = document.querySelector('#myChart8');
+// var newCanvas9 = document.querySelector('#myChart9');
+// var newCanvas10 = document.querySelector('#myChart10');
+// var newCanvas11 = document.querySelector('#myChart11');
+// var newCanvas12 = document.querySelector('#myChart12');
+// var newCanvas13 = document.querySelector('#myChart13');
+// var newCanvas14 = document.querySelector('#myChart14');
+// var newCanvas15 = document.querySelector('#myChart15');
 
-var newCanvas16 = document.querySelector('#myChart16');
-var newCanvas17 = document.querySelector('#myChart17');
-var newCanvas18 = document.querySelector('#myChart18');
-var newCanvas19 = document.querySelector('#myChart19');
-var newCanvas20 = document.querySelector('#myChart20');
-var newCanvas21 = document.querySelector('#myChart21');
-var newCanvas22 = document.querySelector('#myChart22');
-var newCanvas23 = document.querySelector('#myChart23');
+// var newCanvas16 = document.querySelector('#myChart16');
+// var newCanvas17 = document.querySelector('#myChart17');
+// var newCanvas18 = document.querySelector('#myChart18');
+// var newCanvas19 = document.querySelector('#myChart19');
+// var newCanvas20 = document.querySelector('#myChart20');
+// var newCanvas21 = document.querySelector('#myChart21');
+// var newCanvas22 = document.querySelector('#myChart22');
+// var newCanvas23 = document.querySelector('#myChart23');
 
-var newCanvas24 = document.querySelector('#myChart24');
-var newCanvas25 = document.querySelector('#myChart25');
-var newCanvas26 = document.querySelector('#myChart26');
-var newCanvas27 = document.querySelector('#myChart27');
-var newCanvas28 = document.querySelector('#myChart28');
-var newCanvas29 = document.querySelector('#myChart29');
-var newCanvas30 = document.querySelector('#myChart30');
-var newCanvas31 = document.querySelector('#myChart31');
+// var newCanvas24 = document.querySelector('#myChart24');
+// var newCanvas25 = document.querySelector('#myChart25');
+// var newCanvas26 = document.querySelector('#myChart26');
+// var newCanvas27 = document.querySelector('#myChart27');
+// var newCanvas28 = document.querySelector('#myChart28');
+// var newCanvas29 = document.querySelector('#myChart29');
+// var newCanvas30 = document.querySelector('#myChart30');
+// var newCanvas31 = document.querySelector('#myChart31');
 
-var newCanvas32 = document.querySelector('#myChart32');
-var newCanvas33 = document.querySelector('#myChart33');
-var newCanvas34 = document.querySelector('#myChart34');
-var newCanvas35 = document.querySelector('#myChart35');
-var newCanvas36 = document.querySelector('#myChart36');
+// var newCanvas32 = document.querySelector('#myChart32');
+// var newCanvas33 = document.querySelector('#myChart33');
+// var newCanvas34 = document.querySelector('#myChart34');
+// var newCanvas35 = document.querySelector('#myChart35');
+// var newCanvas36 = document.querySelector('#myChart36');
 
-//create image from dummy canvas
-var newCanvasImg0 = newCanvas.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg1 = newCanvas1.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg2 = newCanvas2.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg3 = newCanvas3.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg4 = newCanvas4.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg5 = newCanvas5.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg6 = newCanvas6.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg7 = newCanvas7.toDataURL("image/png", "image/octet-stream");
+// //create image from dummy canvas
+// var newCanvasImg0 = newCanvas.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg1 = newCanvas1.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg2 = newCanvas2.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg3 = newCanvas3.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg4 = newCanvas4.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg5 = newCanvas5.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg6 = newCanvas6.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg7 = newCanvas7.toDataURL("image/png", "image/octet-stream");
 
-var newCanvasImg8 = newCanvas8.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg9 = newCanvas9.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg10 = newCanvas10.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg11 = newCanvas11.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg12 = newCanvas12.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg13 = newCanvas13.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg14 = newCanvas14.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg15 = newCanvas15.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg8 = newCanvas8.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg9 = newCanvas9.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg10 = newCanvas10.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg11 = newCanvas11.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg12 = newCanvas12.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg13 = newCanvas13.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg14 = newCanvas14.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg15 = newCanvas15.toDataURL("image/png", "image/octet-stream");
 
-var newCanvasImg16 = newCanvas16.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg17 = newCanvas17.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg18 = newCanvas18.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg19 = newCanvas19.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg20 = newCanvas20.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg21 = newCanvas21.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg22 = newCanvas22.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg23 = newCanvas23.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg16 = newCanvas16.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg17 = newCanvas17.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg18 = newCanvas18.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg19 = newCanvas19.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg20 = newCanvas20.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg21 = newCanvas21.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg22 = newCanvas22.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg23 = newCanvas23.toDataURL("image/png", "image/octet-stream");
 
-var newCanvasImg24 = newCanvas24.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg25 = newCanvas25.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg26 = newCanvas26.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg27 = newCanvas27.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg28 = newCanvas28.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg29 = newCanvas29.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg30 = newCanvas30.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg31 = newCanvas31.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg24 = newCanvas24.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg25 = newCanvas25.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg26 = newCanvas26.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg27 = newCanvas27.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg28 = newCanvas28.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg29 = newCanvas29.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg30 = newCanvas30.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg31 = newCanvas31.toDataURL("image/png", "image/octet-stream");
 
-var newCanvasImg32 = newCanvas32.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg33 = newCanvas33.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg34 = newCanvas34.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg35 = newCanvas35.toDataURL("image/png", "image/octet-stream");
-var newCanvasImg36 = newCanvas36.toDataURL("image/png", "image/octet-stream");
-
-
-console.log("newCanvas1="+ newCanvas1);
-console.log("newCanvas10="+newCanvas10);
-console.log("newCanvasImg1="+ newCanvasImg1);
-console.log("newCanvasImg10="+newCanvasImg10);
-console.log("newCanvasImg12="+newCanvasImg12);
+// var newCanvasImg32 = newCanvas32.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg33 = newCanvas33.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg34 = newCanvas34.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg35 = newCanvas35.toDataURL("image/png", "image/octet-stream");
+// var newCanvasImg36 = newCanvas36.toDataURL("image/png", "image/octet-stream");
 
 
-var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newCanvasImg4, newCanvasImg5, newCanvasImg6, newCanvasImg7, newCanvasImg8,newCanvasImg9, newCanvasImg10, newCanvasImg11, newCanvasImg12, newCanvasImg13, newCanvasImg14, newCanvasImg15,newCanvasImg16,newCanvasImg17,newCanvasImg18,newCanvasImg19,newCanvasImg20,newCanvasImg21,newCanvasImg22,newCanvasImg23,newCanvasImg24,newCanvasImg25,newCanvasImg26,newCanvasImg27,newCanvasImg28,newCanvasImg29,newCanvasImg30,newCanvasImg31,newCanvasImg32,newCanvasImg33,newCanvasImg34,newCanvasImg35,newCanvasImg36];
+// console.log("newCanvas1="+ newCanvas1);
+// console.log("newCanvas10="+newCanvas10);
+// console.log("newCanvasImg1="+ newCanvasImg1);
+// console.log("newCanvasImg10="+newCanvasImg10);
+// console.log("newCanvasImg12="+newCanvasImg12);
 
+
+// var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newCanvasImg4, newCanvasImg5, newCanvasImg6, newCanvasImg7, newCanvasImg8,newCanvasImg9, newCanvasImg10, newCanvasImg11, newCanvasImg12, newCanvasImg13, newCanvasImg14, newCanvasImg15,newCanvasImg16,newCanvasImg17,newCanvasImg18,newCanvasImg19,newCanvasImg20,newCanvasImg21,newCanvasImg22,newCanvasImg23,newCanvasImg24,newCanvasImg25,newCanvasImg26,newCanvasImg27,newCanvasImg28,newCanvasImg29,newCanvasImg30,newCanvasImg31,newCanvasImg32,newCanvasImg33,newCanvasImg34,newCanvasImg35,newCanvasImg36];
+
+var charts=document.querySelectorAll(".chartPDFunique")
+
+var chartToImages=[]
+for (let i =0; i<charts.length; i++){
+  chartToImages.push(charts[i].toDataURL("image/png", "image/octet-stream"))
+}
 
   var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
   var pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
@@ -434,25 +440,25 @@ var imgArray = [newCanvasImg0, newCanvasImg1, newCanvasImg2, newCanvasImg3, newC
 //         console.log(imgArray[i] + " Canvas is Empty");
 //       }
 //   }
-for(i = 0; i <36; i+=2) { 
-      if(imgArray[i]!=emptyImg){
-        console.log("full");
+for(i = 0; i <chartToImages.length; i++) { 
+      // if(imgArray[i]!=emptyImg){
+      //   console.log("full");
         // Graph Page Start:    
         doc.addPage('a4','p');
         doc.addImage(img, 'JPEG',160,10,30,30 );
-        doc.addImage(imgArray[i], 'JPEG', 50, 40, 115, 100 );
+        doc.addImage(chartToImages[i], 'JPEG', 50, 40, 115, 100 );
 
-         if(imgArray[i+1]!=emptyImg){
-          // console.log("full");
-           doc.addImage(imgArray[i+1], 'JPEG', 50, 155, 115, 100 );
-         }
-         else {
-          console.log("empty 2");
-         }
-      }
-      else {
-        console.log(imgArray[i] + " Canvas is Empty");
-      }
+      //    if(imgArray[i+1]!=emptyImg){
+      //     // console.log("full");
+      //      doc.addImage(imgArray[i+1], 'JPEG', 50, 155, 115, 100 );
+      //    }
+      //    else {
+      //     console.log("empty 2");
+      //    }
+      // }
+      // else {
+      //   console.log(imgArray[i] + " Canvas is Empty");
+      // }
   }
 
 

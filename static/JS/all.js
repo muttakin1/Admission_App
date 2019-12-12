@@ -214,6 +214,189 @@ $("#all").click(function (event) {
     
 //myChart2: Number of Students
 $("#all").click(function (event) {
+  $.ajax({
+    method: "GET",
+    url: "/data/list"
+  }).done(function (response) { 
+    let noofStd = response.datas
+
+    startYear =$("#startYearVal").val()
+    finishYear =$("#finishYearVal").val()
+    
+   // Yearly semester wise SECS
+  let counterSpring = 0
+  let counterAutumn = 0
+  let counterSummer = 0
+
+  let numberAutumn=[]
+  let numberSpring=[]
+  let numberSummer=[]   
+
+    let counter = 0
+    let numberOfStd = []
+   
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
+        noofStd.forEach((item, index) => {
+          if (item.year == i) {
+            counter = counter + Number(item.no_of_Student)
+          }
+
+            // Yearly semester wise SECS
+      if (item.year == i  && item.Semester == "3") {
+        counterAutumn = counterAutumn + Number(item.no_of_Student)
+
+      }
+
+      if (item.year == i  && item.Semester == "1") {
+        counterSpring = counterSpring + Number(item.no_of_Student)
+
+      }
+
+      if (item.year == i  && item.Semester == "2") {
+        counterSummer = counterSummer + Number(item.no_of_Student)
+
+      }
+        }
+      );
+      numberOfStd.push(counter)
+    // Yearly semester wise SECS
+    numberAutumn.push(counterAutumn)
+    numberSpring.push(counterSpring)
+    numberSummer.push(counterSummer) 
+
+    // reinitializing the counter
+    counterAutumn = 0
+    counterSpring = 0
+    counterSummer = 0
+    counter = 0
+    }
+    console.log(numberOfStd)
+
+        // Yearly semester wise Number of Students
+        var ctx = document.getElementById('myChart2');
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: year,
+            datasets: [{
+              label: 'Autumn',
+              fill: false,
+              data: [numberAutumn[0], numberAutumn[1], numberAutumn[2], numberAutumn[3], numberAutumn[4], numberAutumn[5], numberAutumn[6], numberAutumn[7],],
+              backgroundColor: [
+            
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',
+              'rgba(155,187,89,1)', 
+              'rgba(155,187,89,1)',         
+            
+            ],
+              borderColor: [
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+                'rgba(155,187,89,1)',
+    
+              ],
+              borderWidth: 2
+            },
+            {
+              label: 'Spring',
+              fill: false,
+              data: [numberSpring[0], numberSpring[1], numberSpring[2], numberSpring[3], numberSpring[4], numberSpring[5], numberSpring[6], numberSpring[7],],
+              backgroundColor: [
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+              ],
+              borderColor: [
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+                'rgba(79,129,189, 1)',
+    
+              ],
+              borderWidth: 2
+            },
+            {
+              label: 'Summer',
+              fill: false,
+              data: [numberSummer[0], numberSummer[1], numberSummer[2], numberSummer[3], numberSummer[4], numberSummer[5], numberSummer[6], numberSummer[7],],
+              backgroundColor: [
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+              ],
+              borderColor: [
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+                'rgba(192,80,77, 1)',
+    
+              ],
+              borderWidth: 2
+            },
+    
+            ]
+    
+          },
+          options: {
+            scales: {
+              xAxes: [{
+                stacked: true
+              }],
+              yAxes: [{
+                stacked: true,
+                ticks: {
+                  beginAtZero: true
+                }
+              }],},
+            title: {
+              display: true,
+              text: 'Yearly semester wise Number of Students',
+              fontSize:20  
+             
+              
+            }
+          }
+        });
+    
+        }).fail(function (response) {
+          console.log(response.responseText);
+        });   
+      })
+
+
+    
+//myChart2: Number of Students
+$("#all").click(function (event) {
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -237,7 +420,7 @@ $("#all").click(function (event) {
       }
       console.log(numberOfStd)
     
-      var ctx = document.getElementById('myChart2');
+      var ctx = document.getElementById('myChart3');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -291,102 +474,179 @@ $("#all").click(function (event) {
   })
     
   // myChart3: Schoolwise Interest in IUB (line)
-  $("#all").click(function (event) {
-    $.ajax({
-      method: "GET",
-      url: "/data/list"
-    }).done(function (response) {
-      console.log(response)
-      let noofStd = response.datas
-    
-      let counter = 0
-      let counterSLS = 0
-      let counterSESM_PHARM = 0
-      let numberOfStd = []
-      let numberOfSob = []
-      let numberOfOth = []
+ $("#all").click(function (event) {
+  $.ajax({
+    method: "GET",
+    url: "/data/list"
+  }).done(function (response) {
+    console.log(response)
+    let noofStd = response.datas
+
+    let counter = 0
+    let counterSLS = 0
+    let counterSESM_PHARM = 0
+    let counterSlass = 0
+    let counterSls = 0
+    let numberOfStd = []
+    let numberOfSob = []
+    let numberOfOth = []
+    let numberOfSlass = []
+    let numberOfSls = []
+      
+    for (let i = 2013; i <= 2019; i++) {
+      noofStd.forEach((item, index) => {
+        if (item.year == i && item.School == "SECS") {
+          counter = counter + Number(item.no_of_Student)
+        }
+        else if (item.year == i && item.School == "SoB") {
+          counterSLS = counterSLS + Number(item.no_of_Student)
+        }
         
-      for (let i = 2013; i <= 2019; i++) {
-        noofStd.forEach((item, index) => {
-          if (item.year == i && item.School == "SECS") {
-            counter = counter + Number(item.no_of_Student)
-          }
-          else if (item.year == i && item.School == "SoB") {
-            counterSLS = counterSLS + Number(item.no_of_Student)
-          }
-          else if (item.year == i && (item.School == "Phar" || item.School == "SESM" || item.School == "SLASS" || item.School == "SLS")) {
-            counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
-          }
-        });
-    
-        numberOfStd.push(counter)
-        numberOfSob.push(counterSLS)
-        numberOfOth.push(counterSESM_PHARM)
-        counter = 0
-        counterSLS = 0
-        counterSESM_PHARM = 0
-      }
-      var ctx = document.getElementById('myChart3');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-          datasets: [{
-            lineTension:0.1,
-            label: 'Number Of Students in SECS',
-            data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
-    
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-            ],
-            borderWidth: 2
-          }, 
-          {
-            lineTension:0.1,
-            label: 'Number Of Students in SoB',
-            data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
-    
-            borderColor: [
-              'rgba(220,180,0,1)',
-            ],
-            borderWidth: 2
-          },
-          {
-            lineTension:0.1,
-            label: 'Number Of Students in Others',
-            data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
-    
-            borderColor: [
-              'rgba(180,130,0,1)',
-            ],
-            borderWidth: 2
-          },
-        ]},
-        options: {
-          scales: {
-            xAxes: [{
-            }],
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          },
-          title: {
-            display: true,
-            text: 'Schoolwise interest in IUB',
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-            fontSize:20    
-          }
-             
+        else if (item.year == i && (item.School == "Phar" || item.School == "SESM")) {
+          counterSESM_PHARM = counterSESM_PHARM + Number(item.no_of_Student)
+        }
+        else if (item.year == i && item.School == "SLASS") {
+          counterSlass = counterSlass + Number(item.no_of_Student)
+        }
+        else if (item.year == i && item.School == "SLS") {
+          counterSls = counterSls + Number(item.no_of_Student)
         }
       });
   
-    }).fail(function (response) {
-      console.log(response.responseText);
-    });  
-  })
-    
+      // numberOfStd.push(counter)
+      // numberOfSob.push(counterSLS)
+      // numberOfOth.push(counterSESM_PHARM)
+      // counter = 0
+      // counterSLS = 0
+      // counterSESM_PHARM = 0
+
+      numberOfStd.push(counter)
+      numberOfSob.push(counterSLS)
+      numberOfOth.push(counterSESM_PHARM)
+      numberOfSlass.push(counterSlass)
+      numberOfSls.push(counterSls)
+      counter = 0
+      counterSLS = 0
+      counterSESM_PHARM = 0
+      counterSls = 0
+      counterSlass = 0
+    }
+    var ctx = document.getElementById('myChart4');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data:
+      {
+        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        datasets: [{
+          lineTension:0.1,
+          label: 'Number Of Students in SECS',
+          data: [numberOfStd[0], numberOfStd[1], numberOfStd[2], numberOfStd[3], numberOfStd[4], numberOfStd[5], numberOfStd[6], numberOfStd[7],],
+  
+          backgroundColor: [
+              'rgba(228,108,10, 1)',
+          ],
+          borderColor: [
+            'rgba(228,108,10, 1)',
+          ],
+          borderWidth: 2
+        }, 
+        {
+          lineTension:0.1,
+          label: 'Number Of Students in SoB',
+          data: [numberOfSob[0], numberOfSob[1], numberOfSob[2], numberOfSob[3], numberOfSob[4], numberOfSob[5], numberOfSob[6], numberOfSob[7],],
+  
+          backgroundColor: [
+              'rgba(31,73,125,1)',
+          ],
+          borderColor: [
+            'rgba(31,73,125,1)',
+          ],
+          borderWidth: 2
+        },
+      //   {
+      //     lineTension:0.1,
+      //     label: 'Number Of Students in Others',
+      //     data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+  
+      //     backgroundColor: [
+      //         'rgba(128,100,162,1)',
+      //     ],
+      //     borderColor: [
+      //       'rgba(128,100,162,1)',
+      //     ],
+      //     borderWidth: 2
+      //   },
+
+      {
+          lineTension:0.1,
+          label: 'Number Of Students in SESM+PHARM',
+          data: [numberOfOth[0], numberOfOth[1], numberOfOth[2], numberOfOth[3], numberOfOth[4], numberOfOth[5], numberOfOth[6], numberOfOth[7],],
+          
+          backgroundColor: [
+            'rgba(128,100,162,1)',
+          ],
+          borderColor: [
+            'rgba(128,100,162,1)',
+          ],
+          borderWidth: 2
+        },
+        { 
+          lineTension:0.1,
+          label: 'Number Of Students in Slass',
+          data: [numberOfSlass[0], numberOfSlass[1], numberOfSlass[2], numberOfSlass[3], numberOfSlass[4], numberOfSlass[5], numberOfSlass[6], numberOfSlass[7],],
+
+          backgroundColor: [
+            'rgba(166,166,166,1)',
+          ],
+
+          borderColor: [
+            'rgba(166,166,166,1)',
+          ],
+          borderWidth: 2
+        },
+        {
+          lineTension:0.1,
+          label: 'Number Of Students in SLS',
+          data: [numberOfSls[0], numberOfSls[1], numberOfSls[2], numberOfSls[3], numberOfSls[4], numberOfSls[5], numberOfSls[6], numberOfSls[7],],
+
+          backgroundColor: [
+            'rgba(155,187,89,1)',
+          ],
+
+          borderColor: [
+            'rgba(155,187,89,1)',
+
+          ],
+          borderWidth: 2
+          },
+          ]
+  
+        },
+      options: {
+        scales: {
+          xAxes: [{ stacked : true
+          }],
+          yAxes: [{ stacked : true,
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        },
+        title: {
+          display: true,
+          text: 'Schoolwise interest in IUB',
+          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontSize:20    
+        }
+           
+      }
+    });
+
+  }).fail(function (response) {
+    console.log(response.responseText);
+  });  
+})
+   
     // myChart4: Schoolwise Interest in IUB (bar)
     $("#all").click(function (event) {
       $.ajax({
@@ -442,7 +702,7 @@ $("#all").click(function (event) {
           counterSls = 0
           counterSlass = 0
         }
-        var ctx = document.getElementById('myChart4');
+        var ctx = document.getElementById('myChart5');
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -654,7 +914,7 @@ $("#all").click(function (event) {
           counterSLS = 0
           counterSESM_PHARM = 0
         }
-        var ctx = document.getElementById('myChart5');
+        var ctx = document.getElementById('myChart6');
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
@@ -964,7 +1224,7 @@ $("#all").click(function (event) {
         
     
         // Focus year graphs
-        var ctx = document.getElementById('myChart6');
+        var ctx = document.getElementById('myChart7');
           var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -1019,7 +1279,7 @@ $("#all").click(function (event) {
             }
           });
     
-          var ctx = document.getElementById('myChart7');
+          var ctx = document.getElementById('myChart8');
           var myChart7 = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -1071,7 +1331,7 @@ $("#all").click(function (event) {
           
         //   Line graph
         
-        var ctx = document.getElementById('myChart8');
+        var ctx = document.getElementById('myChart9');
          myChart8 = new Chart(ctx, {
           type: 'line',
           data:{
@@ -1300,7 +1560,7 @@ $("#all").click(function (event) {
         
     
         //   Area under the graph
-        var ctx = document.getElementById('myChart9');
+        var ctx = document.getElementById('myChart10');
         myChart9 = new Chart(ctx, {
           type: 'line',
           data: {
@@ -1523,7 +1783,7 @@ $("#all").click(function (event) {
         });
     
         //   SECS Dept Line Chart
-        var ctx = document.getElementById('myChart10');
+        var ctx = document.getElementById('myChart11');
          myChart10 = new Chart(ctx, {
           type: 'line',
           data: {
@@ -1583,7 +1843,7 @@ $("#all").click(function (event) {
         });
     
         //SECS dept bar chart
-        var ctx = document.getElementById('myChart11');
+        var ctx = document.getElementById('myChart12');
         myChart11 = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -1689,7 +1949,7 @@ $("#all").click(function (event) {
         });
     
         // Yearly semester wise SECS
-        var ctx = document.getElementById('myChart12');
+        var ctx = document.getElementById('myChart13');
         var myChart12 = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -1894,15 +2154,15 @@ $("#all").click(function (event) {
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Environmental Management") {
-          counterYearlyENV_management = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyENV_management = counterYearlyENV_management + Number(item.no_of_Student)
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Environmental Science") {
-          counterYearlyENV = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyENV = counterYearlyENV + Number(item.no_of_Student)
         }
 
         else if (item.year == Yearvalue && item.Major == "BSc - Population Environment") {
-          counterYearlyPopulation_Env = counterYearlyPharmacy + Number(item.no_of_Student)
+          counterYearlyPopulation_Env = counterYearlyPopulation_Env + Number(item.no_of_Student)
         }
 
         // Yearly semester wise SESM
@@ -1964,7 +2224,7 @@ $("#all").click(function (event) {
       counterSummer = 0
     }
 
-    var ctx = document.getElementById('myChart13');
+    var ctx = document.getElementById('myChart14');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2012,7 +2272,7 @@ $("#all").click(function (event) {
 
       }
     });
-    var ctx = document.getElementById('myChart14');
+    var ctx = document.getElementById('myChart15');
     var myChart14 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2061,7 +2321,7 @@ $("#all").click(function (event) {
 
 
     //   Line graph
-    var ctx = document.getElementById('myChart15');
+    var ctx = document.getElementById('myChart16');
     myChart15 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2136,7 +2396,7 @@ $("#all").click(function (event) {
     });
 
     //   Area under the graph
-    var ctx = document.getElementById('myChart16');
+    var ctx = document.getElementById('myChart17');
     myChart16 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2229,7 +2489,7 @@ $("#all").click(function (event) {
     });
 
      // Yearly semester wise SESM
-     var ctx = document.getElementById('myChart17');
+     var ctx = document.getElementById('myChart18');
       myChart17 = new Chart(ctx, {
        type: 'bar',
        data: {
@@ -2615,7 +2875,7 @@ $("#all").click(function (event) {
     }
 
 
-    var ctx = document.getElementById('myChart18');
+    var ctx = document.getElementById('myChart19');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2671,7 +2931,7 @@ $("#all").click(function (event) {
     });
 
 
-    var ctx = document.getElementById('myChart19');
+    var ctx = document.getElementById('myChart20');
     var myChart19 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2726,7 +2986,7 @@ $("#all").click(function (event) {
 
 
     //   Line graph
-    var ctx = document.getElementById('myChart20');
+    var ctx = document.getElementById('myChart21');
     myChart20 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2834,7 +3094,7 @@ $("#all").click(function (event) {
     });
 
     //   Area under the graph
-    var ctx = document.getElementById('myChart21');
+    var ctx = document.getElementById('myChart22');
     myChart21 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2946,7 +3206,7 @@ $("#all").click(function (event) {
     });
 
     //   SLASS Dept
-    var ctx = document.getElementById('myChart22');
+    var ctx = document.getElementById('myChart23');
     myChart22 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3028,7 +3288,7 @@ $("#all").click(function (event) {
       }
     });
 
-    var ctx = document.getElementById('myChart23');
+    var ctx = document.getElementById('myChart24');
     var myChart23 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -3196,7 +3456,7 @@ $("#all").click(function (event) {
     });
 
     // Yearly semester wise SLASS
-    var ctx = document.getElementById('myChart24');
+    var ctx = document.getElementById('myChart25');
     var myChart24 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -3444,7 +3704,7 @@ $("#all").click(function (event) {
       counterSummer = 0
     }
 
-    var ctx = document.getElementById('myChart25');
+    var ctx = document.getElementById('myChart26');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -3492,7 +3752,7 @@ $("#all").click(function (event) {
     })
 
 
-    var ctx = document.getElementById('myChart26');
+    var ctx = document.getElementById('myChart27');
     var myChart26 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -3540,7 +3800,7 @@ $("#all").click(function (event) {
     });
 
     //   Line graph
-    var ctx = document.getElementById('myChart27');
+    var ctx = document.getElementById('myChart28');
     myChart27 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3601,7 +3861,7 @@ $("#all").click(function (event) {
     });
 
     //   Area under the graph
-    var ctx = document.getElementById('myChart28');
+    var ctx = document.getElementById('myChart29');
     myChart28 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3665,7 +3925,7 @@ $("#all").click(function (event) {
     });
 
       // Yearly semester wise SLS
-      var ctx = document.getElementById('myChart29');
+      var ctx = document.getElementById('myChart30');
        myChart29 = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -3995,7 +4255,7 @@ $("#all").click(function (event) {
 
 
 
-    var ctx = document.getElementById('myChart30');
+    var ctx = document.getElementById('myChart31');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -4054,7 +4314,7 @@ $("#all").click(function (event) {
 
       }
     });
-    var ctx = document.getElementById('myChart31');
+    var ctx = document.getElementById('myChart32');
     var myChart31 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -4110,7 +4370,7 @@ $("#all").click(function (event) {
         }
       }
     });
-    var ctx = document.getElementById('myChart32');
+    var ctx = document.getElementById('myChart33');
     myChart32 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -4410,7 +4670,7 @@ $("#all").click(function (event) {
         }
       }
     });
-    var ctx = document.getElementById('myChart33');
+    var ctx = document.getElementById('myChart34');
     myChart33 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -4723,7 +4983,7 @@ $("#all").click(function (event) {
     });
 
       // Yearly semester wise SoB
-      var ctx = document.getElementById('myChart34');
+      var ctx = document.getElementById('myChart35');
       var myChart34 = new Chart(ctx, {
         type: 'bar',
         data: {

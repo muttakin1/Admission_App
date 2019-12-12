@@ -1,3 +1,5 @@
+var myChart24
+var myChart34
 // myChart and myChart1: Focus year @ IUB AND Focus year schoolwise distribution
 $("#getFocusYear").click(function (event) {
     
@@ -110,7 +112,9 @@ $("#getFocusYear").click(function (event) {
        
         
         var ctx = document.getElementById('myChart');
-        
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
+
         var myChart = new Chart(ctx, {
           type: 'pie',
           data: {
@@ -155,7 +159,10 @@ $("#getFocusYear").click(function (event) {
             
           }
         });
+        
         var ctx = document.getElementById('myChart1');
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
         var myChart1 = new Chart(ctx, {
           type: 'pie',
           data: {
@@ -209,9 +216,9 @@ $("#getFocusYear").click(function (event) {
       });
       
     }
+  
     })
 
-    
 //myChart2: Number of Students
 $("#getFocusYear").click(function (event) {
     $.ajax({
@@ -241,6 +248,8 @@ $("#getFocusYear").click(function (event) {
       console.log(numberOfStd)
     
       var ctx = document.getElementById('myChart2');
+      $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -332,6 +341,8 @@ $("#getFocusYear").click(function (event) {
         counterSESM_PHARM = 0
       }
       var ctx = document.getElementById('myChart3');
+      $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -452,6 +463,8 @@ $("#getFocusYear").click(function (event) {
           counterSlass = 0
         }
         var ctx = document.getElementById('myChart4');
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -667,6 +680,8 @@ $("#getFocusYear").click(function (event) {
           counterSESM_PHARM = 0
         }
         var ctx = document.getElementById('myChart5');
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
@@ -979,7 +994,9 @@ $("#getFocusYear").click(function (event) {
     
         // Focus year graphs
         var ctx = document.getElementById('myChart6');
-          var myChart = new Chart(ctx, {
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
+        var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
               
@@ -1034,6 +1051,8 @@ $("#getFocusYear").click(function (event) {
           });
     
           var ctx = document.getElementById('myChart7');
+          $(ctx).show()
+          $(ctx).addClass("chartPDFunique")
           var myChart7 = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -1086,7 +1105,9 @@ $("#getFocusYear").click(function (event) {
         //   Line graph
         
         var ctx = document.getElementById('myChart8');
-         myChart8 = new Chart(ctx, {
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
+        myChart8 = new Chart(ctx, {
           type: 'line',
           data:{
             labels: year,
@@ -1315,6 +1336,8 @@ $("#getFocusYear").click(function (event) {
     
         //   Area under the graph
         var ctx = document.getElementById('myChart9');
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
         myChart9 = new Chart(ctx, {
           type: 'line',
           data: {
@@ -1538,7 +1561,9 @@ $("#getFocusYear").click(function (event) {
     
         //   SECS Dept Line Chart
         var ctx = document.getElementById('myChart10');
-         myChart10 = new Chart(ctx, {
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
+        myChart10 = new Chart(ctx, {
           type: 'line',
           data: {
             labels: year,
@@ -1598,6 +1623,8 @@ $("#getFocusYear").click(function (event) {
     
         //SECS dept bar chart
         var ctx = document.getElementById('myChart11');
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
         myChart11 = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -1704,6 +1731,8 @@ $("#getFocusYear").click(function (event) {
     
         // Yearly semester wise SECS
         var ctx = document.getElementById('myChart12');
+        $(ctx).show()
+        $(ctx).addClass("chartPDFunique")
         var myChart12 = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -1982,6 +2011,8 @@ $("#getFocusYear").click(function (event) {
     console.log(year)
 
     var ctx = document.getElementById('myChart13');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2030,6 +2061,8 @@ $("#getFocusYear").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart14');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart14 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2079,6 +2112,8 @@ $("#getFocusYear").click(function (event) {
 
     //   Line graph
     var ctx = document.getElementById('myChart15');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart15 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2154,6 +2189,8 @@ $("#getFocusYear").click(function (event) {
 
     //   Area under the graph
     var ctx = document.getElementById('myChart16');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart16 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2247,7 +2284,9 @@ $("#getFocusYear").click(function (event) {
 
      // Yearly semester wise SESM
      var ctx = document.getElementById('myChart17');
-      myChart17 = new Chart(ctx, {
+     $(ctx).show()
+     $(ctx).addClass("chartPDFunique")
+     myChart17 = new Chart(ctx, {
        type: 'bar',
        data: {
          labels: year,
@@ -2636,6 +2675,8 @@ $("#getFocusYear").click(function (event) {
 
 
     var ctx = document.getElementById('myChart18');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2692,6 +2733,8 @@ $("#getFocusYear").click(function (event) {
 
 
     var ctx = document.getElementById('myChart19');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart19 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -2747,6 +2790,8 @@ $("#getFocusYear").click(function (event) {
 
     //   Line graph
     var ctx = document.getElementById('myChart20');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart20 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2855,6 +2900,8 @@ $("#getFocusYear").click(function (event) {
 
     //   Area under the graph
     var ctx = document.getElementById('myChart21');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart21 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -2967,6 +3014,8 @@ $("#getFocusYear").click(function (event) {
 
     //   SLASS Dept
     var ctx = document.getElementById('myChart22');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart22 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3049,6 +3098,8 @@ $("#getFocusYear").click(function (event) {
     });
 
     var ctx = document.getElementById('myChart23');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart23 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -3217,7 +3268,9 @@ $("#getFocusYear").click(function (event) {
 
     // Yearly semester wise SLASS
     var ctx = document.getElementById('myChart24');
-    var myChart24 = new Chart(ctx, {
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+     myChart24 = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: year,
@@ -3467,6 +3520,8 @@ $("#getFocusYear").click(function (event) {
     }
 
     var ctx = document.getElementById('myChart25');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -3515,6 +3570,8 @@ $("#getFocusYear").click(function (event) {
 
 
     var ctx = document.getElementById('myChart26');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart26 = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -3563,6 +3620,8 @@ $("#getFocusYear").click(function (event) {
 
     //   Line graph
     var ctx = document.getElementById('myChart27');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart27 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3624,6 +3683,8 @@ $("#getFocusYear").click(function (event) {
 
     //   Area under the graph
     var ctx = document.getElementById('myChart28');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart28 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -3688,7 +3749,9 @@ $("#getFocusYear").click(function (event) {
 
       // Yearly semester wise SLS
       var ctx = document.getElementById('myChart29');
-       myChart29 = new Chart(ctx, {
+      $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
+      myChart29 = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: year,
@@ -4020,6 +4083,8 @@ $("#getFocusYear").click(function (event) {
 
 
     var ctx = document.getElementById('myChart30');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -4079,6 +4144,8 @@ $("#getFocusYear").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart31');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     var myChart31 = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -4135,6 +4202,8 @@ $("#getFocusYear").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart32');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart32 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -4435,6 +4504,8 @@ $("#getFocusYear").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart33');
+    $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
     myChart33 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -4748,7 +4819,9 @@ $("#getFocusYear").click(function (event) {
 
       // Yearly semester wise SoB
       var ctx = document.getElementById('myChart34');
-      var myChart34 = new Chart(ctx, {
+      $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
+       myChart34 = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: year,

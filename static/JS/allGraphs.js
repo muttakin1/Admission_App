@@ -497,7 +497,9 @@ $("#getFocusYear").click(function (event) {
     let numberOfSlass = []
     let numberOfSls = []
       
-    for (let i = 2013; i <= 2019; i++) {
+    let year=[]
+    for (let i = startYear; i <= finishYear; i++) {
+      year.push(Number(i))
       noofStd.forEach((item, index) => {
         if (item.year == i && item.School == "SECS") {
           counter = counter + Number(item.no_of_Student)
@@ -540,7 +542,7 @@ $("#getFocusYear").click(function (event) {
       type: 'line',
       data:
       {
-        labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+        labels: year,
         datasets: [{
           lineTension:0.1,
           label: 'Number Of Students in SECS',
@@ -4348,26 +4350,26 @@ $("#getFocusYear").click(function (event) {
           data: [numberBBA[0], numberBBA[1], numberBBA[2], numberBBA[3], numberBBA[4], numberBBA[5], numberBBA[6], numberBBA[7], numberBBA[8]],
           backgroundColor: [
             'rgba(44, 77, 117, 1)', //mis
-            'rgba(192, 80, 77, 1)', // finance
-            'rgba(247, 150, 70, 1)', //investment banking
-            'rgba(79, 129, 189, 1)', // accounting
-            'rgba(155, 187, 89, 1)', //general management
-            'rgba(128, 100, 162, 1)', //hrm
-            'rgba(75, 172, 198, 1)', //IB
-            'rgba(119, 44, 42, 1)', //marketing
-            'rgba(95, 117, 48, 1)', // econ
-          ],
-          borderColor: [
-            'rgba(44, 77, 117, 1)', //mis
-            'rgba(192, 80, 77, 1)', // finance
-            'rgba(247, 150, 70, 1)', //investment banking
-            'rgba(79, 129, 189, 1)', // accounting
-            'rgba(155, 187, 89, 1)', //general management
-            'rgba(128, 100, 162, 1)', //hrm
-            'rgba(75, 172, 198, 1)', //IB
-            'rgba(119, 44, 42, 1)', //marketing
-            'rgba(95, 117, 48, 1)', // econ
-          ],
+                'rgb(89, 135, 192)', // finance
+                'rgb(107, 148, 199)', //investment banking
+                'rgb(163, 188, 220)', // accounting
+                'rgb(0, 134, 179)', //general management
+                'rgb(0, 153, 204)', //hrm
+                'rgb(102, 181, 255)', //IB
+                'rgb(153, 204, 255)', //marketing
+                'rgb(204, 230, 255)', // econ
+              ],
+              borderColor: [
+                'rgba(44, 77, 117, 1)',
+                'rgb(89, 135, 192)',
+                'rgb(107, 148, 199)',
+                'rgb(163, 188, 220)',
+                'rgb(0, 134, 179)',
+                'rgb(0, 153, 204)',
+                'rgb(102, 181, 255)',
+                'rgb(153, 204, 255)',
+                'rgb(204, 230, 255)',
+              ],
           borderWidth: 2
         },
         ]
@@ -4432,26 +4434,26 @@ $("#getFocusYear").click(function (event) {
           label: 'Marketing',
           data: [numberYearlyMkt[0], numberYearlyMkt[1], numberYearlyMkt[2], numberYearlyMkt[3], numberYearlyMkt[4], numberYearlyMkt[5], numberYearlyMkt[6], numberYearlyMkt[7],],
           backgroundColor: [
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
 
 
           ],
           borderColor: [
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
 
           ],
           borderWidth: 2
@@ -4463,25 +4465,25 @@ $("#getFocusYear").click(function (event) {
           label: 'Accounting',
           data: [numberYearlyAcn[0], numberYearlyAcn[1], numberYearlyAcn[2], numberYearlyAcn[3], numberYearlyAcn[4], numberYearlyAcn[5], numberYearlyAcn[6], numberYearlyAcn[7],],
           backgroundColor: [
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
 
           ],
           borderColor: [
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
 
           ],
           borderWidth: 2
@@ -4492,25 +4494,25 @@ $("#getFocusYear").click(function (event) {
           label: 'Finance',
           data: [numberYearlyFin[0], numberYearlyFin[1], numberYearlyFin[2], numberYearlyFin[3], numberYearlyFin[4], numberYearlyFin[5], numberYearlyFin[6], numberYearlyFin[7],],
           backgroundColor: [
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
 
           ],
           borderColor: [
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
 
           ],
           borderWidth: 2
@@ -4522,25 +4524,25 @@ $("#getFocusYear").click(function (event) {
           label: 'General Management',
           data: [numberYearlyMgt[0], numberYearlyMgt[1], numberYearlyMgt[2], numberYearlyMgt[3], numberYearlyMgt[4], numberYearlyMgt[5], numberYearlyMgt[6], numberYearlyMgt[7],],
           backgroundColor: [
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
             
           ],
           borderColor: [
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
 
           ],
           borderWidth: 2
@@ -4552,25 +4554,25 @@ $("#getFocusYear").click(function (event) {
           label: 'Human Resources Management',
           data: [numberYearlyHrm[0], numberYearlyHrm[1], numberYearlyHrm[2], numberYearlyHrm[3], numberYearlyHrm[4], numberYearlyHrm[5], numberYearlyHrm[6], numberYearlyHrm[7],],
           backgroundColor: [
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
 
           ],
           borderColor: [
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
 
           ],
           borderWidth: 2
@@ -4582,25 +4584,25 @@ $("#getFocusYear").click(function (event) {
           label: 'International Business',
           data: [numberYearlyIb[0], numberYearlyIb[1], numberYearlyIb[2], numberYearlyIb[3], numberYearlyIb[4], numberYearlyIb[5], numberYearlyIb[6], numberYearlyIb[7],],
           backgroundColor: [
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
 
           ],
           borderColor: [
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
 
           ],
           borderWidth: 2
@@ -4612,26 +4614,25 @@ $("#getFocusYear").click(function (event) {
           label: 'Investment Management',
           data: [numberYearlyInvest[0], numberYearlyInvest[1], numberYearlyInvest[2], numberYearlyInvest[3], numberYearlyInvest[4], numberYearlyInvest[5], numberYearlyInvest[6], numberYearlyInvest[7],],
           backgroundColor: [
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
 
           ],
           borderColor: [
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
           ],
           borderWidth: 2
 
@@ -4641,25 +4642,25 @@ $("#getFocusYear").click(function (event) {
           label: 'Economics',
           data: [numberYearlyEcn[0], numberYearlyEcn[1], numberYearlyEcn[2], numberYearlyEcn[3], numberYearlyEcn[4], numberYearlyEcn[5], numberYearlyEcn[6], numberYearlyEcn[7],],
           backgroundColor: [
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
 
           ],
           borderColor: [
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
 
           ],
           borderWidth: 2
@@ -4712,7 +4713,7 @@ $("#getFocusYear").click(function (event) {
             'rgba(44, 77, 117, 1)',
             'rgba(44, 77, 117, 1)',
             'rgba(44, 77, 117, 1)',
-
+            
           ],
           borderColor: [
             'rgba(44, 77, 117, 1)',
@@ -4734,25 +4735,26 @@ $("#getFocusYear").click(function (event) {
           fill: false,
           data: [numberYearlyMkt[0], numberYearlyMkt[1], numberYearlyMkt[2], numberYearlyMkt[3], numberYearlyMkt[4], numberYearlyMkt[5], numberYearlyMkt[6], numberYearlyMkt[7],],
           backgroundColor: [
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+
 
           ],
           borderColor: [
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
-            'rgba(119, 44, 42, 1)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
+            'rgb(153, 204, 255)',
 
           ],
           borderWidth: 2
@@ -4765,25 +4767,25 @@ $("#getFocusYear").click(function (event) {
           fill: false,
           data: [numberYearlyAcn[0], numberYearlyAcn[1], numberYearlyAcn[2], numberYearlyAcn[3], numberYearlyAcn[4], numberYearlyAcn[5], numberYearlyAcn[6], numberYearlyAcn[7],],
           backgroundColor: [
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
 
           ],
           borderColor: [
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
-            'rgba(79, 129, 189, 1)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
+            'rgb(163, 188, 220)',
 
           ],
           borderWidth: 2
@@ -4795,25 +4797,25 @@ $("#getFocusYear").click(function (event) {
           fill: false,
           data: [numberYearlyFin[0], numberYearlyFin[1], numberYearlyFin[2], numberYearlyFin[3], numberYearlyFin[4], numberYearlyFin[5], numberYearlyFin[6], numberYearlyFin[7],],
           backgroundColor: [
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
 
           ],
           borderColor: [
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
-            'rgba(192, 80, 77, 1)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
+            'rgb(89, 135, 192)',
 
           ],
           borderWidth: 2
@@ -4826,25 +4828,25 @@ $("#getFocusYear").click(function (event) {
           fill: false,
           data: [numberYearlyMgt[0], numberYearlyMgt[1], numberYearlyMgt[2], numberYearlyMgt[3], numberYearlyMgt[4], numberYearlyMgt[5], numberYearlyMgt[6], numberYearlyMgt[7],],
           backgroundColor: [
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            
           ],
           borderColor: [
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
-            'rgba(155, 187, 89, 1)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
+            'rgb(0, 134, 179)',
 
           ],
           borderWidth: 2
@@ -4857,25 +4859,25 @@ $("#getFocusYear").click(function (event) {
           fill: false,
           data: [numberYearlyHrm[0], numberYearlyHrm[1], numberYearlyHrm[2], numberYearlyHrm[3], numberYearlyHrm[4], numberYearlyHrm[5], numberYearlyHrm[6], numberYearlyHrm[7],],
           backgroundColor: [
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
 
           ],
           borderColor: [
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
-            'rgba(128, 100, 162, 1)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
+            'rgb(0, 153, 204)',
 
           ],
           borderWidth: 2
@@ -4888,25 +4890,25 @@ $("#getFocusYear").click(function (event) {
           fill: false,
           data: [numberYearlyIb[0], numberYearlyIb[1], numberYearlyIb[2], numberYearlyIb[3], numberYearlyIb[4], numberYearlyIb[5], numberYearlyIb[6], numberYearlyIb[7],],
           backgroundColor: [
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
 
           ],
           borderColor: [
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
-            'rgba(75, 172, 198, 1)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
+            'rgb(102, 181, 255)',
 
           ],
           borderWidth: 2
@@ -4919,26 +4921,25 @@ $("#getFocusYear").click(function (event) {
           fill: false,
           data: [numberYearlyInvest[0], numberYearlyInvest[1], numberYearlyInvest[2], numberYearlyInvest[3], numberYearlyInvest[4], numberYearlyInvest[5], numberYearlyInvest[6], numberYearlyInvest[7],],
           backgroundColor: [
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
 
           ],
           borderColor: [
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-            'rgba(247, 150, 70, 1)',
-
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
+            'rgb(107, 148, 199)',
           ],
           borderWidth: 2
 
@@ -4949,25 +4950,25 @@ $("#getFocusYear").click(function (event) {
           fill: false,
           data: [numberYearlyEcn[0], numberYearlyEcn[1], numberYearlyEcn[2], numberYearlyEcn[3], numberYearlyEcn[4], numberYearlyEcn[5], numberYearlyEcn[6], numberYearlyEcn[7],],
           backgroundColor: [
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
 
           ],
           borderColor: [
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
-            'rgba(95, 117, 48, 1)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
+            'rgb(204, 230, 255)',
 
           ],
           borderWidth: 2

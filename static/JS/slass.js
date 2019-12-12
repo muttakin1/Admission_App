@@ -23,7 +23,8 @@ function saveTitle() {
 
 $("#MajorWiseStudentsSLASS").click(function (event) {
   getBtn();
-  
+  $(".chartPDFunique").hide()
+  $(".chartPDFunique").removeClass("chartPDFunique")
   $(".dropdown").show();
   $("#content").show();
 
@@ -327,6 +328,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     console.log(year)
     var ctx = document.getElementById('myChart');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -383,6 +386,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
 
     var ctx = document.getElementById('myChart1');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -438,6 +443,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     //   Line graph
     var ctx = document.getElementById('myChart2');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -546,6 +553,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     //   Area under the graph
     var ctx = document.getElementById('myChart3');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -658,6 +667,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     //   SLASS Dept
     var ctx = document.getElementById('myChart4');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     myChart4 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -740,6 +751,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
     });
 
     var ctx = document.getElementById('myChart5');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -908,6 +921,8 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
 
     // Yearly semester wise SLASS
     var ctx = document.getElementById('myChart6');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {

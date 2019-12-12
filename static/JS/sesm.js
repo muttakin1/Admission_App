@@ -21,6 +21,8 @@ function saveTitle() {
   myChart4.update();
 }
 $("#MajorWiseStudentsSESM").click(function (event) {
+  $(".chartPDFunique").hide()
+  $(".chartPDFunique").removeClass("chartPDFunique")
   getBtn();
   $(".dropdown").show();
   $("#content").show();
@@ -212,6 +214,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
     console.log(year)
 
     var ctx = document.getElementById('myChart');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -260,6 +264,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart1');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -309,6 +315,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
     //   Line graph
     var ctx = document.getElementById('myChart2');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -384,6 +392,8 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
     //   Area under the graph
     var ctx = document.getElementById('myChart3');
+     $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -477,7 +487,9 @@ $("#MajorWiseStudentsSESM").click(function (event) {
 
      // Yearly semester wise SESM
      var ctx = document.getElementById('myChart4');
-      myChart4 = new Chart(ctx, {
+      $(ctx).show()
+      $(ctx).addClass("chartPDFunique")
+     myChart4 = new Chart(ctx, {
        type: 'bar',
        data: {
          labels: year,

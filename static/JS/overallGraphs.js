@@ -1,5 +1,7 @@
 // myChart and myChart1: Focus year @ IUB AND Focus year schoolwise distribution
 $("#overall").click(function (event) {
+  $(".chartPDFunique").hide()
+  $(".chartPDFunique").removeClass("chartPDFunique")
     
     var sYear = document.getElementById('startYearVal').value;
     var finYear = document.getElementById('startYearVal').value;
@@ -113,7 +115,10 @@ $("#overall").click(function (event) {
        
         
         var ctx = document.getElementById('myChart');
+  $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
         
+
         var myChart = new Chart(ctx, {
           type: 'pie',
           data: {
@@ -159,6 +164,9 @@ $("#overall").click(function (event) {
           }
         });
         var ctx = document.getElementById('myChart1');
+         $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+        
         var myChart1 = new Chart(ctx, {
           type: 'pie',
           data: {
@@ -217,6 +225,8 @@ $("#overall").click(function (event) {
     
 //myChart2: Number of Students
 $("#overall").click(function (event) {
+  $(".chartPDFunique").hide()
+  $(".chartPDFunique").removeClass("chartPDFunique")
     $.ajax({
       method: "GET",
       url: "/data/list"
@@ -278,6 +288,9 @@ $("#overall").click(function (event) {
       console.log(numberOfStd)
     
       var ctx = document.getElementById('myChart3');
+       $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+      
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -328,6 +341,9 @@ $("#overall").click(function (event) {
 
        // Yearly semester wise Number of Students
     var ctx = document.getElementById('myChart2');
+     $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+    
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -447,6 +463,8 @@ $("#overall").click(function (event) {
     
  // myChart3: Schoolwise Interest in IUB (line)
  $("#overall").click(function (event) {
+  $(".chartPDFunique").hide()
+  $(".chartPDFunique").removeClass("chartPDFunique")
   $.ajax({
     method: "GET",
     url: "/data/list"
@@ -506,6 +524,9 @@ $("#overall").click(function (event) {
       counterSlass = 0
     }
     var ctx = document.getElementById('myChart4');
+     $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+    
     var myChart = new Chart(ctx, {
       type: 'line',
       data:
@@ -623,6 +644,8 @@ $("#overall").click(function (event) {
     
     // myChart4: Schoolwise Interest in IUB (bar)
     $("#overall").click(function (event) {
+      $(".chartPDFunique").hide()
+      $(".chartPDFunique").removeClass("chartPDFunique")
       $.ajax({
         method: "GET",
         url: "/data/list"
@@ -680,6 +703,9 @@ $("#overall").click(function (event) {
           counterSlass = 0
         }
         var ctx = document.getElementById('myChart5');
+         $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+        
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -852,6 +878,8 @@ $("#overall").click(function (event) {
     
     // myChart5: Other Schools
     $("#overall").click(function (event) {
+      $(".chartPDFunique").hide()
+      $(".chartPDFunique").removeClass("chartPDFunique")
       $.ajax({
         method: "GET",
         url: "/data/list"
@@ -895,6 +923,9 @@ $("#overall").click(function (event) {
           counterSESM_PHARM = 0
         }
         var ctx = document.getElementById('myChart6');
+         $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+        
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {

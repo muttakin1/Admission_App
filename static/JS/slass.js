@@ -1046,7 +1046,7 @@ $("#MajorWiseStudentsSLASS").click(function (event) {
       }
     });
 
-    removeCanvas();
+    // removeCanvas();
 
 
 

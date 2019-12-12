@@ -21,6 +21,10 @@ function saveTitle() {
   myChart4.update();
 }
 $("#MajorWiseStudentsSESM").click(function (event) {
+  
+  $(".chartPDFunique").hide()
+  $(".chartPDFunique").removeClass("chartPDFunique")
+  
   getBtn();
   $(".dropdown").show();
   $("#content").show();

@@ -22,6 +22,10 @@ function saveTitle() {
 }
 
 $("#MajorWiseStudentsSLASS").click(function (event) {
+  
+  $(".chartPDFunique").hide()
+  $(".chartPDFunique").removeClass("chartPDFunique")
+  
   getBtn();
   
   $(".dropdown").show();

@@ -276,6 +276,9 @@ $("#SoB").click(function (event) {
 
 
     var ctx = document.getElementById('myChart');
+     $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+    
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -335,6 +338,9 @@ $("#SoB").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart5');
+     $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+    
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -392,6 +398,9 @@ $("#SoB").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart2');
+     $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+    
     myChart2 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -687,6 +696,9 @@ $("#SoB").click(function (event) {
       }
     });
     var ctx = document.getElementById('myChart2');
+     $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+    
     myChart3 = new Chart(ctx, {
       type: 'line',
       data: {
@@ -1000,7 +1012,10 @@ $("#SoB").click(function (event) {
 
       // Yearly semester wise SoB
       var ctx = document.getElementById('myChart4');
-       myChart4 = new Chart(ctx, {
+       $(ctx).show()
+    $(ctx).addClass("chartPDFunique")
+      
+      myChart4 = new Chart(ctx, {
         type: 'bar',
         data: {
           

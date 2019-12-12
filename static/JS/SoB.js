@@ -341,7 +341,7 @@ $("#SoB").click(function (event) {
 
       }
     });
-    var ctx = document.getElementById('myChart5');
+    var ctx = document.getElementById('myChart1');
      $(ctx).show()
     $(ctx).addClass("chartPDFunique")
     
@@ -699,7 +699,7 @@ $("#SoB").click(function (event) {
         },
       }
     });
-    var ctx = document.getElementById('myChart2');
+    var ctx = document.getElementById('myChart3');
      $(ctx).show()
     $(ctx).addClass("chartPDFunique")
     
